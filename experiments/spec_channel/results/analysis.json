@@ -77,216 +77,559 @@
    }
   },
   "independence_baseline": {
-   "0": {
-    "factorial": {
-     "true_best": "A1/B1",
-     "optimizer_pick": "A1/B1",
-     "quality_regret": 0.0,
-     "bar": 0.843,
-     "true_cheapest": "A0/B0",
-     "optimizer_cheapest": "A1/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 6.33
+   "B1": {
+    "0": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "bar": 0.843,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A1/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 6.33
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.891,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.715,
+       "true_q": 0.85
+      },
+      "A0/B1": {
+       "est_q": 0.825,
+       "true_q": 0.825
+      },
+      "A1/B0": {
+       "est_q": 0.769,
+       "true_q": 0.875
+      },
+      "A1/B1": {
+       "est_q": 0.888,
+       "true_q": 0.888
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.938,
+       "true_q": 0.938
+      }
+     }
     },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.891,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "bar": 0.855,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.577
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.902,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.738,
+       "true_q": 0.875
+      },
+      "A0/B1": {
+       "est_q": 0.862,
+       "true_q": 0.862
+      },
+      "A1/B0": {
+       "est_q": 0.77,
+       "true_q": 0.775
+      },
+      "A1/B1": {
+       "est_q": 0.9,
+       "true_q": 0.9
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.95,
+       "true_q": 0.95
+      }
+     }
     },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.715,
-      "true_q": 0.85
+    "2": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0125,
+      "bar": 0.855,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.527
      },
-     "A0/B1": {
-      "est_q": 0.825,
-      "true_q": 0.825
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.902,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A1/B0": {
-      "est_q": 0.769,
-      "true_q": 0.875
-     },
-     "A1/B1": {
-      "est_q": 0.888,
-      "true_q": 0.888
-     },
-     "S_ref/B0": {
-      "est_q": 0.812,
-      "true_q": 0.812
-     },
-     "S_ref/B1": {
-      "est_q": 0.938,
-      "true_q": 0.938
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.748,
+       "true_q": 0.9
+      },
+      "A0/B1": {
+       "est_q": 0.875,
+       "true_q": 0.875
+      },
+      "A1/B0": {
+       "est_q": 0.759,
+       "true_q": 0.9
+      },
+      "A1/B1": {
+       "est_q": 0.888,
+       "true_q": 0.888
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.95,
+       "true_q": 0.95
+      }
      }
     }
    },
-   "1": {
-    "factorial": {
-     "true_best": "A1/B1",
-     "optimizer_pick": "A1/B1",
-     "quality_regret": 0.0,
-     "bar": 0.855,
-     "true_cheapest": "A0/B0",
-     "optimizer_cheapest": "A0/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 5.577
-    },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.902,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
-    },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.738,
-      "true_q": 0.875
+   "B0": {
+    "0": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "bar": 0.843,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A0/B1": {
-      "est_q": 0.862,
-      "true_q": 0.862
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.05,
+      "bar": 0.891,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.868
      },
-     "A1/B0": {
-      "est_q": 0.77,
-      "true_q": 0.775
-     },
-     "A1/B1": {
-      "est_q": 0.9,
-      "true_q": 0.9
-     },
-     "S_ref/B0": {
-      "est_q": 0.812,
-      "true_q": 0.812
-     },
-     "S_ref/B1": {
-      "est_q": 0.95,
-      "true_q": 0.95
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.85,
+       "true_q": 0.85
+      },
+      "A0/B1": {
+       "est_q": 0.981,
+       "true_q": 0.825
+      },
+      "A1/B0": {
+       "est_q": 0.875,
+       "true_q": 0.875
+      },
+      "A1/B1": {
+       "est_q": 1.01,
+       "true_q": 0.888
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.938,
+       "true_q": 0.938
+      }
      }
-    }
-   },
-   "2": {
-    "factorial": {
-     "true_best": "A0/B0",
-     "optimizer_pick": "A1/B1",
-     "quality_regret": 0.0125,
-     "bar": 0.855,
-     "true_cheapest": "A0/B0",
-     "optimizer_cheapest": "A0/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 5.527
     },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.902,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0375,
+      "bar": 0.855,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0875,
+      "bar": 0.902,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.707
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.875,
+       "true_q": 0.875
+      },
+      "A0/B1": {
+       "est_q": 1.023,
+       "true_q": 0.862
+      },
+      "A1/B0": {
+       "est_q": 0.775,
+       "true_q": 0.775
+      },
+      "A1/B1": {
+       "est_q": 0.906,
+       "true_q": 0.9
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.95,
+       "true_q": 0.95
+      }
+     }
     },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.748,
-      "true_q": 0.9
+    "2": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.025,
+      "bar": 0.855,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A0/B1": {
-      "est_q": 0.875,
-      "true_q": 0.875
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.075,
+      "bar": 0.902,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.969
      },
-     "A1/B0": {
-      "est_q": 0.759,
-      "true_q": 0.9
-     },
-     "A1/B1": {
-      "est_q": 0.888,
-      "true_q": 0.888
-     },
-     "S_ref/B0": {
-      "est_q": 0.812,
-      "true_q": 0.812
-     },
-     "S_ref/B1": {
-      "est_q": 0.95,
-      "true_q": 0.95
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.9,
+       "true_q": 0.9
+      },
+      "A0/B1": {
+       "est_q": 1.052,
+       "true_q": 0.875
+      },
+      "A1/B0": {
+       "est_q": 0.9,
+       "true_q": 0.9
+      },
+      "A1/B1": {
+       "est_q": 1.052,
+       "true_q": 0.888
+      },
+      "S_ref/B0": {
+       "est_q": 0.812,
+       "true_q": 0.812
+      },
+      "S_ref/B1": {
+       "est_q": 0.95,
+       "true_q": 0.95
+      }
      }
     }
    }
+  },
+  "cache_sensitivity": {
+   "B1": {
+    "1.0": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A1/B1",
+      "cost_ratio_pick_vs_true": 6.33
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.577
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.527
+     }
+    },
+    "0.5": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A1/B1",
+      "cost_ratio_pick_vs_true": 6.221
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.486
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.455
+     }
+    },
+    "0.25": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A1/B1",
+      "cost_ratio_pick_vs_true": 6.118
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.401
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.385
+     }
+    },
+    "0.1": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A1/B1",
+      "cost_ratio_pick_vs_true": 6.02
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.324
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.317
+     }
+    }
+   },
+   "B0": {
+    "1.0": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.5": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.25": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.1": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   }
+  },
+  "spec_share_of_downstream_cost": {
+   "rep0 A0/B0": 0.628,
+   "rep0 A0/B1": 0.651,
+   "rep0 A1/B0": 0.539,
+   "rep0 A1/B1": 0.652,
+   "rep1 A0/B0": 0.608,
+   "rep1 A0/B1": 0.63,
+   "rep1 A1/B0": 0.592,
+   "rep1 A1/B1": 0.698,
+   "rep2 A0/B0": 0.645,
+   "rep2 A0/B1": 0.663,
+   "rep2 A1/B0": 0.562,
+   "rep2 A1/B1": 0.669
   },
   "cost_model": {
    "rows": {
     "rep0 A0/B0": {
      "measured": 440.4,
      "naive_err": -0.631,
-     "composed_err": 0.067
+     "composed_err": {
+      "B1": 0.067,
+      "B0": 0.0
+     }
     },
     "rep0 A0/B1": {
      "measured": 424.8,
      "naive_err": -0.654,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.063
+     }
     },
     "rep0 A1/B0": {
      "measured": 480.4,
      "naive_err": -0.662,
-     "composed_err": 0.059
+     "composed_err": {
+      "B1": 0.059,
+      "B0": 0.0
+     }
     },
     "rep0 A1/B1": {
      "measured": 459.8,
      "naive_err": -0.681,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.056
+     }
     },
     "rep1 A0/B0": {
      "measured": 418.4,
      "naive_err": -0.612,
-     "composed_err": 0.06
+     "composed_err": {
+      "B1": 0.06,
+      "B0": 0.0
+     }
     },
     "rep1 A0/B1": {
      "measured": 400.8,
      "naive_err": -0.634,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.056
+     }
     },
     "rep1 A1/B0": {
      "measured": 564.4,
      "naive_err": -0.712,
-     "composed_err": 0.048
+     "composed_err": {
+      "B1": 0.048,
+      "B0": 0.0
+     }
     },
     "rep1 A1/B1": {
      "measured": 534.8,
      "naive_err": -0.726,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.046
+     }
     },
     "rep2 A0/B0": {
      "measured": 463.4,
      "naive_err": -0.65,
-     "composed_err": 0.05
+     "composed_err": {
+      "B1": 0.05,
+      "B0": 0.0
+     }
     },
     "rep2 A0/B1": {
      "measured": 439.8,
      "naive_err": -0.666,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.048
+     }
     },
     "rep2 A1/B0": {
      "measured": 513.4,
      "naive_err": -0.684,
-     "composed_err": 0.047
+     "composed_err": {
+      "B1": 0.047,
+      "B0": 0.0
+     }
     },
     "rep2 A1/B1": {
      "measured": 485.8,
      "naive_err": -0.698,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.045
+     }
     }
    },
    "mean_abs_err_naive": 0.668,
-   "mean_abs_err_composed": 0.028,
+   "mean_abs_err_composed": {
+    "B1": 0.028,
+    "B0": 0.026
+   },
    "spec_words": {
     "rep0 A0": 196,
     "rep0 A1": 228,
@@ -309,6 +652,79 @@
    "delta_margin": 0.038,
    "records_needed": 399,
    "replicates_needed": 24
+  },
+  "replicate_tests": {
+   "H1_interaction_acc": {
+    "mean": -0.0625,
+    "t": -1.637,
+    "df": 2,
+    "p": 0.2434,
+    "ci95_two_level": [
+     -0.15,
+     0.0125
+    ]
+   },
+   "H2_estimability": {
+    "A0": {
+     "mean": 0.1542,
+     "t": 37.0,
+     "df": 2,
+     "p": 0.0007
+    },
+    "A1": {
+     "mean": 0.0917,
+     "t": 2.234,
+     "df": 2,
+     "p": 0.1551
+    }
+   }
+  },
+  "f1": {
+   "per_cell": {
+    "0": {
+     "A0/B0": 0.838,
+     "A0/B1": 0.788,
+     "A1/B0": 0.884,
+     "A1/B1": 0.877,
+     "S_ref/B0": 0.835,
+     "S_ref/B1": 0.937
+    },
+    "1": {
+     "A0/B0": 0.868,
+     "A0/B1": 0.841,
+     "A1/B0": 0.812,
+     "A1/B1": 0.905,
+     "S_ref/B0": 0.835,
+     "S_ref/B1": 0.949
+    },
+    "2": {
+     "A0/B0": 0.9,
+     "A0/B1": 0.861,
+     "A1/B0": 0.9,
+     "A1/B1": 0.873,
+     "S_ref/B0": 0.835,
+     "S_ref/B1": 0.949
+    }
+   },
+   "interaction_per_replicate": {
+    "0": -0.043,
+    "1": -0.1201,
+    "2": -0.0121
+   },
+   "interaction_ci95_two_level": [
+    -0.1456,
+    0.0209
+   ]
+  },
+  "lexical_baseline": {
+   "jaccard_t0.49": {
+    "acc": 0.325,
+    "f1": 0.386
+   },
+   "model_token_overlap": {
+    "acc": 0.738,
+    "f1": 0.72
+   }
   }
  },
  {
@@ -389,211 +805,554 @@
    }
   },
   "independence_baseline": {
-   "0": {
-    "factorial": {
-     "true_best": "A0/B0",
-     "optimizer_pick": "A0/B1",
-     "quality_regret": 0.0,
-     "bar": 0.718,
-     "true_cheapest": "A0/B0",
-     "optimizer_cheapest": "A0/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 5.3
+   "B1": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "bar": 0.718,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.3
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.784,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.703,
+       "true_q": 0.756
+      },
+      "A0/B1": {
+       "est_q": 0.756,
+       "true_q": 0.756
+      },
+      "A1/B0": {
+       "est_q": 0.692,
+       "true_q": 0.709
+      },
+      "A1/B1": {
+       "est_q": 0.744,
+       "true_q": 0.744
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.826,
+       "true_q": 0.826
+      }
+     }
     },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.784,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
+    "1": {
+     "factorial": {
+      "true_best": "A1/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.773,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.68,
+       "true_q": 0.721
+      },
+      "A0/B1": {
+       "est_q": 0.721,
+       "true_q": 0.721
+      },
+      "A1/B0": {
+       "est_q": 0.526,
+       "true_q": 0.791
+      },
+      "A1/B1": {
+       "est_q": 0.558,
+       "true_q": 0.558
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.814,
+       "true_q": 0.814
+      }
+     }
     },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.703,
-      "true_q": 0.756
+    "2": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0233,
+      "bar": 0.718,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.438
      },
-     "A0/B1": {
-      "est_q": 0.756,
-      "true_q": 0.756
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.773,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A1/B0": {
-      "est_q": 0.692,
-      "true_q": 0.709
-     },
-     "A1/B1": {
-      "est_q": 0.744,
-      "true_q": 0.744
-     },
-     "S_ref/B0": {
-      "est_q": 0.767,
-      "true_q": 0.767
-     },
-     "S_ref/B1": {
-      "est_q": 0.826,
-      "true_q": 0.826
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.691,
+       "true_q": 0.756
+      },
+      "A0/B1": {
+       "est_q": 0.733,
+       "true_q": 0.733
+      },
+      "A1/B0": {
+       "est_q": 0.669,
+       "true_q": 0.756
+      },
+      "A1/B1": {
+       "est_q": 0.709,
+       "true_q": 0.709
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.814,
+       "true_q": 0.814
+      }
      }
     }
    },
-   "1": {
-    "factorial": {
-     "true_best": "A1/B0",
-     "optimizer_pick": "A0/B1",
-     "quality_regret": 0.0698
-    },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.773,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
-    },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.68,
-      "true_q": 0.721
+   "B0": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "bar": 0.718,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A0/B1": {
-      "est_q": 0.721,
-      "true_q": 0.721
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.784,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.192
      },
-     "A1/B0": {
-      "est_q": 0.526,
-      "true_q": 0.791
-     },
-     "A1/B1": {
-      "est_q": 0.558,
-      "true_q": 0.558
-     },
-     "S_ref/B0": {
-      "est_q": 0.767,
-      "true_q": 0.767
-     },
-     "S_ref/B1": {
-      "est_q": 0.814,
-      "true_q": 0.814
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.756,
+       "true_q": 0.756
+      },
+      "A0/B1": {
+       "est_q": 0.813,
+       "true_q": 0.756
+      },
+      "A1/B0": {
+       "est_q": 0.709,
+       "true_q": 0.709
+      },
+      "A1/B1": {
+       "est_q": 0.763,
+       "true_q": 0.744
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.826,
+       "true_q": 0.826
+      }
      }
-    }
-   },
-   "2": {
-    "factorial": {
-     "true_best": "A0/B0",
-     "optimizer_pick": "A0/B1",
-     "quality_regret": 0.0233,
-     "bar": 0.718,
-     "true_cheapest": "A0/B0",
-     "optimizer_cheapest": "A0/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 5.438
     },
-    "all": {
-     "true_best": "S_ref/B1",
-     "optimizer_pick": "S_ref/B1",
-     "quality_regret": 0.0,
-     "bar": 0.773,
-     "true_cheapest": "S_ref/B1",
-     "optimizer_cheapest": "S_ref/B1",
-     "pick_meets_bar": true,
-     "cost_ratio_pick_vs_true": 1.0
+    "1": {
+     "factorial": {
+      "true_best": "A1/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.2326,
+      "bar": 0.751,
+      "true_cheapest": "A1/B0",
+      "optimizer_cheapest": "A1/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.2558,
+      "bar": 0.773,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A1/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.416
+     },
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.721,
+       "true_q": 0.721
+      },
+      "A0/B1": {
+       "est_q": 0.765,
+       "true_q": 0.721
+      },
+      "A1/B0": {
+       "est_q": 0.791,
+       "true_q": 0.791
+      },
+      "A1/B1": {
+       "est_q": 0.839,
+       "true_q": 0.558
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.814,
+       "true_q": 0.814
+      }
+     }
     },
-    "estimates": {
-     "A0/B0": {
-      "est_q": 0.691,
-      "true_q": 0.756
+    "2": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0233,
+      "bar": 0.718,
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
      },
-     "A0/B1": {
-      "est_q": 0.733,
-      "true_q": 0.733
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "bar": 0.773,
+      "true_cheapest": "S_ref/B1",
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 3.845
      },
-     "A1/B0": {
-      "est_q": 0.669,
-      "true_q": 0.756
-     },
-     "A1/B1": {
-      "est_q": 0.709,
-      "true_q": 0.709
-     },
-     "S_ref/B0": {
-      "est_q": 0.767,
-      "true_q": 0.767
-     },
-     "S_ref/B1": {
-      "est_q": 0.814,
-      "true_q": 0.814
+     "estimates": {
+      "A0/B0": {
+       "est_q": 0.756,
+       "true_q": 0.756
+      },
+      "A0/B1": {
+       "est_q": 0.802,
+       "true_q": 0.733
+      },
+      "A1/B0": {
+       "est_q": 0.756,
+       "true_q": 0.756
+      },
+      "A1/B1": {
+       "est_q": 0.802,
+       "true_q": 0.709
+      },
+      "S_ref/B0": {
+       "est_q": 0.767,
+       "true_q": 0.767
+      },
+      "S_ref/B1": {
+       "est_q": 0.814,
+       "true_q": 0.814
+      }
      }
     }
    }
+  },
+  "cache_sensitivity": {
+   "B1": {
+    "1.0": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.3
+     },
+     "1": {
+      "true_cheapest": null,
+      "optimizer_cheapest": null,
+      "cost_ratio_pick_vs_true": null
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.438
+     }
+    },
+    "0.5": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.268
+     },
+     "1": {
+      "true_cheapest": null,
+      "optimizer_cheapest": null,
+      "cost_ratio_pick_vs_true": null
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.366
+     }
+    },
+    "0.25": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.228
+     },
+     "1": {
+      "true_cheapest": null,
+      "optimizer_cheapest": null,
+      "cost_ratio_pick_vs_true": null
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.286
+     }
+    },
+    "0.1": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.177
+     },
+     "1": {
+      "true_cheapest": null,
+      "optimizer_cheapest": null,
+      "cost_ratio_pick_vs_true": null
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B1",
+      "cost_ratio_pick_vs_true": 5.199
+     }
+    }
+   },
+   "B0": {
+    "1.0": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A1/B0",
+      "optimizer_cheapest": "A1/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.5": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A1/B0",
+      "optimizer_cheapest": "A1/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.25": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A1/B0",
+      "optimizer_cheapest": "A1/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "0.1": {
+     "0": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "1": {
+      "true_cheapest": "A1/B0",
+      "optimizer_cheapest": "A1/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "2": {
+      "true_cheapest": "A0/B0",
+      "optimizer_cheapest": "A0/B0",
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   }
+  },
+  "spec_share_of_downstream_cost": {
+   "rep0 A0/B0": 0.8,
+   "rep0 A0/B1": 0.807,
+   "rep0 A1/B0": 0.645,
+   "rep0 A1/B1": 0.741,
+   "rep1 A0/B0": 0.823,
+   "rep1 A0/B1": 0.826,
+   "rep1 A1/B0": 0.733,
+   "rep1 A1/B1": 0.827,
+   "rep2 A0/B0": 0.722,
+   "rep2 A0/B1": 0.739,
+   "rep2 A1/B0": 0.723,
+   "rep2 A1/B1": 0.822
   },
   "cost_model": {
    "rows": {
     "rep0 A0/B0": {
      "measured": 417.1,
      "naive_err": -0.806,
-     "composed_err": 0.045
+     "composed_err": {
+      "B1": 0.045,
+      "B0": -0.0
+     }
     },
     "rep0 A0/B1": {
      "measured": 378.4,
      "naive_err": -0.814,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.043
+     }
     },
     "rep0 A1/B0": {
      "measured": 356.1,
      "naive_err": -0.772,
-     "composed_err": 0.059
+     "composed_err": {
+      "B1": 0.059,
+      "B0": 0.0
+     }
     },
     "rep0 A1/B1": {
      "measured": 327.4,
      "naive_err": -0.785,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.056
+     }
     },
     "rep1 A0/B0": {
      "measured": 473.1,
      "naive_err": -0.829,
-     "composed_err": 0.072
+     "composed_err": {
+      "B1": 0.072,
+      "B0": -0.0
+     }
     },
     "rep1 A0/B1": {
      "measured": 440.4,
      "naive_err": -0.84,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.067
+     }
     },
     "rep1 A1/B0": {
      "measured": 526.1,
      "naive_err": -0.846,
-     "composed_err": 0.067
+     "composed_err": {
+      "B1": 0.067,
+      "B0": 0.0
+     }
     },
     "rep1 A1/B1": {
      "measured": 487.4,
      "naive_err": -0.856,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.063
+     }
     },
     "rep2 A0/B0": {
      "measured": 300.1,
      "naive_err": -0.73,
-     "composed_err": 0.073
+     "composed_err": {
+      "B1": 0.073,
+      "B0": 0.0
+     }
     },
     "rep2 A0/B1": {
      "measured": 279.4,
      "naive_err": -0.748,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.068
+     }
     },
     "rep2 A1/B0": {
      "measured": 500.1,
      "naive_err": -0.838,
-     "composed_err": 0.084
+     "composed_err": {
+      "B1": 0.084,
+      "B0": -0.0
+     }
     },
     "rep2 A1/B1": {
      "measured": 470.4,
      "naive_err": -0.85,
-     "composed_err": 0.0
+     "composed_err": {
+      "B1": 0.0,
+      "B0": -0.077
+     }
     }
    },
    "mean_abs_err_naive": 0.809,
-   "mean_abs_err_composed": 0.033,
+   "mean_abs_err_composed": {
+    "B1": 0.033,
+    "B0": 0.031
+   },
    "spec_words": {
     "rep0 A0": 192,
     "rep0 A1": 170,
@@ -616,6 +1375,32 @@
    "delta_margin": 0.0257,
    "records_needed": 1164,
    "replicates_needed": 236
+  },
+  "replicate_tests": {
+   "H1_interaction_acc": {
+    "mean": 0.0736,
+    "t": 0.907,
+    "df": 2,
+    "p": 0.4602,
+    "ci95_two_level": [
+     -0.0388,
+     0.2209
+    ]
+   },
+   "H2_estimability": {
+    "A0": {
+     "mean": 0.0581,
+     "t": 8.66,
+     "df": 2,
+     "p": 0.0131
+    },
+    "A1": {
+     "mean": 0.1318,
+     "t": 1.726,
+     "df": 2,
+     "p": 0.2265
+    }
+   }
   }
  }
 ]

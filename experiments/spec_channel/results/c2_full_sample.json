@@ -1,0 +1,3485 @@
+{
+ "seed": 2,
+ "dataset": "structured/Walmart-Amazon",
+ "excludes": "c2_sample.json",
+ "items": [
+  {
+   "id": "test-811-453",
+   "left": {
+    "id": "811",
+    "title": "aleratec inc cd dvd shredder",
+    "category": "stationery & office machinery",
+    "brand": "aleratec",
+    "modelno": "",
+    "price": "61.88"
+   },
+   "right": {
+    "id": "453",
+    "title": "aleratec dvd cd shredder xc 240145 black",
+    "category": "shredders",
+    "brand": "aleratec",
+    "modelno": "240145",
+    "price": "68.78"
+   },
+   "label": 1,
+   "jaccard": 0.47368421052631576,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2461-13244",
+   "left": {
+    "id": "2461",
+    "title": "filemate imagine series k2010 usb standard keyboard",
+    "category": "computers",
+    "brand": "",
+    "modelno": "",
+    "price": "15.12"
+   },
+   "right": {
+    "id": "13244",
+    "title": "wintec filemate imagine series k2010 usb standard keyboard - light green 3fmnk2010ugn-r",
+    "category": "keyboards",
+    "brand": "wintec",
+    "modelno": "3fmnk2010ugn-r",
+    "price": "15.99"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-599-556",
+   "left": {
+    "id": "599",
+    "title": "corsair cm2x2048-6400c5 xms2 2gb pc2-6400 800mhz 240-pin ddr2 cl5 dual channel desktop memory kit",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "cm2x2048-6400c5",
+    "price": "40.82"
+   },
+   "right": {
+    "id": "556",
+    "title": "corsair cm2x2048-6400c5 xms2 2gb pc2-6400 800mhz 240-pin ddr2 cl5 desktop memory module",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "cm2x2048-6400c5",
+    "price": "29.7"
+   },
+   "label": 1,
+   "jaccard": 0.7272727272727273,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1962-9467",
+   "left": {
+    "id": "1962",
+    "title": "startech 1 slim 3.5 mm to right angle stereo audio cable m m",
+    "category": "electronics - general",
+    "brand": "startech",
+    "modelno": "mu1mmsra",
+    "price": "7.88"
+   },
+   "right": {
+    "id": "9467",
+    "title": "startech.com mu6mmsra slim 3.5 mm to right angle stereo audio cable - m m 6 feet",
+    "category": "connectors adapters",
+    "brand": "startech",
+    "modelno": "mu6mmsra",
+    "price": "4.49"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1577-21525",
+   "left": {
+    "id": "1577",
+    "title": "foldio p2 leather texture folio case for ipad 2 black",
+    "category": "mp3 accessories",
+    "brand": "scosche",
+    "modelno": "ipd2flbk",
+    "price": "44.88"
+   },
+   "right": {
+    "id": "21525",
+    "title": "scosche foldio p2 black carbon fiber texture folio case for ipad 2 ipd2cfbk",
+    "category": "laptop netbook computer accessories",
+    "brand": "scosche",
+    "modelno": "ipd2cfbk",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6153846153846154,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1649-21800",
+   "left": {
+    "id": "1649",
+    "title": "ifrogz ipod touch 4 luxe lean case pink",
+    "category": "mp3 accessories",
+    "brand": "ifrogz",
+    "modelno": "it4ll-pnk",
+    "price": "24.99"
+   },
+   "right": {
+    "id": "21800",
+    "title": "case ipod touch 4 soft gloss pink",
+    "category": "mp3 player accessories",
+    "brand": "unknown",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1092-1831",
+   "left": {
+    "id": "1092",
+    "title": "ocz technology vertex 2 60gb 2.5 sata ii solid state drive",
+    "category": "hard drives",
+    "brand": "ocz technologies",
+    "modelno": "oczssd22vtxe60g",
+    "price": "119.98"
+   },
+   "right": {
+    "id": "1831",
+    "title": "ocz technology 60 gb vertex series sata ii solid state drive black oczssd2-1vtx60g",
+    "category": "computer components",
+    "brand": "ocz",
+    "modelno": "oczssd2-1vtx60g",
+    "price": "114.99"
+   },
+   "label": 0,
+   "jaccard": 0.4482758620689655,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1888-8764",
+   "left": {
+    "id": "1888",
+    "title": "logitech wireless mouse dark fleur",
+    "category": "mice",
+    "brand": "logitech",
+    "modelno": "910001898",
+    "price": "27.82"
+   },
+   "right": {
+    "id": "8764",
+    "title": "logitech wireless mouse m310 dark aces 910-002087",
+    "category": "mice",
+    "brand": "logitech",
+    "modelno": "910-002087",
+    "price": "24.45"
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2211-114",
+   "left": {
+    "id": "2211",
+    "title": "microsoft lifecam vx-800 black",
+    "category": "electronics - general",
+    "brand": "microsoft",
+    "modelno": "jsd-00007",
+    "price": "18.88"
+   },
+   "right": {
+    "id": "114",
+    "title": "microsoft lifecam hd-3000 t3h-00001",
+    "category": "webcams",
+    "brand": "microsoft",
+    "modelno": "t3h-00001",
+    "price": "30.24"
+   },
+   "label": 0,
+   "jaccard": 0.4117647058823529,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1168-379",
+   "left": {
+    "id": "1168",
+    "title": "belkin pro series 6 usb 2.0 5-pin mini-b cable",
+    "category": "electronics - general",
+    "brand": "belkin",
+    "modelno": "f3u138b06",
+    "price": "7.88"
+   },
+   "right": {
+    "id": "379",
+    "title": "belkin f3u138-10 pro series 10-foot usb 2.0 5-pin mini-b cable",
+    "category": "usb cables",
+    "brand": "belkin",
+    "modelno": "f3u138-10",
+    "price": "5.25"
+   },
+   "label": 0,
+   "jaccard": 0.5909090909090909,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1441-15284",
+   "left": {
+    "id": "1441",
+    "title": "verbatim 94892 datalifeplus 52x cd-r media",
+    "category": "mp3 accessories",
+    "brand": "verbatim",
+    "modelno": "94892",
+    "price": "19.88"
+   },
+   "right": {
+    "id": "15284",
+    "title": "verbatim 94892 700 mb 52x datalifeplus silver inkjet printable recordable disc cd-r 50-disc spindle",
+    "category": "cd-r discs",
+    "brand": "verbatim",
+    "modelno": "94892",
+    "price": "14.15"
+   },
+   "label": 1,
+   "jaccard": 0.4,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-145-15891",
+   "left": {
+    "id": "145",
+    "title": "case logic medium slr camera bag",
+    "category": "photography - general",
+    "brand": "case logic",
+    "modelno": "133827",
+    "price": "47.99"
+   },
+   "right": {
+    "id": "15891",
+    "title": "case logic slrc-202 medium slr camera bag black",
+    "category": "cases bags",
+    "brand": "case logic",
+    "modelno": "slrc-202black",
+    "price": "37.95"
+   },
+   "label": 1,
+   "jaccard": 0.5238095238095238,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-742-12766",
+   "left": {
+    "id": "742",
+    "title": "logitech m305 wireless mouse black",
+    "category": "mice",
+    "brand": "logitech",
+    "modelno": "910-001752",
+    "price": "29.73"
+   },
+   "right": {
+    "id": "12766",
+    "title": "logitech wireless mouse m305 forest green",
+    "category": "mice",
+    "brand": "logitech",
+    "modelno": "910-001896",
+    "price": "22.49"
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1883-19123",
+   "left": {
+    "id": "1883",
+    "title": "prince of persia pc",
+    "category": "software",
+    "brand": "encore",
+    "modelno": "21191",
+    "price": "10.88"
+   },
+   "right": {
+    "id": "19123",
+    "title": "prince of persia jc cs",
+    "category": "audio video accessories",
+    "brand": "encore",
+    "modelno": "21191",
+    "price": "12.54"
+   },
+   "label": 1,
+   "jaccard": 0.5263157894736842,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-887-16320",
+   "left": {
+    "id": "887",
+    "title": "da-lite dual vision tensioned advantage deluxe electrol - hdtv format 92 diagonal",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "88285",
+    "price": "4242.99"
+   },
+   "right": {
+    "id": "16320",
+    "title": "da-lite 97986 hc cinema vision tensioned cosmopolitan electrol - av format 12 x 12 diagonal",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.3793103448275862,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-2089-7048",
+   "left": {
+    "id": "2089",
+    "title": "netgear prosafe gs716t 16-port ethernet switch",
+    "category": "networking",
+    "brand": "netgear",
+    "modelno": "gs716t-200nas",
+    "price": "238.0"
+   },
+   "right": {
+    "id": "7048",
+    "title": "gs716t-200 - prosafe 16-port gigabit smart switch",
+    "category": "networking products",
+    "brand": "netgear",
+    "modelno": "gs716t-200nas",
+    "price": "224.37"
+   },
+   "label": 1,
+   "jaccard": 0.5789473684210527,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-540-7373",
+   "left": {
+    "id": "540",
+    "title": "tp-link tl-wa500g 54mbps extended range wireless access point",
+    "category": "networking",
+    "brand": "tp link",
+    "modelno": "tl-wa500g",
+    "price": "32.88"
+   },
+   "right": {
+    "id": "7373",
+    "title": "tp-link tl-wn350g 54mbps wireless pci adapter",
+    "category": "usb network adapters",
+    "brand": "tp-link",
+    "modelno": "tl-wn350g",
+    "price": "12.88"
+   },
+   "label": 0,
+   "jaccard": 0.3333333333333333,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-229-13258",
+   "left": {
+    "id": "229",
+    "title": "wacom ptk640 intuos4 medium pen graphics tablet",
+    "category": "electronics - general",
+    "brand": "wacom tech corp.",
+    "modelno": "ptk640",
+    "price": "372.88"
+   },
+   "right": {
+    "id": "13258",
+    "title": "wacom intuos4 medium pen tablet",
+    "category": "graphics tablets",
+    "brand": "wacom",
+    "modelno": "ptk640",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.6666666666666666,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1099-19404",
+   "left": {
+    "id": "1099",
+    "title": "philips gogear ariaz mp3 player",
+    "category": "mp3",
+    "brand": "philips",
+    "modelno": "sa3ara08k/37",
+    "price": "78.88"
+   },
+   "right": {
+    "id": "19404",
+    "title": "philips gogear raga 4gb mp3 player sa3rga04k 37",
+    "category": "mp3 players",
+    "brand": "philips",
+    "modelno": "sa3rga04k/37",
+    "price": "39.02"
+   },
+   "label": 0,
+   "jaccard": 0.47368421052631576,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1740-18028",
+   "left": {
+    "id": "1740",
+    "title": "comprehensive f plug to bnc plug set of 25",
+    "category": "tv accessories",
+    "brand": "comprehensive",
+    "modelno": "fp-bp",
+    "price": "59.75"
+   },
+   "right": {
+    "id": "18028",
+    "title": "comprehensive bj-up bnc jack to uhf plug set of 25",
+    "category": "",
+    "brand": "comprehensive",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1833-5542",
+   "left": {
+    "id": "1833",
+    "title": "scosche 1993-up select subaru power 4-speaker connector",
+    "category": "car stereos",
+    "brand": "scosche",
+    "modelno": "su03b",
+    "price": "9.88"
+   },
+   "right": {
+    "id": "5542",
+    "title": "scosche su03rb 1993-up select subaru power 4-speaker connector",
+    "category": "speaker connectors",
+    "brand": "scosche",
+    "modelno": "su03rb",
+    "price": "15.18"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-932-2813",
+   "left": {
+    "id": "932",
+    "title": "da-lite dual vision tensioned cosmopolitan electrol - av format 10 x 10 diagonal",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "84992",
+    "price": "2735.99"
+   },
+   "right": {
+    "id": "2813",
+    "title": "da-lite tensioned cosmopolitan electrol - projection screen motorized - 1 1 - dual vision",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "cosmopolitan electrol",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.44,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1224-8070",
+   "left": {
+    "id": "1224",
+    "title": "vantec nexstar mx dual 3.5 dual bay external hard drive enclosure with jbod raid 0 1",
+    "category": "electronics - general",
+    "brand": "vantec",
+    "modelno": "nst-400mx-sr",
+    "price": "100.21"
+   },
+   "right": {
+    "id": "8070",
+    "title": "vantec nexstar mx nst-400mx-sr dual 3.5-inch sata to usb 2.0 and esata with jbod raid 0 1 external hard drive enclosure black",
+    "category": "hard drive enclosures",
+    "brand": "vantec",
+    "modelno": "nst-400mx-sr",
+    "price": "91.99"
+   },
+   "label": 1,
+   "jaccard": 0.5588235294117647,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2191-4029",
+   "left": {
+    "id": "2191",
+    "title": "chicago bears ipod touch 4g hard case",
+    "category": "electronics - general",
+    "brand": "tribeca",
+    "modelno": "fva4587",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "4029",
+    "title": "washington redskins ipod touch 4g hard case",
+    "category": "computers accessories",
+    "brand": "tribeca",
+    "modelno": "",
+    "price": "29.99"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-411-19599",
+   "left": {
+    "id": "411",
+    "title": "hitachi 500gb touro mobile usb 2.0 hard drive",
+    "category": "hard drives",
+    "brand": "hitachi",
+    "modelno": "0s03121",
+    "price": "64.98"
+   },
+   "right": {
+    "id": "19599",
+    "title": "hitachi touro mobile750 gb usb 2.0 external hard drive htolmxna7501abb",
+    "category": "external hard drives",
+    "brand": "hitachi",
+    "modelno": "htolmxna7501abb",
+    "price": "69.99"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1138-9085",
+   "left": {
+    "id": "1138",
+    "title": "griffin technology powerjolt plus mobile",
+    "category": "electronics - general",
+    "brand": "griffin technology",
+    "modelno": "gc23073",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "9085",
+    "title": "griffin gc23073 powerjolt plus mobile",
+    "category": "car chargers",
+    "brand": "griffin technology",
+    "modelno": "gc23073",
+    "price": "11.25"
+   },
+   "label": 1,
+   "jaccard": 0.6470588235294118,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-722-3097",
+   "left": {
+    "id": "722",
+    "title": "corsair memory vs2gbkit400c3 2 gb pc3200 400mhz 184-pin ddr desktop memory kit",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "vs2gbkit400c3",
+    "price": "59.82"
+   },
+   "right": {
+    "id": "3097",
+    "title": "corsair memory vs1gb400c3 1 gb pc-3200 400mhz 184-pin ddr desktop memory",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "vs1gb400c3",
+    "price": "24.99"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2441-21373",
+   "left": {
+    "id": "2441",
+    "title": "samsung ec-st65zzbpu indigo blue 14.2 mp digital camera w 5x optical digital camera 2.7 lcd display w 50 bonus prints",
+    "category": "digital cameras",
+    "brand": "samsung",
+    "modelno": "ec-st65zzbpu",
+    "price": "84.0"
+   },
+   "right": {
+    "id": "21373",
+    "title": "samsung ec-st65 digital camera with 14 mp and 5x optical zoom indigo blue",
+    "category": "point shoot digital cameras",
+    "brand": "samsung",
+    "modelno": "ec-st65zzbpuus",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.4375,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-114-9223",
+   "left": {
+    "id": "114",
+    "title": "xantech 100w decora-style impedance matching volume control",
+    "category": "stereos/audio",
+    "brand": "xantech",
+    "modelno": "xvcd100",
+    "price": "56.88"
+   },
+   "right": {
+    "id": "9223",
+    "title": "xantech xvcd100 decora style impedance matching volume control",
+    "category": "audio video accessories",
+    "brand": "xantech",
+    "modelno": "xvcd100",
+    "price": "46.38"
+   },
+   "label": 1,
+   "jaccard": 0.5238095238095238,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1355-559",
+   "left": {
+    "id": "1355",
+    "title": "cooler master vortex plus cpu cooler",
+    "category": "electronics - general",
+    "brand": "coolermaster",
+    "modelno": "rrvtps28pkr1",
+    "price": "30.0"
+   },
+   "right": {
+    "id": "559",
+    "title": "cooler master vortex plus cpu cooler rr-vtps-28pk-r1",
+    "category": "computers accessories",
+    "brand": "cooler master",
+    "modelno": "rr-vtps-28pk-r1",
+    "price": "25.15"
+   },
+   "label": 1,
+   "jaccard": 0.5263157894736842,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-419-7260",
+   "left": {
+    "id": "419",
+    "title": "western digital 1tb my passport essential se usb 3.0 portable external hard drive",
+    "category": "hard drives",
+    "brand": "western digital",
+    "modelno": "wdbacx0010bbksn",
+    "price": "98.92"
+   },
+   "right": {
+    "id": "7260",
+    "title": "western digital my passport essential se 1 tb usb 3.0 2.0 ultra portable external hard drive metallic blue",
+    "category": "external hard drives",
+    "brand": "western digital",
+    "modelno": "wdbacx0010bbl-nesn",
+    "price": "89.99"
+   },
+   "label": 0,
+   "jaccard": 0.6206896551724138,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2260-17637",
+   "left": {
+    "id": "2260",
+    "title": "panasonic kx-tga6645b dect 6.0 plus expandable digital cordless answering system with 5 handsets",
+    "category": "electronics - general",
+    "brand": "panasonic",
+    "modelno": "kx-tg6645b",
+    "price": "150.0"
+   },
+   "right": {
+    "id": "17637",
+    "title": "panasonic dect 6.0 expandable cordless phone with talking caller id answering system - 4 handset pack",
+    "category": "cordless telephones",
+    "brand": "panasonic",
+    "modelno": "",
+    "price": "132.68"
+   },
+   "label": 0,
+   "jaccard": 0.41935483870967744,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1910-59",
+   "left": {
+    "id": "1910",
+    "title": "sigma 18-250mm zoom lens for nikon digital slr cameras 880306",
+    "category": "camera and camcorder accessories",
+    "brand": "sigma",
+    "modelno": "880306",
+    "price": "478.0"
+   },
+   "right": {
+    "id": "59",
+    "title": "nikon 35mm f 1.4 g af-s fx swm nikkor lens for nikon digital slr cameras",
+    "category": "camera lenses",
+    "brand": "nikon",
+    "modelno": "af-s 35mm",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.41379310344827586,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-305-13308",
+   "left": {
+    "id": "305",
+    "title": "v7 10 cat5e snagless network patch cable blue",
+    "category": "electronics - general",
+    "brand": "v7",
+    "modelno": "v7n3c5e-10f-blus",
+    "price": "4.88"
+   },
+   "right": {
+    "id": "13308",
+    "title": "v7 cat5e snagless molded network patch cable rj45 male to male blue 1-foot v7n3c5e-01f-blus",
+    "category": "ethernet cables",
+    "brand": "v7",
+    "modelno": "v7n3c5e-01f-blus",
+    "price": "1.19"
+   },
+   "label": 0,
+   "jaccard": 0.46153846153846156,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-531-732",
+   "left": {
+    "id": "531",
+    "title": "wireless mobile mouse 6000 bluetrack red",
+    "category": "mice",
+    "brand": "microsoft",
+    "modelno": "mhc-00019",
+    "price": "29.88"
+   },
+   "right": {
+    "id": "732",
+    "title": "microsoft wireless mobile mouse 3500 - poppy red",
+    "category": "mice",
+    "brand": "microsoft",
+    "modelno": "gmf-00013",
+    "price": "19.99"
+   },
+   "label": 0,
+   "jaccard": 0.5789473684210527,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1499-4637",
+   "left": {
+    "id": "1499",
+    "title": "officemate plastic coated paper clips assorted colors 800pk",
+    "category": "stationery & office machinery",
+    "brand": "officemate",
+    "modelno": "97228",
+    "price": "8.88"
+   },
+   "right": {
+    "id": "4637",
+    "title": "officemate 97228 - plastic coated paper clips no. 2 size assorted colors 800 pack",
+    "category": "printers",
+    "brand": "officemate",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.5416666666666666,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1475-12654",
+   "left": {
+    "id": "1475",
+    "title": "netgear wn511 rangemax next wireless-n pc-card notebook adapter",
+    "category": "networking",
+    "brand": "netgear",
+    "modelno": "wn511b100nas",
+    "price": "58.88"
+   },
+   "right": {
+    "id": "12654",
+    "title": "netgear wn511b rangemax wireless-n notebook adapter",
+    "category": "chargers adapters",
+    "brand": "netgear",
+    "modelno": "wn511b-100nas",
+    "price": "11.99"
+   },
+   "label": 1,
+   "jaccard": 0.47619047619047616,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2077-20484",
+   "left": {
+    "id": "2077",
+    "title": "wintec filemate 16gb color mini usb flash drive aqua",
+    "category": "usb drives",
+    "brand": "wintec",
+    "modelno": "3fmsp01u2aq-16g-r",
+    "price": "24.84"
+   },
+   "right": {
+    "id": "20484",
+    "title": "wintec filemate color mini 16 gb usb 2.0 flash drive - black",
+    "category": "usb flash drives",
+    "brand": "wintec",
+    "modelno": "3fmsp01u2bk-16g-r",
+    "price": "25.99"
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2389-820",
+   "left": {
+    "id": "2389",
+    "title": "da-lite da-glas deluxe rear projection screen - 84 x 84 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27650",
+    "price": "4958.99"
+   },
+   "right": {
+    "id": "820",
+    "title": "da-lite 27597 da-glas unframed rear projection screen - 96 x 96 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1136-606",
+   "left": {
+    "id": "1136",
+    "title": "elite screens cinegray prime vision series fixed frame screen - 135 diagonal",
+    "category": "electronics - general",
+    "brand": "elite screens",
+    "modelno": "pvr135h1",
+    "price": "1069.0"
+   },
+   "right": {
+    "id": "606",
+    "title": "cinewhite prime vision series fixed frame screen - 150 diagonal",
+    "category": "projection screens",
+    "brand": "elite",
+    "modelno": "",
+    "price": "1179.0"
+   },
+   "label": 0,
+   "jaccard": 0.5833333333333334,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1674-19094",
+   "left": {
+    "id": "1674",
+    "title": "storex portable file storage box w organizer lid black",
+    "category": "storage",
+    "brand": "",
+    "modelno": "61510u01c",
+    "price": "25.0"
+   },
+   "right": {
+    "id": "19094",
+    "title": "storex 61511u01c - portable file storage box w organizer lid letter legal clear",
+    "category": "laminating supplies",
+    "brand": "storex",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5909090909090909,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1549-18948",
+   "left": {
+    "id": "1549",
+    "title": "comprehensive 1 4 standard phone plug to 3-pin xlr jack set of 10",
+    "category": "tv accessories",
+    "brand": "comprehensive",
+    "modelno": "spp-xlrj",
+    "price": "79.9"
+   },
+   "right": {
+    "id": "18948",
+    "title": "comprehensive premium - audio adapter - mini-phone 3.5 mm m - 3 pin xlr f",
+    "category": "connectors adapters",
+    "brand": "comprehensive video",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.2,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-294-19911",
+   "left": {
+    "id": "294",
+    "title": "siig usb 2.0 bay media card reader",
+    "category": "usb drives",
+    "brand": "siig",
+    "modelno": "ju-mr0012-s1",
+    "price": "16.82"
+   },
+   "right": {
+    "id": "19911",
+    "title": "usb 2.0 bay media card reader",
+    "category": "computer accessories",
+    "brand": "siig",
+    "modelno": "ju-mr0012-s1",
+    "price": "16.82"
+   },
+   "label": 1,
+   "jaccard": 0.8235294117647058,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1014-7028",
+   "left": {
+    "id": "1014",
+    "title": "hercules dualpix emotion hd 720p usb webcam",
+    "category": "electronics - general",
+    "brand": "hercules",
+    "modelno": "4780655",
+    "price": "47.82"
+   },
+   "right": {
+    "id": "7028",
+    "title": "hercules dualpix emotion hd webcam",
+    "category": "webcams",
+    "brand": "hercules",
+    "modelno": "4780655",
+    "price": "35.99"
+   },
+   "label": 1,
+   "jaccard": 0.6111111111111112,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-836-8739",
+   "left": {
+    "id": "836",
+    "title": "marware eco-vue for ipad",
+    "category": "mp3 accessories",
+    "brand": "",
+    "modelno": "602956006572",
+    "price": "54.99"
+   },
+   "right": {
+    "id": "8739",
+    "title": "marware eco-vue for ipad",
+    "category": "cases sleeves",
+    "brand": "marware",
+    "modelno": "602956006572",
+    "price": "11.99"
+   },
+   "label": 1,
+   "jaccard": 0.625,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-92-4739",
+   "left": {
+    "id": "92",
+    "title": "da-lite natural walnut veneer model b manual screen with matte white fabric - 64 x 84 diagonal video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "73197",
+    "price": "261.99"
+   },
+   "right": {
+    "id": "4739",
+    "title": "light oak veneer model b manual screen with matte white fabric - diagonal video format size 60 x 60 diagonal",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5757575757575758,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-896-1632",
+   "left": {
+    "id": "896",
+    "title": "samsung s2 640gb usb 3.0 portable external hard drive red",
+    "category": "hard drives",
+    "brand": "samsung",
+    "modelno": "hx-mta64da / g42",
+    "price": "78.88"
+   },
+   "right": {
+    "id": "1632",
+    "title": "samsung s2 portable hard drive 640 gb usb 3.0 external hard drive hx-mta64da g32 snow white",
+    "category": "external hard drives",
+    "brand": "samsung",
+    "modelno": "hx-mta64da / g32",
+    "price": "84.99"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2033-19398",
+   "left": {
+    "id": "2033",
+    "title": "canon cli-221 magenta ink cartridge 2948b001",
+    "category": "printers",
+    "brand": "canon",
+    "modelno": "cli221mag",
+    "price": "16.84"
+   },
+   "right": {
+    "id": "19398",
+    "title": "premium compatible canon cli-221 magenta ink cartridge canon 2948b001",
+    "category": "inkjet printer ink",
+    "brand": "compatible",
+    "modelno": "",
+    "price": "3.7"
+   },
+   "label": 0,
+   "jaccard": 0.5789473684210527,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1218-13035",
+   "left": {
+    "id": "1218",
+    "title": "v7 8gb sd card secure digital high capacity 8 gb memory card",
+    "category": "usb drives",
+    "brand": "v7",
+    "modelno": "vasdh8gcl4r-1n",
+    "price": "10.26"
+   },
+   "right": {
+    "id": "13035",
+    "title": "4gb high capacity cat-6 secure digital card sdhc",
+    "category": "blank media",
+    "brand": "acp",
+    "modelno": "epsdhc/4gb -6",
+    "price": "12.98"
+   },
+   "label": 0,
+   "jaccard": 0.3448275862068966,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1296-17892",
+   "left": {
+    "id": "1296",
+    "title": "da-lite da-glas unframed rear projection screen - 57 3 4 x 77 video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27604",
+    "price": "1609.99"
+   },
+   "right": {
+    "id": "17892",
+    "title": "da-plex base rear projection screen - 57 3 4 x 77 video format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "2608.99"
+   },
+   "label": 0,
+   "jaccard": 0.6153846153846154,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2516-20309",
+   "left": {
+    "id": "2516",
+    "title": "night owl no-8lcd security products 8 lcd security monitor with audio",
+    "category": "garden - general",
+    "brand": "night owl",
+    "modelno": "no-8lcd",
+    "price": "100.0"
+   },
+   "right": {
+    "id": "20309",
+    "title": "night owl security no-8lcd 8-inch color lcd security monitor with audio",
+    "category": "security monitors displays",
+    "brand": "night owl optics",
+    "modelno": "no-8lcd",
+    "price": "99.94"
+   },
+   "label": 1,
+   "jaccard": 0.5416666666666666,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-461-17769",
+   "left": {
+    "id": "461",
+    "title": "expo low-odor dry erase marker eraser cleaner chisel fine 12 set",
+    "category": "stationery & office machinery",
+    "brand": "expo",
+    "modelno": "80054",
+    "price": "21.94"
+   },
+   "right": {
+    "id": "17769",
+    "title": "new-expo 83054 - dry erase marker eraser cleaner chisel fine assorted 12 set - san83054",
+    "category": "radios",
+    "brand": "expo",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5769230769230769,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-345-8386",
+   "left": {
+    "id": "345",
+    "title": "apple ipad 10w usb power adapter",
+    "category": "mp3",
+    "brand": "apple",
+    "modelno": "mc359ll/a",
+    "price": "29.0"
+   },
+   "right": {
+    "id": "8386",
+    "title": "apple ipad 10w usb power adapter mc359ll a",
+    "category": "chargers adapters",
+    "brand": "apple",
+    "modelno": "ipad 10w usb power adapter",
+    "price": "24.76"
+   },
+   "label": 1,
+   "jaccard": 0.5789473684210527,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-971-1464",
+   "left": {
+    "id": "971",
+    "title": "startech dual-port usb vga kvm switch",
+    "category": "electronics - general",
+    "brand": "startech",
+    "modelno": "sv231uaf",
+    "price": "78.88"
+   },
+   "right": {
+    "id": "1464",
+    "title": "startech 2 port dual dvi usb kvm switch with audio sv231dviddu",
+    "category": "kvm switches",
+    "brand": "startech",
+    "modelno": "sv231dviddu",
+    "price": "256.99"
+   },
+   "label": 0,
+   "jaccard": 0.375,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1903-10674",
+   "left": {
+    "id": "1903",
+    "title": "microsoft laptop roller bag destination",
+    "category": "computers",
+    "brand": "microsoft",
+    "modelno": "39203",
+    "price": "102.88"
+   },
+   "right": {
+    "id": "10674",
+    "title": "microsoft 39203 laptop roller bag - destination black",
+    "category": "bags cases",
+    "brand": "microsoft",
+    "modelno": "39203",
+    "price": "102.88"
+   },
+   "label": 1,
+   "jaccard": 0.75,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2004-1747",
+   "left": {
+    "id": "2004",
+    "title": "pioneer cdx-p680 6-disc cd changer",
+    "category": "car stereos",
+    "brand": "pioneer",
+    "modelno": "cdx-p680",
+    "price": "218.0"
+   },
+   "right": {
+    "id": "1747",
+    "title": "pioneer cdx-p680 6-disc cd changer",
+    "category": "stereos",
+    "brand": "pioneer",
+    "modelno": "cdx-p680",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.8461538461538461,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1589-2645",
+   "left": {
+    "id": "1589",
+    "title": "startech esata usb to sata external hard drive docking station for 2.5 hdd",
+    "category": "electronics - general",
+    "brand": "startech",
+    "modelno": "satadocku2e",
+    "price": "29.84"
+   },
+   "right": {
+    "id": "2645",
+    "title": "startech.com esata usb to sata external hard drive docking station for 2.5 or 3.5-inch satadocku2e - black",
+    "category": "computers accessories",
+    "brand": "startech",
+    "modelno": "satadocku2e",
+    "price": "26.99"
+   },
+   "label": 1,
+   "jaccard": 0.6206896551724138,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2519-2668",
+   "left": {
+    "id": "2519",
+    "title": "buffalo network usb print server lpv3-u2 - print server - hi-speed usb - en fast en - 10base-t 100base-tx",
+    "category": "computers",
+    "brand": "buffalo technology",
+    "modelno": "lpv3-u2",
+    "price": "53.84"
+   },
+   "right": {
+    "id": "2668",
+    "title": "buffalo technology network usb 2.0 print server lpv3-u2",
+    "category": "print servers",
+    "brand": "buffalo technology",
+    "modelno": "lpv3-u2",
+    "price": "47.05"
+   },
+   "label": 1,
+   "jaccard": 0.5454545454545454,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-903-16989",
+   "left": {
+    "id": "903",
+    "title": "scosche 1974-up ford chrysler jeep multi-purpose kit including 1999-up grand cherokee",
+    "category": "automotive - general",
+    "brand": "scosche",
+    "modelno": "fcj1276ab",
+    "price": "11.37"
+   },
+   "right": {
+    "id": "16989",
+    "title": "scosche fcj1276ab 1974-up ford chrysler jeep multi-purpose kit including 1999-up grand cherokee intrepid cr1277",
+    "category": "audio video accessories",
+    "brand": "scosche",
+    "modelno": "fcj1276ab",
+    "price": "11.37"
+   },
+   "label": 1,
+   "jaccard": 0.72,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-992-1329",
+   "left": {
+    "id": "992",
+    "title": "hp 61 black tri-color combo inkjet cartridge",
+    "category": "printers",
+    "brand": "hp",
+    "modelno": "hp 61",
+    "price": "30.5"
+   },
+   "right": {
+    "id": "1329",
+    "title": "hp 15 and 78 color and black ink cartridge",
+    "category": "printer ink toner",
+    "brand": "hp",
+    "modelno": "c9353bn",
+    "price": "59.74"
+   },
+   "label": 0,
+   "jaccard": 0.34782608695652173,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-2007-20461",
+   "left": {
+    "id": "2007",
+    "title": "flip ultra u1120 white camcorder 2 hour recording time 4gb 2nd generation",
+    "category": "camcorders",
+    "brand": "flip video",
+    "modelno": "u1120w",
+    "price": "109.0"
+   },
+   "right": {
+    "id": "20461",
+    "title": "flip ultra video camera - white 4 gb 2 hours 2nd generation old model",
+    "category": "camcorders",
+    "brand": "flip video",
+    "modelno": "u1120w",
+    "price": "69.99"
+   },
+   "label": 1,
+   "jaccard": 0.5,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-130-9890",
+   "left": {
+    "id": "130",
+    "title": "kensington virtuoso ipad stylus and pen",
+    "category": "mp3 accessories",
+    "brand": "kensington",
+    "modelno": "k39304us",
+    "price": "17.54"
+   },
+   "right": {
+    "id": "9890",
+    "title": "kensington 2nd generation apple ipad 1 and 2 iphone ipod motorola xoom tablet galaxy blackberry playbook virtuoso touch screen stylus and pen black newest model",
+    "category": "cases sleeves",
+    "brand": "kensington",
+    "modelno": "k39304us",
+    "price": "17.3"
+   },
+   "label": 1,
+   "jaccard": 0.3333333333333333,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1936-11295",
+   "left": {
+    "id": "1936",
+    "title": "v7 m42n01-7n 2.4 ghz wireless laser mouse with stoable nano receiver",
+    "category": "mice",
+    "brand": "v7",
+    "modelno": "m42n01-7n",
+    "price": "24.84"
+   },
+   "right": {
+    "id": "11295",
+    "title": "v7 3 button 2.4 ghz laser mouse with storable nano receiver",
+    "category": "mice",
+    "brand": "v7",
+    "modelno": "m42n01-7n",
+    "price": "19.23"
+   },
+   "label": 1,
+   "jaccard": 0.6818181818181818,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-498-5577",
+   "left": {
+    "id": "498",
+    "title": "t-mobile samsung sgh-t249 prepaid slider camera phone with bluetooth",
+    "category": "prepaid wireless phones",
+    "brand": "t-mobile",
+    "modelno": "t249",
+    "price": "49.84"
+   },
+   "right": {
+    "id": "5577",
+    "title": "samsung t249 prepaid phone blue t-mobile",
+    "category": "no-contract phones",
+    "brand": "samsung",
+    "modelno": "t239",
+    "price": "59.99"
+   },
+   "label": 1,
+   "jaccard": 0.5,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1922-20240",
+   "left": {
+    "id": "1922",
+    "title": "avery postage meter labels for personal post office e700 1-3 16 x 6 white 60 pack",
+    "category": "stationery & office machinery",
+    "brand": "avery",
+    "modelno": "5289",
+    "price": "9.54"
+   },
+   "right": {
+    "id": "20240",
+    "title": "postage meter labels for personal post office e700",
+    "category": "printer accessories",
+    "brand": "avery",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.5185185185185185,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-201-14312",
+   "left": {
+    "id": "201",
+    "title": "seagate freeagent goflex 500gb usb 2.0 ultra-portable hard drive black",
+    "category": "hard drives",
+    "brand": "seagate",
+    "modelno": "9zf2a2-570",
+    "price": "71.07"
+   },
+   "right": {
+    "id": "14312",
+    "title": "seagate freeagent goflex 500 gb usb 2.0 ultra-portable external hard drive staa500101 silver",
+    "category": "external hard drives",
+    "brand": "seagate",
+    "modelno": "staa500101",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6086956521739131,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1286-16535",
+   "left": {
+    "id": "1286",
+    "title": "mayline brighton series suspended box file pedestal cherry",
+    "category": "storage",
+    "brand": "mayline",
+    "modelno": "btbf20lcr",
+    "price": "229.0"
+   },
+   "right": {
+    "id": "16535",
+    "title": "new-mayline btbf20lcr - brighton series suspended box file pedestal 15w x 19d x 20h cherry - mlnbtbf20lcr",
+    "category": "laminating supplies",
+    "brand": "mayline",
+    "modelno": "",
+    "price": "289.0"
+   },
+   "label": 1,
+   "jaccard": 0.56,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1718-11835",
+   "left": {
+    "id": "1718",
+    "title": "kodak esp 3250 all-in-one printer value bundle",
+    "category": "printers",
+    "brand": "",
+    "modelno": "",
+    "price": "58.0"
+   },
+   "right": {
+    "id": "11835",
+    "title": "kodak esp 7 all-in-one printer",
+    "category": "all-in-one printers",
+    "brand": "kodak",
+    "modelno": "1252972",
+    "price": "149.29"
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2365-19791",
+   "left": {
+    "id": "2365",
+    "title": "canon cli-226 black ink tank",
+    "category": "printers",
+    "brand": "canon",
+    "modelno": "4546b001",
+    "price": "13.97"
+   },
+   "right": {
+    "id": "19791",
+    "title": "canon cli-226 gray ink tank 4550b001",
+    "category": "inkjet printer ink",
+    "brand": "canon",
+    "modelno": "4550b001",
+    "price": "13.97"
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-53-21566",
+   "left": {
+    "id": "53",
+    "title": "da-lite da-plex base rear projection screen - 57 3 4 x 77 video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27528",
+    "price": "2608.99"
+   },
+   "right": {
+    "id": "21566",
+    "title": "da-lite 27637 da-glas standard rear projection screen 57 3 4 x 77 video format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6153846153846154,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-547-1309",
+   "left": {
+    "id": "547",
+    "title": "verbatim 96438 2gb store n go usb 2.0 flash drive",
+    "category": "usb drives",
+    "brand": "verbatim",
+    "modelno": "96438",
+    "price": "14.84"
+   },
+   "right": {
+    "id": "1309",
+    "title": "verbatim store n go 4 gb usb 2.0 flash drive 96733 metallic purple",
+    "category": "usb flash drives",
+    "brand": "verbatim",
+    "modelno": "96733",
+    "price": "11.98"
+   },
+   "label": 0,
+   "jaccard": 0.6086956521739131,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1498-5234",
+   "left": {
+    "id": "1498",
+    "title": "visiontek radeon hd6770 1gb gddr5 graphics card",
+    "category": "electronics - general",
+    "brand": "visiontek",
+    "modelno": "900368",
+    "price": "145.0"
+   },
+   "right": {
+    "id": "5234",
+    "title": "visiontek radeon hd6770 1 gb gddr5 hdmi dvi vga graphics card 900368",
+    "category": "graphics cards",
+    "brand": "visiontek",
+    "modelno": "900368",
+    "price": "130.99"
+   },
+   "label": 1,
+   "jaccard": 0.5217391304347826,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2468-16832",
+   "left": {
+    "id": "2468",
+    "title": "mohawk color copy gloss paper ream of 500 sheets",
+    "category": "stationery & office machinery",
+    "brand": "mohawk",
+    "modelno": "36101",
+    "price": "12.94"
+   },
+   "right": {
+    "id": "16832",
+    "title": "new-mohawk 36101 - color copy gloss paper 96 brightness 32lb 8-1 2 x 11 white 500 sheets ream - mow36101",
+    "category": "computers accessories",
+    "brand": "mohawk",
+    "modelno": "",
+    "price": "34.52"
+   },
+   "label": 1,
+   "jaccard": 0.4375,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1951-20443",
+   "left": {
+    "id": "1951",
+    "title": "incipio ipod touch 4g feather hard shell case matte black",
+    "category": "mp3 accessories",
+    "brand": "incipio",
+    "modelno": "ip-909",
+    "price": "23.75"
+   },
+   "right": {
+    "id": "20443",
+    "title": "incipio feather case for ipod touch 4g matte black",
+    "category": "cases",
+    "brand": "incipio",
+    "modelno": "ip-909",
+    "price": "17.82"
+   },
+   "label": 1,
+   "jaccard": 0.6363636363636364,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1534-1090",
+   "left": {
+    "id": "1534",
+    "title": "griffin ipod touch 4g formfit case pink clear",
+    "category": "mp3 accessories",
+    "brand": "arkon",
+    "modelno": "gb01959",
+    "price": "17.13"
+   },
+   "right": {
+    "id": "1090",
+    "title": "griffin technology formfit for ipod touch 4g pink clear",
+    "category": "cases",
+    "brand": "griffin technology",
+    "modelno": "gb01959",
+    "price": "7.53"
+   },
+   "label": 1,
+   "jaccard": 0.5909090909090909,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1841-18623",
+   "left": {
+    "id": "1841",
+    "title": "belkin f2e9142-wht-apl adc to dvi apple monitor adapter",
+    "category": "electronics - general",
+    "brand": "belkin",
+    "modelno": "f2e9142-wht-apl",
+    "price": "29.88"
+   },
+   "right": {
+    "id": "18623",
+    "title": "belkin f2e9142-wht pro series adc to dvi apple monitor adapter",
+    "category": "connectors adapters",
+    "brand": "belkin",
+    "modelno": "f2e9142-wht",
+    "price": "24.99"
+   },
+   "label": 1,
+   "jaccard": 0.5454545454545454,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1398-10620",
+   "left": {
+    "id": "1398",
+    "title": "netgear universal wi-fi range extender",
+    "category": "networking",
+    "brand": "netgear",
+    "modelno": "wn3000rp100nas",
+    "price": "79.88"
+   },
+   "right": {
+    "id": "10620",
+    "title": "netgear universal wifi range extender wn2000rpt",
+    "category": "networking products",
+    "brand": "netgear",
+    "modelno": "wn2000rpt",
+    "price": "61.5"
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-975-13422",
+   "left": {
+    "id": "975",
+    "title": "startech.com pex13943 4 port pcie 1394a firewire adapter card",
+    "category": "electronics - general",
+    "brand": "startech",
+    "modelno": "pex13943",
+    "price": "34.88"
+   },
+   "right": {
+    "id": "13422",
+    "title": "startech.com 4 port pci express 1394a firewire adapter card - 3 external 1 internal pex13943",
+    "category": "computers accessories",
+    "brand": "startech",
+    "modelno": "pex13943",
+    "price": "27.99"
+   },
+   "label": 1,
+   "jaccard": 0.5185185185185185,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2087-11143",
+   "left": {
+    "id": "2087",
+    "title": "endust for electronics ultimate office cleaning combo",
+    "category": "electronics - general",
+    "brand": "endust",
+    "modelno": "12886bp",
+    "price": "64.99"
+   },
+   "right": {
+    "id": "11143",
+    "title": "endust 12886bp electronics ultimate office cleaning combo",
+    "category": "monitor accessories",
+    "brand": "endust",
+    "modelno": "12886bp",
+    "price": "29.86"
+   },
+   "label": 1,
+   "jaccard": 0.6666666666666666,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-53-18200",
+   "left": {
+    "id": "53",
+    "title": "da-lite da-plex base rear projection screen - 57 3 4 x 77 video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27528",
+    "price": "2608.99"
+   },
+   "right": {
+    "id": "18200",
+    "title": "da-plex base rear projection screen - 40 1 4 x 53 3 4 video format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "1525.99"
+   },
+   "label": 0,
+   "jaccard": 0.5925925925925926,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2296-4823",
+   "left": {
+    "id": "2296",
+    "title": "kanguru defender 1gb v2 kdv2-1g usb 2.0 flash drive",
+    "category": "usb drives",
+    "brand": "kanguru",
+    "modelno": "kdv2-1g",
+    "price": "39.82"
+   },
+   "right": {
+    "id": "4823",
+    "title": "kanguru defender 32 gb usb 2.0 flash drive v2 kdv2-32g",
+    "category": "usb flash drives",
+    "brand": "kanguru solutions",
+    "modelno": "kdv2-32g",
+    "price": "122.36"
+   },
+   "label": 0,
+   "jaccard": 0.6190476190476191,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1895-7660",
+   "left": {
+    "id": "1895",
+    "title": "q-see qt426 16-channel digital video recorder",
+    "category": "garden - general",
+    "brand": "q-see",
+    "modelno": "qt426-5",
+    "price": "612.24"
+   },
+   "right": {
+    "id": "7660",
+    "title": "q-see qt426-5 16 channel h. 264 smart recording dvr with pre-installed 500 gb hard drive",
+    "category": "surveillance video recorders",
+    "brand": "q-see",
+    "modelno": "qt426-5",
+    "price": "516.99"
+   },
+   "label": 1,
+   "jaccard": 0.25806451612903225,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2092-13767",
+   "left": {
+    "id": "2092",
+    "title": "night owl zeus-810 16-channel h. 264 dvr kit with 1tb hard drive",
+    "category": "electronics - general",
+    "brand": "night owl",
+    "modelno": "",
+    "price": "773.82"
+   },
+   "right": {
+    "id": "13767",
+    "title": "night owl security zeus-810 16-channel 8-camera h. 264 dvr surveillance kit with d1 recording and hdmi output",
+    "category": "complete surveillance systems",
+    "brand": "night owl optics",
+    "modelno": "zeus-810",
+    "price": "676.63"
+   },
+   "label": 1,
+   "jaccard": 0.4375,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2468-10813",
+   "left": {
+    "id": "2468",
+    "title": "mohawk color copy gloss paper ream of 500 sheets",
+    "category": "stationery & office machinery",
+    "brand": "mohawk",
+    "modelno": "36101",
+    "price": "12.94"
+   },
+   "right": {
+    "id": "10813",
+    "title": "mohawk 36101 - color copy gloss paper 96 brightness 32lb 8-1 2 x 11 white 500 sheets ream",
+    "category": "projection screens",
+    "brand": "mohawk",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.4827586206896552,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-278-16320",
+   "left": {
+    "id": "278",
+    "title": "da-lite hc cinema vision tensioned advantage electrol - av format 8 x 8 diagonal",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "89939",
+    "price": "2595.0"
+   },
+   "right": {
+    "id": "16320",
+    "title": "da-lite 97986 hc cinema vision tensioned cosmopolitan electrol - av format 12 x 12 diagonal",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5769230769230769,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2389-16333",
+   "left": {
+    "id": "2389",
+    "title": "da-lite da-glas deluxe rear projection screen - 84 x 84 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27650",
+    "price": "4958.99"
+   },
+   "right": {
+    "id": "16333",
+    "title": "da-glas base rear projection screen - 70 x 70 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "2622.99"
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2296-12892",
+   "left": {
+    "id": "2296",
+    "title": "kanguru defender 1gb v2 kdv2-1g usb 2.0 flash drive",
+    "category": "usb drives",
+    "brand": "kanguru",
+    "modelno": "kdv2-1g",
+    "price": "39.82"
+   },
+   "right": {
+    "id": "12892",
+    "title": "kanguru defender 1 gb usb 2.0 flash drive v2 kdv2-1g",
+    "category": "usb flash drives",
+    "brand": "kanguru solutions",
+    "modelno": "kdv2-1g",
+    "price": "33.43"
+   },
+   "label": 1,
+   "jaccard": 0.7,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1937-8500",
+   "left": {
+    "id": "1937",
+    "title": "kingston kth-mlg4 2g 2gb ddr2 240-pin sdram server memory module",
+    "category": "memory",
+    "brand": "kingston",
+    "modelno": "kth-mlg4 / 2g",
+    "price": "55.92"
+   },
+   "right": {
+    "id": "8500",
+    "title": "kingston memory - 2 gb 2 x 1 gb - dimm 240-pin - ddr ii kth-mlg4 2g",
+    "category": "memory",
+    "brand": "kingston",
+    "modelno": "kth-mlg4 / 2g",
+    "price": "52.68"
+   },
+   "label": 1,
+   "jaccard": 0.4166666666666667,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1257-17561",
+   "left": {
+    "id": "1257",
+    "title": "da-lite da-plex unframed rear projection screen - 84 x 84 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27503",
+    "price": "3561.99"
+   },
+   "right": {
+    "id": "17561",
+    "title": "da-plex standard rear projection screen - 96 x 96 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "5912.99"
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-411-20452",
+   "left": {
+    "id": "411",
+    "title": "hitachi 500gb touro mobile usb 2.0 hard drive",
+    "category": "hard drives",
+    "brand": "hitachi",
+    "modelno": "0s03121",
+    "price": "64.98"
+   },
+   "right": {
+    "id": "20452",
+    "title": "hitachi touro mobile 320 gb usb 2.0 external hard drive htolmxna3201abb",
+    "category": "external hard drives",
+    "brand": "hitachi",
+    "modelno": "htolmxna3201abb",
+    "price": "49.99"
+   },
+   "label": 0,
+   "jaccard": 0.6190476190476191,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-960-13888",
+   "left": {
+    "id": "960",
+    "title": "new york mets ipod touch 4g hard case",
+    "category": "electronics - general",
+    "brand": "tribeca",
+    "modelno": "fva4459",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "13888",
+    "title": "new york jets ipod touch 4g hard case",
+    "category": "computers accessories",
+    "brand": "tribeca",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6190476190476191,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-656-10558",
+   "left": {
+    "id": "656",
+    "title": "canon ac adapter kit for powershot-sd900 sd800is sd700is",
+    "category": "photography - general",
+    "brand": "canon",
+    "modelno": "ack-dc30",
+    "price": "52.88"
+   },
+   "right": {
+    "id": "10558",
+    "title": "canon ack-dc30 ac adapter kit for sd700is sd800is sd850is sd870is sd880is sd890is sd900 sd950is sd990is sd970is sx200is digital cameras",
+    "category": "battery chargers",
+    "brand": "canon",
+    "modelno": "1137b001",
+    "price": "49.99"
+   },
+   "label": 1,
+   "jaccard": 0.40625,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2021-18319",
+   "left": {
+    "id": "2021",
+    "title": "crown cushion-step rubber mat 36 x 72 marbleized black",
+    "category": "home care",
+    "brand": "crown",
+    "modelno": "cu3672bk",
+    "price": "194.97"
+   },
+   "right": {
+    "id": "18319",
+    "title": "crown cu3672gy - cushion-step mat rubber 36 x 72 marbleized gray",
+    "category": "networking products",
+    "brand": "crown",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5909090909090909,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2191-18617",
+   "left": {
+    "id": "2191",
+    "title": "chicago bears ipod touch 4g hard case",
+    "category": "electronics - general",
+    "brand": "tribeca",
+    "modelno": "fva4587",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "18617",
+    "title": "cincinnati bengals ipod touch 4g hard case",
+    "category": "computers accessories",
+    "brand": "tribeca",
+    "modelno": "",
+    "price": "29.99"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1761-4578",
+   "left": {
+    "id": "1761",
+    "title": "buffalo technology linkstation duo 1 tb 2 x 500 gb network attached storage ls-wx1 .0 tl r1",
+    "category": "networking",
+    "brand": "buffalo technology",
+    "modelno": "lswx10tlr1",
+    "price": "192.63"
+   },
+   "right": {
+    "id": "4578",
+    "title": "buffalo technology linkstation live 1.0 tb shared network attached storage ls-ch1 .0 tl black",
+    "category": "network attached storage",
+    "brand": "buffalo technology",
+    "modelno": "ls-ch1 .0 tl",
+    "price": "99.97"
+   },
+   "label": 0,
+   "jaccard": 0.45161290322580644,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1661-514",
+   "left": {
+    "id": "1661",
+    "title": "edge 8gb diskgo usb 2.0 flash drive silver",
+    "category": "usb drives",
+    "brand": "edge",
+    "modelno": "pe204198",
+    "price": "10.98"
+   },
+   "right": {
+    "id": "514",
+    "title": "edge diskgo secure guardian flash drive - usb flash drive - 16 gb - usb 2.0",
+    "category": "usb flash drives",
+    "brand": "edge",
+    "modelno": "diskgo secure guardian flash drive",
+    "price": "42.89"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-129-8121",
+   "left": {
+    "id": "129",
+    "title": "bushnell backtrack personal locator tech gray",
+    "category": "handheld gps",
+    "brand": "bushnell",
+    "modelno": "",
+    "price": "49.99"
+   },
+   "right": {
+    "id": "8121",
+    "title": "bushnell backtrack point-3 personal gps locator gray",
+    "category": "sports outdoor gps",
+    "brand": "bushnell",
+    "modelno": "360100",
+    "price": "48.95"
+   },
+   "label": 0,
+   "jaccard": 0.5789473684210527,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-290-15478",
+   "left": {
+    "id": "290",
+    "title": "semi hard case set for ipad 2 white",
+    "category": "mp3 accessories",
+    "brand": "simplism",
+    "modelno": "tr-shcsipd2-wt / en",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "15478",
+    "title": "simplism japan semi hard case set for ipad 2 - green tr-shcsipd2-sg en",
+    "category": "cases sleeves",
+    "brand": "simplism japan",
+    "modelno": "tr-shcsipd2-sg / en",
+    "price": "29.99"
+   },
+   "label": 0,
+   "jaccard": 0.625,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-939-3615",
+   "left": {
+    "id": "939",
+    "title": "sabrent usb 2.0 firewire pcmcia cardbus",
+    "category": "networking",
+    "brand": "sabrent",
+    "modelno": "sbt-pca4",
+    "price": "14.88"
+   },
+   "right": {
+    "id": "3615",
+    "title": "sabrent sbt-pca4 4-port usb 2.0 firewire 1394 32-bit pcmcia cardbus combo adapter",
+    "category": "cables interconnects",
+    "brand": "sabrent",
+    "modelno": "sbt-pca4",
+    "price": "18.99"
+   },
+   "label": 1,
+   "jaccard": 0.5454545454545454,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-738-18197",
+   "left": {
+    "id": "738",
+    "title": "bond street ltd. 5 attach case aluminum 18 x 5 x 13-1 2 black silver",
+    "category": "electronics - general",
+    "brand": "bond street ltd.",
+    "modelno": "bnd416020sil",
+    "price": "91.49"
+   },
+   "right": {
+    "id": "18197",
+    "title": "bond street ltd. 416020sil - 5 attach case aluminum 18 x 5 x 13-1 2 black silver",
+    "category": "computer accessories",
+    "brand": "bond street",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.72,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-32-17836",
+   "left": {
+    "id": "32",
+    "title": "da-lite da-mat deluxe fast fold complete front projection screen - 68 x 68",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "88604",
+    "price": "829.99"
+   },
+   "right": {
+    "id": "17836",
+    "title": "da-lite 40433 da-mat fast fold complete front projection screen - 92 x 92",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6086956521739131,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-235-21783",
+   "left": {
+    "id": "235",
+    "title": "avery worksaver big tab plastic dividers two slash pockets eight-tab assorted",
+    "category": "stationery & office machinery",
+    "brand": "avery",
+    "modelno": "11907",
+    "price": "5.88"
+   },
+   "right": {
+    "id": "21783",
+    "title": "avery 11907 - worksaver big tab plastic dividers two slash pockets 8-tab assorted",
+    "category": "",
+    "brand": "avery",
+    "modelno": "",
+    "price": "12.0"
+   },
+   "label": 1,
+   "jaccard": 0.6956521739130435,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1559-14553",
+   "left": {
+    "id": "1559",
+    "title": "paper mate mechanical pencil starter set",
+    "category": "stationery & office machinery",
+    "brand": "paper mate",
+    "modelno": "1739312",
+    "price": "4.87"
+   },
+   "right": {
+    "id": "14553",
+    "title": "paper mate 1739312 - megalead mechanical pencil starter set 0.7 mm 2 erasure refills blue barrel",
+    "category": "printer accessories",
+    "brand": "paper mate",
+    "modelno": "",
+    "price": "23.96"
+   },
+   "label": 1,
+   "jaccard": 0.4444444444444444,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-148-8956",
+   "left": {
+    "id": "148",
+    "title": "xerox 108r00579 transfer roller",
+    "category": "printers",
+    "brand": "xerox",
+    "modelno": "108r00579",
+    "price": "199.88"
+   },
+   "right": {
+    "id": "8956",
+    "title": "xerox printers transfer roller 108r00646",
+    "category": "printer transfer rollers",
+    "brand": "xerox",
+    "modelno": "108r00646",
+    "price": "71.74"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-157-16205",
+   "left": {
+    "id": "157",
+    "title": "quartet total erase 3-month modular planning system aluminum frame 36",
+    "category": "stationery & office machinery",
+    "brand": "quartet",
+    "modelno": "cmp32",
+    "price": "129.94"
+   },
+   "right": {
+    "id": "16205",
+    "title": "new-quartet cmp32 - total erase 3-month modular planning system 36 x 24 aluminum frame - qrtcmp32",
+    "category": "laminating supplies",
+    "brand": "quartet",
+    "modelno": "",
+    "price": "170.0"
+   },
+   "label": 1,
+   "jaccard": 0.5925925925925926,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2430-20125",
+   "left": {
+    "id": "2430",
+    "title": "da-lite da-plex thru-the-wall rear projection screen - 81 x 108 video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "23096",
+    "price": "10048.99"
+   },
+   "right": {
+    "id": "20125",
+    "title": "da-lite 27673 da-glas self trimming rear projection screen - 96 x 96 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.4074074074074074,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1305-2558",
+   "left": {
+    "id": "1305",
+    "title": "allsop clingo universal hands free mount",
+    "category": "electronics - general",
+    "brand": "allsop",
+    "modelno": "30272",
+    "price": "34.99"
+   },
+   "right": {
+    "id": "2558",
+    "title": "clingo universal hands-free car mount for iphone 4 3g 3gs and all cell phones and mobile devices",
+    "category": "mounts",
+    "brand": "allsop",
+    "modelno": "30272",
+    "price": "20.07"
+   },
+   "label": 1,
+   "jaccard": 0.3333333333333333,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1237-6974",
+   "left": {
+    "id": "1237",
+    "title": "hp q2429a maintenance kit",
+    "category": "printers",
+    "brand": "hp",
+    "modelno": "q2429a",
+    "price": "234.54"
+   },
+   "right": {
+    "id": "6974",
+    "title": "hp q2429a 110v printer maintenance kit",
+    "category": "printer accessories",
+    "brand": "hp",
+    "modelno": "q2429a",
+    "price": "200.0"
+   },
+   "label": 1,
+   "jaccard": 0.6,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1758-13845",
+   "left": {
+    "id": "1758",
+    "title": "fellowes goriser laptop elevator",
+    "category": "electronics - general",
+    "brand": "fellowes",
+    "modelno": "8030401",
+    "price": "21.88"
+   },
+   "right": {
+    "id": "13845",
+    "title": "fellowes 8030401 laptop goriser",
+    "category": "laptop netbook computer accessories",
+    "brand": "fellowes",
+    "modelno": "8030401",
+    "price": "14.95"
+   },
+   "label": 1,
+   "jaccard": 0.5294117647058824,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-266-15128",
+   "left": {
+    "id": "266",
+    "title": "iomega ego 500gb helium portable hard drive",
+    "category": "hard drives",
+    "brand": "iomega",
+    "modelno": "34945",
+    "price": "78.98"
+   },
+   "right": {
+    "id": "15128",
+    "title": "edge diskgo 500 gb 2.5-inch portable hard drive",
+    "category": "external hard drives",
+    "brand": "edge",
+    "modelno": "2.5 '' backup ultra portable hard drive",
+    "price": "78.07"
+   },
+   "label": 0,
+   "jaccard": 0.36,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-2391-18601",
+   "left": {
+    "id": "2391",
+    "title": "da-lite high power model b manual screen with csr - 96 x 96 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "85311",
+    "price": "555.99"
+   },
+   "right": {
+    "id": "18601",
+    "title": "high contrast matte white designer contour manual screen with csr - av format size 60 x 60",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.45161290322580644,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1728-12125",
+   "left": {
+    "id": "1728",
+    "title": "scosche convertible 6 speaker adapter",
+    "category": "car stereos",
+    "brand": "scosche",
+    "modelno": "sa68",
+    "price": "11.88"
+   },
+   "right": {
+    "id": "12125",
+    "title": "scosche sa68 convertible 6x8-inch speaker adapter - pair",
+    "category": "audio video accessories",
+    "brand": "scosche",
+    "modelno": "sa68",
+    "price": "11.18"
+   },
+   "label": 1,
+   "jaccard": 0.5,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-92-6998",
+   "left": {
+    "id": "92",
+    "title": "da-lite natural walnut veneer model b manual screen with matte white fabric - 64 x 84 diagonal video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "73197",
+    "price": "261.99"
+   },
+   "right": {
+    "id": "6998",
+    "title": "honey maple veneer model b manual screen with matte white fabric - diagonal video format size 60 x 60 diagonal",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5757575757575758,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1396-2438",
+   "left": {
+    "id": "1396",
+    "title": "dj-tech t545a 15 600w 2-way active loudspeaker",
+    "category": "stereos/audio",
+    "brand": "dj tech",
+    "modelno": "t545a",
+    "price": "358.0"
+   },
+   "right": {
+    "id": "2438",
+    "title": "djtech super powered 15 600 w dj spkrs",
+    "category": "home audio theater",
+    "brand": "dj-tech",
+    "modelno": "t545a",
+    "price": "396.74"
+   },
+   "label": 1,
+   "jaccard": 0.34615384615384615,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2136-19006",
+   "left": {
+    "id": "2136",
+    "title": "lorex lw1002 live wireless security cameras",
+    "category": "garden - general",
+    "brand": "lorex",
+    "modelno": "lw1002",
+    "price": "119.0"
+   },
+   "right": {
+    "id": "19006",
+    "title": "new lorex lw1002w 2 wireless camera system obs systems home security",
+    "category": "printer ink toner",
+    "brand": "lorex",
+    "modelno": "",
+    "price": "141.99"
+   },
+   "label": 1,
+   "jaccard": 0.3076923076923077,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-108-12441",
+   "left": {
+    "id": "108",
+    "title": "imation 26607 rdx cartridge hard drive",
+    "category": "hard drives",
+    "brand": "imation",
+    "modelno": "26607",
+    "price": "117.84"
+   },
+   "right": {
+    "id": "12441",
+    "title": "160gb cartridge for rdx govt series taa",
+    "category": "",
+    "brand": "imation",
+    "modelno": "26718",
+    "price": "156.83"
+   },
+   "label": 1,
+   "jaccard": 0.4,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1476-11083",
+   "left": {
+    "id": "1476",
+    "title": "garmin etrex summit hc handheld gps receiver 010-00633-00",
+    "category": "handheld gps",
+    "brand": "garmin",
+    "modelno": "010-00633-00",
+    "price": "166.88"
+   },
+   "right": {
+    "id": "11083",
+    "title": "garmin etrex summit hc handheld gps receiver",
+    "category": "handheld gps",
+    "brand": "garmin",
+    "modelno": "010-00633-00",
+    "price": "166.88"
+   },
+   "label": 1,
+   "jaccard": 1.0,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-547-9294",
+   "left": {
+    "id": "547",
+    "title": "verbatim 96438 2gb store n go usb 2.0 flash drive",
+    "category": "usb drives",
+    "brand": "verbatim",
+    "modelno": "96438",
+    "price": "14.84"
+   },
+   "right": {
+    "id": "9294",
+    "title": "verbatim store n go netbook 16 gb usb 2.0 flash drive 97464 black",
+    "category": "usb flash drives",
+    "brand": "verbatim",
+    "modelno": "97464",
+    "price": "26.76"
+   },
+   "label": 0,
+   "jaccard": 0.6086956521739131,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-286-18626",
+   "left": {
+    "id": "286",
+    "title": "motion systems ipad01 charlie ipad sleeve black",
+    "category": "mp3 accessories",
+    "brand": "motion systems",
+    "modelno": "ipad01-blk",
+    "price": "16.99"
+   },
+   "right": {
+    "id": "18626",
+    "title": "charlie black nylon sleeve for ipad",
+    "category": "cases sleeves",
+    "brand": "motion systems",
+    "modelno": "ipad01-blk",
+    "price": "9.99"
+   },
+   "label": 1,
+   "jaccard": 0.5714285714285714,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2100-20731",
+   "left": {
+    "id": "2100",
+    "title": "imation 26654 swivel 8gb usb2 .0 flash drive",
+    "category": "usb drives",
+    "brand": "imation",
+    "modelno": "26654",
+    "price": "25.84"
+   },
+   "right": {
+    "id": "20731",
+    "title": "imation 8gb swivel flash drive",
+    "category": "usb flash drives",
+    "brand": "imation",
+    "modelno": "26654",
+    "price": "17.58"
+   },
+   "label": 1,
+   "jaccard": 0.7647058823529411,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-528-5203",
+   "left": {
+    "id": "528",
+    "title": "wintec filemate 4gb swivel usb flash drive black",
+    "category": "usb drives",
+    "brand": "wintec",
+    "modelno": "3fmusb4gwb-r",
+    "price": "7.84"
+   },
+   "right": {
+    "id": "5203",
+    "title": "wintec filemate 32 gb swivel usb drive - blue",
+    "category": "usb flash drives",
+    "brand": "wintec",
+    "modelno": "3fmusb32gwn-r",
+    "price": "44.94"
+   },
+   "label": 0,
+   "jaccard": 0.5714285714285714,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-90-21917",
+   "left": {
+    "id": "90",
+    "title": "dane-elec 8gb high-speed compact flash memory card",
+    "category": "usb drives",
+    "brand": "dane-elec",
+    "modelno": "dacf3008gc",
+    "price": "44.88"
+   },
+   "right": {
+    "id": "21917",
+    "title": "dane-elec high speed 300x 8 gb usb 2.0 compact flash card udma da-cf30-08g-c",
+    "category": "blank media",
+    "brand": "dane-elec",
+    "modelno": "da-cf30-08g-c",
+    "price": "29.06"
+   },
+   "label": 1,
+   "jaccard": 0.37037037037037035,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-447-13174",
+   "left": {
+    "id": "447",
+    "title": "ematic articulating wall mount kit for 15 tv includes 6ft hdmi cable cleaning solution cleaning cloth emw3202",
+    "category": "tv accessories",
+    "brand": "ematic",
+    "modelno": "emw3202",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "13174",
+    "title": "ematic emw3202 articulating wall mount kit for 15-inch to 32-inch tv with 6-feet hdmi cable cleaning solution cleaning cloth",
+    "category": "tv mounts",
+    "brand": "ematic",
+    "modelno": "emw3202",
+    "price": "29.99"
+   },
+   "label": 1,
+   "jaccard": 0.6551724137931034,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1102-7853",
+   "left": {
+    "id": "1102",
+    "title": "iogear miniview micro kvm switch",
+    "category": "networking",
+    "brand": "iogear",
+    "modelno": "gcs62",
+    "price": "25.88"
+   },
+   "right": {
+    "id": "7853",
+    "title": "iogear 2-port miniview micro ps 2 kvm switch with 2 cables gcs62",
+    "category": "kvm switches",
+    "brand": "iogear",
+    "modelno": "gcs62",
+    "price": "18.99"
+   },
+   "label": 1,
+   "jaccard": 0.55,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1404-12267",
+   "left": {
+    "id": "1404",
+    "title": "birdhouse tony hawk 2gb ptero skatedrive usb flash drive",
+    "category": "usb drives",
+    "brand": "ep memory",
+    "modelno": "bh-skthpt/2g",
+    "price": "9.84"
+   },
+   "right": {
+    "id": "12267",
+    "title": "birdhouse tony hawk 16gb bonepile skatedrive usb flash drive",
+    "category": "usb flash drives",
+    "brand": "action",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5909090909090909,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2357-10504",
+   "left": {
+    "id": "2357",
+    "title": "coby 7 lcd portable dvd cd mp3 player",
+    "category": "dvd players",
+    "brand": "coby",
+    "modelno": "tfdvd7379",
+    "price": "85.71"
+   },
+   "right": {
+    "id": "10504",
+    "title": "coby tfdvd7009 7-inch portable dvd cd mp3 player black",
+    "category": "portable dvd players",
+    "brand": "coby",
+    "modelno": "tfdvd7009",
+    "price": "58.9"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-2436-6690",
+   "left": {
+    "id": "2436",
+    "title": "elite screens maxwhite vmax2 plus2 series ezelectric motorized screen - 135 diagonal in black case",
+    "category": "electronics - general",
+    "brand": "elite screens",
+    "modelno": "vmax135uwv2",
+    "price": "649.99"
+   },
+   "right": {
+    "id": "6690",
+    "title": "maxwhite vmax2 plus2 series ezelectric motorized screen - 92 diagonal",
+    "category": "projection screens",
+    "brand": "elite",
+    "modelno": "",
+    "price": "379.0"
+   },
+   "label": 0,
+   "jaccard": 0.5769230769230769,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-561-17561",
+   "left": {
+    "id": "561",
+    "title": "da-lite da-plex self trimming rear projection screen - 96 x 120 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27903",
+    "price": "7799.99"
+   },
+   "right": {
+    "id": "17561",
+    "title": "da-plex standard rear projection screen - 96 x 96 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "5912.99"
+   },
+   "label": 0,
+   "jaccard": 0.5833333333333334,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-53-18465",
+   "left": {
+    "id": "53",
+    "title": "da-lite da-plex base rear projection screen - 57 3 4 x 77 video format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27528",
+    "price": "2608.99"
+   },
+   "right": {
+    "id": "18465",
+    "title": "da-glas base rear projection screen - 36 x 48 video format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": "1199.99"
+   },
+   "label": 0,
+   "jaccard": 0.48148148148148145,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1455-17224",
+   "left": {
+    "id": "1455",
+    "title": "tops second nature subject wire notebook college rule 6 x 9-1 2 we 80 sheets",
+    "category": "stationery & office machinery",
+    "brand": "tops business forms",
+    "modelno": "74109",
+    "price": "5.54"
+   },
+   "right": {
+    "id": "17224",
+    "title": "tops 74112 - second nature subject wirebound notebook quadrille rule ltr we 80-sheet",
+    "category": "storage presentation materials",
+    "brand": "tops",
+    "modelno": "",
+    "price": "24.3"
+   },
+   "label": 0,
+   "jaccard": 0.3333333333333333,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-875-4226",
+   "left": {
+    "id": "875",
+    "title": "bravo view 12.1 ovr-121wfm overhead monitor",
+    "category": "car stereos",
+    "brand": "bravo",
+    "modelno": "ovr-121wfm",
+    "price": "148.0"
+   },
+   "right": {
+    "id": "4226",
+    "title": "bravo view ovr-121wfm 12.1 widescreen overhead lcd",
+    "category": "overhead video",
+    "brand": "bravo view",
+    "modelno": "ovr-121wfm",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.5882352941176471,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1194-14916",
+   "left": {
+    "id": "1194",
+    "title": "hp 75 tri-color inkjet cartridge cb337wn",
+    "category": "printers",
+    "brand": "hp",
+    "modelno": "hp cb337wn140",
+    "price": "19.47"
+   },
+   "right": {
+    "id": "14916",
+    "title": "hp 75 tri-color inkjet print cartridge cb337wn",
+    "category": "inkjet printer ink",
+    "brand": "hp",
+    "modelno": "cb337wn # 140",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.6111111111111112,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1092-13747",
+   "left": {
+    "id": "1092",
+    "title": "ocz technology vertex 2 60gb 2.5 sata ii solid state drive",
+    "category": "hard drives",
+    "brand": "ocz technologies",
+    "modelno": "oczssd22vtxe60g",
+    "price": "119.98"
+   },
+   "right": {
+    "id": "13747",
+    "title": "ocz technology 60 gb vertex 2 series sata ii 2.5-inch solid state drive ssd oczssd22vtxe60g",
+    "category": "camcorders",
+    "brand": "ocz",
+    "modelno": "oczssd2-2vtxe60g",
+    "price": "94.99"
+   },
+   "label": 1,
+   "jaccard": 0.5172413793103449,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2188-20664",
+   "left": {
+    "id": "2188",
+    "title": "buffalo technology 2tb usb 3.0 drivestation duo",
+    "category": "hard drives",
+    "brand": "buffalo technology",
+    "modelno": "hdwl2tu3r1",
+    "price": "239.82"
+   },
+   "right": {
+    "id": "20664",
+    "title": "buffalo technology drivestation datavault 2 tb usb 2.0 desktop external hard drive hd-cxt2 .0 tu2 black",
+    "category": "external hard drives",
+    "brand": "buffalo technology",
+    "modelno": "hd-cxt2 .0 tu2",
+    "price": "132.64"
+   },
+   "label": 0,
+   "jaccard": 0.39285714285714285,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-1834-16331",
+   "left": {
+    "id": "1834",
+    "title": "guardian ecoguard indoor rubber wiper mats 36 x 60 charcoal",
+    "category": "rugs",
+    "brand": "guardian",
+    "modelno": "eg030504",
+    "price": "55.97"
+   },
+   "right": {
+    "id": "16331",
+    "title": "guardian eg030504 - ecoguard indoor wiper mats rubber 36 x 60 charcoal",
+    "category": "storage presentation materials",
+    "brand": "guardian",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.7619047619047619,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2252-16783",
+   "left": {
+    "id": "2252",
+    "title": "3m o-cel-o sponge with 3m stayfresh technology 4pk",
+    "category": "home care",
+    "brand": "3m",
+    "modelno": "7274t",
+    "price": "2.69"
+   },
+   "right": {
+    "id": "16783",
+    "title": "3m 7274t - o-cel-o sponge w 3m stayfresh technology 4-7 10 x 3 x 3 5 4 pack",
+    "category": "",
+    "brand": "3m",
+    "modelno": "",
+    "price": "10.85"
+   },
+   "label": 1,
+   "jaccard": 0.44,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-428-6990",
+   "left": {
+    "id": "428",
+    "title": "hp 27 black inkjet cartridge c8727an",
+    "category": "printers",
+    "brand": "hp",
+    "modelno": "c8727an",
+    "price": "19.97"
+   },
+   "right": {
+    "id": "6990",
+    "title": "hp 27 black ink cartridge in retail packaging c8727an 140",
+    "category": "inkjet printer ink",
+    "brand": "hp",
+    "modelno": "hewc8727an",
+    "price": "18.61"
+   },
+   "label": 1,
+   "jaccard": 0.5238095238095238,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1776-13179",
+   "left": {
+    "id": "1776",
+    "title": "sharp el1192bl printing calculator",
+    "category": "stationery & office machinery",
+    "brand": "sharp",
+    "modelno": "el1192bl",
+    "price": "37.63"
+   },
+   "right": {
+    "id": "13179",
+    "title": "sharp el1192bl two-color printing calculator calculator prting desktop pack of2",
+    "category": "printing",
+    "brand": "sharp",
+    "modelno": "",
+    "price": "95.66"
+   },
+   "label": 1,
+   "jaccard": 0.47368421052631576,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1467-16059",
+   "left": {
+    "id": "1467",
+    "title": "slappa ladies damask netbook sleeve in white",
+    "category": "electronics - general",
+    "brand": "slappa",
+    "modelno": "nsv-121",
+    "price": "39.99"
+   },
+   "right": {
+    "id": "16059",
+    "title": "slappa sl-nsv-121 15.4-inch lady damask laptop sleeve black white",
+    "category": "bags cases",
+    "brand": "slappa",
+    "modelno": "sl-nsv-121",
+    "price": "26.99"
+   },
+   "label": 1,
+   "jaccard": 0.375,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-658-21942",
+   "left": {
+    "id": "658",
+    "title": "keyspan usb twin serial adapter",
+    "category": "electronics - general",
+    "brand": "keyspan",
+    "modelno": "usa-28xg",
+    "price": "70.73"
+   },
+   "right": {
+    "id": "21942",
+    "title": "usb twin serial adapter",
+    "category": "connectors adapters",
+    "brand": "keyspan",
+    "modelno": "usa-28xg",
+    "price": "64.24"
+   },
+   "label": 1,
+   "jaccard": 0.6470588235294118,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-992-19592",
+   "left": {
+    "id": "992",
+    "title": "hp 61 black tri-color combo inkjet cartridge",
+    "category": "printers",
+    "brand": "hp",
+    "modelno": "hp 61",
+    "price": "30.5"
+   },
+   "right": {
+    "id": "19592",
+    "title": "hp 61 ink cartridge combo pack",
+    "category": "inkjet printer ink",
+    "brand": "hp",
+    "modelno": "cr259fn # 140",
+    "price": "28.2"
+   },
+   "label": 1,
+   "jaccard": 0.5,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1178-20125",
+   "left": {
+    "id": "1178",
+    "title": "da-lite da-glas deluxe rear projection screen - 96 x 96 av format",
+    "category": "electronics - general",
+    "brand": "da-lite",
+    "modelno": "27651",
+    "price": "6128.99"
+   },
+   "right": {
+    "id": "20125",
+    "title": "da-lite 27673 da-glas self trimming rear projection screen - 96 x 96 av format",
+    "category": "projection screens",
+    "brand": "da-lite",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.6086956521739131,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1073-2522",
+   "left": {
+    "id": "1073",
+    "title": "corsair hx3x12g1333c9 12 gb xms3 6 x 2 gb pc3-10600 1333mhz 240-pin ddr3 core i7 triple channel memory kit desktop memory module",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "hx3x12g1333c9",
+    "price": "163.82"
+   },
+   "right": {
+    "id": "2522",
+    "title": "corsair hx3x12g1333c9 12 gb xms3 6 x 2 gb pc3-10600 1333mhz 240-pin ddr3 core i7 triple channel memory kit",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "hx3x12g1333c9",
+    "price": "119.99"
+   },
+   "label": 1,
+   "jaccard": 0.8518518518518519,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1560-19963",
+   "left": {
+    "id": "1560",
+    "title": "pc treasures wireless optical mouse 2.4 ghz purple",
+    "category": "mice",
+    "brand": "pc treasures",
+    "modelno": "07227",
+    "price": "17.82"
+   },
+   "right": {
+    "id": "19963",
+    "title": "pc treasures mighty mini mouse - 2.4 ghz wireless",
+    "category": "mice",
+    "brand": "pc treasures",
+    "modelno": "07228",
+    "price": "14.65"
+   },
+   "label": 0,
+   "jaccard": 0.6,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-928-17570",
+   "left": {
+    "id": "928",
+    "title": "wilson jones basic vinyl round ring binder w label holder",
+    "category": "stationery & office machinery",
+    "brand": "wilson jones",
+    "modelno": "36849nhb",
+    "price": "14.2"
+   },
+   "right": {
+    "id": "17570",
+    "title": "new-wilson jones 36834nbl - basic vinyl round ring binder 1-1 2 capacity dark blue - wlj36834nbl",
+    "category": "adapter rings",
+    "brand": "wilson jones",
+    "modelno": "",
+    "price": "14.64"
+   },
+   "label": 0,
+   "jaccard": 0.3870967741935484,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-340-363",
+   "left": {
+    "id": "340",
+    "title": "birdhouse tony hawk 2gb full skull skatedrive usb flash drive",
+    "category": "usb drives",
+    "brand": "ep memory",
+    "modelno": "bh-skthfs/2g",
+    "price": "9.84"
+   },
+   "right": {
+    "id": "363",
+    "title": "birdhouse tony hawk 16gb ptero skatedrive usb flash drive",
+    "category": "usb flash drives",
+    "brand": "action",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-735-12273",
+   "left": {
+    "id": "735",
+    "title": "bell o high-speed hdmi cable with ethernet 1-meter",
+    "category": "tv accessories",
+    "brand": "bell ' o",
+    "modelno": "hd7101",
+    "price": "59.99"
+   },
+   "right": {
+    "id": "12273",
+    "title": "bell o hd7101 high speed hdmi cables",
+    "category": "hdmi cables",
+    "brand": "bell ' o",
+    "modelno": "hd7101",
+    "price": "31.97"
+   },
+   "label": 1,
+   "jaccard": 0.42857142857142855,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-2238-21675",
+   "left": {
+    "id": "2238",
+    "title": "ge 3.6 v 700mah cordless phone battery",
+    "category": "electronics - general",
+    "brand": "ge",
+    "modelno": "36562",
+    "price": "0.0"
+   },
+   "right": {
+    "id": "21675",
+    "title": "ge cordless phone nimh 3.6 v 700mah battery 76413",
+    "category": "batteries",
+    "brand": "general electric",
+    "modelno": "76413",
+    "price": "9.07"
+   },
+   "label": 0,
+   "jaccard": 0.6190476190476191,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-414-6762",
+   "left": {
+    "id": "414",
+    "title": "sony bdp-s360 1080p blu-ray disc player - refurbished",
+    "category": "dvd players",
+    "brand": "sony",
+    "modelno": "rbbdp-s360",
+    "price": "79.0"
+   },
+   "right": {
+    "id": "6762",
+    "title": "sony bdp-s280 blu-ray disc player",
+    "category": "blu-ray disc players",
+    "brand": "sony",
+    "modelno": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.5882352941176471,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1304-10473",
+   "left": {
+    "id": "1304",
+    "title": "tribeca varsity jacket hard shell case for ipod touch dallas cowboys",
+    "category": "mp3 accessories",
+    "brand": "tribeca",
+    "modelno": "fva3767",
+    "price": "18.54"
+   },
+   "right": {
+    "id": "10473",
+    "title": "dallas cowboys ipod touch 4g hard case",
+    "category": "computers accessories",
+    "brand": "tribeca",
+    "modelno": "",
+    "price": "29.99"
+   },
+   "label": 0,
+   "jaccard": 0.5652173913043478,
+   "stratum": "hard_neg"
+  }
+ ],
+ "writer_examples": [
+  {
+   "id": "train-788-14901",
+   "left": {
+    "id": "788",
+    "title": "humminbird 778c hd color fishing system",
+    "category": "fishing and boating",
+    "brand": "humminbird",
+    "modelno": "407930-1",
+    "price": "499.46"
+   },
+   "right": {
+    "id": "14901",
+    "title": "humminbird 778c hd fishfinder",
+    "category": "fishfinders",
+    "brand": "humminbird",
+    "modelno": "407930-1",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.5294117647058824,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-1242-6400",
+   "left": {
+    "id": "1242",
+    "title": "gear head 2.4 ghz wireless optical nano mouse black",
+    "category": "mice",
+    "brand": "gear head",
+    "modelno": "mp2800blk",
+    "price": "15.82"
+   },
+   "right": {
+    "id": "6400",
+    "title": "2.4 ghz wireless optical nano mouse black usb",
+    "category": "mice",
+    "brand": "gear head",
+    "modelno": "mp2375blk",
+    "price": "12.0"
+   },
+   "label": 0,
+   "jaccard": 0.75,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-1952-1770",
+   "left": {
+    "id": "1952",
+    "title": "pc treasures clickit classic mouse black",
+    "category": "mice",
+    "brand": "pc treasures",
+    "modelno": "07667",
+    "price": "16.8"
+   },
+   "right": {
+    "id": "1770",
+    "title": "pc treasures clickit classic mouse - copper 07724",
+    "category": "mice",
+    "brand": "pc treasures",
+    "modelno": "07724",
+    "price": "16.8"
+   },
+   "label": 0,
+   "jaccard": 0.75,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-324-19773",
+   "left": {
+    "id": "324",
+    "title": "corsair xms2 2gb 2 x 1gb pc2-6400 800mhz 240-pin ddr2 cl5 dual channel desktop memory kit - twin2x4096-6400c5c",
+    "category": "memory",
+    "brand": "corsair",
+    "modelno": "twin2x4096-6400c5c",
+    "price": "72.82"
+   },
+   "right": {
+    "id": "19773",
+    "title": "corsair xms2 2gb 2 x 1gb pc2-6400 800mhz 240-pin ddr2 cl5 dual channel desktop memory kit - twin2x2048-6400",
+    "category": "computer components",
+    "brand": "corsair",
+    "modelno": "twin2x2048-6400",
+    "price": "32.99"
+   },
+   "label": 0,
+   "jaccard": 0.7777777777777778,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-336-20174",
+   "left": {
+    "id": "336",
+    "title": "xerox 108r00657 extended-capacity maintenance kit for work centre c2424",
+    "category": "printers",
+    "brand": "xerox",
+    "modelno": "108r00657",
+    "price": "154.84"
+   },
+   "right": {
+    "id": "20174",
+    "title": "extended capacity maintenance kit workcentre c2424",
+    "category": "printer accessories",
+    "brand": "tektronix",
+    "modelno": "108r00657",
+    "price": "154.84"
+   },
+   "label": 1,
+   "jaccard": 0.45454545454545453,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-2125-16072",
+   "left": {
+    "id": "2125",
+    "title": "scosche it4scbk tch 3 switchback",
+    "category": "mp3 accessories",
+    "brand": "scosche",
+    "modelno": "it4scbk",
+    "price": "32.88"
+   },
+   "right": {
+    "id": "16072",
+    "title": "scosche switchkase hybrid case for ipod touch 4g black",
+    "category": "cases",
+    "brand": "scosche",
+    "modelno": "it4scbk",
+    "price": "15.25"
+   },
+   "label": 1,
+   "jaccard": 0.30434782608695654,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-1129-8643",
+   "left": {
+    "id": "1129",
+    "title": "buffalo technology drivestation axis 1.5 tb usb 2.0 desktop external hard drive with buffalo tools and turbo pc hd-lb1 .5 tu2 black",
+    "category": "hard drives",
+    "brand": "buffalo technology",
+    "modelno": "hd-lb1 .5 tu2",
+    "price": "101.82"
+   },
+   "right": {
+    "id": "8643",
+    "title": "buffalo technology drivestation axis 1 tb usb 2.0 desktop external hard drive with buffalo tools and turbo pc hd-lb1 .0 tu2 black",
+    "category": "computers accessories",
+    "brand": "buffalo technology",
+    "modelno": "hd-lb1 .0 tu2",
+    "price": "76.77"
+   },
+   "label": 0,
+   "jaccard": 0.7272727272727273,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-2265-18698",
+   "left": {
+    "id": "2265",
+    "title": "siig mini displayport to hdmi adapter",
+    "category": "electronics - general",
+    "brand": "siig",
+    "modelno": "cb-dp0b11-s1",
+    "price": "19.88"
+   },
+   "right": {
+    "id": "18698",
+    "title": "mini displayport to hdmi adapter",
+    "category": "video cables",
+    "brand": "siig",
+    "modelno": "cb-dp0b11-s1",
+    "price": "15.14"
+   },
+   "label": 1,
+   "jaccard": 0.6666666666666666,
+   "stratum": "pos"
+  }
+ ]
+}
