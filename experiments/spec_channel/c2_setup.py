@@ -1,4 +1,4 @@
-"""C2 (Walmart-Amazon entity matching) setup: stratified pilot sample, spec-writer examples, and a context-truncation check on Purdue.
+"""C2 (Walmart-Amazon entity matching) setup: stratified pilot and full-run samples, spec-writer examples, and a context-truncation check on Purdue.
 
 Design and results: REPORT.md.
 """
@@ -17,10 +17,12 @@ from prompts import EM_EXECUTOR, EM_REF_SPEC, EM_WRITER, em_examples, em_record 
 
 DATA = REPO / "testdata" / "fm_data_tasks" / "datasets" / "entity_matching" / "structured" / "Walmart-Amazon"
 OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_sample.json"
-SEED = 0
+FULL_OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_full_sample.json"
+SEED, FULL_SEED = 0, 2
 N_POS, N_HARD_NEG, N_RAND_NEG = 40, 30, 10
+FULL_STRATA = (75, 56, 19)  # 150 pairs at pilot proportions
 K_POS, K_HARD_NEG = 4, 4
-PURDUE_MODELS = ["gemma3:12b", "llama3.3:70b", "qwen2.5:72b"]
+PURDUE_MODELS = ["gemma3:12b", "llama3.3:70b", "qwen2.5:72b", "mistral:latest"]
 
 
 def load_pairs(split: str) -> list[dict]:
@@ -67,6 +69,24 @@ def build() -> dict:
     return data
 
 
+def build_full() -> dict:
+    # Fresh test pairs disjoint from the pilot; writer examples reused so the writer prompt is unchanged.
+    pilot = json.loads(OUT.read_text())
+    used = {p["id"] for p in pilot["pilot"]}
+    items = stratified([p for p in load_pairs("test") if p["id"] not in used], *FULL_STRATA, random.Random(FULL_SEED))
+    assert not used & {p["id"] for p in items}
+    data = {"seed": FULL_SEED, "dataset": pilot["dataset"], "excludes": OUT.name, "items": items,
+            "writer_examples": pilot["writer_examples"]}
+    FULL_OUT.write_text(json.dumps(data, indent=1))
+    counts = {k: sum(p["stratum"] == k for p in items) for k in ("pos", "hard_neg", "rand_neg")}
+    hard = [p["jaccard"] for p in items if p["stratum"] == "hard_neg"]
+    longest = max(items, key=lambda p: len(em_record(p["left"]) + em_record(p["right"])))
+    print(f"full={len(items)} {counts} overlap_with_pilot=0 hard_neg jaccard range {min(hard):.2f}-{max(hard):.2f}")
+    print(f"longest executor prompt chars (ref spec)="
+          f"{len(EM_EXECUTOR.format(spec=EM_REF_SPEC, left=em_record(longest['left']), right=em_record(longest['right'])))}")
+    return data
+
+
 def truncation_check() -> None:
     # Secret word at the very start of a ~6k-token prompt; a backend that truncates from the front cannot recall it.
     key = load_env()["PURDUE"]
@@ -81,6 +101,6 @@ def truncation_check() -> None:
 
 
 if __name__ == "__main__":
-    build()
+    build_full() if "--full" in sys.argv else build()
     if "--truncation-check" in sys.argv:
         truncation_check()

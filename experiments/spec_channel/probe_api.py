@@ -4,6 +4,7 @@ Design and results: REPORT.md.
 """
 from __future__ import annotations
 
+import http.client
 import json
 import sys
 import time
@@ -36,6 +37,9 @@ def call(url: str, headers: dict, body: dict | None = None) -> tuple[int, dict, 
             status, hdrs, raw = r.status, dict(r.headers), r.read()
     except urllib.error.HTTPError as e:
         status, hdrs, raw = e.code, dict(e.headers), e.read()
+    except (urllib.error.URLError, OSError, http.client.HTTPException) as e:
+        # Network-level failure (DNS, reset, timeout): status 0 so callers retry instead of crashing.
+        status, hdrs, raw = 0, {}, json.dumps({"_exception": repr(e)[:300]}).encode()
     latency = time.time() - t0
     try:
         payload = json.loads(raw) if raw else None

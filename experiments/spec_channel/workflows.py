@@ -10,7 +10,7 @@ import tarfile
 from dataclasses import dataclass
 from typing import Callable
 
-from c2_setup import OUT as C2_SAMPLE, load_pairs, stratified
+from c2_setup import FULL_OUT as C2_FULL_SAMPLE, OUT as C2_SAMPLE, load_pairs, stratified
 from lexical_baseline import TARBALL, load, norm
 from prompts import (DI_EXECUTOR, DI_REF_SPEC, DI_WRITER, EM_EXECUTOR, EM_REF_SPEC, EM_WRITER,
                      di_examples, di_record, em_examples, em_record)
@@ -55,12 +55,12 @@ def c1() -> Workflow:
                     lambda spec, it: DI_EXECUTOR.format(spec=spec, record=di_record(it["record"])), parse_city, pilot, screen)
 
 
-def c2() -> Workflow:
-    sample = json.loads(C2_SAMPLE.read_text())
+def c2(name: str = "c2", path=C2_SAMPLE, key: str = "pilot") -> Workflow:
+    sample = json.loads(path.read_text())
     screen = stratified(load_pairs("valid"), 3, 7, 0, random.Random(SCREEN_SEED))
-    return Workflow("c2", EM_WRITER.format(examples=em_examples(sample["writer_examples"])), EM_REF_SPEC,
+    return Workflow(name, EM_WRITER.format(examples=em_examples(sample["writer_examples"])), EM_REF_SPEC,
                     lambda spec, it: EM_EXECUTOR.format(spec=spec, left=em_record(it["left"]), right=em_record(it["right"])),
-                    parse_yes, sample["pilot"], screen)
+                    parse_yes, sample[key], screen)
 
 
-WORKFLOWS = {"c1": c1, "c2": c2}
+WORKFLOWS = {"c1": c1, "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items")}

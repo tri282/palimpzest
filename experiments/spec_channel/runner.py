@@ -1,7 +1,8 @@
 """Pilot runner for the Specification channel: fresh specs per replicate, shuffled downstream calls, resumable JSONL logs.
 
-Usage: python -I runner.py <run_id> --workflow c1|c2 [--replicates 3] [--items N] [--cells all|factorial] [--seed 0]
+Usage: python -I runner.py <run_id> --workflow c1|c2|c2_full [--replicates 3] [--items N] [--cells all|factorial] [--ref-executor] [--seed 0]
 Outputs results/runs/<run_id>/{config.json, specs.jsonl, calls.jsonl}. Design and results: REPORT.md.
+Exit codes: 0 done, 2 transient stop (provider outage; re-run resumes), 3 config mismatch (do not retry).
 """
 from __future__ import annotations
 
@@ -22,6 +23,7 @@ from workflows import WORKFLOWS  # noqa: E402
 
 WRITERS = {"A0": "gemini-3.5-flash-lite", "A1": "qwen2.5:72b"}
 EXECUTORS = {"B0": "gemma3:12b", "B1": "llama3.3:70b"}
+REF_EXECUTORS = {"B2": "gpt-oss:120b", "B3": "gemma3:27b"}  # profiling-only references, never candidate plans (D6)
 WRITER_TEMP, EXECUTOR_TEMP = 0.7, 0.0
 REF = "S_ref"
 
@@ -69,23 +71,26 @@ def main() -> int:
     ap.add_argument("--replicates", type=int, default=3)
     ap.add_argument("--items", type=int, default=0, help="limit pilot items (0 = all)")
     ap.add_argument("--cells", choices=["all", "factorial"], default="all")
+    ap.add_argument("--ref-executor", action="store_true", help="add the held-out reference executors B2, B3")
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
 
     wf = WORKFLOWS[args.workflow]()
     items = wf.pilot[: args.items] if args.items else wf.pilot
     a_arms = list(WRITERS) + ([REF] if args.cells == "all" else [])
-    cells = [(a, b) for a in a_arms for b in EXECUTORS]
+    executors = EXECUTORS | (REF_EXECUTORS if args.ref_executor else {})
+    cells = [(a, b) for a in a_arms for b in executors]
 
     run_dir = REPO / "experiments" / "spec_channel" / "results" / "runs" / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)
-    config = {**vars(args), "writers": WRITERS, "executors": EXECUTORS, "writer_temp": WRITER_TEMP,
+    config = {**vars(args), "writers": WRITERS, "executors": executors, "writer_temp": WRITER_TEMP,
               "executor_temp": EXECUTOR_TEMP, "cells": cells, "n_items": len(items), "writer_prompt": wf.writer_prompt,
               "ref_spec": wf.ref_spec}
     cfg_path = run_dir / "config.json"
     config = json.loads(json.dumps(config))  # tuples -> lists, so a resumed run compares equal
     if cfg_path.exists() and json.loads(cfg_path.read_text()) | {"started": None} != config | {"started": None}:
-        sys.exit(f"config mismatch with existing run {args.run_id}; use a new run_id")
+        print(f"config mismatch with existing run {args.run_id}; use a new run_id", flush=True)
+        return 3
     if not cfg_path.exists():
         cfg_path.write_text(json.dumps({**config, "started": now()}, indent=1))
     specs_path, calls_path = run_dir / "specs.jsonl", run_dir / "calls.jsonl"
@@ -104,7 +109,8 @@ def main() -> int:
                "timestamp": now(), **r}
         append(specs_path, row)
         if row["error"]:
-            sys.exit(f"spec generation failed for replicate {rep} arm {a}: {row['error']}")
+            print(f"spec generation failed for replicate {rep} arm {a}: {row['error']}; stopping. Re-run to resume.", flush=True)
+            return 2
         specs[(rep, a)] = row
         print(f"spec rep={rep} {a} words={row['spec_words']} tokens_out={row['tokens_out']}", flush=True)
 
@@ -118,7 +124,7 @@ def main() -> int:
     done = {k for k, c in latest_ok(read_jsonl(calls_path)).items() if not c["error"]}
     jobs = []
     for rep in rng.sample(range(args.replicates), args.replicates):
-        for b in rng.sample(list(EXECUTORS), len(EXECUTORS)):
+        for b in rng.sample(list(executors), len(executors)):
             block = [(rep, a, b, it) for a, bb in cells if bb == b for it in items]
             rng.shuffle(block)
             jobs += block
@@ -129,15 +135,15 @@ def main() -> int:
     prev_model, t0, failures = None, time.time(), 0
     for k, (rep, a, b, it) in enumerate(todo):
         spec, spec_hash = spec_for(rep, a)
-        r = ask(EXECUTORS[b], wf.executor_prompt(spec, it), EXECUTOR_TEMP)
+        r = ask(executors[b], wf.executor_prompt(spec, it), EXECUTOR_TEMP)
         pred = wf.parse(r["content"])
         append(calls_path, {
             "run_id": args.run_id, "workflow": wf.name, "seed": args.seed, "replicate": rep, "arm_a": a, "arm_b": b,
             "operator": "down", "item_id": it["id"], "stratum": it.get("stratum"), "spec_hash": spec_hash,
-            "call_index": call_index[(rep, a, b, it["id"])], "model_switch": prev_model not in (None, EXECUTORS[b]),
+            "call_index": call_index[(rep, a, b, it["id"])], "model_switch": prev_model not in (None, executors[b]),
             "label": it["label"], "prediction": pred, "correct": pred == it["label"], "unparsed": pred is None,
             "timestamp": now(), **r})
-        prev_model = EXECUTORS[b]
+        prev_model = executors[b]
         failures = failures + 1 if r["error"] else 0
         if failures >= MAX_CONSECUTIVE_FAILURES:
             print(f"{failures} consecutive failed calls (last: {r['error']}); stopping. Re-run the same command to resume.", flush=True)
