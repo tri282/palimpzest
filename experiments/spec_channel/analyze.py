@@ -6,13 +6,16 @@ from __future__ import annotations
 
 import json
 import math
+import re
 import sys
+import tarfile
 from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lexical_baseline import TARBALL, load as load_c1, rules as c1_rules  # noqa: E402
 from em_lexical_baseline import EM, f1, jaccard, model_tokens, pairs, table, tokens  # noqa: E402
 from probe_api import REPO  # noqa: E402
 
@@ -226,6 +229,28 @@ def analyze(run_id: str) -> dict:
                                                reps, len(items), rng),
         }
         out["lexical_baseline"] = lexical_c2(items, labels)
+
+    # 9. C1 redesign checks (c1-redesign.md II.3): P1 best factorial cell vs the area-code x phone-format rule on the
+    # same records; P2 spec lines that state the phone-format convention (flagged by keyword, then read by hand).
+    if cfg["workflow"].startswith("c1"):
+        with tarfile.open(TARBALL) as tar:
+            split = {s: load_c1(tar, s) for s in ("train", "valid", "test")}
+        rule = c1_rules(split["train"])["area_code_x_phone_format"]
+        labels = [calls[(reps[0], REF, "B0", it)]["label"] for it in items]
+        rule_ok = np.array([rule(split[it.split("-")[0]][int(it.split("-")[1])]) == y for it, y in zip(items, labels)], dtype=float)
+        fact = [c for c in cells if c[0] != REF]
+        best = max(fact, key=lambda c: np.mean([acc[r][c] for r in reps]))
+        diff = np.mean([correct[r][best] for r in reps], axis=0) - rule_ok
+        boot = [diff[rng.integers(0, len(diff), len(diff))].mean() for _ in range(N_BOOT)]
+        out["p1_vs_rule"] = {
+            "rule_acc": round(float(rule_ok.mean()), 3), "best_cell": "/".join(best),
+            "best_acc_per_rep": {r: round(acc[r][best], 3) for r in reps},
+            "reps_beating_rule": f"{sum(acc[r][best] > rule_ok.mean() for r in reps)}/{len(reps)}",
+            "pooled_diff": round(float(diff.mean()), 4),
+            "ci95_records": [round(float(np.percentile(boot, 2.5)), 4), round(float(np.percentile(boot, 97.5)), 4)]}
+        pat = re.compile(r"slash|dash|hyphen|\d{3}\s*/|phone[^.\n]{0,40}format|format[^.\n]{0,40}phone", re.I)
+        out["p2_phone_format"] = {f"rep{r} {a}": [ln.strip() for ln in s["content"].splitlines() if pat.search(ln)]
+                                  for (r, a), s in sorted(specs.items())}
     return out
 
 
@@ -250,6 +275,12 @@ def report(res: dict) -> None:
         print("F1 per cell:", res["f1"]["per_cell"])
         print(f"F1 interaction per rep {res['f1']['interaction_per_replicate']} CI95(two-level) {res['f1']['interaction_ci95_two_level']}")
         print("lexical baseline (same records):", res["lexical_baseline"])
+    if "p1_vs_rule" in res:
+        print("P1 vs rule:", res["p1_vs_rule"])
+        hits = {k: v for k, v in res["p2_phone_format"].items() if v}
+        print(f"P2 specs flagged for phone format: {len(hits)}/{len(res['p2_phone_format'])} (read each by hand)")
+        for k, lines in hits.items():
+            print(f"  {k}: {lines[:3]}")
 
 
 def main(run_ids: list[str]) -> int:

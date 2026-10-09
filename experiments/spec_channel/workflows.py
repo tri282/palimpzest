@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import random
 import tarfile
+from collections import defaultdict
 from dataclasses import dataclass
 from typing import Callable
 
@@ -18,6 +19,7 @@ from prompts import (DI_EXECUTOR, DI_REF_SPEC, DI_WRITER, EM_EXECUTOR, EM_REF_SP
 SEED = 0
 SCREEN_SEED = 1
 C1_K_EXAMPLES = 12
+C1_STRAT_SEED, C1_PER_CELL = 2, 3
 
 
 @dataclass
@@ -41,17 +43,31 @@ def parse_city(text: str | None) -> str | None:
     return norm(lines[0].strip(" *\"'.")) if lines else None
 
 
-def c1() -> Workflow:
+def c1_examples(train: list[dict], k: int, rng: random.Random) -> list[dict]:
+    # C1_PER_CELL rows from every (phone format, city) cell with >= 5 train rows, so both sources' naming is shown; rest random.
+    cells = defaultdict(list)
+    for r in train:
+        cells[("/" in r["phone"], norm(r["city"]))].append(r)
+    picked = [r for rows in cells.values() if len(rows) >= 5 for r in rng.sample(rows, C1_PER_CELL)]
+    ids = {id(r) for r in picked}
+    out = picked + rng.sample([r for r in train if id(r) not in ids], k - len(picked))
+    rng.shuffle(out)
+    return out
+
+
+def c1(name: str = "c1", split: str = "test", k: int = 0) -> Workflow:
+    """k = 0: pilot (12 random writer examples); k > 0: c1_examples stratified set."""
     with tarfile.open(TARBALL) as tar:
         train, valid, test = (load(tar, s) for s in ("train", "valid", "test"))
-    examples = random.Random(SEED).sample(train, C1_K_EXAMPLES)
-    pilot = [{"id": f"test-{i}", "record": r, "label": norm(r["city"])} for i, r in enumerate(test)]
+    examples = c1_examples(train, k, random.Random(C1_STRAT_SEED)) if k else random.Random(SEED).sample(train, C1_K_EXAMPLES)
+    rows = {"valid": valid, "test": test}[split]
+    pilot = [{"id": f"{split}-{i}", "record": r, "label": norm(r["city"])} for i, r in enumerate(rows)]
     # Screen: 5 dash-phone + 5 slash-phone valid rows; the two phone formats carry different city conventions.
     rng = random.Random(SCREEN_SEED)
     rows = list(enumerate(valid))
     screen = [{"id": f"valid-{i}", "record": r, "label": norm(r["city"])}
               for i, r in rng.sample([x for x in rows if "/" not in x[1]["phone"]], 5) + rng.sample([x for x in rows if "/" in x[1]["phone"]], 5)]
-    return Workflow("c1", DI_WRITER.format(examples=di_examples(examples)), DI_REF_SPEC,
+    return Workflow(name, DI_WRITER.format(examples=di_examples(examples)), DI_REF_SPEC,
                     lambda spec, it: DI_EXECUTOR.format(spec=spec, record=di_record(it["record"])), parse_city, pilot, screen)
 
 
@@ -63,4 +79,4 @@ def c2(name: str = "c2", path=C2_SAMPLE, key: str = "pilot") -> Workflow:
                     parse_yes, sample[key], screen)
 
 
-WORKFLOWS = {"c1": c1, "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items")}
+WORKFLOWS = {"c1": c1, "c1_k40": lambda: c1("c1_k40", "valid", 40), "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items")}
