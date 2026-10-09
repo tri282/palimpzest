@@ -1401,6 +1401,29 @@
      "p": 0.2265
     }
    }
+  },
+  "p1_vs_rule": {
+   "rule_acc": 0.895,
+   "best_cell": "A1/B0",
+   "best_acc_per_rep": {
+    "0": 0.709,
+    "1": 0.791,
+    "2": 0.756
+   },
+   "reps_beating_rule": "0/3",
+   "pooled_diff": -0.1434,
+   "ci95_records": [
+    -0.2287,
+    -0.0659
+   ]
+  },
+  "p2_phone_format": {
+   "rep0 A0": [],
+   "rep0 A1": [],
+   "rep1 A0": [],
+   "rep1 A1": [],
+   "rep2 A0": [],
+   "rep2 A1": []
   }
  }
 ]
