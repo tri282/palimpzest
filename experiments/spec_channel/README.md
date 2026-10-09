@@ -1,6 +1,6 @@
 # Specification Channel Experiment
 
-Measures whether an optimizer that profiles LLM operators one at a time picks the right plan when one LLM writes the instructions another LLM follows. Results and method: `REPORT.md`.
+Measures whether an optimizer that profiles LLM operators one at a time picks the right plan when one LLM writes the instructions another LLM follows. Results and method: `REPORT.md`. Pre-registered C2 full run: `PREREG-C2.md`.
 
 ---
 
@@ -8,13 +8,15 @@ Measures whether an optimizer that profiles LLM operators one at a time picks th
 
 | file | role |
 |------|------|
-| `runner.py` | pilot runner: fresh specs per replicate, shuffled downstream calls, resumable JSONL logs |
-| `analyze.py` | offline analysis: interaction, independence baseline and regret, cost model, workload sizing |
-| `workflows.py` | workload definitions: `c1` (Restaurant city imputation), `c2` (Walmart-Amazon matching) |
+| `runner.py` | runner: fresh specs per replicate, shuffled downstream calls, resumable JSONL logs; `--ref-executor` adds held-out references B2, B3 |
+| `run_resilient.sh` | restarts `runner.py` after outages or crashes until the run completes |
+| `analyze.py` | offline analysis: interaction and estimability tests, independence baseline and regret per reference executor, cost model, cache sensitivity, F1, workload sizing |
+| `workflows.py` | workload definitions: `c1` (Restaurant city imputation), `c2` (Walmart-Amazon matching, pilot sample), `c2_full` (150-pair full-run sample) |
 | `prompts.py` | writer, executor, and reference-spec templates |
 | `llm.py` | single-call client for Purdue GenAI and Gemini: pacing, retries, token and cost fields |
 | `screen.py` | cheap screens: spec variation across writers, executor sensitivity to spec |
-| `c2_setup.py` | builds the stratified C2 sample and spec-writer examples |
+| `c2_setup.py` | builds the stratified C2 pilot sample (`--full`: full-run sample disjoint from the pilot) and spec-writer examples |
+| `ref_screen.py` | screens candidate reference executors on C2 validation pairs |
 | `lexical_baseline.py`, `em_lexical_baseline.py` | zero-API rule baselines for C1 and C2 |
 | `model_baseline.py`, `probe_api.py` | per-model sanity baseline and API probe |
 | `results/` | screen outputs, C2 sample, `analysis.json`, and `runs/<run_id>/` logs |
@@ -80,10 +82,21 @@ python -I experiments/spec_channel/runner.py pilot-c1 --workflow c1
 setsid nohup python -I experiments/spec_channel/runner.py pilot-c2 --workflow c2 >> experiments/spec_channel/results/runs/pilot-c2.log 2>&1 < /dev/null &
 ```
 
+**Run the C2 full experiment (unattended, ~16 h):**  
+
+```bash
+python -I experiments/spec_channel/c2_setup.py --full
+setsid nohup experiments/spec_channel/run_resilient.sh full-c2 --workflow c2_full --replicates 9 --ref-executor \
+  >> experiments/spec_channel/results/runs/full-c2.log 2>&1 < /dev/null &
+```
+
+* **Exit codes:** `runner.py` returns 0 when done, 2 on a transient stop (outage, failed spec call), 3 on a config mismatch. `run_resilient.sh` restarts on any non-zero code except 3, waiting `RETRY_SLEEP` seconds (default 900), at most `MAX_RESTARTS` times (default 30).
+
 **Analyze:**  
 
 ```bash
 python -I experiments/spec_channel/analyze.py pilot-c2 pilot-c1
+python -I experiments/spec_channel/analyze.py full-c2
 ```
 
 Writes `results/analysis.json` and prints a per-workload summary.
