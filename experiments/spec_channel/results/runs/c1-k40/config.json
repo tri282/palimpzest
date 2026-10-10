@@ -1,0 +1,48 @@
+{
+ "run_id": "c1-k40",
+ "workflow": "c1_k40",
+ "replicates": 3,
+ "items": 0,
+ "cells": [
+  [
+   "A0",
+   "B0"
+  ],
+  [
+   "A0",
+   "B1"
+  ],
+  [
+   "A1",
+   "B0"
+  ],
+  [
+   "A1",
+   "B1"
+  ],
+  [
+   "S_ref",
+   "B0"
+  ],
+  [
+   "S_ref",
+   "B1"
+  ]
+ ],
+ "ref_executor": false,
+ "seed": 0,
+ "writers": {
+  "A0": "gemini-3.5-flash-lite",
+  "A1": "qwen2.5:72b"
+ },
+ "executors": {
+  "B0": "gemma3:12b",
+  "B1": "llama3.3:70b"
+ },
+ "writer_temp": 0.7,
+ "executor_temp": 0.0,
+ "n_items": 156,
+ "writer_prompt": "You are writing instructions for an assistant that will fill in the missing city value of restaurant records, one record at a time. The records come from a dataset with its own labeling conventions.\n\nBelow are example records with their correct city values. Write concise imputation rules, at most 250 words, that capture the conventions these examples imply: which city names to use, at what granularity, how to spell them, and which cues in the other fields decide the choice.\n\nOutput the rules only.\n\nname: benita's frites; addr: 1433 third st. promenade; phone: 310-458-2889; type: fast food; city: santa monica\nname: grill on the alley; addr: 9560 dayton way; phone: 310/276-0615; type: american; city: los angeles\nname: l'orangerie; addr: 903 n. la cienega blvd.; phone: 310/652-9770; type: french; city: los angeles\nname: water grill; addr: 544 s. grand ave.; phone: 213-891-0900; type: seafood; city: los angeles\nname: cafe blanc; addr: 9777 little santa monica blvd.; phone: 310-888-0108; type: pacific new wave; city: beverly hills\nname: bone's restaurant; addr: 3130 piedmont rd. ne; phone: 404-237-2663; type: steakhouses; city: atlanta\nname: drai's; addr: 730 n. la cienega blvd.; phone: 310/358-8585; type: french; city: los angeles\nname: grill  the; addr: 9560 dayton way; phone: 310-276-0615; type: american (traditional); city: beverly hills\nname: sushisay; addr: 38 e. 51st st.; phone: 212-755-1780; type: japanese; city: new york city\nname: steakhouse  the; addr: 128 e. fremont st.; phone: 702-382-1600; type: steakhouses; city: las vegas\nname: sweet lady jane; addr: 8360 melrose ave.; phone: 213-653-7145; type: desserts; city: la\nname: indo cafe; addr: 10428 1/2 national blvd.; phone: 310-815-1290; type: indonesian; city: la\nname: le central; addr: 453 bush st.; phone: 415/391-2233; type: french; city: san francisco\nname: campanile; addr: 624 s. la brea ave.; phone: 213-938-1447; type: californian; city: los angeles\nname: la grenouille; addr: 3 e. 52nd st.; phone: 212-752-1495; type: french (classic); city: new york city\nname: michael's (los angeles); addr: 1147 third st.; phone: 310-451-0843; type: californian; city: santa monica\nname: ralph's diner; addr: 3000 las vegas blvd. s; phone: 702/732-6330; type: coffee shops/diners; city: las vegas\nname: xunta; addr: 174 1st ave.  between 10th and 11th sts.; phone: 212/614-0620; type: mediterranean; city: new york\nname: citrus; addr: 6703 melrose ave.; phone: 213-857-0034; type: californian; city: los angeles\nname: deacon burton's soulfood restaurant; addr: 1029 edgewood ave. se; phone: 404-523-1929; type: southern/soul; city: atlanta\nname: mayflower cuisinier; addr: 4750 w. sahara ave.; phone: 702-870-8432; type: chinese; city: las vegas\nname: bone's; addr: 3130 piedmont road; phone: 404/237-2663; type: american; city: atlanta\nname: margarita's mexican cantina; addr: 3120 las vegas blvd. s; phone: 702/794-8200; type: mexican; city: las vegas\nname: one market; addr: 1 market st.; phone: 415/777-5577; type: american; city: san francisco\nname: holt bros. bar-b-q; addr: 6359 jimmy carter blvd.  at buford hwy.  norcross; phone: 770/242-3984; type: barbecue; city: atlanta\nname: seryna; addr: 11 e. 53rd st.; phone: 212-980-9393; type: japanese; city: new york city\nname: tu lan; addr: 8 sixth st.; phone: 415-626-0927; type: vietnamese; city: san francisco\nname: billy's; addr: 948 1st ave.  between 52nd and 53rd sts.; phone: 212/753-1870; type: american; city: new york\nname: veni vidi vici; addr: 41 14th st.; phone: 404/875-8424; type: italian; city: atlanta\nname: le select; addr: 507 columbus ave.  between 84th and 85th sts.; phone: 212/875-1993; type: american; city: new york\nname: bradshaw's restaurant; addr: 2911 s. pharr court; phone: 404-261-7015; type: southern/soul; city: atlanta\nname: jan's family restaurant; addr: 8424 beverly blvd.; phone: 213-651-2866; type: coffee shops; city: la\nname: postrio; addr: 545 post st.; phone: 415-776-7825; type: californian; city: san francisco\nname: nicky blair's; addr: 3925 paradise rd.; phone: 702-792-9900; type: italian; city: las vegas\nname: wa-ha-ka oaxaca mexican grill; addr: 2141 polk st.; phone: 415-775-1055; type: mexican; city: san francisco\nname: r&g lounge; addr: 631 b kearny st.; phone: 415/982-7877; type: or 415/982-3811 asian; city: san francisco\nname: valentino; addr: 3115 pico blvd.; phone: 310-829-4313; type: italian; city: santa monica\nname: spago; addr: 1114 horn ave.; phone: 310/652-4025; type: californian; city: los angeles\nname: carnival world; addr: 3700 w. flamingo rd.; phone: 702/252-7777; type: buffets; city: las vegas\nname: belvedere  the; addr: 9882 little santa monica blvd.; phone: 310-788-2306; type: pacific new wave; city: beverly hills",
+ "ref_spec": "Fill in the missing city for this restaurant record.",
+ "started": "2026-10-10T16:48:18.710621+00:00"
+}
