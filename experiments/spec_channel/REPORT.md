@@ -1,9 +1,9 @@
-# Specification Channel Pilot: Report
+# Specification Channel: Report
 
 Goal: test whether an optimizer that profiles LLM operators one at a time picks the right plan when one LLM writes the instructions another LLM follows.  
-*Requirements: none to read it. How to reproduce: `README.md`. Raw logs: `results/runs/pilot-c1`, `results/runs/pilot-c2`. Analysis output: `results/analysis.json`.*  
+*Requirements: none to read it. How to reproduce: `README.md`. Raw logs: `results/runs/pilot-c1`, `results/runs/pilot-c2`, `results/runs/full-c2`, `results/runs/c1-k40`. Full-run pre-registration: `PREREG-C2.md`. Analysis output: `results/analysis.json`.*  
 
-Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7).  
+Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1 retest: 2026-10-10 (Sections VII, VIII).  
 
 ---
 
@@ -14,6 +14,8 @@ Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7).
 * **Quality vs cost:** the optimizer's pick still meets the quality bar. The mistake shows up as cost.
 * **Cost composition:** generated instructions make every downstream call 2.6-6.5x longer. Adding per-operator costs underestimates downstream cost by 67-81%; scaling by instruction length is within about 3%.
 * **Two workloads, two behaviors:** in product matching (C2) the interaction keeps its direction in all 3 replicates but is not significant once variation between drafts of the rules is counted (Section IV.7). In city imputation (C1) the generated instructions hurt every plan, and the largest source of variation is which *writing* of the instructions you get, not which writer.
+* **Full C2 run (Section VII):** 150 new pairs, 9 replicates, two held-out reference executors. The executor-gap shift is large and significant (p < 0.001); the interaction is not (p = 0.34). Which reference executor profiles the writer decides whether the optimizer overpays (~5.6x) or loses quality (up to 0.15).
+* **C1 retest (Section VIII):** 40 stratified writer examples did not help. No writer stated the phone-format convention; every writer plan scores ~0.52 against the simple rule's 0.840. C1 is dropped as a workload.
 
 ---
 
@@ -175,7 +177,7 @@ The composed estimate scales the executor's generic token count by the rules-to-
 
 Sized so the observed interaction is detectable (5% significance, 80% power).
 
-*Note: an earlier version proposed running the generic-instruction cells once. llama's generic cells vary across replicates at temperature 0 (0.94-0.95 in C2, 0.81-0.83 in C1), so they run every replicate. The planned C2 run is 150 new pairs x 9 replicates with a held-out reference executor, about 12,150 calls. C1 is to be redesigned before scaling.*
+*Note: an earlier version proposed running the generic-instruction cells once. llama's generic cells vary across replicates at temperature 0 (0.94-0.95 in C2, 0.81-0.83 in C1), so they run every replicate. The planned C2 run is 150 new pairs x 9 replicates with a held-out reference executor, about 12,150 calls. C1 is to be redesigned before scaling. Both done: Sections VII and VIII.*
 
 | | C2 | C1 |
 |---|---|---|
@@ -185,3 +187,101 @@ Sized so the observed interaction is detectable (5% significance, 80% power).
 | time at ~18 calls/min | ~5.3 h | ~15.7 h |
 
 C1's replicate count comes from the large variation between writings of the rules.
+
+---
+
+## VII. Full C2 Run (2026-10-10)
+
+Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 pilot-c1 full-c2 c1-k40`.
+
+### 1. Changes From The Pilot
+
+* **Records:** 150 new Walmart-Amazon test pairs (none reused), same mix as the pilot: half matches, ~37% hard non-matches, ~13% easy non-matches.
+* **Replicates:** 9, fixed in advance; no extension after looking.
+* **Held-out reference executors:** `gpt-oss:120b` (B2) and `gemma3:27b` (B3) are used only to profile writers, never as candidate plans, so no plan is estimated exactly by construction. Chosen by a screen on 24 validation pairs (`ref_screen.py`); four other candidates were rejected (always "yes", unreadable answers, or identical answers under every instruction).
+* **Cells per replicate:** {Gemini's rules, qwen's rules, generic instruction} x {gemma, llama, B2, B3} = 12.
+* **Tests:** replicate-level t-tests (df = 8) and a two-level bootstrap (drafts, then records). Accuracy and F1; simple-rule baseline on the same pairs.
+* **Size:** 16,200 calls, ~16.9 h. 5 calls failed during a provider outage and succeeded on resume; 0 unreadable answers.
+
+### 2. Quality (accuracy, mean over 9 replicates; F1)
+
+| | gemma (weak) | llama (strong) |
+|---|---|---|
+| generic instruction | 0.793 / F1 0.827 | 0.913 / F1 0.914 |
+| Gemini's rules | 0.877 (0.847-0.913) / F1 0.872 | 0.870 (0.807-0.893) / F1 0.853 |
+| qwen's rules | 0.838 (0.800-0.887) / F1 0.843 | 0.856 (0.767-0.907) / F1 0.838 |
+
+* **Same pattern as the pilot:** rules lift gemma and pull llama down. Generic instruction + llama is the best plan in 8 of 9 replicates.
+* **Simple rule on the same 150 pairs** (model-number overlap): accuracy 0.820 / F1 0.824. Every LLM plan except generic + gemma is above it.
+
+### 3. Tests
+
+| | mean | t / p (df 8) | CI95 (two-level) |
+|---|---|---|---|
+| H1 interaction (accuracy) | -0.025 | -1.01 / 0.34 | [-0.076, +0.025] |
+| H2 executor-gap shrink, Gemini's rules | 0.127 | 13.96 / < 0.001 | |
+| H2 executor-gap shrink, qwen's rules | 0.102 | 5.08 / 0.001 | |
+
+* **H1, interaction: not significant.** Per-replicate contrasts range from -0.127 to +0.107 (6 of 9 negative); the replicate SD (0.075) is three times the mean. The F1 contrast agrees (CI95 [-0.068, +0.044]). The pilot's -0.063 does not hold at full size.
+* **H2, estimability: significant for both writers.** Under the generic instruction llama leads gemma by 0.120; under real rules the gap is -0.007 (Gemini) and +0.018 (qwen). The executor profile an optimizer would measure does not predict the executor's behavior in the pipeline.
+
+### 4. Optimizer Regret By Reference Executor (H3, 9 replicates each)
+
+| reference | writer optional: true best picked | quality regret mean / max | writer required: true best picked | writer required, cheapest above bar: median cost ratio |
+|---|---|---|---|---|
+| llama (candidate) | 8/9 | 0.000 / 0.000 | 6/9 | 5.57x |
+| `gpt-oss:120b` (held out) | 7/9 | 0.001 / 0.007 | 3/9 | 5.57x |
+| gemma (candidate) | 0/9 | 0.045 / 0.107 | 2/9 | 1.00x |
+| `gemma3:27b` (held out) | 0/9 | 0.058 / 0.147 | 2/9 | 5.57x |
+
+* **References that react to rules like llama** (no gain) make writers look weak: the optimizer keeps the generic instruction when it may, and overpays for llama when a writer is required.
+* **References that react like gemma** (gain) make writers look strong: the optimizer adds a writer even when skipping it is better, and composes that gain onto llama, which actually loses from rules. Picks fall below the quality bar in up to 3 of 9 replicates.
+* **Reading:** the reference executor is a hidden design choice that decides which error the optimizer makes. The pilot's "writer-optional pick is correct" holds only with a llama-like reference.
+
+### 5. Cost Composition And Caching
+
+* **Naive estimate** (executor profiled under the generic instruction): mean absolute error 67.6%.
+* **Composed estimate** (scaled by the rules-to-generic token ratio on the reference): 2.6-2.7% via llama, gemma, `gemma3:27b`; 16.3% via `gpt-oss:120b`, whose chat template adds ~190 tokens per call, so its ratio does not transfer.
+* **Caching (priced, not measured):** rules are 59-75% of executor cost. Median overpay with llama as reference: 5.57x uncached, 5.33x with rule tokens at 10% price.
+
+### 6. Reading
+
+* **Established for C2:** isolated executor profiles mispredict in-pipeline behavior (H2); the reference executor decides whether the optimizer overpays or loses quality (H3); downstream cost composes as rules length x calls.
+* **Not established:** a writer-by-executor interaction (H1). Detecting a 0.05 effect at the observed replicate SD would need about 17 replicates (post-hoc, not used).
+
+---
+
+## VIII. C1 Retest: More Writer Examples (2026-10-10)
+
+### 1. Design
+
+* **Change:** the writer sees 40 training records instead of 12, stratified so every (phone format, city) pair with at least 5 training rows appears 3 times. Both New York conventions (slash phone with `new york`, dash phone with `new york city`) are shown equally.
+* **Records:** the 156-record validation split (the test split is kept unused). 3 replicates, 2,808 calls, ~2.7 h.
+* **Pass criteria, fixed before running:** (P1) the best writer x executor plan beats the simple rule on the same records (0.840) in at least 2 of 3 replicates; (P2) at least 3 of 6 rules drafts state the phone-format convention.
+
+### 2. Results
+
+| | gemma (weak) | llama (strong) |
+|---|---|---|
+| generic instruction | 0.731 | 0.784 (0.776-0.788) |
+| Gemini's rules | 0.504 (0.487-0.519) | 0.528 (0.506-0.538) |
+| qwen's rules | 0.521 (0.506-0.532) | 0.521 (0.513-0.532) |
+
+* **P1: fail, 0 of 3.** Best plan minus rule on the same records: -0.312, CI95 [-0.400, -0.229].
+* **P2: fail, 0 of 6.** No draft mentions the phone format.
+
+### 3. Why
+
+| records | n | generic: gemma / llama | rules: gemma / llama |
+|---|---|---|---|
+| `new york` (slash phone) | 45 | 1.000 / 0.978 | 0.000 / 0.000 |
+| `new york city` (dash phone) | 17 | 0.059 / 0.314 | 1.000 / 1.000 |
+| all other cities | 94 | 0.723 / 0.777 | 0.67 / 0.69 |
+
+* **Every draft maps area code 212 to `new york city`.** Gemini's drafts call the two spellings "interchangeable"; qwen's name only `New York City`. The executors follow, so all 45 slash-phone records are wrong.
+* **The writers noticed both spellings but did not explain them.** More examples made drafts consistent (interaction SD across replicates 0.020, pilot 0.141), not correct.
+* **Side observations (3 replicates, not tested):** the executor gap shrinks under rules (Gemini 0.030, p = 0.07; qwen 0.053, p = 0.006). With a writer required, the optimizer picks llama when gemma would do in 3 of 3 replicates (3.4-5.5x cost). Naive cost error 84%, composed 3.2-3.4%.
+
+### 4. Decision
+
+C1 is dropped as a workload: a simple rule beats every LLM plan, and more examples do not let these writers find the convention. The next check of whether the C2 results generalize is a second product-matching dataset (Abt-Buy).
