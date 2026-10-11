@@ -1,0 +1,27 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches: [ "**" ]
+    tags: [ "**" ]
+  delete:
+  workflow_dispatch: # Allows you to trigger a sync manually from the Actions tab
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches all history, branches, and tags
+
+      - name: Push to GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git remote add gitlab https://oauth2:${GITLAB_TOKEN}@gitlab.com/tri282/palimpzest.git
+          git push gitlab "refs/remotes/origin/*:refs/heads/*" --force --prune
+          git push gitlab --tags --force --prune
