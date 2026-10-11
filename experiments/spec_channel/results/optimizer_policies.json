@@ -1,0 +1,3607 @@
+[
+ {
+  "run_id": "full-c2",
+  "n_items": 150,
+  "replicates": 9,
+  "held_out": [
+   "B2",
+   "B3"
+  ],
+  "summary": {
+   "P0_ref_B0/naive": {
+    "n": 9,
+    "profiling_calls": 600,
+    "all_best_picked": 0.0,
+    "all_regret_mean": 0.0452,
+    "all_regret_p95": 0.096,
+    "all_regret_max": 0.1067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.889,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 1.0
+   },
+   "P0_ref_B1/naive": {
+    "n": 9,
+    "profiling_calls": 600,
+    "all_best_picked": 0.889,
+    "all_regret_mean": 0.0,
+    "all_regret_p95": 0.0,
+    "all_regret_max": 0.0,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 1.0,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 6.682
+   },
+   "P0_ref_B2/naive": {
+    "n": 9,
+    "profiling_calls": 750,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P0_ref_B3/naive": {
+    "n": 9,
+    "profiling_calls": 750,
+    "all_best_picked": 0.0,
+    "all_regret_mean": 0.0578,
+    "all_regret_p95": 0.1307,
+    "all_regret_max": 0.1467,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P1_heldout_mean/naive": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.222,
+    "all_regret_mean": 0.0267,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P2_all_mean/naive": {
+    "n": 9,
+    "profiling_calls": 1800,
+    "all_best_picked": 0.111,
+    "all_regret_mean": 0.0289,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P3_heldout_min/naive": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P4_additive/naive": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.222,
+    "all_regret_mean": 0.0267,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P5_matched/naive": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P0_ref_B0/composed": {
+    "n": 9,
+    "profiling_calls": 600,
+    "all_best_picked": 0.0,
+    "all_regret_mean": 0.0452,
+    "all_regret_p95": 0.096,
+    "all_regret_max": 0.1067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.889,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 1.0
+   },
+   "P0_ref_B1/composed": {
+    "n": 9,
+    "profiling_calls": 600,
+    "all_best_picked": 0.889,
+    "all_regret_mean": 0.0,
+    "all_regret_p95": 0.0,
+    "all_regret_max": 0.0,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 1.0,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 6.682
+   },
+   "P0_ref_B2/composed": {
+    "n": 9,
+    "profiling_calls": 750,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P0_ref_B3/composed": {
+    "n": 9,
+    "profiling_calls": 750,
+    "all_best_picked": 0.0,
+    "all_regret_mean": 0.0578,
+    "all_regret_p95": 0.1307,
+    "all_regret_max": 0.1467,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P1_heldout_mean/composed": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.222,
+    "all_regret_mean": 0.0267,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P2_all_mean/composed": {
+    "n": 9,
+    "profiling_calls": 1800,
+    "all_best_picked": 0.111,
+    "all_regret_mean": 0.0289,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P3_heldout_min/composed": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P4_additive/composed": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.222,
+    "all_regret_mean": 0.0267,
+    "all_regret_p95": 0.0667,
+    "all_regret_max": 0.08,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P5_matched/composed": {
+    "n": 9,
+    "profiling_calls": 1200,
+    "all_best_picked": 0.778,
+    "all_regret_mean": 0.0007,
+    "all_regret_p95": 0.004,
+    "all_regret_max": 0.0067,
+    "factorial_n_decided": 9,
+    "factorial_meets_bar": 0.778,
+    "factorial_cost_ratio_median": 5.57,
+    "factorial_cost_ratio_max": 5.635
+   },
+   "P6_joint_k5/disjoint": {
+    "n": 4500,
+    "profiling_calls": 30,
+    "all_best_picked": 0.094,
+    "all_regret_mean": 0.0457,
+    "all_regret_p95": 0.1241,
+    "all_regret_max": 0.1586,
+    "factorial_n_decided": 3447,
+    "factorial_meets_bar": 0.725,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 9.357
+   },
+   "P6_joint_k5/all_n": {
+    "n": 4500,
+    "profiling_calls": 30,
+    "all_best_picked": 0.116,
+    "all_regret_mean": 0.0421,
+    "all_regret_p95": 0.12,
+    "all_regret_max": 0.1467,
+    "factorial_n_decided": 3447,
+    "factorial_meets_bar": 0.73,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 9.357
+   },
+   "P6_joint_k10/disjoint": {
+    "n": 4500,
+    "profiling_calls": 60,
+    "all_best_picked": 0.146,
+    "all_regret_mean": 0.0416,
+    "all_regret_p95": 0.1143,
+    "all_regret_max": 0.1714,
+    "factorial_n_decided": 3965,
+    "factorial_meets_bar": 0.767,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 9.357
+   },
+   "P6_joint_k10/all_n": {
+    "n": 4500,
+    "profiling_calls": 60,
+    "all_best_picked": 0.187,
+    "all_regret_mean": 0.0357,
+    "all_regret_p95": 0.1067,
+    "all_regret_max": 0.1467,
+    "factorial_n_decided": 3965,
+    "factorial_meets_bar": 0.755,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 9.357
+   },
+   "P6_joint_k20/disjoint": {
+    "n": 4500,
+    "profiling_calls": 120,
+    "all_best_picked": 0.217,
+    "all_regret_mean": 0.0359,
+    "all_regret_p95": 0.1154,
+    "all_regret_max": 0.1846,
+    "factorial_n_decided": 3824,
+    "factorial_meets_bar": 0.792,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k20/all_n": {
+    "n": 4500,
+    "profiling_calls": 120,
+    "all_best_picked": 0.289,
+    "all_regret_mean": 0.0273,
+    "all_regret_p95": 0.1,
+    "all_regret_max": 0.1467,
+    "factorial_n_decided": 4117,
+    "factorial_meets_bar": 0.827,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k40/disjoint": {
+    "n": 4500,
+    "profiling_calls": 240,
+    "all_best_picked": 0.258,
+    "all_regret_mean": 0.0286,
+    "all_regret_p95": 0.0909,
+    "all_regret_max": 0.1818,
+    "factorial_n_decided": 3962,
+    "factorial_meets_bar": 0.777,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k40/all_n": {
+    "n": 4500,
+    "profiling_calls": 240,
+    "all_best_picked": 0.435,
+    "all_regret_mean": 0.0167,
+    "all_regret_p95": 0.06,
+    "all_regret_max": 0.12,
+    "factorial_n_decided": 4294,
+    "factorial_meets_bar": 0.841,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k100/disjoint": {
+    "n": 4500,
+    "profiling_calls": 600,
+    "all_best_picked": 0.264,
+    "all_regret_mean": 0.0255,
+    "all_regret_p95": 0.1,
+    "all_regret_max": 0.22,
+    "factorial_n_decided": 3499,
+    "factorial_meets_bar": 0.781,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k100/all_n": {
+    "n": 4500,
+    "profiling_calls": 600,
+    "all_best_picked": 0.744,
+    "all_regret_mean": 0.0042,
+    "all_regret_p95": 0.0267,
+    "all_regret_max": 0.0667,
+    "factorial_n_decided": 4496,
+    "factorial_meets_bar": 0.905,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k125/disjoint": {
+    "n": 4500,
+    "profiling_calls": 750,
+    "all_best_picked": 0.223,
+    "all_regret_mean": 0.0337,
+    "all_regret_p95": 0.12,
+    "all_regret_max": 0.28,
+    "factorial_n_decided": 2975,
+    "factorial_meets_bar": 0.742,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 8.971
+   },
+   "P6_joint_k125/all_n": {
+    "n": 4500,
+    "profiling_calls": 750,
+    "all_best_picked": 0.862,
+    "all_regret_mean": 0.0016,
+    "all_regret_p95": 0.02,
+    "all_regret_max": 0.04,
+    "factorial_n_decided": 4500,
+    "factorial_meets_bar": 0.898,
+    "factorial_cost_ratio_median": 1.0,
+    "factorial_cost_ratio_max": 5.611
+   }
+  },
+  "per_replicate": {
+   "P0_ref_B0/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0133,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.1067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.763
+     }
+    }
+   },
+   "P0_ref_B1/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A1/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 6.682
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A1/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B2/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B3/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.1267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.1467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.1067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.763
+     }
+    }
+   },
+   "P1_heldout_mean/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.763
+     }
+    }
+   },
+   "P2_all_mean/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.763
+     }
+    }
+   },
+   "P3_heldout_min/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P4_additive/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 2.763
+     }
+    }
+   },
+   "P5_matched/naive": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.851
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.57
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.979
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B0/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0133,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.1067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B1/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A1/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 6.682
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A1/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B2/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P0_ref_B3/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.1267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.1467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.1067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P1_heldout_mean/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P2_all_mean/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P3_heldout_min/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P4_additive/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0467,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.08,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.02,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.482
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0333,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   },
+   "P5_matched/composed": {
+    "0": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0867,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.608
+     },
+     "all": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.931
+     }
+    },
+    "1": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "2": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.611
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.158
+     }
+    },
+    "3": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0267,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.57
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.093
+     }
+    },
+    "4": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0533,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 5.62
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.917
+     }
+    },
+    "5": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A1/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.635
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.102
+     }
+    },
+    "6": {
+     "factorial": {
+      "true_best": "A0/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "A0/B0",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    },
+    "7": {
+     "factorial": {
+      "true_best": "A0/B0",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0067,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 5.553
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 2.05
+     }
+    },
+    "8": {
+     "factorial": {
+      "true_best": "A1/B1",
+      "optimizer_pick": "A0/B1",
+      "quality_regret": 0.0933,
+      "optimizer_cheapest": "A0/B1",
+      "pick_meets_bar": false,
+      "cost_ratio_pick_vs_true": 0.698
+     },
+     "all": {
+      "true_best": "S_ref/B1",
+      "optimizer_pick": "S_ref/B1",
+      "quality_regret": 0.0,
+      "optimizer_cheapest": "S_ref/B1",
+      "pick_meets_bar": true,
+      "cost_ratio_pick_vs_true": 1.0
+     }
+    }
+   }
+  },
+  "drafts": {
+   "rep0 A0": {
+    "words": 205,
+    "rules": 6,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.12,
+    "gain_B1": -0.027,
+    "gain_B2": -0.04,
+    "gain_B3": 0.06,
+    "gain_B0_minus_B1": 0.147
+   },
+   "rep0 A1": {
+    "words": 219,
+    "rules": 7,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.093,
+    "gain_B1": -0.087,
+    "gain_B2": -0.027,
+    "gain_B3": 0.047,
+    "gain_B0_minus_B1": 0.18
+   },
+   "rep1 A0": {
+    "words": 197,
+    "rules": 6,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.067,
+    "gain_B1": -0.033,
+    "gain_B2": -0.04,
+    "gain_B3": 0.02,
+    "gain_B0_minus_B1": 0.1
+   },
+   "rep1 A1": {
+    "words": 247,
+    "rules": 17,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.06,
+    "gain_B1": -0.007,
+    "gain_B2": 0.0,
+    "gain_B3": 0.02,
+    "gain_B0_minus_B1": 0.067
+   },
+   "rep2 A0": {
+    "words": 185,
+    "rules": 5,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.08,
+    "gain_B1": -0.02,
+    "gain_B2": -0.04,
+    "gain_B3": 0.0,
+    "gain_B0_minus_B1": 0.1
+   },
+   "rep2 A1": {
+    "words": 311,
+    "rules": 20,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.06,
+    "gain_B1": -0.147,
+    "gain_B2": -0.127,
+    "gain_B3": 0.053,
+    "gain_B0_minus_B1": 0.207
+   },
+   "rep3 A0": {
+    "words": 178,
+    "rules": 5,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.093,
+    "gain_B1": -0.047,
+    "gain_B2": -0.047,
+    "gain_B3": 0.047,
+    "gain_B0_minus_B1": 0.14
+   },
+   "rep3 A1": {
+    "words": 330,
+    "rules": 21,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.04,
+    "gain_B1": -0.053,
+    "gain_B2": -0.04,
+    "gain_B3": -0.007,
+    "gain_B0_minus_B1": 0.093
+   },
+   "rep4 A0": {
+    "words": 206,
+    "rules": 6,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.087,
+    "gain_B1": -0.08,
+    "gain_B2": -0.047,
+    "gain_B3": 0.047,
+    "gain_B0_minus_B1": 0.167
+   },
+   "rep4 A1": {
+    "words": 272,
+    "rules": 13,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.02,
+    "gain_B1": -0.027,
+    "gain_B2": -0.153,
+    "gain_B3": 0.027,
+    "gain_B0_minus_B1": 0.047
+   },
+   "rep5 A0": {
+    "words": 181,
+    "rules": 6,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.093,
+    "gain_B1": -0.02,
+    "gain_B2": -0.033,
+    "gain_B3": 0.047,
+    "gain_B0_minus_B1": 0.113
+   },
+   "rep5 A1": {
+    "words": 305,
+    "rules": 20,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.033,
+    "gain_B1": -0.02,
+    "gain_B2": -0.02,
+    "gain_B3": 0.007,
+    "gain_B0_minus_B1": 0.053
+   },
+   "rep6 A0": {
+    "words": 200,
+    "rules": 5,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.06,
+    "gain_B1": -0.033,
+    "gain_B2": -0.013,
+    "gain_B3": 0.053,
+    "gain_B0_minus_B1": 0.093
+   },
+   "rep6 A1": {
+    "words": 223,
+    "rules": 18,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.073,
+    "gain_B1": -0.047,
+    "gain_B2": -0.033,
+    "gain_B3": 0.0,
+    "gain_B0_minus_B1": 0.12
+   },
+   "rep7 A0": {
+    "words": 190,
+    "rules": 5,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.1,
+    "gain_B1": -0.027,
+    "gain_B2": -0.007,
+    "gain_B3": 0.053,
+    "gain_B0_minus_B1": 0.127
+   },
+   "rep7 A1": {
+    "words": 282,
+    "rules": 18,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.007,
+    "gain_B1": -0.113,
+    "gain_B2": -0.073,
+    "gain_B3": 0.033,
+    "gain_B0_minus_B1": 0.12
+   },
+   "rep8 A0": {
+    "words": 190,
+    "rules": 6,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.053,
+    "gain_B1": -0.107,
+    "gain_B2": -0.053,
+    "gain_B3": 0.027,
+    "gain_B0_minus_B1": 0.16
+   },
+   "rep8 A1": {
+    "words": 312,
+    "rules": 18,
+    "model_number": 1,
+    "capacity_size": 1,
+    "color": 1,
+    "brand": 1,
+    "gain_B0": 0.02,
+    "gain_B1": -0.013,
+    "gain_B2": -0.093,
+    "gain_B3": -0.053,
+    "gain_B0_minus_B1": 0.033
+   }
+  },
+  "draft_spearman": {
+   "words": {
+    "gain_B0": -0.683,
+    "gain_B1": -0.103,
+    "gain_B2": -0.25,
+    "gain_B3": -0.381,
+    "gain_B0_minus_B1": -0.32
+   },
+   "rules": {
+    "gain_B0": -0.625,
+    "gain_B1": -0.152,
+    "gain_B2": -0.232,
+    "gain_B3": -0.459,
+    "gain_B0_minus_B1": -0.222
+   },
+   "model_number": {
+    "gain_B0": null,
+    "gain_B1": null,
+    "gain_B2": null,
+    "gain_B3": null,
+    "gain_B0_minus_B1": null
+   },
+   "capacity_size": {
+    "gain_B0": null,
+    "gain_B1": null,
+    "gain_B2": null,
+    "gain_B3": null,
+    "gain_B0_minus_B1": null
+   },
+   "color": {
+    "gain_B0": null,
+    "gain_B1": null,
+    "gain_B2": null,
+    "gain_B3": null,
+    "gain_B0_minus_B1": null
+   },
+   "brand": {
+    "gain_B0": null,
+    "gain_B1": null,
+    "gain_B2": null,
+    "gain_B3": null,
+    "gain_B0_minus_B1": null
+   }
+  }
+ }
+]
