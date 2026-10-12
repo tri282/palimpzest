@@ -50,10 +50,17 @@ Record B (Amazon): {right}
 Do A and B refer to the same product? Answer Yes or No only."""
 
 
-def em_record(r: dict) -> str:
-    return "; ".join(f"{k}: {r.get(k) or '-'}" for k in EM_FIELDS)
+AB_FIELDS = ("name", "description", "price")
+
+AB_WRITER = EM_WRITER.replace("a Walmart product record and an Amazon product record", "an Abt product record and a Buy product record")
+
+AB_EXECUTOR = EM_EXECUTOR.replace("Record A (Walmart)", "Record A (Abt)").replace("Record B (Amazon)", "Record B (Buy)")
 
 
-def em_examples(pairs: list[dict]) -> str:
-    return "\n\n".join(f"Record A: {em_record(p['left'])}\nRecord B: {em_record(p['right'])}\nSame product: {'Yes' if p['label'] else 'No'}"
+def em_record(r: dict, fields: tuple = EM_FIELDS) -> str:
+    return "; ".join(f"{k}: {r.get(k) or '-'}" for k in fields)
+
+
+def em_examples(pairs: list[dict], fields: tuple = EM_FIELDS) -> str:
+    return "\n\n".join(f"Record A: {em_record(p['left'], fields)}\nRecord B: {em_record(p['right'], fields)}\nSame product: {'Yes' if p['label'] else 'No'}"
                        for p in pairs)

@@ -1,5 +1,7 @@
 """C2 (Walmart-Amazon entity matching) setup: stratified pilot and full-run samples, spec-writer examples, and a context-truncation check on Purdue.
 
+`--abt-buy` builds the same pilot-shaped sample on Abt-Buy.
+
 Design and results: REPORT.md.
 """
 from __future__ import annotations
@@ -13,11 +15,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from em_lexical_baseline import jaccard, tokens  # noqa: E402
 from probe_api import PURDUE_BASE, REPO, call, load_env  # noqa: E402
-from prompts import EM_EXECUTOR, EM_REF_SPEC, EM_WRITER, em_examples, em_record  # noqa: E402
+from prompts import AB_FIELDS, AB_WRITER, EM_EXECUTOR, EM_FIELDS, EM_REF_SPEC, EM_WRITER, em_examples, em_record  # noqa: E402
 
 DATA = REPO / "testdata" / "fm_data_tasks" / "datasets" / "entity_matching" / "structured" / "Walmart-Amazon"
+AB_DATA = REPO / "testdata" / "fm_data_tasks" / "datasets" / "entity_matching" / "textual" / "Abt-Buy"
 OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_sample.json"
 FULL_OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_full_sample.json"
+AB_OUT = REPO / "experiments" / "spec_channel" / "results" / "ab_sample.json"
 SEED, FULL_SEED = 0, 2
 N_POS, N_HARD_NEG, N_RAND_NEG = 40, 30, 10
 FULL_STRATA = (75, 56, 19)  # 150 pairs at pilot proportions
@@ -25,17 +29,17 @@ K_POS, K_HARD_NEG = 4, 4
 PURDUE_MODELS = ["gemma3:12b", "llama3.3:70b", "qwen2.5:72b", "mistral:latest"]
 
 
-def load_pairs(split: str) -> list[dict]:
-    with (DATA / "tableA.csv").open() as f:
+def load_pairs(split: str, data: Path = DATA, fields: tuple = EM_FIELDS) -> list[dict]:
+    with (data / "tableA.csv").open() as f:
         A = {r["id"]: r for r in csv.DictReader(f)}
-    with (DATA / "tableB.csv").open() as f:
+    with (data / "tableB.csv").open() as f:
         B = {r["id"]: r for r in csv.DictReader(f)}
-    with (DATA / f"{split}.csv").open() as f:
+    with (data / f"{split}.csv").open() as f:
         out = []
         for r in csv.DictReader(f):
             left, right = A[r["ltable_id"]], B[r["rtable_id"]]
             out.append({"id": f"{split}-{r['ltable_id']}-{r['rtable_id']}", "left": left, "right": right,
-                        "label": int(r["label"]), "jaccard": jaccard(tokens(em_record(left)), tokens(em_record(right)))})
+                        "label": int(r["label"]), "jaccard": jaccard(tokens(em_record(left, fields)), tokens(em_record(right, fields)))})
     return out
 
 
@@ -87,6 +91,23 @@ def build_full() -> dict:
     return data
 
 
+def build_ab() -> dict:
+    # Abt-Buy (second matching dataset): same strata and writer-example counts as the C2 pilot.
+    rng = random.Random(SEED)
+    pilot = stratified(load_pairs("test", AB_DATA, AB_FIELDS), N_POS, N_HARD_NEG, N_RAND_NEG, rng)
+    examples = stratified(load_pairs("train", AB_DATA, AB_FIELDS), K_POS, K_HARD_NEG, 0, rng)
+    data = {"seed": SEED, "dataset": "textual/Abt-Buy", "pilot": pilot, "writer_examples": examples}
+    AB_OUT.write_text(json.dumps(data, indent=1))
+    counts = {k: sum(p["stratum"] == k for p in pilot) for k in ("pos", "hard_neg", "rand_neg")}
+    hard = [p["jaccard"] for p in pilot if p["stratum"] == "hard_neg"]
+    longest = max(pilot, key=lambda p: len(em_record(p["left"], AB_FIELDS) + em_record(p["right"], AB_FIELDS)))
+    print(f"ab pilot={len(pilot)} {counts} writer_examples={len(examples)} hard_neg jaccard range {min(hard):.2f}-{max(hard):.2f}; "
+          f"pos jaccard median {sorted(p['jaccard'] for p in pilot if p['label'])[N_POS // 2]:.2f}")
+    print(f"writer prompt chars={len(AB_WRITER.format(examples=em_examples(examples, AB_FIELDS)))}; longest record pair chars="
+          f"{len(em_record(longest['left'], AB_FIELDS) + em_record(longest['right'], AB_FIELDS))}")
+    return data
+
+
 def truncation_check() -> None:
     # Secret word at the very start of a ~6k-token prompt; a backend that truncates from the front cannot recall it.
     key = load_env()["PURDUE"]
@@ -101,6 +122,6 @@ def truncation_check() -> None:
 
 
 if __name__ == "__main__":
-    build_full() if "--full" in sys.argv else build()
+    build_ab() if "--abt-buy" in sys.argv else build_full() if "--full" in sys.argv else build()
     if "--truncation-check" in sys.argv:
         truncation_check()

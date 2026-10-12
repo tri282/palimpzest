@@ -11,12 +11,12 @@ Measures whether an optimizer that profiles LLM operators one at a time picks th
 | `runner.py` | runner: fresh specs per replicate, shuffled downstream calls, resumable JSONL logs; `--ref-executor` adds held-out references B2, B3 |
 | `run_resilient.sh` | restarts `runner.py` after outages or crashes until the run completes |
 | `analyze.py` | offline analysis: interaction and estimability tests, independence baseline and regret per reference executor, cost model, cache sensitivity, F1, workload sizing |
-| `optimizer_policies.py` | offline comparison of optimizer estimation policies (single, averaged, matched reference; joint sampling incl. equal budget) and draft features vs executor gain; needs `analysis.json` |
-| `workflows.py` | workload definitions: `c1` (Restaurant city imputation), `c2` (Walmart-Amazon matching, pilot sample), `c2_full` (150-pair full-run sample), `c1_k40` (C1 redesign test: 40 stratified writer examples, valid split) |
+| `optimizer_policies.py` | offline comparison of optimizer estimation policies (single, averaged, matched reference; joint sampling incl. equal budget) and draft features vs executor gain; targeted estimator P7 (synthetic self-check only); needs `analysis.json` |
+| `workflows.py` | workload definitions: `c1` (Restaurant city imputation), `c2` (Walmart-Amazon matching, pilot sample), `c2_full` (150-pair full-run sample), `c1_k40` (C1 redesign test: 40 stratified writer examples, valid split), `ab` (Abt-Buy matching, pilot-shaped sample) |
 | `prompts.py` | writer, executor, and reference-spec templates |
 | `llm.py` | single-call client for Purdue GenAI and Gemini: pacing, retries, token and cost fields |
 | `screen.py` | cheap screens: spec variation across writers, executor sensitivity to spec |
-| `c2_setup.py` | builds the stratified C2 pilot sample (`--full`: full-run sample disjoint from the pilot) and spec-writer examples |
+| `c2_setup.py` | builds the stratified C2 pilot sample (`--full`: full-run sample disjoint from the pilot; `--abt-buy`: Abt-Buy sample) and spec-writer examples |
 | `ref_screen.py` | screens candidate reference executors on C2 validation pairs |
 | `lexical_baseline.py`, `em_lexical_baseline.py` | zero-API rule baselines for C1 and C2 |
 | `model_baseline.py`, `probe_api.py` | per-model sanity baseline and API probe |

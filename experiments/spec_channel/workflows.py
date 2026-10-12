@@ -1,4 +1,4 @@
-"""Workflow definitions for the Specification channel pilot: C1 (UniDM-DI Restaurant imputation) and C2 (Walmart-Amazon matching).
+"""Workflow definitions for the Specification channel: C1 (UniDM-DI Restaurant imputation), C2 (Walmart-Amazon matching), ab (Abt-Buy matching).
 
 Design and results: REPORT.md.
 """
@@ -11,9 +11,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Callable
 
-from c2_setup import FULL_OUT as C2_FULL_SAMPLE, OUT as C2_SAMPLE, load_pairs, stratified
+from c2_setup import AB_DATA, AB_OUT as AB_SAMPLE, FULL_OUT as C2_FULL_SAMPLE, OUT as C2_SAMPLE, load_pairs, stratified
 from lexical_baseline import TARBALL, load, norm
-from prompts import (DI_EXECUTOR, DI_REF_SPEC, DI_WRITER, EM_EXECUTOR, EM_REF_SPEC, EM_WRITER,
+from prompts import (AB_EXECUTOR, AB_FIELDS, AB_WRITER, DI_EXECUTOR, DI_REF_SPEC, DI_WRITER, EM_EXECUTOR, EM_REF_SPEC, EM_WRITER,
                      di_examples, di_record, em_examples, em_record)
 
 SEED = 0
@@ -79,4 +79,12 @@ def c2(name: str = "c2", path=C2_SAMPLE, key: str = "pilot") -> Workflow:
                     parse_yes, sample[key], screen)
 
 
-WORKFLOWS = {"c1": c1, "c1_k40": lambda: c1("c1_k40", "valid", 40), "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items")}
+def ab() -> Workflow:
+    sample = json.loads(AB_SAMPLE.read_text())
+    screen = stratified(load_pairs("valid", AB_DATA, AB_FIELDS), 3, 7, 0, random.Random(SCREEN_SEED))
+    return Workflow("ab", AB_WRITER.format(examples=em_examples(sample["writer_examples"], AB_FIELDS)), EM_REF_SPEC,
+                    lambda spec, it: AB_EXECUTOR.format(spec=spec, left=em_record(it["left"], AB_FIELDS), right=em_record(it["right"], AB_FIELDS)),
+                    parse_yes, sample["pilot"], screen)
+
+
+WORKFLOWS = {"c1": c1, "c1_k40": lambda: c1("c1_k40", "valid", 40), "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items"), "ab": ab}
