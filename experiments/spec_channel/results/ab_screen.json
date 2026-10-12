@@ -1,0 +1,3414 @@
+{
+ "specs": {
+  "gemini-3.5-flash-lite#0": {
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "temperature": 0.7,
+   "status": 200,
+   "latency_s": 3.164,
+   "raw_response": {
+    "candidates": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "**Matching Rules:**\n\n1. **Model Numbers:** The primary matching criterion is the model number or unique product code. If exact or normalized model numbers match (ignoring hyphens, spaces, or suffixes like part numbers), strongly favor a \"Yes\" match, even if retailer naming conventions differ slightly.\n2. **Brands:** Both records must reference the exact same manufacturer brand. Mismatched brands mean \"No\".\n3. **Product Variants:** \n   * **Color/Finish:** Conflicting explicit colors or finishes (e.g., silver vs. gray, blue vs. silver) indicate different products (\"No\"). \n   * **Capacity/Size:** Differing technical specifications, such as ink cartridge models (e.g., CL51 vs. CL52) or capacities, indicate different products (\"No\").\n4. **Core Product Identity:** Generic category terms (e.g., \"digital camera\", \"ink cartridge\") combined with conflicting core modifiers mean the items are different, even within the same brand series (e.g., SD890IS vs. A1000 IS).\n5. **Bundles and Accessories:** Standalone items do not match kits or bundles containing multiple distinct items. \n6. **Missing or Noisy Fields:** Ignore missing descriptions, prices, or extra promotional text. Focus entirely on whether the core item identifier (model number/name) and key specs align.",
+         "thoughtSignature": "EmAKXgFpFH0TrubbjvqVcTsf5tv9rJl+GEnaUt+puEuljUqP6rZSoqZTJKcf16/wf12p8msZWxQ2BGLH4VvvlXBzLYlK4Lwi3YC9MSLYpk2G66sm/7nnpQi/uaeAEUshHRw="
+        }
+       ],
+       "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+     }
+    ],
+    "usageMetadata": {
+     "promptTokenCount": 1303,
+     "candidatesTokenCount": 294,
+     "totalTokenCount": 1597,
+     "promptTokensDetails": [
+      {
+       "modality": "TEXT",
+       "tokenCount": 1303
+      }
+     ],
+     "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "9C3MasBgj_mewQ-Y67go"
+   },
+   "content": "**Matching Rules:**\n\n1. **Model Numbers:** The primary matching criterion is the model number or unique product code. If exact or normalized model numbers match (ignoring hyphens, spaces, or suffixes like part numbers), strongly favor a \"Yes\" match, even if retailer naming conventions differ slightly.\n2. **Brands:** Both records must reference the exact same manufacturer brand. Mismatched brands mean \"No\".\n3. **Product Variants:** \n   * **Color/Finish:** Conflicting explicit colors or finishes (e.g., silver vs. gray, blue vs. silver) indicate different products (\"No\"). \n   * **Capacity/Size:** Differing technical specifications, such as ink cartridge models (e.g., CL51 vs. CL52) or capacities, indicate different products (\"No\").\n4. **Core Product Identity:** Generic category terms (e.g., \"digital camera\", \"ink cartridge\") combined with conflicting core modifiers mean the items are different, even within the same brand series (e.g., SD890IS vs. A1000 IS).\n5. **Bundles and Accessories:** Standalone items do not match kits or bundles containing multiple distinct items. \n6. **Missing or Noisy Fields:** Ignore missing descriptions, prices, or extra promotional text. Focus entirely on whether the core item identifier (model number/name) and key specs align.",
+   "tokens_in": 1303,
+   "tokens_out": 294,
+   "cached_tokens": 0,
+   "reasoning_tokens": 0,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 3.164,
+     "error": null
+    }
+   ],
+   "latency_total_s": 3.164,
+   "wait_s": 0.0,
+   "cache_hit": false,
+   "cost_usd_list": 0.0011259
+  },
+  "gemini-3.5-flash-lite#1": {
+   "model": "gemini-3.5-flash-lite",
+   "provider": "gemini",
+   "temperature": 0.7,
+   "status": 200,
+   "latency_s": 2.75,
+   "raw_response": {
+    "candidates": [
+     {
+      "content": {
+       "parts": [
+        {
+         "text": "1. **Model Numbers:** Exact or hyphen-normalized model number matches (e.g., `f5c400300w` vs `f5c400-300w`) strongly indicate the same product, even if formatting differs.\n2. **Brands:** Both records must reference the same manufacturer brand. Mismatched brands mean different products.\n3. **Product Variants:** \n   - **Color:** Different explicitly stated colors (e.g., silver vs gray, blue vs silver) mean different products. \n   - **Type/Model Number Differences:** Different specific model variants (e.g., Canon CL-51 color ink vs CL-52 photo ink, or PowerShot SD890IS vs A1000 IS) are distinct products.\n   - **Ink/Cartridge Color:** Ink cartridges with different specified colors (e.g., yellow CLI8Y vs black) are not the same.\n4. **Core Specifications:** Key specs (such as wattage, size, or core functionality) must align. If specs conflict (e.g., different printer compatibility or different megapixel counts combined with different models), treat as distinct.\n5. **Missing or Noisy Fields:** Ignore missing descriptions, prices, or minor formatting/punctuation differences (such as spaces, dashes, or \"sold as a single\"). Focus primarily on the brand, core product name, and model/part number.",
+         "thoughtSignature": "EmAKXgFpFH0TB/asiFytx4rdfgGFOvRBzouGVQfN4yTVIR0i3mclDVWW7ZnnsWNz0Fp6tuJPc5tAS77+xaNamrm/dyT8T77sljGs9u1lSnKFcjFhMlQrmpFzSOSZ5UvhqC0="
+        }
+       ],
+       "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+     }
+    ],
+    "usageMetadata": {
+     "promptTokenCount": 1303,
+     "candidatesTokenCount": 302,
+     "totalTokenCount": 1605,
+     "promptTokensDetails": [
+      {
+       "modality": "TEXT",
+       "tokenCount": 1303
+      }
+     ],
+     "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.5-flash-lite",
+    "responseId": "9y3MapT5MIqFxN8P17Xv6Qs"
+   },
+   "content": "1. **Model Numbers:** Exact or hyphen-normalized model number matches (e.g., `f5c400300w` vs `f5c400-300w`) strongly indicate the same product, even if formatting differs.\n2. **Brands:** Both records must reference the same manufacturer brand. Mismatched brands mean different products.\n3. **Product Variants:** \n   - **Color:** Different explicitly stated colors (e.g., silver vs gray, blue vs silver) mean different products. \n   - **Type/Model Number Differences:** Different specific model variants (e.g., Canon CL-51 color ink vs CL-52 photo ink, or PowerShot SD890IS vs A1000 IS) are distinct products.\n   - **Ink/Cartridge Color:** Ink cartridges with different specified colors (e.g., yellow CLI8Y vs black) are not the same.\n4. **Core Specifications:** Key specs (such as wattage, size, or core functionality) must align. If specs conflict (e.g., different printer compatibility or different megapixel counts combined with different models), treat as distinct.\n5. **Missing or Noisy Fields:** Ignore missing descriptions, prices, or minor formatting/punctuation differences (such as spaces, dashes, or \"sold as a single\"). Focus primarily on the brand, core product name, and model/part number.",
+   "tokens_in": 1303,
+   "tokens_out": 302,
+   "cached_tokens": 0,
+   "reasoning_tokens": 0,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 2.75,
+     "error": null
+    }
+   ],
+   "latency_total_s": 2.75,
+   "wait_s": 1.121,
+   "cache_hit": false,
+   "cost_usd_list": 0.0011459
+  },
+  "qwen2.5:72b#0": {
+   "model": "qwen2.5:72b",
+   "provider": "purdue",
+   "temperature": 0.7,
+   "status": 200,
+   "latency_s": 47.519,
+   "raw_response": {
+    "id": "chatcmpl-11484ff0-15ae-4a39-b8ef-88a281353e71",
+    "created": 1791766056,
+    "model": "qwen2.5:72b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "### Matching Rules for Product Records:\n\n1. **Model Numbers**:\n   - Compare model numbers directly if available.\n   - If one record has a more detailed or extended model number, check if the base model matches (e.g., \"F5C400300W\" and \"F5C400-300W\").\n   - Ignore minor variations in model number formats (e.g., hyphens, spaces).\n\n2. **Brands**:\n   - Ensure both records have the same brand name.\n   - Variations in brand spelling or case should be ignored (e.g., \"Canon\" and \"canon\").\n\n3. **Product Variants**:\n   - Color: Products with different colors are considered different variants (e.g., \"silver\" vs. \"gray\").\n   - Size/Capacity: Different sizes or capacities indicate different products (e.g., 8GB vs. 16GB).\n   - Features: If one record specifies a feature not mentioned in the other, and this feature significantly changes the product's functionality, consider them different.\n\n4. **Bundles and Accessories**:\n   - Check if both records mention the same accessories or bundles.\n   - Products that come with additional items (e.g., \"with 32GB SD card\") are considered different from those without these extras.\n\n5. **Missing or Noisy Fields**:\n   - If a field is missing in one record but present in the other, use the available information to make a decision.\n   - Ignore noisy or irrelevant details that do not affect product identity (e.g., \"low-battery alarm\" vs. no mention of it).\n\n6. **Overall Description**:\n   - Compare the overall description for consistency in key features and specifications.\n   - If descriptions are significantly different, especially in terms of core functionality, consider them different products.\n\n7. **Price**:\n   - Price alone should not be a deciding factor unless all other criteria are ambiguous.\n\nBy following these rules, you can accurately determine if two product records refer to the same real-world product.",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 427,
+     "prompt_tokens": 1336,
+     "total_tokens": 1763
+    }
+   },
+   "content": "### Matching Rules for Product Records:\n\n1. **Model Numbers**:\n   - Compare model numbers directly if available.\n   - If one record has a more detailed or extended model number, check if the base model matches (e.g., \"F5C400300W\" and \"F5C400-300W\").\n   - Ignore minor variations in model number formats (e.g., hyphens, spaces).\n\n2. **Brands**:\n   - Ensure both records have the same brand name.\n   - Variations in brand spelling or case should be ignored (e.g., \"Canon\" and \"canon\").\n\n3. **Product Variants**:\n   - Color: Products with different colors are considered different variants (e.g., \"silver\" vs. \"gray\").\n   - Size/Capacity: Different sizes or capacities indicate different products (e.g., 8GB vs. 16GB).\n   - Features: If one record specifies a feature not mentioned in the other, and this feature significantly changes the product's functionality, consider them different.\n\n4. **Bundles and Accessories**:\n   - Check if both records mention the same accessories or bundles.\n   - Products that come with additional items (e.g., \"with 32GB SD card\") are considered different from those without these extras.\n\n5. **Missing or Noisy Fields**:\n   - If a field is missing in one record but present in the other, use the available information to make a decision.\n   - Ignore noisy or irrelevant details that do not affect product identity (e.g., \"low-battery alarm\" vs. no mention of it).\n\n6. **Overall Description**:\n   - Compare the overall description for consistency in key features and specifications.\n   - If descriptions are significantly different, especially in terms of core functionality, consider them different products.\n\n7. **Price**:\n   - Price alone should not be a deciding factor unless all other criteria are ambiguous.\n\nBy following these rules, you can accurately determine if two product records refer to the same real-world product.",
+   "tokens_in": 1336,
+   "tokens_out": 427,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 47.519,
+     "error": null
+    }
+   ],
+   "latency_total_s": 47.519,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null
+  },
+  "qwen2.5:72b#1": {
+   "model": "qwen2.5:72b",
+   "provider": "purdue",
+   "temperature": 0.7,
+   "status": 200,
+   "latency_s": 12.263,
+   "raw_response": {
+    "id": "chatcmpl-dd153474-8bf6-4bea-8d45-07ed89decbc6",
+    "created": 1791766069,
+    "model": "qwen2.5:72b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "### Matching Rules:\n\n1. **Model Numbers**: \n   - Compare model numbers directly if available.\n   - If one record has a more detailed or extended version of the model number, consider them the same if the core part matches (e.g., \"F5C400300W\" and \"F5C400-300W\").\n\n2. **Brands**:\n   - Ensure that both records have the same brand name.\n   - Minor variations in brand names (e.g., \"Canon\" vs. \"canon\") should be considered a match.\n\n3. **Product Variants**:\n   - **Color**: Products with different colors are not the same unless explicitly stated otherwise.\n   - **Size/Capacity**: Products with different sizes or capacities are not the same.\n   - **Bundles and Accessories**: If one record includes additional accessories or is part of a bundle, it should be considered a different product.\n\n4. **Missing or Noisy Fields**:\n   - Ignore missing fields if other key information (model number, brand, core features) matches.\n   - Treat noisy or inconsistent descriptions by focusing on the essential details that define the product (e.g., model number, primary function).\n\n5. **Core Features and Specifications**:\n   - Compare key specifications such as power ratings, resolution, and primary functions to ensure they match.\n   - If the core features are identical but one record provides more detailed information, consider them the same.\n\n6. **Product Names**:\n   - Ensure that the product names are similar or describe the same product type.\n   - Minor variations in naming (e.g., \"AC Anywhere\" vs. \"AC Anywhere 300W\") should be considered a match if other criteria align.\n\n7. **Special Cases**:\n   - If one record is more specific about a feature (e.g., color, capacity) and the other is generic, consider them the same if all other details match.\n   - If both records are vague or lack key information, use the context provided by other fields to make the decision.",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 429,
+     "prompt_tokens": 1336,
+     "total_tokens": 1765
+    }
+   },
+   "content": "### Matching Rules:\n\n1. **Model Numbers**: \n   - Compare model numbers directly if available.\n   - If one record has a more detailed or extended version of the model number, consider them the same if the core part matches (e.g., \"F5C400300W\" and \"F5C400-300W\").\n\n2. **Brands**:\n   - Ensure that both records have the same brand name.\n   - Minor variations in brand names (e.g., \"Canon\" vs. \"canon\") should be considered a match.\n\n3. **Product Variants**:\n   - **Color**: Products with different colors are not the same unless explicitly stated otherwise.\n   - **Size/Capacity**: Products with different sizes or capacities are not the same.\n   - **Bundles and Accessories**: If one record includes additional accessories or is part of a bundle, it should be considered a different product.\n\n4. **Missing or Noisy Fields**:\n   - Ignore missing fields if other key information (model number, brand, core features) matches.\n   - Treat noisy or inconsistent descriptions by focusing on the essential details that define the product (e.g., model number, primary function).\n\n5. **Core Features and Specifications**:\n   - Compare key specifications such as power ratings, resolution, and primary functions to ensure they match.\n   - If the core features are identical but one record provides more detailed information, consider them the same.\n\n6. **Product Names**:\n   - Ensure that the product names are similar or describe the same product type.\n   - Minor variations in naming (e.g., \"AC Anywhere\" vs. \"AC Anywhere 300W\") should be considered a match if other criteria align.\n\n7. **Special Cases**:\n   - If one record is more specific about a feature (e.g., color, capacity) and the other is generic, consider them the same if all other details match.\n   - If both records are vague or lack key information, use the context provided by other fields to make the decision.",
+   "tokens_in": 1336,
+   "tokens_out": 429,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 12.263,
+     "error": null
+    }
+   ],
+   "latency_total_s": 12.263,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null
+  }
+ },
+ "spec_similarity": {
+  "gemini-3.5-flash-lite#0 ~ gemini-3.5-flash-lite#1": 0.391,
+  "gemini-3.5-flash-lite#0 ~ qwen2.5:72b#0": 0.245,
+  "gemini-3.5-flash-lite#0 ~ qwen2.5:72b#1": 0.257,
+  "gemini-3.5-flash-lite#1 ~ qwen2.5:72b#0": 0.243,
+  "gemini-3.5-flash-lite#1 ~ qwen2.5:72b#1": 0.283,
+  "qwen2.5:72b#0 ~ qwen2.5:72b#1": 0.464
+ },
+ "items": [
+  "valid-142-152",
+  "valid-963-1050",
+  "valid-921-1003",
+  "valid-797-127",
+  "valid-659-621",
+  "valid-661-621",
+  "valid-109-84",
+  "valid-577-991",
+  "valid-985-619",
+  "valid-551-872"
+ ],
+ "calls": [
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 19.809,
+   "raw_response": {
+    "id": "chatcmpl-6e4427ad-3c0b-4c15-bf0d-605765d8325f",
+    "created": 1791766088,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 153,
+     "total_tokens": 156
+    }
+   },
+   "tokens_in": 153,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 19.809,
+     "error": null
+    }
+   ],
+   "latency_total_s": 19.809,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.347,
+   "raw_response": {
+    "id": "chatcmpl-1eb3dd62-5165-4ac3-922e-3ec7b5ce7edc",
+    "created": 1791766090,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 204,
+     "total_tokens": 207
+    }
+   },
+   "tokens_in": 204,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.347,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.347,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.342,
+   "raw_response": {
+    "id": "chatcmpl-06b419f7-281a-4d2a-a573-0515095fa374",
+    "created": 1791766093,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 243,
+     "total_tokens": 246
+    }
+   },
+   "tokens_in": 243,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.342,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.342,
+   "wait_s": 1.987,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.321,
+   "raw_response": {
+    "id": "chatcmpl-e6f7466c-7d56-4ae6-a139-60b6a5ee8140",
+    "created": 1791766096,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 132,
+     "total_tokens": 135
+    }
+   },
+   "tokens_in": 132,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.321,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.321,
+   "wait_s": 1.991,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.321,
+   "raw_response": {
+    "id": "chatcmpl-d52bf587-22a8-4110-9e41-786eb34f3a79",
+    "created": 1791766100,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 164,
+     "total_tokens": 167
+    }
+   },
+   "tokens_in": 164,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.321,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.321,
+   "wait_s": 2.012,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.321,
+   "raw_response": {
+    "id": "chatcmpl-40663018-79b0-47d9-b074-7d7349e183cc",
+    "created": 1791766103,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 165,
+     "total_tokens": 168
+    }
+   },
+   "tokens_in": 165,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.321,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.321,
+   "wait_s": 2.012,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.323,
+   "raw_response": {
+    "id": "chatcmpl-409256bf-8b59-4cfd-bb9e-6bed35049507",
+    "created": 1791766106,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 177,
+     "total_tokens": 180
+    }
+   },
+   "tokens_in": 177,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.323,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.323,
+   "wait_s": 2.012,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.334,
+   "raw_response": {
+    "id": "chatcmpl-48998ef7-8462-4bbb-ba99-439e5bbc6061",
+    "created": 1791766110,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 219,
+     "total_tokens": 222
+    }
+   },
+   "tokens_in": 219,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.334,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.334,
+   "wait_s": 2.01,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.34,
+   "raw_response": {
+    "id": "chatcmpl-ce3bd1fa-8494-4153-a54e-7802483b2283",
+    "created": 1791766113,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 207,
+     "total_tokens": 210
+    }
+   },
+   "tokens_in": 207,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.34,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.34,
+   "wait_s": 1.999,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "gemma3:12b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.333,
+   "raw_response": {
+    "id": "chatcmpl-163553ed-8c63-4870-9b5b-50e19ae7747a",
+    "created": 1791766116,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 203,
+     "total_tokens": 206
+    }
+   },
+   "tokens_in": 203,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.333,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.333,
+   "wait_s": 1.993,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 6.662,
+   "raw_response": {
+    "id": "chatcmpl-1ee5ef34-2185-4fc3-a934-4d889f78fbef",
+    "created": 1791766125,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 137,
+     "total_tokens": 139
+    }
+   },
+   "tokens_in": 137,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 6.662,
+     "error": null
+    }
+   ],
+   "latency_total_s": 6.662,
+   "wait_s": 2.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.24,
+   "raw_response": {
+    "id": "chatcmpl-863fb575-7b17-4eba-a4c7-1a784fd24d83",
+    "created": 1791766126,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 177,
+     "total_tokens": 179
+    }
+   },
+   "tokens_in": 177,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.24,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.24,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.25,
+   "raw_response": {
+    "id": "chatcmpl-f6648ba6-db91-4fc3-b9d9-02eef028457b",
+    "created": 1791766130,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 203,
+     "total_tokens": 205
+    }
+   },
+   "tokens_in": 203,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.25,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.25,
+   "wait_s": 2.093,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.209,
+   "raw_response": {
+    "id": "chatcmpl-ba38fa39-1bc3-467c-b41b-ae46c7e70fa5",
+    "created": 1791766133,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No.",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 114,
+     "total_tokens": 117
+    }
+   },
+   "tokens_in": 114,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.209,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.209,
+   "wait_s": 2.083,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No."
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.212,
+   "raw_response": {
+    "id": "chatcmpl-df0fa0df-98fd-4215-8c88-3503c08042e6",
+    "created": 1791766136,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 152,
+     "total_tokens": 154
+    }
+   },
+   "tokens_in": 152,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.212,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.212,
+   "wait_s": 2.124,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.218,
+   "raw_response": {
+    "id": "chatcmpl-0b2a82e5-431a-4892-8c16-f88f10f5b5e5",
+    "created": 1791766140,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 154,
+     "total_tokens": 156
+    }
+   },
+   "tokens_in": 154,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.218,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.218,
+   "wait_s": 2.121,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.209,
+   "raw_response": {
+    "id": "chatcmpl-17453c40-8c93-4d94-90b8-48ce04cea3cb",
+    "created": 1791766143,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 148,
+     "total_tokens": 150
+    }
+   },
+   "tokens_in": 148,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.209,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.209,
+   "wait_s": 2.115,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.258,
+   "raw_response": {
+    "id": "chatcmpl-e2997618-b12b-45c4-bdff-f9eb8110fdf1",
+    "created": 1791766146,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 195,
+     "total_tokens": 197
+    }
+   },
+   "tokens_in": 195,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.258,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.258,
+   "wait_s": 2.124,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.253,
+   "raw_response": {
+    "id": "chatcmpl-5fb56c90-17c7-4e7a-9937-c96ef7d624a8",
+    "created": 1791766150,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 199,
+     "total_tokens": 201
+    }
+   },
+   "tokens_in": 199,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.253,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.253,
+   "wait_s": 2.075,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "S_ref",
+   "executor": "llama3.3:70b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.246,
+   "raw_response": {
+    "id": "chatcmpl-e5af5a10-7b06-49dc-a3ba-743512a4da65",
+    "created": 1791766153,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 187,
+     "total_tokens": 189
+    }
+   },
+   "tokens_in": 187,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.246,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.246,
+   "wait_s": 2.08,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 3.83,
+   "raw_response": {
+    "id": "chatcmpl-17a5a6f5-ba7b-4a09-abfe-75143b0b1d9c",
+    "created": 1791766159,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 431,
+     "total_tokens": 434
+    }
+   },
+   "tokens_in": 431,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 3.83,
+     "error": null
+    }
+   ],
+   "latency_total_s": 3.83,
+   "wait_s": 2.087,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.373,
+   "raw_response": {
+    "id": "chatcmpl-638d9596-7f50-4edd-972f-118520b647c0",
+    "created": 1791766160,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 482,
+     "total_tokens": 484
+    }
+   },
+   "tokens_in": 482,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.373,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.373,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.372,
+   "raw_response": {
+    "id": "chatcmpl-bc28f7cf-46af-4a4b-9931-a0a5882b8662",
+    "created": 1791766164,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 521,
+     "total_tokens": 523
+    }
+   },
+   "tokens_in": 521,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.372,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.372,
+   "wait_s": 1.96,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.36,
+   "raw_response": {
+    "id": "chatcmpl-3ba368a0-2abe-4f20-8ccb-e6264aaf896d",
+    "created": 1791766167,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 410,
+     "total_tokens": 413
+    }
+   },
+   "tokens_in": 410,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.36,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.36,
+   "wait_s": 1.961,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.363,
+   "raw_response": {
+    "id": "chatcmpl-e072f543-0af9-4392-827e-c55734a1a8ac",
+    "created": 1791766170,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 442,
+     "total_tokens": 445
+    }
+   },
+   "tokens_in": 442,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.363,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.363,
+   "wait_s": 1.973,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.367,
+   "raw_response": {
+    "id": "chatcmpl-db73f2a9-b406-42f5-ba52-b3f24d0a9eae",
+    "created": 1791766174,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 443,
+     "total_tokens": 446
+    }
+   },
+   "tokens_in": 443,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.367,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.367,
+   "wait_s": 1.97,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.361,
+   "raw_response": {
+    "id": "chatcmpl-b1fbf46b-98d5-45e0-8e0f-d50f5d245bae",
+    "created": 1791766177,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 455,
+     "total_tokens": 457
+    }
+   },
+   "tokens_in": 455,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.361,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.361,
+   "wait_s": 1.966,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.356,
+   "raw_response": {
+    "id": "chatcmpl-4342c0ed-dd1e-4520-acea-03c2e1d2ee74",
+    "created": 1791766180,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 497,
+     "total_tokens": 499
+    }
+   },
+   "tokens_in": 497,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.356,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.356,
+   "wait_s": 1.972,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.371,
+   "raw_response": {
+    "id": "chatcmpl-986baed2-b702-42d7-af49-defbab5fc1a4",
+    "created": 1791766184,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 485,
+     "total_tokens": 488
+    }
+   },
+   "tokens_in": 485,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.371,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.371,
+   "wait_s": 1.977,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "gemma3:12b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.358,
+   "raw_response": {
+    "id": "chatcmpl-56866ed7-ba79-4ec2-a065-bd38938c0f08",
+    "created": 1791766187,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 481,
+     "total_tokens": 483
+    }
+   },
+   "tokens_in": 481,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.358,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.358,
+   "wait_s": 1.962,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 11.868,
+   "raw_response": {
+    "id": "chatcmpl-18fc160f-2a3d-4e4e-a1a9-77bbe30c3e04",
+    "created": 1791766201,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 403,
+     "total_tokens": 405
+    }
+   },
+   "tokens_in": 403,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 11.868,
+     "error": null
+    }
+   ],
+   "latency_total_s": 11.868,
+   "wait_s": 1.975,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.235,
+   "raw_response": {
+    "id": "chatcmpl-105aa10f-f43d-40c9-8700-ea203fb22a19",
+    "created": 1791766202,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 443,
+     "total_tokens": 445
+    }
+   },
+   "tokens_in": 443,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.235,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.235,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.254,
+   "raw_response": {
+    "id": "chatcmpl-21040c41-7668-4548-b7d0-b815ac8cf0e6",
+    "created": 1791766205,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 469,
+     "total_tokens": 471
+    }
+   },
+   "tokens_in": 469,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.254,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.254,
+   "wait_s": 2.098,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.183,
+   "raw_response": {
+    "id": "chatcmpl-546329f3-5b06-46ac-bfcc-d08af7366445",
+    "created": 1791766209,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 380,
+     "total_tokens": 382
+    }
+   },
+   "tokens_in": 380,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.183,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.183,
+   "wait_s": 2.08,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.213,
+   "raw_response": {
+    "id": "chatcmpl-5d47dd09-db8b-43bd-9a6a-8e92c74d6fa0",
+    "created": 1791766212,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 418,
+     "total_tokens": 420
+    }
+   },
+   "tokens_in": 418,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.213,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.213,
+   "wait_s": 2.151,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.22,
+   "raw_response": {
+    "id": "chatcmpl-61c53a8e-a35a-4698-84c0-93e23f0fd484",
+    "created": 1791766215,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 420,
+     "total_tokens": 422
+    }
+   },
+   "tokens_in": 420,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.22,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.22,
+   "wait_s": 2.12,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.211,
+   "raw_response": {
+    "id": "chatcmpl-394adb52-9963-46a4-b263-76318c4baecb",
+    "created": 1791766219,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 414,
+     "total_tokens": 416
+    }
+   },
+   "tokens_in": 414,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.211,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.211,
+   "wait_s": 2.113,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.252,
+   "raw_response": {
+    "id": "chatcmpl-fb8cf0aa-0631-425d-9733-050af80379bb",
+    "created": 1791766222,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 461,
+     "total_tokens": 463
+    }
+   },
+   "tokens_in": 461,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.252,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.252,
+   "wait_s": 2.122,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.247,
+   "raw_response": {
+    "id": "chatcmpl-fd1497db-19bb-4add-8b65-9e63a8846de2",
+    "created": 1791766225,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 465,
+     "total_tokens": 467
+    }
+   },
+   "tokens_in": 465,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.247,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.247,
+   "wait_s": 2.081,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "gemini-3.5-flash-lite",
+   "executor": "llama3.3:70b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 2.043,
+   "raw_response": {
+    "id": "chatcmpl-a9cf0449-39ed-4a7d-84bc-7172e3bd2ded",
+    "created": 1791766229,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 453,
+     "total_tokens": 455
+    }
+   },
+   "tokens_in": 453,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 2.043,
+     "error": null
+    }
+   ],
+   "latency_total_s": 2.043,
+   "wait_s": 2.086,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 3.995,
+   "raw_response": {
+    "id": "chatcmpl-bee5e65f-f10f-4bb4-a5e5-c7c0ce06df11",
+    "created": 1791766235,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 582,
+     "total_tokens": 585
+    }
+   },
+   "tokens_in": 582,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 3.995,
+     "error": null
+    }
+   ],
+   "latency_total_s": 3.995,
+   "wait_s": 1.29,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.472,
+   "raw_response": {
+    "id": "chatcmpl-d166e312-d37a-48b6-af7c-fb6236c112ce",
+    "created": 1791766236,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 633,
+     "total_tokens": 636
+    }
+   },
+   "tokens_in": 633,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.472,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.472,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.406,
+   "raw_response": {
+    "id": "chatcmpl-a8685e28-864e-4a52-8ffb-02473d9ec288",
+    "created": 1791766240,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 672,
+     "total_tokens": 675
+    }
+   },
+   "tokens_in": 672,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.406,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.406,
+   "wait_s": 1.861,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.39,
+   "raw_response": {
+    "id": "chatcmpl-bac68478-6691-4bf5-918b-7b465461e6e2",
+    "created": 1791766243,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 561,
+     "total_tokens": 564
+    }
+   },
+   "tokens_in": 561,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.39,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.39,
+   "wait_s": 1.927,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.4,
+   "raw_response": {
+    "id": "chatcmpl-d57e0c71-f5ea-4369-8421-e514cb2c04fd",
+    "created": 1791766246,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 593,
+     "total_tokens": 596
+    }
+   },
+   "tokens_in": 593,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.4,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.4,
+   "wait_s": 1.943,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.39,
+   "raw_response": {
+    "id": "chatcmpl-c43e9f70-ffbd-405a-9b89-9c85f420efb4",
+    "created": 1791766249,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 594,
+     "total_tokens": 597
+    }
+   },
+   "tokens_in": 594,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.39,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.39,
+   "wait_s": 1.933,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.401,
+   "raw_response": {
+    "id": "chatcmpl-ab4b6075-c513-43df-b679-0ee56187ec9f",
+    "created": 1791766253,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 606,
+     "total_tokens": 609
+    }
+   },
+   "tokens_in": 606,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.401,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.401,
+   "wait_s": 1.943,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.412,
+   "raw_response": {
+    "id": "chatcmpl-d2e17b44-0dce-4f7b-bc19-e115cd631d81",
+    "created": 1791766256,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 648,
+     "total_tokens": 651
+    }
+   },
+   "tokens_in": 648,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.412,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.412,
+   "wait_s": 1.932,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.399,
+   "raw_response": {
+    "id": "chatcmpl-8ad69141-4d65-4c05-9ead-9090c66590dc",
+    "created": 1791766259,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 636,
+     "total_tokens": 639
+    }
+   },
+   "tokens_in": 636,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.399,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.399,
+   "wait_s": 1.921,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "gemma3:12b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "gemma3:12b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.397,
+   "raw_response": {
+    "id": "chatcmpl-7f561a86-427b-482d-bdc6-5528960b2a13",
+    "created": 1791766263,
+    "model": "gemma3:12b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes\n",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 632,
+     "total_tokens": 635
+    }
+   },
+   "tokens_in": 632,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.397,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.397,
+   "wait_s": 1.934,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes\n"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-142-152",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 11.705,
+   "raw_response": {
+    "id": "chatcmpl-cb4f0724-3632-44eb-8704-c7eb8bce7834",
+    "created": 1791766276,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 538,
+     "total_tokens": 540
+    }
+   },
+   "tokens_in": 538,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 11.705,
+     "error": null
+    }
+   ],
+   "latency_total_s": 11.705,
+   "wait_s": 1.936,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-963-1050",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.244,
+   "raw_response": {
+    "id": "chatcmpl-ac5904e5-4161-4128-a474-74a0f26df447",
+    "created": 1791766278,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 578,
+     "total_tokens": 580
+    }
+   },
+   "tokens_in": 578,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.244,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.244,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-921-1003",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.263,
+   "raw_response": {
+    "id": "chatcmpl-504df4ef-d889-4468-8b94-21b357784b1b",
+    "created": 1791766281,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 604,
+     "total_tokens": 606
+    }
+   },
+   "tokens_in": 604,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.263,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.263,
+   "wait_s": 2.089,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-797-127",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.218,
+   "raw_response": {
+    "id": "chatcmpl-b7143c3b-9038-4500-a36b-7331014e9cdc",
+    "created": 1791766284,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No.",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 3,
+     "prompt_tokens": 515,
+     "total_tokens": 518
+    }
+   },
+   "tokens_in": 515,
+   "tokens_out": 3,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.218,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.218,
+   "wait_s": 2.071,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No."
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-659-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 16.19,
+   "raw_response": {
+    "id": "chatcmpl-5613b4ad-b88f-4d1f-a3c7-091838916d7e",
+    "created": 1791766303,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 553,
+     "total_tokens": 555
+    }
+   },
+   "tokens_in": 553,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 16.19,
+     "error": null
+    }
+   ],
+   "latency_total_s": 16.19,
+   "wait_s": 2.115,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-661-621",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.219,
+   "raw_response": {
+    "id": "chatcmpl-a12772b9-fa39-4dee-a099-008da5d5119b",
+    "created": 1791766304,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 555,
+     "total_tokens": 557
+    }
+   },
+   "tokens_in": 555,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.219,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.219,
+   "wait_s": 0.0,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-109-84",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.21,
+   "raw_response": {
+    "id": "chatcmpl-e644db28-b06e-4720-ac93-955263eae7a4",
+    "created": 1791766307,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 549,
+     "total_tokens": 551
+    }
+   },
+   "tokens_in": 549,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.21,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.21,
+   "wait_s": 2.114,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-577-991",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.257,
+   "raw_response": {
+    "id": "chatcmpl-aa191d6d-6b79-4449-84e9-9caf07bb1090",
+    "created": 1791766311,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 596,
+     "total_tokens": 598
+    }
+   },
+   "tokens_in": 596,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.257,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.257,
+   "wait_s": 2.123,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-985-619",
+   "stratum": "hard_neg",
+   "label": 0,
+   "pred": 0,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.258,
+   "raw_response": {
+    "id": "chatcmpl-55e62eb7-3ede-42b5-bd55-c4f8f1ce2f6f",
+    "created": 1791766314,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "No",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 600,
+     "total_tokens": 602
+    }
+   },
+   "tokens_in": 600,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.258,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.258,
+   "wait_s": 2.076,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "No"
+  },
+  {
+   "spec": "qwen2.5:72b",
+   "executor": "llama3.3:70b",
+   "item": "valid-551-872",
+   "stratum": "pos",
+   "label": 1,
+   "pred": 1,
+   "model": "llama3.3:70b",
+   "provider": "purdue",
+   "temperature": 0.0,
+   "status": 200,
+   "latency_s": 1.237,
+   "raw_response": {
+    "id": "chatcmpl-b907266e-592d-4035-823b-bbc54796c866",
+    "created": 1791766317,
+    "model": "llama3.3:70b",
+    "object": "chat.completion",
+    "choices": [
+     {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+       "content": "Yes",
+       "role": "assistant"
+      }
+     }
+    ],
+    "usage": {
+     "completion_tokens": 2,
+     "prompt_tokens": 588,
+     "total_tokens": 590
+    }
+   },
+   "tokens_in": 588,
+   "tokens_out": 2,
+   "cached_tokens": null,
+   "reasoning_tokens": null,
+   "reasoning_chars": 0,
+   "error": null,
+   "retry_count": 0,
+   "attempts": [
+    {
+     "status": 200,
+     "latency_s": 1.237,
+     "error": null
+    }
+   ],
+   "latency_total_s": 1.237,
+   "wait_s": 2.075,
+   "cache_hit": null,
+   "cost_usd_list": null,
+   "raw": "Yes"
+  }
+ ]
+}

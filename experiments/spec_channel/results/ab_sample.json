@@ -1,0 +1,1592 @@
+{
+ "seed": 0,
+ "dataset": "textual/Abt-Buy",
+ "pilot": [
+  {
+   "id": "test-715-692",
+   "left": {
+    "id": "715",
+    "name": "samsung 5 disc home theater surround sound system httz515",
+    "description": "samsung 5 disc home theater surround sound system httz515 5.1 channel 5 disc capability usb host play ipod dock divx playback dolby digital , dolby pro logic and dts system black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "692",
+    "name": "samsung htz410t home theater system htz410t",
+    "description": "samsung ht-z410t 5 disc home theater surround sound system with hdmi and divx playback",
+    "price": "279.0"
+   },
+   "label": 0,
+   "jaccard": 0.4,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-900-948",
+   "left": {
+    "id": "900",
+    "name": "sony cyber-shot black digital camera dsct500b",
+    "description": "sony cyber-shot black digital camera dsct500b 10.1 megapixels 720p hd video recording 3.5 ' lcd plus touch screen display 4mb internal memory carl zeiss 5x optical zoom lens 16:9 high-resolution mode high sensitivity mode burst mode face detection technology high sensitivity iso 3200 in-camera retouching optical steadyshot image stabilization with double anti-blur solution hdtv compatibility bravia sync phototv hd stamina battery power black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "948",
+    "name": "panasonic lithium ion digital camera battery cgr-s006a / 1b",
+    "description": "lithium ion ( li-ion ) photo battery",
+    "price": "49.99"
+   },
+   "label": 0,
+   "jaccard": 0.08823529411764706,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-479-586",
+   "left": {
+    "id": "479",
+    "name": "sony black cyber-shot digital camera dscw150b",
+    "description": "sony dscw150 black cyber-shot digital camera dscw150b 8.1 megapixels 2.7 ' lcd display 15 mb internal memory carl zeiss 5x optical zoom lens 16:9 high-resolution mode 9-point auto focus automatic macro shooting high sensitivity mode burst mode face detection intelligent scene recognition mode in-camera retouching super steadyshot optical image stabilization with anti-blur solution music slideshow hdtv compatibility beginner-friendly function guide black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "586",
+    "name": "sony alpha dslr-a300 digital slr camera with 18-70mm zoom lens black dslra300k",
+    "description": "10.2 megapixel 3.9 x optical zoom 2.7 ' active matrix tft color lcd",
+    "price": "599.0"
+   },
+   "label": 0,
+   "jaccard": 0.17567567567567569,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-659-435",
+   "left": {
+    "id": "659",
+    "name": "sony 2gb memory stick pro duo mark 2 media card msmt2g",
+    "description": "sony 2gb memory stick pro duo mark 2 media card msmt2g 160 mbps transfer speed 1.85 gb actual capacity",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "435",
+    "name": "sony 2gb memory stick micro ( m2 ) msa2gd",
+    "description": "2 gb",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.34615384615384615,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-859-1025",
+   "left": {
+    "id": "859",
+    "name": "denon 7.1 channel av receiver with network client compatible d-dock port in black avr2809ci",
+    "description": "denon 7.1 channel av home theater surround receiver with network client compatible d-dock port in black avr2809ci 110 watts x 7 channels 1080p upscaling pc setup and control capability via rs-232c network capable xm satellite radio ready dolby truehd and dts-hd master audio hdmi 1.3 a repeater inputs-outputs dual remotes black finish",
+    "price": "1199.99"
+   },
+   "right": {
+    "id": "1025",
+    "name": "denon avr2809ci a/v receiver",
+    "description": "dolby pro logic iix , dolby digital ex , dts-es discrete , dts-es matrix , dts neo :6 , dolby truehd , dolby digital plus , neural surroundam , fm",
+    "price": "1198.0"
+   },
+   "label": 1,
+   "jaccard": 0.11428571428571428,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1005-1053",
+   "left": {
+    "id": "1005",
+    "name": "altec lansing inmotion max ipod/iphone portable audio system imt702",
+    "description": "altec lansing inmotion max ipod/iphone portable audio system imt702 crystal-clear sound powerful bass fm radio with amber lcd expanded sound stage enhanced remote interference free rechargeable battery auxiliary input black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "1053",
+    "name": "altec lansing imt702 inmotion max portable speaker system for iphone",
+    "description": "",
+    "price": "133.96"
+   },
+   "label": 1,
+   "jaccard": 0.2702702702702703,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-602-1020",
+   "left": {
+    "id": "602",
+    "name": "lg 42 ' black plasma flat panel hdtv 42pg20",
+    "description": "lg 42 ' black plasma flat panel hdtv 42pg20 1024 x 768p hd resolution dual xd engine 20,000:1 contrast ratio fluid motion 180hz effect 3x hdmi v. 1.3 with deep color clear voice technology lg simplink connectivity 100,000 hours to half brightness lamp life pc input atsc/ntsc/clear qam tuner black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "1020",
+    "name": "lg 42pg20 42 ' widescreen 720p plasma hdtv 20,000:1 dynamic contrast ratio",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.23214285714285715,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1034-463",
+   "left": {
+    "id": "1034",
+    "name": "linksys black media center extender dma2100",
+    "description": "linksys black media center extender dma2100 works with your windows vista media center pc dual band 802.11 n wireless learning remote included",
+    "price": "119.0"
+   },
+   "right": {
+    "id": "463",
+    "name": "linksys media center extender dma2100",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.3333333333333333,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-658-672",
+   "left": {
+    "id": "658",
+    "name": "sony 1gb memory stick pro duo mark 2 media card msmt1g",
+    "description": "sony 1gb memory stick pro duo mark 2 media card msmt1g 160 mbps transfer speed 940mb actual capacity",
+    "price": "19.0"
+   },
+   "right": {
+    "id": "672",
+    "name": "sony 2gb memory stick pro duo card msmt2g",
+    "description": "2 gb",
+    "price": "15.99"
+   },
+   "label": 0,
+   "jaccard": 0.38461538461538464,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-96-232",
+   "left": {
+    "id": "96",
+    "name": "canon black ink cartridge black pg40bk",
+    "description": "canon black ink cartridge pg40bk compatible with the pixma ip1600 , mp170 printers",
+    "price": "19.0"
+   },
+   "right": {
+    "id": "232",
+    "name": "canon pg-40 black ink cartridge pg-40-bk-twin",
+    "description": "black",
+    "price": "41.46"
+   },
+   "label": 0,
+   "jaccard": 0.3684210526315789,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-443-581",
+   "left": {
+    "id": "443",
+    "name": "sony high definition hdv handycam camcorder hdrhc9",
+    "description": "sony high definition hdv handycam camcorder hdrhc9 10x optical/20x digital zoom 2.7 ' wide ( 16:9 ) touch panel clear photo lcd plus display switchable hdv/dv format recording active interface shoe built-in intelligent flash progressive shutter system super nightshot infrared system x.v. color technology",
+    "price": ""
+   },
+   "right": {
+    "id": "581",
+    "name": "sony handycam hdr-hc9 high definition digital camcorder hdrhc9",
+    "description": "16:9 2.7 ' color lcd",
+    "price": "824.95"
+   },
+   "label": 1,
+   "jaccard": 0.32608695652173914,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-356-861",
+   "left": {
+    "id": "356",
+    "name": "frigidaire gld4355rfs gallery speedclean 24 ' white dishwasher gld4355wh",
+    "description": "frigidaire gld4355rfs gallery speedclean 24 ' white dishwasher gld4355wh 5-level precision direct wash system variable washing pressure power dry drying system granitegrey interior stainless steel food disposer and self cleaning filter 12 easy clean electronic touchpads with digital display smart soil sensor ultraquiet plus sound insulation package white finish",
+    "price": ""
+   },
+   "right": {
+    "id": "861",
+    "name": "frigidaire gld4355rfs gallery series 24 ' under counter dishwasher",
+    "description": "",
+    "price": "443.81"
+   },
+   "label": 1,
+   "jaccard": 0.1509433962264151,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-60-160",
+   "left": {
+    "id": "60",
+    "name": "sanus 13 ' 30 ' visionmount flat panel tv silver wall mount vmfs",
+    "description": "sanus 13 ' 30 ' visionmount flat panel tv silver wall mount vmfs supports up to 40 lbs easy to install fingertip virtual axis tilting system silver finish",
+    "price": "39.99"
+   },
+   "right": {
+    "id": "160",
+    "name": "sanus visionmount tilting flat panel tv wall mount mt25-b1",
+    "description": "steel 100 lb",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.34375,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-795-821",
+   "left": {
+    "id": "795",
+    "name": "speck green 13 ' macbook see thru hard shell case mb13grnseev2",
+    "description": "speck green 13 ' macbook see thru hard shell case mb13grnseev2 hard plastic shell gives great protection full access to all controls rubber feet for added support green finish",
+    "price": ""
+   },
+   "right": {
+    "id": "821",
+    "name": "speck products seethru case for apple 13 ' macbook mb13-grn-see-v2",
+    "description": "plastic green",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.3125,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-617-667",
+   "left": {
+    "id": "617",
+    "name": "samsung 32 ' series 5 lcd black flat panel hdtv ln32a550",
+    "description": "samsung 32 ' series 5 lcd black flat panel hdtv ln32a550 full 1080p high definition resolution 16:9 widescreen aspect ratio 30,000:1 dynamic contrast ratio 5ms response time srs trusurround xt audio built-in digital tuner ( atsc/clear qam ) picture-in-picture sound leveler 3 hdmi slots swivel stand black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "667",
+    "name": "samsung 5 series ln37a550 37 ' lcd tv",
+    "description": "samsung ln37a550 37 ' widescreen 1080p lcd hdtv 15,000:1 dynamic contrast ratio 5ms response time piano black",
+    "price": "944.0"
+   },
+   "label": 0,
+   "jaccard": 0.34545454545454546,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-576-961",
+   "left": {
+    "id": "576",
+    "name": "canon silver 10 megapixel powershot digital camera sd790is",
+    "description": "canon silver 10 megapixel powershot digital camera sd790is 10.0 megapixel 3x optical zoom optical image stabilizer 3.0 ' purecolor lcd face detection technology motion detection technology digic iii image processor red-eye correction silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "961",
+    "name": "canon powershot a1000 is digital camera gray 3210b001",
+    "description": "canon powershot a1000 is 10 megapixel digital camera w / 4x optical zoom , 2.5 lcd , optical image stabilizer , & face detection gray",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.43243243243243246,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-793-790",
+   "left": {
+    "id": "793",
+    "name": "canon deluxe soft black camera case 0716b001",
+    "description": "canon deluxe soft black camera case 0716b001 compatible with canon powershot s2 is black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "790",
+    "name": "canon psc-85 soft camera case 2595b002",
+    "description": "",
+    "price": "8.77"
+   },
+   "label": 0,
+   "jaccard": 0.3684210526315789,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-814-702",
+   "left": {
+    "id": "814",
+    "name": "sony bud style headphones in silver mdred12lpslv",
+    "description": "sony bud style headphones in silver mdred12lpslv 16mm drivers crisp sound neodymium magnets offer powerful sound reproduction convenient cord slider reduces tangles 3.9 ft. cord length frequency response of 8-22 ,000 hz silver finish",
+    "price": "14.0"
+   },
+   "right": {
+    "id": "702",
+    "name": "bass lover earbuds slver mdred12lp/slv",
+    "description": "",
+    "price": "10.99"
+   },
+   "label": 1,
+   "jaccard": 0.07317073170731707,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-191-140",
+   "left": {
+    "id": "191",
+    "name": "panasonic kx-tga450b black 5.8 ghz cordless handset kxtga450b",
+    "description": "panasonic kx-tga450b black 5.8 ghz cordless handset kxtga450b frequency hopping digital spread spectrum technology answering system with compatible base unit call waiting caller id join in/privacy 2-way intercom voice scramble black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "140",
+    "name": "panasonic kx-tg6700b cordless telephone",
+    "description": "panasonic kx-tg6700b 5.8 ghz 2-line fhss gigarange expandable digital cordless phone with answering system & call waiting caller id",
+    "price": "106.14"
+   },
+   "label": 0,
+   "jaccard": 0.35714285714285715,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-378-533",
+   "left": {
+    "id": "378",
+    "name": "haier 13 ' tv/dvd combo tcr13",
+    "description": "haier 13 ' tv/dvd combo tcr13 integrated atsc/ntsc qam tuner 480i resolutions digital comb filter video noise reduction trilingual on-screen display full function remote v-chip parental control silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "533",
+    "name": "13in crt tv/dvd combo tcr13",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.18181818181818182,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-445-415",
+   "left": {
+    "id": "445",
+    "name": "sony pink cyber-shot 7.2 megapixel digital camera dscw120p",
+    "description": "sony pink cyber-shot 7.2 megapixel digital camera dscw120p 7.2 megapixel 4x optical zoom 2.5 ' tft lcd 15 mb internal memory face detection super steadyshot image stabilization smile shutter mode smart zoom pink finish",
+    "price": ""
+   },
+   "right": {
+    "id": "415",
+    "name": "sony lcs-twa/b cyber-shot camera case lcstwa/b",
+    "description": "top loading leather black",
+    "price": "34.0"
+   },
+   "label": 0,
+   "jaccard": 0.15,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-661-672",
+   "left": {
+    "id": "661",
+    "name": "sony 8gb memory stick pro duo mark 2 media card msmt8g",
+    "description": "sony 8gb memory stick pro duo mark 2 media card msmt8g 160 mbps transfer speed ideal for avchd recording 7.35 gb actual capacity",
+    "price": ""
+   },
+   "right": {
+    "id": "672",
+    "name": "sony 2gb memory stick pro duo card msmt2g",
+    "description": "2 gb",
+    "price": "15.99"
+   },
+   "label": 0,
+   "jaccard": 0.3793103448275862,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-987-911",
+   "left": {
+    "id": "987",
+    "name": "canon silver powershot digital camera sd880is",
+    "description": "canon silver powershot digital camera sd880is 10 megapixel 4x optical zoom optical image stabilizer 3.0 ' purecolor lcd ii digic 4 image processor face detection self-timer red-eye correction 19 shooting modes print/share button silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "911",
+    "name": "olympus fe-370 digital camera silver 226420",
+    "description": "olympus fe-370 8 megapixel digital camera w / dual image stabilization , 5x optical zoom , 2.7 lcd , face detection , & 19 easy-to-use shooting modes silver",
+    "price": "129.95"
+   },
+   "label": 0,
+   "jaccard": 0.35555555555555557,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-949-961",
+   "left": {
+    "id": "949",
+    "name": "canon powershot silver 14.7 megapixel digital camera sd990is",
+    "description": "canon powershot silver 14.7 megapixel digital camera sd990is 14.7 megapixel 3.7 x optical zoom optical image stabilizer optical viewfinder large high-quality 2.5 ' purecolor lcd digic 4 image processor face detection self-timer intelligent contrast correction quick mode print/share button silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "961",
+    "name": "canon powershot a1000 is digital camera gray 3210b001",
+    "description": "canon powershot a1000 is 10 megapixel digital camera w / 4x optical zoom , 2.5 lcd , optical image stabilizer , & face detection gray",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.36363636363636365,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-993-105",
+   "left": {
+    "id": "993",
+    "name": "canon black ef 70-300mm f/4 -5.6 is usm telephoto zoom lens 0345b002",
+    "description": "canon black ef 70-300mm f/4 -5.6 is usm telephoto zoom lens 0345b002 15 elements in 10 groups lens construction 4.9 feet closest focusing distance 6-group helical zoom 58mm filter size black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "105",
+    "name": "canon ef 70-300mm f/4 -5.6 is usm telephoto zoom lens 0345b002",
+    "description": "f/4 to 5.6",
+    "price": "549.0"
+   },
+   "label": 1,
+   "jaccard": 0.4117647058823529,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-1011-724",
+   "left": {
+    "id": "1011",
+    "name": "panasonic dect 6.0 pearl silver expandable digital cordless phone system kxtg6313s",
+    "description": "panasonic dect 6.0 pearl silver expandable digital cordless phone system kxtg6313s 3 handsets up to 6 multi-handset capability dect 6.0 technology ringer id call waiting caller id voicemail hold mute clock alarm led lighting night mode speakerphone 11 days standby 5 hours talk time pearl silver finish",
+    "price": "69.0"
+   },
+   "right": {
+    "id": "724",
+    "name": "panasonic kx-tg6313s cordless phone",
+    "description": "1 x phone line ( s ) silver",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.13725490196078433,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-840-676",
+   "left": {
+    "id": "840",
+    "name": "speck seethru pink hard shell case for 13 ' macbook mb13pnkseev2",
+    "description": "speck seethru pink hard shell case for 13 ' macbook mb13pnkseev2 translucent hard plastic shell gives great protection full access to all controls rubber feet for added support pink finish",
+    "price": ""
+   },
+   "right": {
+    "id": "676",
+    "name": "speck products seethru case for apple macbook air mba-pnk-see",
+    "description": "plastic pink",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.3125,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-944-954",
+   "left": {
+    "id": "944",
+    "name": "toshiba 42 ' regza theaterwide black flat panel lcd hdtv 42rv535u",
+    "description": "toshiba 42 ' regza theaterwide black flat panel lcd hdtv 42rv535u 1080p full hd cinespeed display 14-bit pixelpure 4g video processor 4 hdmi inputs dynalight dynamic backlight control atsc/qam/ntsc tuner color temperature control colormaster color control black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "954",
+    "name": "toshiba 42rv535u 42 ' widescreen 1080p lcd hdtv w / cinespeed piano black",
+    "description": "",
+    "price": "789.98"
+   },
+   "label": 1,
+   "jaccard": 0.275,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-368-467",
+   "left": {
+    "id": "368",
+    "name": "sirius stiletto 2 home docking kit slh2",
+    "description": "sirius stiletto 2 home docking kit slh2 stereo audio output connects with home audio system or speakers headphone jack pc sync compatible with stiletto 2 radios charges stiletto 2 while docked black finish",
+    "price": "49.0"
+   },
+   "right": {
+    "id": "467",
+    "name": "sirius slh2 sirius ? stiletto 2 portable radio home kit",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.28125,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-79-149",
+   "left": {
+    "id": "79",
+    "name": "pioneer xm digital satellite tuner for pioneer headunits gexp920xm",
+    "description": "pioneer xm digital satellite tuner for pioneer headunits gexp920xm sat radio ready xm ready built-in fm modulator 18 - station 6 - button presets magne mount installation",
+    "price": "98.0"
+   },
+   "right": {
+    "id": "149",
+    "name": "pioneer gex-p920xm xm digital satellite tuner gex-p920xm",
+    "description": "pioneer electronics gexp920xm xm digital satellite tuner for pioneer headunits",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.39285714285714285,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-484-966",
+   "left": {
+    "id": "484",
+    "name": "nikon d60 digital camera with 18-55mm lens d60outfit",
+    "description": "nikon d60 digital camera with 18-55mm lens d60outfit 10.2 megapixel af-s dx nikkor 18-55mm f/3 .5 -5.6 g vr image stabilization lens in-camera image editing and enhanced retouch menu built-in speedlight image optimization 2.5 ' lcd screen product number 25438 black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "966",
+    "name": "nikon d90 digital slr camera with af-s dx nikkor 18-105mm f/3 .5 -5.6 g ed vr lens 25448",
+    "description": "nikon d90 12 megapixel digital slr camera w / 3 ' lcd , live view , 18-105mm lens , 4.5 fps burst & in-camera image editing",
+    "price": "1159.88"
+   },
+   "label": 0,
+   "jaccard": 0.3888888888888889,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-447-447",
+   "left": {
+    "id": "447",
+    "name": "peerless 32 ' 50 ' articulating flat panel tv black wall arm sa750pu",
+    "description": "peerless 32 ' 50 ' articulating flat panel tv black wall arm sa750pu one-touch tilt three pivot points up to 10.75 ' total horizontal adjustment black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "447",
+    "name": "peerless ss550p flat panel tv stand",
+    "description": "glass black",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.27586206896551724,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-208-245",
+   "left": {
+    "id": "208",
+    "name": "nikon en-el9 black rechargeable li-ion battery enel9",
+    "description": "nikon en-el9 black rechargeable li-ion battery enel9 compatible with d40 and d60 digital camera black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "245",
+    "name": "nikon en-el3e lithium ion digital camera battery 25334",
+    "description": "nikon en-el3e rechargeable li-ion battery",
+    "price": "34.24"
+   },
+   "label": 0,
+   "jaccard": 0.391304347826087,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1006-1091",
+   "left": {
+    "id": "1006",
+    "name": "case-mate carbon fiber black leather case for iphone 3g iph3gcbcf",
+    "description": "case-mate carbon fiber black leather case for iphone 3g iph3gcbcf ultra rare and luxurious leather impact resistant molded shell precise cutouts easy access to all controls screen protection included black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "1091",
+    "name": "case mate carbon fiber iphone 3g case black iph3gc-bcf",
+    "description": "",
+    "price": "28.08"
+   },
+   "label": 1,
+   "jaccard": 0.2571428571428571,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-481-629",
+   "left": {
+    "id": "481",
+    "name": "sony gold cyber-shot digital camera dscw150n",
+    "description": "sony dscw150 gold cyber-shot digital camera dscw150n 8.1 megapixels 2.7 ' lcd display 15 mb internal memory carl zeiss 5x optical zoom lens 16:9 high-resolution mode 9-point auto focus automatic macro shooting high sensitivity mode burst mode face detection intelligent scene recognition mode in-camera retouching super steadyshot optical image stabilization with anti-blur solution music slideshow hdtv compatibility beginner-friendly function guide gold finish",
+    "price": ""
+   },
+   "right": {
+    "id": "629",
+    "name": "sony cyber-shot dsc-h10 digital camera black dsch10/b",
+    "description": "8.1 megapixel 16:9 2x digital zoom 3 ' active matrix tft color lcd",
+    "price": "213.72"
+   },
+   "label": 0,
+   "jaccard": 0.16901408450704225,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-212-325",
+   "left": {
+    "id": "212",
+    "name": "weber stainless steel genesis s320 lp grill 3780001",
+    "description": "weber 3780001 stainless steel genesis s-320 liquid propane grill 3780001 3 stainless steel burners 42,000 btu-per-hour input 12,000 btu-per-hour input side burner electronic crossover ignition system 7mm diameter stainless steel rod cooking grates stainless steel flavorizer bars stainless steel finish liquid propane model ( lp tank not included ) assembly required",
+    "price": "949.0"
+   },
+   "right": {
+    "id": "325",
+    "name": "weber genesis s-320 3780001 60 ' freestanding gas grill",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.17777777777777778,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-55-225",
+   "left": {
+    "id": "55",
+    "name": "delonghi twenty four seven coffee maker dc50w",
+    "description": "delonghi twenty four seven coffee maker dc50w 4-cup capacity easy-access , washable filter basket white finish",
+    "price": "22.0"
+   },
+   "right": {
+    "id": "225",
+    "name": "delonghi 4-cup drip coffee makers",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.2857142857142857,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-745-747",
+   "left": {
+    "id": "745",
+    "name": "pioneer kuro 50 ' black plasma hdtv pdp5020fd",
+    "description": "pioneer kuro 50 ' black plasma hdtv pdp5020fd 1920 x 1080p full hd resolution new home media gallery home network connectivity four independent hdmi v1 .3 inputs anti-reflective filter cell structure with crystal emissive layer asic video processing and scaling detachable bottom speaker room light sensor atsc/ntsc tuner with clear qam 1080p 24/60hz signal via hdmi black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "747",
+    "name": "pioneer pdp-5020fd 50 ' plasma tv",
+    "description": "pioneer kuro pdp-5020fd 50 ' 1080p plasma hdtv",
+    "price": "2199.98"
+   },
+   "label": 1,
+   "jaccard": 0.15517241379310345,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-527-738",
+   "left": {
+    "id": "527",
+    "name": "boston acoustics solo am/fm large display clock radio hsolomdnt",
+    "description": "boston acoustics solo am/fm large display clock radio hsolomdnt rotating clock face precision tuner 3\u00a01/2 ? full-range speaker auxiliary input high contrast lcd display 360\u00ba snooze bar grey finish",
+    "price": "99.0"
+   },
+   "right": {
+    "id": "738",
+    "name": "boston acoustics horizon solo am/fm radio hsolomndt",
+    "description": "",
+    "price": "90.0"
+   },
+   "label": 1,
+   "jaccard": 0.23529411764705882,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-486-653",
+   "left": {
+    "id": "486",
+    "name": "canon silver 8.0 megapixel powershot digital camera sd1100is",
+    "description": "canon silver 8.0 megapixel powershot digital camera sd1100is 8.0 megapixel 3x optical zoom 2.5 ' color lcd 18 shooting modes red-eye correction face detection technology isaps technology swing silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "653",
+    "name": "canon powershot sd790 is digital camera 2554b001",
+    "description": "canon powershot sd790 is 10 megapixel digital camera with 3x optical zoom , 3 ' lcd , & pictbridge",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.34285714285714286,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-308-345",
+   "left": {
+    "id": "308",
+    "name": "panasonic nnsd797s stainless steel countertop microwave oven nnsd797ss",
+    "description": "panasonic nnsd797s stainless steel countertop microwave oven nnsd797ss 1.6 cu . ft. capacity 1250w output power 10 power levels 5 cooking stages one-touch sensor cooking or heating timer stainless steel finish",
+    "price": "199.0"
+   },
+   "right": {
+    "id": "345",
+    "name": "panasonic nnsd767s 1.6 cu . ft. stainless steel countertop microwave oven",
+    "description": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.3870967741935484,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-53-126",
+   "left": {
+    "id": "53",
+    "name": "sony digital photo printer paper 40 pack svmf40p",
+    "description": "sony digital photo printer paper 40 pack svmf40p 4 ' x 6 ' print paper with snap-off edges super coat 2 protective lamination water damage and fingerprint resistant prints 40 sheets of paper and print ribbon for dppf series digital photo printers only",
+    "price": ""
+   },
+   "right": {
+    "id": "126",
+    "name": "sony print paper svmf40p",
+    "description": "svm-f40p 4 ` x6 ' photo paper 40-count",
+    "price": "17.99"
+   },
+   "label": 1,
+   "jaccard": 0.21951219512195122,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-960-963",
+   "left": {
+    "id": "960",
+    "name": "canon printer black ink cartridge cli221blk",
+    "description": "canon printer black ink cartridge cli221blk fine technology for exceptional sharpness and detail compatible with pixma ip3600 , pixma ip4600 , pixma mp620 and pixma mp980",
+    "price": ""
+   },
+   "right": {
+    "id": "963",
+    "name": "canon cli-221 black ink cartridge 2946b001",
+    "description": "black",
+    "price": "11.99"
+   },
+   "label": 1,
+   "jaccard": 0.2692307692307692,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-403-104",
+   "left": {
+    "id": "403",
+    "name": "belkin hi-speed usb 2.0 7-port hub f5u237apls",
+    "description": "belkin hi-speed usb 2.0 7-port hub f5u237apls transfers data up to 480mbps installs easily with plug-and-play convenience works seamlessly with all usb 1.1 and usb 2.0 devices over-current detection and safety mac and pc compatible silver finish",
+    "price": "49.0"
+   },
+   "right": {
+    "id": "104",
+    "name": "belkin hi-speed usb 2.0 7-port hub f5u237-apl-s",
+    "description": "usb 2.0 7-port hub/apple #tb857ll / a",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.23076923076923078,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-65-308",
+   "left": {
+    "id": "65",
+    "name": "sanus 15 ' 40 ' flat panel tv black wall mount vm400b",
+    "description": "sanus 15 ' 40 ' flat panel tv black wall mount vm400b virtual axis tilt adjustment system hinged arm extend from 3.5 ' to 20 ' durable powder coated black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "308",
+    "name": "sanus mf209-b1 full motion wall tv mount",
+    "description": "60 lb",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.20588235294117646,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-797-152",
+   "left": {
+    "id": "797",
+    "name": "canon battery charger 1133b001",
+    "description": "canon battery charger 1133b001 compatible with canon nb-5l lithium battery black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "152",
+    "name": "canon nb-5l lithium-ion digital camera battery 1135b001",
+    "description": "canon nb-5l lithium ion battery",
+    "price": "36.49"
+   },
+   "label": 0,
+   "jaccard": 0.3684210526315789,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1056-307",
+   "left": {
+    "id": "1056",
+    "name": "sanus 30 ' 50 ' full-motion flat panel tv black wall mount lrf118b1",
+    "description": "sanus 30 ' 50 ' full-motion flat panel tv black wall mount lrf118b1 swivel motion low profile virtual axis technology easy access to wires universal mounting brackets black finish",
+    "price": "349.0"
+   },
+   "right": {
+    "id": "307",
+    "name": "sanus lrf118-b1 full motion wall tv mount",
+    "description": "130 lb black",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.2647058823529412,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-476-587",
+   "left": {
+    "id": "476",
+    "name": "sony silver cyber-shot digital camera dscs750",
+    "description": "sony silver cyber-shot digital camera dscs750 7.2 megapixel super had ccd 2.5 ' lcd display 3x optical zoom high sensitivity mode auto focus 22 mb internal memory face detection burst mode convenient photo modes beginner-friendly function guide silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "587",
+    "name": "sony alpha dslr-a350 digital slr camera dslra350",
+    "description": "14.2 megapixel 16:9 2.7 ' active matrix tft color lcd",
+    "price": "594.73"
+   },
+   "label": 0,
+   "jaccard": 0.15384615384615385,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-421-209",
+   "left": {
+    "id": "421",
+    "name": "garmin suction cup mount and 12-volt adapter kit 0101097900",
+    "description": "garmin suction cup mount and 12-volt adapter kit 0101097900 suction cup mount and 12-volt adapter included",
+    "price": "30.0"
+   },
+   "right": {
+    "id": "209",
+    "name": "garmin vehicle suction mount 010-10609-00",
+    "description": "",
+    "price": "27.59"
+   },
+   "label": 0,
+   "jaccard": 0.35294117647058826,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-68-222",
+   "left": {
+    "id": "68",
+    "name": "danby designer portable dishwasher ddw1805wh",
+    "description": "danby designer portable dishwasher ddw1805wh 8 place settings capacity adjustable upper dish rack 7 wash programs three tier spray wash system white finish",
+    "price": ""
+   },
+   "right": {
+    "id": "222",
+    "name": "ddw1805w 18-in . portable dishwasher ( white , energy star )",
+    "description": "",
+    "price": "474.36"
+   },
+   "label": 1,
+   "jaccard": 0.2,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-487-991",
+   "left": {
+    "id": "487",
+    "name": "canon blue 8.0 megapixel powershot digital camera sd1100isb",
+    "description": "canon blue 8.0 megapixel powershot digital camera sd1100isb 8.0 megapixel 3x optical zoom 2.5 ' color lcd 18 shooting modes red-eye correction face detection technology isaps technology rhythm & blue finish",
+    "price": ""
+   },
+   "right": {
+    "id": "991",
+    "name": "canon powershot sx10 is digital camera 2665b001",
+    "description": "canon powershot sx10 is 10 megapixel digital camera w / 20x optical zoom , 28mm wide lens , 2.5 ' lcd , motion detection , & red eye correction",
+    "price": "339.88"
+   },
+   "label": 0,
+   "jaccard": 0.34146341463414637,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-1032-497",
+   "left": {
+    "id": "1032",
+    "name": "sony telephoto converter lens vcldh1774",
+    "description": "sony telephoto converter lens vcldh1774 1.7 x magnification made for cyber-shot dsc-h7 , dsc-h9 or dsc-h50 digital cameras aluminum housing black finish",
+    "price": "169.99"
+   },
+   "right": {
+    "id": "497",
+    "name": "sony vcl-dh1774 telephoto lens vcldh1774",
+    "description": "black",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.3076923076923077,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-659-671",
+   "left": {
+    "id": "659",
+    "name": "sony 2gb memory stick pro duo mark 2 media card msmt2g",
+    "description": "sony 2gb memory stick pro duo mark 2 media card msmt2g 160 mbps transfer speed 1.85 gb actual capacity",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "671",
+    "name": "sony 4gb memory stick pro duo card msmt4g",
+    "description": "4 gb",
+    "price": "26.92"
+   },
+   "label": 0,
+   "jaccard": 0.37037037037037035,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-687-627",
+   "left": {
+    "id": "687",
+    "name": "sony black 13.6 megapixel cyber-shot digital camera dscw300",
+    "description": "sony black 13.6 megapixel cyber-shot digital camera dscw300 13.6 megapixel carl zeiss 3x optical zoom lens 2.7 ' clear photo lcd display in-camera retouching 15 mb internal memory in-camera red-eye correction super steadyshot optical image stabilization double anti-blur solution black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "627",
+    "name": "samsung l200 digital camera black ec-l200zbba / us",
+    "description": "samsung l200 10 megapixel digital camera with 2.5 lcd , 3x optical zoom , digital image stabilization , face detection function black",
+    "price": "119.0"
+   },
+   "label": 0,
+   "jaccard": 0.2653061224489796,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-328-299",
+   "left": {
+    "id": "328",
+    "name": "panasonic expandable digital cordless dect 6.0 phone system kxtg1032s",
+    "description": "panasonic expandable digital cordless dect 6.0 phone system kxtg1032s up to 17 hours of talk time expandable up to 6 handsets up to 3-way conference capability light-up indicator with ringer/message alert backlit lcd on handset digital speakerphone 16-minute all-digital answering system silver finish",
+    "price": "69.0"
+   },
+   "right": {
+    "id": "299",
+    "name": "panasonic kx-tg1032s dual handset digital cordless phone",
+    "description": "1 x phone line ( s ) headset jack silver",
+    "price": "61.14"
+   },
+   "label": 1,
+   "jaccard": 0.1836734693877551,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-659-669",
+   "left": {
+    "id": "659",
+    "name": "sony 2gb memory stick pro duo mark 2 media card msmt2g",
+    "description": "sony 2gb memory stick pro duo mark 2 media card msmt2g 160 mbps transfer speed 1.85 gb actual capacity",
+    "price": "29.99"
+   },
+   "right": {
+    "id": "669",
+    "name": "sony 8gb memory stick pro duo card msmt8g",
+    "description": "8 gb",
+    "price": "49.85"
+   },
+   "label": 0,
+   "jaccard": 0.37037037037037035,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-130-203",
+   "left": {
+    "id": "130",
+    "name": "universal rf series mastercontrol remote control rf20",
+    "description": "universal rf series mastercontrol remote control ? rf20 control up to 10 components 432 macropower buttons customizable lcd screen pre-programmed codes learning capable simplesound fully backlit keypad dvd guide",
+    "price": "79.99"
+   },
+   "right": {
+    "id": "203",
+    "name": "universal mastercontrol universal learning remote control rf20",
+    "description": "audio/video , tv , vcr , dvd player , cd player , cable box , dvr , audio system , tape deck , pc , satellite radio , ipod , xbox 360 , lighting system 50 ft , 100 ft universal remote",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.18867924528301888,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-487-994",
+   "left": {
+    "id": "487",
+    "name": "canon blue 8.0 megapixel powershot digital camera sd1100isb",
+    "description": "canon blue 8.0 megapixel powershot digital camera sd1100isb 8.0 megapixel 3x optical zoom 2.5 ' color lcd 18 shooting modes red-eye correction face detection technology isaps technology rhythm & blue finish",
+    "price": ""
+   },
+   "right": {
+    "id": "994",
+    "name": "canon powershot g10 14 megapixel digital camera w / 28mm wide lens , 5x optical zoom , 3 ' lcd , face detection & red eye correction 2663b001",
+    "description": "",
+    "price": "409.88"
+   },
+   "label": 0,
+   "jaccard": 0.35,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-800-67",
+   "left": {
+    "id": "800",
+    "name": "canon 9517a002 ef-s 17mm 85mm f/4 .0 -5.6 usm is zoom lens 9517a002",
+    "description": "canon 275483 ef-s 17mm 85mm f/4 .0 -5.6 usm is zoom lens 9517a002 compatible with canon eos 20d and digital rebel bodies aspheric element with two aspherical surfaces utilized image stabilization circular aperture design 5x zoom ratio",
+    "price": ""
+   },
+   "right": {
+    "id": "67",
+    "name": "canon ef-s 17-85mm f/4 -5.6 is usm standard zoom lens",
+    "description": "canon 9517a002 ef-s 17-85mm f4-5 .6 is usm standard zoom lens with optical image stabilizer",
+    "price": "515.0"
+   },
+   "label": 1,
+   "jaccard": 0.3181818181818182,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-796-259",
+   "left": {
+    "id": "796",
+    "name": "canon battery charger 0763b001",
+    "description": "canon battery charger 0763b001 compatible with canon nb-2l and nb-2lh batteries",
+    "price": ""
+   },
+   "right": {
+    "id": "259",
+    "name": "canon cb-2lx battery charger 1133b001",
+    "description": "",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.4,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-487-993",
+   "left": {
+    "id": "487",
+    "name": "canon blue 8.0 megapixel powershot digital camera sd1100isb",
+    "description": "canon blue 8.0 megapixel powershot digital camera sd1100isb 8.0 megapixel 3x optical zoom 2.5 ' color lcd 18 shooting modes red-eye correction face detection technology isaps technology rhythm & blue finish",
+    "price": ""
+   },
+   "right": {
+    "id": "993",
+    "name": "canon powershot sd990 is 14 megapixel digital camera w / 3.7 x optical zoom , ua len , face detection , 2.5 lcd , & iso 1600 black 2669b001",
+    "description": "",
+    "price": "299.88"
+   },
+   "label": 0,
+   "jaccard": 0.34146341463414637,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-495-629",
+   "left": {
+    "id": "495",
+    "name": "sony cyber-shot black digital camera dsch10b",
+    "description": "sony dsch10 cyber-shot black digital camera dsch10b 8.1 megapixels 3.0 ' lcd display carl zeiss 10x optical zoom lens 31 mb internal memory versatile flash advanced sports mode 9-point auto focus high sensitivity mode burst mode face detection in-camera retouching super steadyshot optical image stabilization with anti-blur solution music slideshow hdtv compatibility stamina battery power beginner-friendly function guide black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "629",
+    "name": "sony cyber-shot dsc-h10 digital camera black dsch10/b",
+    "description": "8.1 megapixel 16:9 2x digital zoom 3 ' active matrix tft color lcd",
+    "price": "213.72"
+   },
+   "label": 1,
+   "jaccard": 0.15714285714285714,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-509-665",
+   "left": {
+    "id": "509",
+    "name": "toshiba black 9-inch lcd widescreen portable dvd player sdp91s",
+    "description": "toshiba black portable dvd player sdp91s 9 ' widescreen tft lcd display up to 5 hour lithium battery life official divx certified switchable audio/video input and output swivel and flip type screen black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "665",
+    "name": "toshiba sd-p91s portable dvd player",
+    "description": "toshiba sd-p91s 9 ' portable dvd player",
+    "price": "164.72"
+   },
+   "label": 1,
+   "jaccard": 0.21621621621621623,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-661-669",
+   "left": {
+    "id": "661",
+    "name": "sony 8gb memory stick pro duo mark 2 media card msmt8g",
+    "description": "sony 8gb memory stick pro duo mark 2 media card msmt8g 160 mbps transfer speed ideal for avchd recording 7.35 gb actual capacity",
+    "price": ""
+   },
+   "right": {
+    "id": "669",
+    "name": "sony 8gb memory stick pro duo card msmt8g",
+    "description": "8 gb",
+    "price": "49.85"
+   },
+   "label": 1,
+   "jaccard": 0.42857142857142855,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-110-97",
+   "left": {
+    "id": "110",
+    "name": "canon photo ink cartridge cl52",
+    "description": "canon photo ink cartridge cl52 compatible with pixma ip6210d and ip6220d printers",
+    "price": "25.0"
+   },
+   "right": {
+    "id": "97",
+    "name": "canon cli-8pc photo cyan ink cartridge 0624b002",
+    "description": "photo cyan",
+    "price": "13.99"
+   },
+   "label": 0,
+   "jaccard": 0.35,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-110-84",
+   "left": {
+    "id": "110",
+    "name": "canon photo ink cartridge cl52",
+    "description": "canon photo ink cartridge cl52 compatible with pixma ip6210d and ip6220d printers",
+    "price": "25.0"
+   },
+   "right": {
+    "id": "84",
+    "name": "canon ink cartridge for pixma ip1600 , ip6210d and ip6220d printers 0617b002",
+    "description": "color",
+    "price": "19.11"
+   },
+   "label": 0,
+   "jaccard": 0.5238095238095238,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-231-253",
+   "left": {
+    "id": "231",
+    "name": "lg 14 ' washer and dryer red pedestal with drawer wdp3r",
+    "description": "lg 14 ' washer and dryer red pedestal with drawer wdp3r each drawer has storage for laundry bottles , boxes and more provides easy access to front loading doors by raising the washer and dryer by 14 ' minimizes bending and stooping at doors red finish",
+    "price": ""
+   },
+   "right": {
+    "id": "253",
+    "name": "lg electronics wdp3 laundry pedestal with drawer - w / b / s / n wdp3r wild cherry",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.20454545454545456,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-538-483",
+   "left": {
+    "id": "538",
+    "name": "motorola motorokr portable bluetooth car kit speaker phone t505",
+    "description": "motorola motorokr portable bluetooth car kit speaker phone t505 2.0 bluetooth wireless technology noise cancellation technology loud sound high speaker output audio callerid stationfinder convenient multi-function button long battery life mini-usb connector black finish",
+    "price": "129.0"
+   },
+   "right": {
+    "id": "483",
+    "name": "motorola motorokr t505 bluetooth in-car speakerphone 89149",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.18421052631578946,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-544-759",
+   "left": {
+    "id": "544",
+    "name": "panasonic black dvd home theater sound system scpt660",
+    "description": "panasonic black dvd home theater sound system scpt660 kelton subwoofer bamboo diaphragm center speakers 1080p up-conversion integrated universal dock and on-screen display for ipod ipod video playback whisper-mode surround built-in dolby digital and dts decoder high speed 5-dvd/cd changer black finish",
+    "price": "289.0"
+   },
+   "right": {
+    "id": "759",
+    "name": "panasonic sc-pt960 home theater system",
+    "description": "panasonic sc-pt960 5-disc dvd home theater system with kelton subwoofer , 1080p up-conversion , integrated universal dock for ipod , 2 tower speakers , wireless rear speaker and viera link",
+    "price": "349.99"
+   },
+   "label": 0,
+   "jaccard": 0.3584905660377358,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-626-471",
+   "left": {
+    "id": "626",
+    "name": "polk audio csi a4 black center channel loudspeaker csia4bk",
+    "description": "polk audio csi a4 black center channel loudspeaker csia4bk 1 ' silk/polymer dome tweeter dual 5-1/4 ' mid/woofers magnetic shielding all-mdf construction acoustically inert stamped driver baskets floating anti-diffraction grilles dual bi-ampable gold-plated 5-way binding post inputs black finish sold as a single",
+    "price": "279.95"
+   },
+   "right": {
+    "id": "471",
+    "name": "polkaudio csi a4 black high performance center channel loudspeaker am4415-a",
+    "description": "",
+    "price": "189.47"
+   },
+   "label": 1,
+   "jaccard": 0.1875,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-131-175",
+   "left": {
+    "id": "131",
+    "name": "panasonic network camera white finish blc1a",
+    "description": "panasonic network camera blc1a automatic network configuration built-in calendar timer auto time adjustment with ntp up to 10x digital zoom multi-language interface white finish",
+    "price": "99.0"
+   },
+   "right": {
+    "id": "175",
+    "name": "panasonic bl-c1a network camera",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.21428571428571427,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-546-759",
+   "left": {
+    "id": "546",
+    "name": "panasonic black dvd home theater sound system scpt960",
+    "description": "panasonic black dvd home theater sound system scpt960 kelton subwoofer bamboo diaphragm center speakers 1080p up-conversion integrated universal dock and on-screen display for ipod ipod video playback wireless rear speaker system whisper-mode surround built-in dolby digital and dts decoder high speed 5-dvd/cd changer black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "759",
+    "name": "panasonic sc-pt960 home theater system",
+    "description": "panasonic sc-pt960 5-disc dvd home theater system with kelton subwoofer , 1080p up-conversion , integrated universal dock for ipod , 2 tower speakers , wireless rear speaker and viera link",
+    "price": "349.99"
+   },
+   "label": 1,
+   "jaccard": 0.4230769230769231,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-851-816",
+   "left": {
+    "id": "851",
+    "name": "speck seethru pink hard shell case for 15 ' macbook mb15pnkseev2",
+    "description": "speck seethru pink hard shell case for 15 ' macbook mb15pnkseev2 translucent hard plastic shell gives great protection full access to all controls rubber feet for added support pink finish",
+    "price": ""
+   },
+   "right": {
+    "id": "816",
+    "name": "speck products seethru case for apple 15 ' macbook pro mb15-pnk-see-v2",
+    "description": "plastic pink",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.34375,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-476-631",
+   "left": {
+    "id": "476",
+    "name": "sony silver cyber-shot digital camera dscs750",
+    "description": "sony silver cyber-shot digital camera dscs750 7.2 megapixel super had ccd 2.5 ' lcd display 3x optical zoom high sensitivity mode auto focus 22 mb internal memory face detection burst mode convenient photo modes beginner-friendly function guide silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "631",
+    "name": "sony dsc-750 cyber-shot digital camera dsc750",
+    "description": "",
+    "price": "99.72"
+   },
+   "label": 1,
+   "jaccard": 0.16666666666666666,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-142-948",
+   "left": {
+    "id": "142",
+    "name": "panasonic digital camera battery cgas007a1b",
+    "description": "panasonic digital camera battery cgas007a1b lithium ion type for digital camera dmctz1 and dmctz3",
+    "price": ""
+   },
+   "right": {
+    "id": "948",
+    "name": "panasonic lithium ion digital camera battery cgr-s006a / 1b",
+    "description": "lithium ion ( li-ion ) photo battery",
+    "price": "49.99"
+   },
+   "label": 0,
+   "jaccard": 0.45,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-689-785",
+   "left": {
+    "id": "689",
+    "name": "lg black freestanding electric range lre30757bk",
+    "description": "lg black freestanding electric range lre30757bk 5.6 cu . ft. capacity dual convection self-cleaning touch controls ceramic cooktop wideview window warming drawer interior oven light black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "785",
+    "name": "lg 5.6 cu.ft . freestanding electric range",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.27586206896551724,
+   "stratum": "pos"
+  },
+  {
+   "id": "test-421-275",
+   "left": {
+    "id": "421",
+    "name": "garmin suction cup mount and 12-volt adapter kit 0101097900",
+    "description": "garmin suction cup mount and 12-volt adapter kit 0101097900 suction cup mount and 12-volt adapter included",
+    "price": "30.0"
+   },
+   "right": {
+    "id": "275",
+    "name": "garmin suction cup mount 010-10823-00",
+    "description": "",
+    "price": "24.84"
+   },
+   "label": 0,
+   "jaccard": 0.4375,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-96-100",
+   "left": {
+    "id": "96",
+    "name": "canon black ink cartridge black pg40bk",
+    "description": "canon black ink cartridge pg40bk compatible with the pixma ip1600 , mp170 printers",
+    "price": "19.0"
+   },
+   "right": {
+    "id": "100",
+    "name": "canon pg-50 high capacity black ink cartridge for pixma mp450 printer 0616b002",
+    "description": "black",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.34782608695652173,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "test-664-1012",
+   "left": {
+    "id": "664",
+    "name": "panasonic dect 6.0 black expandable digital cordless phone system kxtg9372b",
+    "description": "panasonic dect 6.0 black expandable digital cordless phone system kxtg9372b drop and splash resistant 2 handsets up to 6 multi-handset capability digital answering machine system ringer id call waiting caller id voicemail hold mute clock alarm led lighting night mode call block speakerphone 11 days standby 5 hours talk time black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "1012",
+    "name": "panasonic lumix dmc-fz28 digital camera black",
+    "description": "panasonic dmc-fz28k lumix 10 megapixel digital camera with 27mm leica dc vario-elmarit lens , 18x optical zoom and intelligent auto mode black",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.11940298507462686,
+   "stratum": "rand_neg"
+  },
+  {
+   "id": "test-625-761",
+   "left": {
+    "id": "625",
+    "name": "sony black bravia home theater system davhdx279w",
+    "description": "sony black bravia home theater system davhdx279w ipod cradle digital media port and s-air surround wireless included bravia sync 1080p upscaling via hdmi 5-disc dvd/cd player digital cinema auto calibration black finish",
+    "price": ""
+   },
+   "right": {
+    "id": "761",
+    "name": "sony bravia dav-hdx279wc home theater system",
+    "description": "dvd player , 6.1 speakers 5 disc ( s ) progressive scan dolby digital , dts , dolby pro logic ii black",
+    "price": "318.01"
+   },
+   "label": 1,
+   "jaccard": 0.23404255319148937,
+   "stratum": "pos"
+  }
+ ],
+ "writer_examples": [
+  {
+   "id": "train-59-16",
+   "left": {
+    "id": "59",
+    "name": "belkin ac anywhere f5c400300w",
+    "description": "belkin ac anywhere f5c400300w mobile power adapter for your vehicle powers portable devices using a 300-watt power inverter 2 ac outlets converts dc power to ac power from a cigarette lighter socket automatic overheat shut-off low-battery alarm overload protection replaceable fuse included power led indicator",
+    "price": ""
+   },
+   "right": {
+    "id": "16",
+    "name": "belkin ac anywhere 300w power inverter f5c400-300w",
+    "description": "input voltage :12 v dc output voltage :110 v ac 300w stepped sine wave",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.17307692307692307,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-109-101",
+   "left": {
+    "id": "109",
+    "name": "canon high capacity color ink cartridge color ink cl51",
+    "description": "canon high capacity color ink cartridge cl51 compatible with pixma ip6210d , ip6220d , mp150 , mp170 and mp450 printers",
+    "price": "35.0"
+   },
+   "right": {
+    "id": "101",
+    "name": "canon cl-52 photo ink cartridge for pixma ip6210d and pixma ip6220d printers 0619b002",
+    "description": "color",
+    "price": "18.16"
+   },
+   "label": 0,
+   "jaccard": 0.46153846153846156,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-577-961",
+   "left": {
+    "id": "577",
+    "name": "canon silver 10 megapixel powershot digital camera sd890is",
+    "description": "canon silver 10 megapixel powershot digital camera sd890is 10.0 megapixel 5x optical zoom optical image stabilizer 2.5 ' purecolor lcd face detection technology motion detection technology digic iii image processor red-eye correction silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "961",
+    "name": "canon powershot a1000 is digital camera gray 3210b001",
+    "description": "canon powershot a1000 is 10 megapixel digital camera w / 4x optical zoom , 2.5 lcd , optical image stabilizer , & face detection gray",
+    "price": ""
+   },
+   "label": 0,
+   "jaccard": 0.4722222222222222,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-95-85",
+   "left": {
+    "id": "95",
+    "name": "canon yellow ink cartridge yellow cli8y",
+    "description": "canon yellow ink cartridge cli8y compatible with the pixma ip4200 , ip5200 , ip5200r , ip6600d , mp500 , mp800 printers",
+    "price": "16.0"
+   },
+   "right": {
+    "id": "85",
+    "name": "canon ink cartridge for pixma ip4200 , ip5200 , ip5200r and ip6600d printers 0620b002",
+    "description": "black",
+    "price": "13.99"
+   },
+   "label": 0,
+   "jaccard": 0.48,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-627-472",
+   "left": {
+    "id": "627",
+    "name": "polk audio csi a4 cherry center channel loudspeaker csia4ch",
+    "description": "polk audio csi a4 cherry center channel loudspeaker csia4ch 1 ' silk/polymer dome tweeter dual 5-1/4 ' mid/woofers magnetic shielding all-mdf construction acoustically inert stamped driver baskets floating anti-diffraction grilles dual bi-ampable gold-plated 5-way binding post inputs cherry finish sold as a single",
+    "price": "279.95"
+   },
+   "right": {
+    "id": "472",
+    "name": "polkaudio csi a4 cherry high performance center channel loudspeaker am4412-a",
+    "description": "",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.19148936170212766,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-132-151",
+   "left": {
+    "id": "132",
+    "name": "pioneer 6.5 ' 2-way marine white speakers tsmr1640",
+    "description": "pioneer 6.5 ' 2-way marine speakers tsmr1640 160 watts maximum power handling ( 30 watts nominal ) 1-1/8 ' poly-ether imide dome tweeter with magnetic fluid and equalizer tinsel lead wire and terminals are gold-plated for extra protection",
+    "price": "120.0"
+   },
+   "right": {
+    "id": "151",
+    "name": "pioneer nautica ts-mr1640 marine speaker ts-mr1640",
+    "description": "pioneer electronics tsmr1640 nautica series 6-1/2 ' marine-use 2-way speaker with 160 watts max . power",
+    "price": ""
+   },
+   "label": 1,
+   "jaccard": 0.24444444444444444,
+   "stratum": "pos"
+  },
+  {
+   "id": "train-1000-607",
+   "left": {
+    "id": "1000",
+    "name": "panasonic blue 8.1 megapixel digital camera dmcfs3a",
+    "description": "panasonic blue 8.1 megapixel digital camera dmcfs3a 8.1 megapixel 33mm lens 3x optical zoom intelligent auto mode 2.5 ' diagonal intelligent lcd mega optical image stabilization intelligent iso control face detection hi-speed burst mode blue finish",
+    "price": ""
+   },
+   "right": {
+    "id": "607",
+    "name": "panasonic lumix dmc-fs3 digital camera silver",
+    "description": "panasonic dmc-fs3s 8 megapixel compact digital camera with 33mm lens , 3x optical zoom , intelligent auto mode and 2.5 ' diagonal intelligent lcd silver",
+    "price": "137.33"
+   },
+   "label": 0,
+   "jaccard": 0.45,
+   "stratum": "hard_neg"
+  },
+  {
+   "id": "train-457-509",
+   "left": {
+    "id": "457",
+    "name": "canon silver dual flash memory camcorder fs10",
+    "description": "canon silver dual flash memory camcorder fs10 8gb internal flash drive sdhc card slot built-in electronic lens cover wireless remote control 2.7 ' widescreen lcd 1.07 megapixel ccd image sensor 48x advanced zoom moonstone silver finish",
+    "price": ""
+   },
+   "right": {
+    "id": "509",
+    "name": "canon fs10 digital camcorder 2686b001",
+    "description": "canon fs10 dual flash memory camcorder",
+    "price": "341.72"
+   },
+   "label": 1,
+   "jaccard": 0.23076923076923078,
+   "stratum": "pos"
+  }
+ ]
+}
