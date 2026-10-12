@@ -3,7 +3,7 @@
 Goal: test whether an optimizer that profiles LLM operators one at a time picks the right plan when one LLM writes the instructions another LLM follows.  
 *Requirements: none to read it. How to reproduce: `README.md`. Raw logs: `results/runs/pilot-c1`, `results/runs/pilot-c2`, `results/runs/full-c2`, `results/runs/c1-k40`. Full-run pre-registration: `PREREG-C2.md`. Analysis output: `results/analysis.json`.*  
 
-Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1 retest: 2026-10-10 (Sections VII, VIII).  
+Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1 retest: 2026-10-10 (Sections VII, VIII). Framing of H1/H2 and reference results corrected after review: 2026-10-12.  
 
 ---
 
@@ -14,7 +14,7 @@ Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1
 * **Quality vs cost:** the optimizer's pick still meets the quality bar. The mistake shows up as cost.
 * **Cost composition:** generated instructions make every downstream call 2.6-6.5x longer. Adding per-operator costs underestimates downstream cost by 67-81%; scaling by instruction length is within about 3%.
 * **Two workloads, two behaviors:** in product matching (C2) the interaction keeps its direction in all 3 replicates but is not significant once variation between drafts of the rules is counted (Section IV.7). In city imputation (C1) the generated instructions hurt every plan, and the largest source of variation is which *writing* of the instructions you get, not which writer.
-* **Full C2 run (Section VII):** 150 new pairs, 9 replicates, two held-out reference executors. The executor-gap shift is large and significant (p < 0.001); the interaction is not (p = 0.34). Which reference executor profiles the writer decides whether the optimizer overpays (~5.6x) or loses quality (up to 0.15).
+* **Full C2 run (Section VII):** 150 new pairs, 9 replicates, two held-out reference executors. Treating the generic instruction as the cheapest writer, adding a writer removes llama's lead over gemma: an upstream x downstream interaction, large and significant (p < 0.001; pre-registered as "estimability"). The interaction between *which* writer and which executor is not detected (p = 0.34). When a writer is required, the optimizer overpays ~5.6x under three of the four reference executors; when it is optional, the reference decides between the correct pick and lost quality (up to 0.15).
 * **C1 retest (Section VIII):** 40 stratified writer examples did not help. No writer stated the phone-format convention; every writer plan scores ~0.52 against the simple rule's 0.840. C1 is dropped as a workload.
 
 ---
@@ -222,8 +222,9 @@ Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 p
 | H2 executor-gap shrink, Gemini's rules | 0.127 | 13.96 / < 0.001 | |
 | H2 executor-gap shrink, qwen's rules | 0.102 | 5.08 / 0.001 | |
 
-* **H1, interaction: not significant.** Per-replicate contrasts range from -0.127 to +0.107 (6 of 9 negative); the replicate SD (0.075) is three times the mean. The F1 contrast agrees (CI95 [-0.068, +0.044]). The pilot's -0.063 does not hold at full size.
-* **H2, estimability: significant for both writers.** Under the generic instruction llama leads gemma by 0.120; under real rules the gap is -0.007 (Gemini) and +0.018 (qwen). The executor profile an optimizer would measure does not predict the executor's behavior in the pipeline.
+* **H1, writer x executor interaction: not significant.** Per-replicate contrasts range from -0.127 to +0.107 (6 of 9 negative); the replicate SD (0.075) is three times the mean. The F1 contrast agrees (CI95 [-0.068, +0.044]). The pilot's -0.063 does not hold at full size.
+* **H2, writer present x executor interaction: significant for both writers.** Under the generic instruction llama leads gemma by 0.120; under real rules the gap is -0.007 (Gemini) and +0.018 (qwen). Treating the generic instruction as the cheapest writer (a fixed template), adding a writer removes the downstream ranking: an interaction between the upstream choice and the downstream choice. `PREREG-C2.md` names H2 "estimability"; the test is unchanged. For the optimizer, it means the executor profile measured under the generic instruction does not predict the executor's behavior in the pipeline.
+* **What H2 does not separate:** the generic instruction is shorter and less specific than any writer's rules, so H2 shows that detailed rules erase llama's lead, not that a particular writer does. H1 is the test of the latter.
 
 ### 4. Optimizer Regret By Reference Executor (H3, 9 replicates each)
 
@@ -234,9 +235,9 @@ Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 p
 | gemma (candidate) | 0/9 | 0.045 / 0.107 | 2/9 | 1.00x |
 | `gemma3:27b` (held out) | 0/9 | 0.058 / 0.147 | 2/9 | 5.57x |
 
-* **References that react to rules like llama** (no gain) make writers look weak: the optimizer keeps the generic instruction when it may, and overpays for llama when a writer is required.
-* **References that react like gemma** (gain) make writers look strong: the optimizer adds a writer even when skipping it is better, and composes that gain onto llama, which actually loses from rules. Picks fall below the quality bar in up to 3 of 9 replicates.
-* **Reading:** the reference executor is a hidden design choice that decides which error the optimizer makes. The pilot's "writer-optional pick is correct" holds only with a llama-like reference.
+* **Writer required: overpay under three of four references.** llama, `gpt-oss:120b` and `gemma3:27b` all give a median 5.57x. Only gemma as its own reference avoids it, because it then measures the cheap plan directly.
+* **Writer optional: the reference decides.** References that react to rules like llama (no gain) make writers look weak, so the optimizer keeps the generic instruction, which is correct. References that react like gemma (gain) make writers look strong: the optimizer adds a writer even when skipping it is better, and composes that gain onto llama, which actually loses from rules (quality regret up to 0.15).
+* **Reading:** the reference executor is a hidden design choice. It decides between the correct pick and lost quality when the writer is optional; when the writer is required, the overpay holds for every reference except the cheap candidate itself. The pilot's "writer-optional pick is correct" holds only with a llama-like reference.
 
 ### 5. Cost Composition And Caching
 
@@ -246,8 +247,8 @@ Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 p
 
 ### 6. Reading
 
-* **Established for C2:** isolated executor profiles mispredict in-pipeline behavior (H2); the reference executor decides whether the optimizer overpays or loses quality (H3); downstream cost composes as rules length x calls.
-* **Not established:** a writer-by-executor interaction (H1). Detecting a 0.05 effect at the observed replicate SD would need about 17 replicates (post-hoc, not used).
+* **Established for C2:** adding a writer interacts with the executor choice, so executor profiles under the generic instruction mispredict in-pipeline behavior (H2); when a writer is required the optimizer overpays under three of four references, and when it is optional the reference decides between the correct pick and lost quality (H3); downstream cost composes as rules length x calls.
+* **Not established:** an interaction between which writer and which executor (H1). Detecting a 0.05 effect at the observed replicate SD would need about 17 replicates (post-hoc, not used).
 
 ---
 
