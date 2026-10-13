@@ -12,6 +12,7 @@ Measures whether an optimizer that profiles LLM operators one at a time picks th
 | `run_resilient.sh` | restarts `runner.py` after outages or crashes until the run completes |
 | `analyze.py` | offline analysis: interaction and estimability tests, independence baseline and regret per reference executor, cost model, cache sensitivity, F1, workload sizing |
 | `optimizer_policies.py` | offline comparison of optimizer estimation policies (single, averaged, matched reference; joint sampling incl. equal budget) and draft features vs executor gain; targeted estimator P7 (synthetic self-check only); needs `analysis.json` |
+| `optimizer_budget.py` | equal-budget comparison of quality estimates on sampled profiles (separate profile, averaged over upstream outputs, Abacus-style best-upstream profile, joint sampling, targeted), oracle vs estimated bar, Llama price range; per-stratum and natural-mix quality; needs `optimizer_policies.json` |
 | `workflows.py` | workload definitions: `c1` (Restaurant city imputation), `c2` (Walmart-Amazon matching, pilot sample), `c2_full` (150-pair full-run sample), `c1_k40` (C1 redesign test: 40 stratified writer examples, valid split), `ab` (Abt-Buy matching, pilot-shaped sample) |
 | `prompts.py` | writer, executor, and reference-spec templates |
 | `llm.py` | single-call client for Purdue GenAI and Gemini: pacing, retries, token and cost fields |
@@ -109,6 +110,12 @@ python -I experiments/spec_channel/optimizer_policies.py full-c2
 ```
 
 Writes `results/optimizer_policies.json`; asserts the single-reference policy reproduces `analysis.json`.
+
+```bash
+python -I experiments/spec_channel/optimizer_budget.py full-c2
+```
+
+Writes `results/optimizer_budget.json`; asserts the re-implemented estimates reproduce the exact picks in `optimizer_policies.json`.
 
 ---
 

@@ -41,14 +41,19 @@ def spearman(x, y) -> float | None:
     return None if rx.std() == 0 or ry.std() == 0 else round(float(np.corrcoef(rx, ry)[0, 1]), 3)
 
 
-def decide(cells, true_q, true_cost, est_q, est_cost) -> dict:
-    """Same decision rules as analyze.baseline: best estimate (pool all), cheapest estimate above 95% of best true (pool factorial)."""
+def decide(cells, true_q, true_cost, est_q, est_cost, bar_from: str = "true") -> dict:
+    """Same decision rules as analyze.baseline: best estimate (pool all), cheapest estimate above 95% of best (pool factorial).
+
+    bar_from="true" puts the optimizer's bar at 95% of the true best (oracle); "est" at 95% of its own estimated best.
+    Overpay and pick_meets_bar are always judged against the true bar.
+    """
     out = {}
     for name, pool in {"factorial": [c for c in cells if c[0] != REF], "all": cells}.items():
         best, pick = max(pool, key=lambda c: true_q[c]), max(pool, key=lambda c: est_q[c])
         entry = {"true_best": "/".join(best), "optimizer_pick": "/".join(pick), "quality_regret": round(true_q[best] - true_q[pick], 4)}
         bar = 0.95 * true_q[best]
-        feas_true, feas_est = [c for c in pool if true_q[c] >= bar], [c for c in pool if est_q[c] >= bar]
+        est_bar = bar if bar_from == "true" else 0.95 * est_q[pick]
+        feas_true, feas_est = [c for c in pool if true_q[c] >= bar], [c for c in pool if est_q[c] >= est_bar]
         if feas_true and feas_est:
             t, e = min(feas_true, key=lambda c: true_cost[c]), min(feas_est, key=lambda c: est_cost[c])
             entry |= {"true_cheapest": "/".join(t), "optimizer_cheapest": "/".join(e), "pick_meets_bar": bool(true_q[e] >= bar),
