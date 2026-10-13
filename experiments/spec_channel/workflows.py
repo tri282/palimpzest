@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 import tarfile
 from collections import defaultdict
 from dataclasses import dataclass
@@ -36,6 +37,20 @@ class Workflow:
 def parse_yes(text: str | None) -> int | None:
     w = (text or "").strip().lower().lstrip("*").split()
     return None if not w else 1 if w[0].startswith("yes") else 0 if w[0].startswith("no") else None
+
+
+def parse_answer_line(text: str | None) -> int | None:
+    """Last `Answer: Yes/No` line (free-form executors that reason first); falls back to the first word."""
+    hits = re.findall(r"(?im)^\W*answer\W*\s*(yes|no)\b", text or "")
+    return (1 if hits[-1].lower() == "yes" else 0) if hits else parse_yes(text)
+
+
+def check_parsers() -> None:
+    assert parse_answer_line("The model numbers differ.\nAnswer: No") == 0
+    assert parse_answer_line("**Answer:** Yes") == 1
+    assert parse_answer_line("Yes, same product.") == 1
+    assert parse_answer_line("Step 1: answer: no wait\nAnswer: Yes") == 1
+    assert parse_answer_line("unclear") is None and parse_answer_line(None) is None
 
 
 def parse_city(text: str | None) -> str | None:
