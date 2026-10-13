@@ -310,6 +310,8 @@ USD per 1M tokens (input / output), checked 2026-10-12/13: gemma 0.05 / 0.15, ll
 
 *Abacus feeds each downstream operator the output of the highest-quality upstream operator during sampling, scored on the upstream's own output (labels or an LLM validator), then composes per-operator estimates assuming independence. P9ref picks the champion by its score on the reference executor, which knows more than Abacus would; P9A0 / P9A1 fix the champion to Gemini / qwen, bounding whichever writer an upstream-only score picks. Row: P9ref, means over 9 replicates, ranges over the four reference executors (champion is Gemini in 5-8 of 9 replicates).*
 
+* **P9 models what Abacus would do; Palimpzest does not run it today.** The writer runs once over many records, an aggregate in Palimpzest, and its sampler cannot yet optimize LLM operators after an aggregate (`src/palimpzest/query/execution/mab_execution_strategy.py`, `get_frontier_op_inputs`). Value-channel pipelines with a per-record upstream are inside what it optimizes.
+
 * **Averaged over upstream outputs** with two writers is half the candidate plan's own cell. Leaving that writer out makes the picks worse than the separate profile under llama-like references.
 
 ### 3. Equal Profiling Budget
