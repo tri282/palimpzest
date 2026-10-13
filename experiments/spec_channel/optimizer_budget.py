@@ -1,4 +1,4 @@
-"""Equal-budget comparison of optimizer quality estimates on sampled profiles (P0, P8, Abacus-style P9, P6, P7), plus per-stratum quality.
+"""Equal-budget comparison of optimizer quality estimates on sampled profiles (P0, P8, best-upstream P9, P6, P7), plus per-stratum quality.
 
 Usage: python -I optimizer_budget.py full-c2. Design context: REPORT.md.
 """
@@ -41,9 +41,15 @@ def plan_cells(name: str, r: str) -> list[tuple]:
         return sorted(set(s_ref + [(REF, r)] + [(a, r) for a in A_ARMS]))
     if name.startswith("P8"):
         return sorted(set(s_ref + [(w, x) for w in A_ARMS for x in B_ARMS + [r]]))
-    if name == "P9":
+    if name.startswith("P9"):
         return sorted(set(s_ref + [(a, r) for a in A_ARMS] + [("A0", b) for b in B_ARMS]))
     return [(a, b) for a in A_ARMS + [REF] for b in B_ARMS]  # P6
+
+
+def champion(name: str, r: str, q: dict) -> str:
+    """Writer whose rules the executor is profiled under. P9ref: best on the reference executor (knows more than Abacus,
+    which scores the upstream on its own); P9A0 / P9A1: fixed, bounding whichever writer an upstream-only score picks."""
+    return max(A_ARMS, key=lambda w: q[(w, r)]) if name == "P9ref" else name.removeprefix("P9")
 
 
 def estimate(name: str, r: str, q: dict) -> dict:
@@ -51,21 +57,22 @@ def estimate(name: str, r: str, q: dict) -> dict:
     est = {}
     for a in A_ARMS:
         other = [w for w in A_ARMS if w != a]
-        champ = max(A_ARMS, key=lambda w: q[(w, r)])  # P9: best upstream on the sample, as Abacus feeds downstream
+        champ = champion(name, r, q)
         for b in B_ARMS:
             est[(a, b)] = {
                 "P0": lambda: q[(a, r)] * q[(REF, b)] / q[(REF, r)],
                 "P8_all": lambda: q[(a, r)] * np.mean([q[(w, b)] for w in A_ARMS]) / np.mean([q[(w, r)] for w in A_ARMS]),
                 "P8_loo": lambda: q[(a, r)] * np.mean([q[(w, b)] for w in other]) / np.mean([q[(w, r)] for w in other]),
-                "P9": lambda: q[(champ, b)] * q[(a, r)] / q[(champ, r)],
+                "P9": lambda: q[(champ, b)] * q[(a, r)] / q[(champ, r)],  # executor profiled on the champion writer's rules
                 "P6": lambda: q[(a, b)],
-            }[name]()
+            }[name[:2] if name.startswith("P9") else name]()
     return est
 
 
 def check_estimate() -> None:
     q = {("A0", "B0"): .88, ("A1", "B0"): .84, ("A0", "B1"): .87, ("A1", "B1"): .86, (REF, "B0"): .79, (REF, "B1"): .91}
-    p9 = estimate("P9", "B1", q)  # champion on B1 is A0: its own plans exact, A1 scaled by the B1 ratio
+    p9 = estimate("P9ref", "B1", q)  # champion on B1 is A0: its own plans exact, A1 scaled by the B1 ratio
+    assert estimate("P9A0", "B1", q) == p9 and np.isclose(estimate("P9A1", "B0", q)[("A1", "B0")], .84)
     assert np.allclose([p9[("A0", "B0")], p9[("A0", "B1")], p9[("A1", "B0")]], [.88, .87, .88 * .86 / .87])
     p8 = estimate("P8_loo", "B1", q)  # leave-out with two writers: the other writer's profile
     assert abs(p8[("A0", "B0")] - .87 * .84 / .86) < 1e-12
@@ -101,7 +108,7 @@ def analyze_budget(run_id: str) -> dict:
 
     # 1. Equal budget: all policies draw from one record permutation per draw; prefix means via cumulative sums.
     rng = np.random.default_rng(SEED)
-    policies = [(p, r) for p in ("P0", "P8_all", "P8_loo", "P9", "P7") for r in execs] + [("P6", None)]
+    policies = [(p, r) for p in ("P0", "P8_all", "P8_loo", "P9ref", "P9A0", "P9A1", "P7") for r in execs] + [("P6", None)]
     keys = [(llama, bar) for llama in LLAMA_PRICES for bar in ("true", "est")]
     entries = {(p, r, B, llama, bar): [] for p, r in policies for B in BUDGETS for llama, bar in keys}
     spent = {(p, r, B): [] for p, r in policies for B in BUDGETS}
@@ -122,8 +129,8 @@ def analyze_budget(run_id: str) -> dict:
                     q = {c: mean("q", c, k) for c in grid}
                     est_q = {c: q[c] for c in cells if c[0] == REF} | estimate(base, ref, q)
                     measured = set(prof)
-                    if base == "P9":
-                        champ = max(A_ARMS, key=lambda w: q[(w, ref)])
+                    if base.startswith("P9"):
+                        champ = champion(base, ref, q)
                         measured = {c for c in prof if c[0] == REF or c[1] == ref} | {(champ, b) for b in B_ARMS}
                     n_calls = len(prof) * k
                     for llama, bar in keys:
