@@ -3,19 +3,20 @@
 Goal: test whether an optimizer that profiles LLM operators one at a time picks the right plan when one LLM writes the instructions another LLM follows.  
 *Requirements: none to read it. How to reproduce: `README.md`. Raw logs: `results/runs/pilot-c1`, `results/runs/pilot-c2`, `results/runs/full-c2`, `results/runs/c1-k40`. Full-run pre-registration: `PREREG-C2.md`. Analysis output: `results/analysis.json`.*  
 
-Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1 retest: 2026-10-10 (Sections VII, VIII). Framing of H1/H2 and reference results corrected after review: 2026-10-12.  
+Pilot run: 2026-10-07. Reanalysis: 2026-10-09 (Section IV.7). Full C2 run and C1 retest: 2026-10-10 (Sections VII, VIII). Framing of H1/H2 and reference results corrected after review: 2026-10-12. Follow-up analysis (real prices, equal-budget estimates, per-stratum quality, Abt-Buy screen): 2026-10-13 (Section IX).  
 
 ---
 
 ## I. Summary
 
 * **Question:** a semantic query optimizer (for example Palimpzest's Abacus) usually profiles each LLM operator on its own and combines the numbers. When an upstream LLM writes the instructions a downstream LLM follows, is that still safe?
-* **Main finding:** no. Under a generic instruction the strong downstream model looks clearly better than the weak one. Under the instructions a real upstream model writes, the two are about equal. An optimizer trusting separate profiles pays 5-6x more for the strong model when the cheap one would have met the quality bar.
+* **Main finding:** no. Under a generic instruction the strong downstream model looks clearly better than the weak one. Under the instructions a real upstream model writes, the two are about equal. An optimizer that profiles the downstream model under a generic instruction pays more for the strong model when the cheap one would have met the quality bar (5-6x under the size proxy, ~1.7x at list prices). Abacus's own profiling, which feeds the downstream model the best upstream output, avoids this overpay on C2 (Section IX).
 * **Quality vs cost:** the optimizer's pick still meets the quality bar. The mistake shows up as cost.
 * **Cost composition:** generated instructions make every downstream call 2.6-6.5x longer. Adding per-operator costs underestimates downstream cost by 67-81%; scaling by instruction length is within about 3%.
 * **Two workloads, two behaviors:** in product matching (C2) the interaction keeps its direction in all 3 replicates but is not significant once variation between drafts of the rules is counted (Section IV.7). In city imputation (C1) the generated instructions hurt every plan, and the largest source of variation is which *writing* of the instructions you get, not which writer.
-* **Full C2 run (Section VII):** 150 new pairs, 9 replicates, two held-out reference executors. Treating the generic instruction as the cheapest writer, adding a writer removes llama's lead over gemma: an upstream x downstream interaction, large and significant (p < 0.001; pre-registered as "estimability"). The interaction between *which* writer and which executor is not detected (p = 0.34). When a writer is required, the optimizer overpays ~5.6x under three of the four reference executors; when it is optional, the reference decides between the correct pick and lost quality (up to 0.15).
+* **Full C2 run (Section VII):** 150 new pairs, 9 replicates, two held-out reference executors. Treating the generic instruction as the cheapest writer, adding a writer removes llama's lead over gemma: an upstream x downstream interaction, large and significant (p < 0.001; pre-registered as "estimability"). The interaction between *which* writer and which executor is not detected (p = 0.34). When a writer is required, the optimizer overpays ~5.6x (size proxy; ~1.7x at list prices) under three of the four reference executors with an oracle quality bar, and under all four with a bar from its own estimate; when it is optional, the reference decides between the correct pick and lost quality (up to 0.15).
 * **C1 retest (Section VIII):** 40 stratified writer examples did not help. No writer stated the phone-format convention; every writer plan scores ~0.52 against the simple rule's 0.840. C1 is dropped as a workload.
+* **Follow-up (Section IX):** under the test split's natural record mix the rules still shrink llama's lead (0.189 to 0.095-0.121) but llama stays ahead, so the tie under rules depends on the enriched sample. At equal profiling budget, the Abacus-style estimate is the most accurate and does not overpay. Whether generic + llama is the cheapest acceptable plan depends on llama's price. A second matching dataset (Abt-Buy) was at ceiling and is not pursued.
 
 ---
 
@@ -237,6 +238,8 @@ Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 p
 
 * **Writer required: overpay under three of four references.** llama, `gpt-oss:120b` and `gemma3:27b` all give a median 5.57x. Only gemma as its own reference avoids it, because it then measures the cheap plan directly.
 * **Writer optional: the reference decides.** References that react to rules like llama (no gain) make writers look weak, so the optimizer keeps the generic instruction, which is correct. References that react like gemma (gain) make writers look strong: the optimizer adds a writer even when skipping it is better, and composes that gain onto llama, which actually loses from rules (quality regret up to 0.15).
+*Cost ratios here use the size proxy and the true best plan for the bar; Section IX re-prices them, sets the bar from the estimate, and profiles on samples.*
+
 * **Reading:** the reference executor is a hidden design choice. It decides between the correct pick and lost quality when the writer is optional; when the writer is required, the overpay holds for every reference except the cheap candidate itself. The pilot's "writer-optional pick is correct" holds only with a llama-like reference.
 
 ### 5. Cost Composition And Caching
@@ -285,4 +288,75 @@ Pre-registered in `PREREG-C2.md` before launch. Analysis: `analyze.py pilot-c2 p
 
 ### 4. Decision
 
-C1 is dropped as a workload: a simple rule beats every LLM plan, and more examples do not let these writers find the convention. The next check of whether the C2 results generalize is a second product-matching dataset (Abt-Buy).
+C1 is dropped as a workload: a simple rule beats every LLM plan, and more examples do not let these writers find the convention. The next check of whether the C2 results generalize was a second product-matching dataset (Abt-Buy); it was at ceiling (Section IX.6).
+
+---
+
+## IX. Follow-Up Analysis (2026-10-11 to 2026-10-13)
+
+Offline on the full C2 logs, no new calls, except the Abt-Buy screen (IX.6). Code: `optimizer_policies.py`, `optimizer_budget.py`. Output: `results/optimizer_policies.json`, `results/optimizer_budget.json`.
+
+### 1. List Prices
+
+USD per 1M tokens (input / output), checked 2026-10-12/13: gemma 0.05 / 0.15, llama 0.10 / 0.32 (DeepInfra Turbo FP8), qwen 0.36 / 0.40 (DeepInfra), Gemini 3.5 Flash-Lite 0.30 / 2.50 (Google). llama is ~2x gemma per token, not 5.8x as under the size proxy. The writer-required overpay of Section VII.4 becomes 1.69-1.70x; direction and reference pattern unchanged. Purdue serves different builds, so prices are a what-if on the measured token counts.
+
+### 2. Three Ways To Profile The Executor
+
+| estimate | executor profiled on | gemma | llama |
+|---|---|---|---|
+| separate profile (Section III.4) | the generic instruction | 0.793 | 0.913 |
+| averaged over upstream outputs | both writers' rules | 0.858 | 0.863 |
+| Abacus-style | the best writer's rules (champion on the reference executor) | 0.861-0.879 | 0.856-0.889 |
+
+*Abacus feeds each downstream operator the output of the highest-quality upstream operator during sampling, then composes per-operator estimates assuming independence. Means over 9 replicates; ranges over the four reference executors. The champion writer is Gemini in 5-8 of 9 replicates depending on the reference.*
+
+* **Averaged over upstream outputs** with two writers is half the candidate plan's own cell. Leaving that writer out makes the picks worse than the separate profile under llama-like references.
+
+### 3. Equal Profiling Budget
+
+Every estimate is profiled on k sampled records, with k = budget / cells it profiles; 500 draws per replicate; truth on all 150 records. llama at the Turbo price, bar = 95% of the true best.
+
+| estimate (reference) | budget (calls) | writer optional: best plan picked | writer required: meets bar | writer required: median overpay |
+|---|---|---|---|---|
+| separate profile (llama) | 300 / 600 | 0.62 / 0.89 | 0.95 / 1.00 | 1.70x |
+| separate profile (`gpt-oss:120b`) | 300 / 600 | 0.58 / 0.73 | 0.80 / 0.78 | 1.70x |
+| separate profile (gemma, `gemma3:27b`) | 300 / 600 | 0.01-0.08 / 0.00-0.01 | 0.79-0.89 | 1.00-1.41x |
+| averaged, own writer left out (4 refs) | 300 / 600 | 0.26-0.39 / 0.33-0.53 | 0.54-0.82 | 1.00x |
+| **Abacus-style (4 refs)** | 300 / 600 | **0.56-0.64 / 0.76-0.89** | **0.79-0.93** | **1.00x** |
+| joint sampling of every plan | 300 / 600 | 0.48 / 0.73 | 0.86 / 0.90 | 1.00x |
+
+* **With the bar from the optimizer's own estimated best,** the separate profile overpays under all four references (1.70-1.71x). The other estimates stay at 1.00-1.04x.
+* **The Abacus-style estimate is the most accurate at equal budget and does not overpay.** Profiling gemma under the best writer's rules is close to its behavior in the pipeline. The overpay in Section VII.4 comes from profiling the executor under a generic stand-in, not from Abacus's procedure.
+* **Targeted checking** (sample only the plans that could change the decision) ends up verifying most writer plans here and performs like joint sampling. It was designed after seeing C2, so this is not a clean test.
+
+### 4. llama Price Range
+
+* At a higher llama price (Together, 1.04 / 1.04, ~10x Turbo input) the separate-profile overpay rises to ~15x.
+* **Writer optional, cheapest plan above the bar:** generic + llama in 9 of 9 replicates at the Turbo price; from 2x the Turbo price up, a writer + gemma plan in 6 of 9 (Gemini + gemma costs 0.93x generic + llama at 2x, 0.19x at 10x). The break-even lies between 1x and 2x Turbo.
+
+### 5. Per Stratum And Natural Mix
+
+Test-split mix: matches 9.4%, hard non-matches 4.2% (the top-Jaccard non-matches, as sampled), easy non-matches 86.4%. Sample: 75 / 56 / 19.
+
+| accuracy | matches | hard non-matches | easy non-matches | sample mix | natural mix |
+|---|---|---|---|---|---|
+| generic + gemma | 0.987 | 0.554 | 0.737 | 0.793 | 0.753 |
+| generic + llama | 0.920 | 0.893 | 0.947 | 0.913 | 0.942 |
+| Gemini + gemma | 0.843 | 0.927 | 0.865 | 0.877 | 0.866 |
+| Gemini + llama | 0.772 | 0.962 | 0.982 | 0.870 | 0.961 |
+| qwen + gemma | 0.883 | 0.786 | 0.819 | 0.839 | 0.824 |
+| qwen + llama | 0.770 | 0.935 | 0.965 | 0.856 | 0.945 |
+
+* **Mechanism:** under the generic instruction the weaker executors say "yes" too often (gemma 0.69, `gemma3:27b` 0.61; true rate 0.50), and the rules fix that. The stronger ones are balanced (llama 0.51, `gpt-oss:120b` 0.52) and the rules make them stricter (llama recall on matches 0.92 to 0.77), likely because the writers saw 4 matches and 4 hard non-matches.
+* **llama minus gemma, generic / Gemini's / qwen's rules:** sample mix 0.120 / -0.007 / 0.017; natural mix 0.189 / 0.095 / 0.121. The rules still shrink llama's lead under the natural mix, but llama stays ahead; the tie in Section VII.2 depends on the enriched sample. The best plan under the natural mix is Gemini + llama (0.961).
+* **Caveat:** the easy stratum carries 86% of the natural weight on 19 records. Optimizer decisions were not recomputed under natural weights.
+
+### 6. Abt-Buy Screen (2026-10-11)
+
+Same design on a second matching dataset (`workflows.py ab`, `results/ab_screen.json`, `results/runs/pilot-ab`). Writers wrote different rules and gemma changed 3 of 10 answers under them, but on a 40-pair, 1-replicate smoke run every plan scored 0.90-1.00 (llama generic 0.950, gemma 0.900), failing the pre-set ceiling criterion. With no executor gap the rules have nothing to change; not pursued.
+
+### 7. Reading
+
+* **Established for C2, narrowed:** the writer-present x executor interaction holds in direction under both record mixes. An optimizer that profiles the executor under a generic instruction overpays when a writer is required (~1.7x at list prices, more at higher llama prices) under every reference once the bar is estimated. Abacus's best-upstream profiling avoids this on C2.
+* **Scope:** one task type (yes/no matching), one enriched record mix, open-weight executors from four families, one price source per model. The results show the effect exists in this setting, not that it holds across Specification workloads or model families.
+* **Open:** cases where the best upstream output is not representative for the cheap executor, which is where Abacus-style profiling would fail; more workloads with other task types and natural record mixes; GPT and Gemini executors.
