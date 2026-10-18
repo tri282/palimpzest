@@ -32,25 +32,45 @@ def split_reasoning(msg: dict) -> tuple[str | None, str]:
     return THINK.sub("", content).strip() or None, reasoning
 
 
+def reasoning_estimate(reasoning: str, content: str | None, tokens_out: int | None) -> dict:
+    """Purdue reports no reasoning count. With reasoning text: ~4 chars per token. Without it (some models' reasoning is
+    hidden but billed in completion_tokens): completion tokens minus the visible answer at ~4 chars per token, which
+    leaves a few tokens of end-of-turn overhead on plain models."""
+    if reasoning:
+        return {"reasoning_tokens_est": round(len(reasoning) / 4), "reasoning_source": "text"}
+    if tokens_out is None:
+        return {"reasoning_tokens_est": None, "reasoning_source": None}
+    return {"reasoning_tokens_est": max(0, tokens_out - -(-len(content or "") // 4)), "reasoning_source": "token_gap"}
+
+
 def check_split() -> None:
     assert split_reasoning({"content": "Yes"}) == ("Yes", "")
     assert split_reasoning({"content": "No", "reasoning_content": "abc"}) == ("No", "abc")
     assert split_reasoning({"content": "<think>x y</think>\n\nAnswer: No", "reasoning": ""}) == ("Answer: No", "x y")
     assert split_reasoning({"content": "<think>cut off"}) == (None, "cut off")
+    assert reasoning_estimate("x" * 400, "No", 120) == {"reasoning_tokens_est": 100, "reasoning_source": "text"}
+    assert reasoning_estimate("", "No.", 399)["reasoning_tokens_est"] == 398
+    assert reasoning_estimate("", None, None)["reasoning_tokens_est"] is None
 
 
-def _once(model: str, provider: str, text: str, temperature: float) -> dict:
+def _once(model: str, provider: str, text: str | list[str], temperature: float | None, system: str | None) -> dict:
+    # temperature None = field omitted (provider default), as PZ's validator calls the judge; a list = consecutive user turns.
+    texts = [text] if isinstance(text, str) else text
     if provider == "purdue":
-        body = {"model": model, "messages": [{"role": "user", "content": text}], "temperature": temperature}
+        messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": t} for t in texts]
+        body = {"model": model, "messages": messages} | ({} if temperature is None else {"temperature": temperature})
         s, _, resp, lat = call(f"{PURDUE_BASE}/chat/completions", {"Authorization": f"Bearer {_env['PURDUE']}"}, body)
         msg = (((resp or {}).get("choices") or [{}])[0] or {}).get("message") or {}
         usage = (resp or {}).get("usage") or {}
         content, reasoning = split_reasoning(msg)
-        out = {"content": content, "tokens_in": usage.get("prompt_tokens"), "tokens_out": usage.get("completion_tokens"),
+        tokens_out = usage.get("completion_tokens")
+        out = {"content": content, "tokens_in": usage.get("prompt_tokens"), "tokens_out": tokens_out,
                "cached_tokens": None, "reasoning_tokens": None, "reasoning_chars": len(reasoning),
-               "reasoning_tokens_est": round(len(reasoning) / 4)}  # ~4 chars per token; Purdue reports no reasoning count
+               **reasoning_estimate(reasoning, content, tokens_out)}
     else:
-        body = {"contents": [{"parts": [{"text": text}]}], "generationConfig": {"temperature": temperature}}
+        body = {"contents": [{"parts": [{"text": t} for t in texts]}], "generationConfig": {} if temperature is None else {"temperature": temperature}}
+        if system:
+            body["systemInstruction"] = {"parts": [{"text": system}]}
         s, _, resp, lat = call(f"{GEMINI_BASE}/models/{model}:generateContent", {"x-goog-api-key": _env["GEMINI"]}, body)
         cand = ((resp or {}).get("candidates") or [{}])[0]
         usage = (resp or {}).get("usageMetadata") or {}
@@ -61,7 +81,7 @@ def _once(model: str, provider: str, text: str, temperature: float) -> dict:
     return {"status": s, "latency_s": round(lat, 3), "raw_response": resp, **out}
 
 
-def ask(model: str, text: str, temperature: float = 0.0) -> dict:
+def ask(model: str, text: str | list[str], temperature: float | None = 0.0, system: str | None = None) -> dict:
     """One logical call: paces per provider, retries transient failures, returns final attempt plus attempt history."""
     if not _env:
         _env.update(load_env())
@@ -72,7 +92,7 @@ def ask(model: str, text: str, temperature: float = 0.0) -> dict:
         time.sleep(wait)
         wait_total += wait
         _last[provider] = time.time()
-        r = _once(model, provider, text, temperature)
+        r = _once(model, provider, text, temperature, system)
         ok = r["status"] == 200 and r["content"]
         attempts.append({"status": r["status"], "latency_s": r["latency_s"], "error": None if ok else str(r["raw_response"])[:300]})
         if ok:
@@ -94,4 +114,4 @@ def ask(model: str, text: str, temperature: float = 0.0) -> dict:
 
 if __name__ == "__main__":
     check_split()
-    print("split_reasoning ok")
+    print("split_reasoning / reasoning_estimate ok")
