@@ -1,0 +1,138 @@
+{
+ "status": 200,
+ "fetched": "2026-10-18T15:36:26.085287+00:00",
+ "models": [
+  {
+   "id": "deepseek-r1:1.5b",
+   "updated_at": 1784666557
+  },
+  {
+   "id": "deepseek-r1:14b",
+   "updated_at": 1790185374
+  },
+  {
+   "id": "deepseek-r1:32b",
+   "updated_at": 1784666566
+  },
+  {
+   "id": "deepseek-r1:7b",
+   "updated_at": 1784666696
+  },
+  {
+   "id": "gemma3:12b",
+   "updated_at": 1784666708
+  },
+  {
+   "id": "gemma3:1b",
+   "updated_at": 1784666713
+  },
+  {
+   "id": "gemma3:27b",
+   "updated_at": 1784666720
+  },
+  {
+   "id": "llama3.1:70b-instruct-q4_K_M",
+   "updated_at": 1784666732
+  },
+  {
+   "id": "llama3.1:latest",
+   "updated_at": 1784666740
+  },
+  {
+   "id": "llama3.2:latest",
+   "updated_at": 1784666748
+  },
+  {
+   "id": "llama3.3:70b",
+   "updated_at": 1784666753
+  },
+  {
+   "id": "llama4:latest",
+   "updated_at": 1790185921
+  },
+  {
+   "id": "llava:latest",
+   "updated_at": 1784666760
+  },
+  {
+   "id": "mistral:latest",
+   "updated_at": 1784666773
+  },
+  {
+   "id": "phi4:latest",
+   "updated_at": 1784666795
+  },
+  {
+   "id": "qwen2.5:72b",
+   "updated_at": 1784666805
+  },
+  {
+   "id": "qwen3:1.7b",
+   "updated_at": 1784666823
+  },
+  {
+   "id": "qwen3:14b",
+   "updated_at": 1784666828
+  },
+  {
+   "id": "qwen3:30b",
+   "updated_at": 1784666835
+  },
+  {
+   "id": "qwen3:32b",
+   "updated_at": 1784666840
+  },
+  {
+   "id": "qwen3:4b",
+   "updated_at": 1784666844
+  },
+  {
+   "id": "qwen3:8b",
+   "updated_at": 1784666849
+  },
+  {
+   "id": "qwq:32b-fp16",
+   "updated_at": 1784666855
+  },
+  {
+   "id": "qwq:latest",
+   "updated_at": 1784666861
+  },
+  {
+   "id": "codellama:latest",
+   "updated_at": 1784666548
+  },
+  {
+   "id": "gpt-oss:120b",
+   "updated_at": 1790185917
+  },
+  {
+   "id": "gpt-oss:latest",
+   "updated_at": 1784666726
+  },
+  {
+   "id": "devstral-small-2:latest",
+   "updated_at": 1784666703
+  },
+  {
+   "id": "gemma4:26b-a4b",
+   "updated_at": 1790185910
+  },
+  {
+   "id": "medgemma:27b",
+   "updated_at": 1784666766
+  },
+  {
+   "id": "qwen3-coder:latest",
+   "updated_at": 1784666811
+  },
+  {
+   "id": "qwen3-vl:32b",
+   "updated_at": 1784666817
+  },
+  {
+   "id": "qwen3.8:27b",
+   "updated_at": 1790185905
+  }
+ ]
+}

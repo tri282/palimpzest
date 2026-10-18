@@ -1,0 +1,88 @@
+{
+ "majority": 0.5,
+ "models": {
+  "gemma3:1b": {
+   "n": 40,
+   "acc": 0.5,
+   "top_share": 1.0,
+   "unparsed": 0,
+   "drop": [
+    "acc<=majority",
+    "one answer"
+   ]
+  },
+  "gemma4:26b-a4b": {
+   "n": 40,
+   "acc": 0.9,
+   "top_share": 0.5,
+   "unparsed": 0,
+   "drop": []
+  },
+  "qwen3:8b": {
+   "n": 40,
+   "acc": 0.85,
+   "top_share": 0.65,
+   "unparsed": 0,
+   "drop": []
+  },
+  "qwen3:32b": {
+   "n": 40,
+   "acc": 0.875,
+   "top_share": 0.525,
+   "unparsed": 0,
+   "drop": []
+  },
+  "llama3.1:latest": {
+   "n": 40,
+   "acc": 0.25,
+   "top_share": 0.75,
+   "unparsed": 0.75,
+   "drop": [
+    "acc<=majority",
+    "unparsed"
+   ]
+  },
+  "gpt-oss:latest": {
+   "n": 40,
+   "acc": 0.85,
+   "top_share": 0.5,
+   "unparsed": 0,
+   "drop": []
+  },
+  "deepseek-r1:14b": {
+   "n": 40,
+   "acc": 0.8,
+   "top_share": 0.5,
+   "unparsed": 0,
+   "drop": []
+  },
+  "mistral:latest": {
+   "n": 40,
+   "acc": 0.725,
+   "top_share": 0.7,
+   "unparsed": 0.025,
+   "drop": []
+  },
+  "phi4:latest": {
+   "n": 40,
+   "acc": 0.9,
+   "top_share": 0.5,
+   "unparsed": 0,
+   "drop": []
+  },
+  "qwen2.5:72b": {
+   "n": 40,
+   "acc": 0.85,
+   "top_share": 0.5,
+   "unparsed": 0,
+   "drop": []
+  },
+  "llama4:latest": {
+   "n": 40,
+   "acc": 0.8,
+   "top_share": 0.6,
+   "unparsed": 0,
+   "drop": []
+  }
+ }
+}

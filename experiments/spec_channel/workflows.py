@@ -12,7 +12,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Callable
 
-from c2_setup import AB_DATA, AB_OUT as AB_SAMPLE, FULL_OUT as C2_FULL_SAMPLE, OUT as C2_SAMPLE, load_pairs, stratified
+from c2_setup import AB_DATA, AB_OUT as AB_SAMPLE, EASY_OUT as C2_EASY_SAMPLE, FULL_OUT as C2_FULL_SAMPLE, OUT as C2_SAMPLE, load_pairs, stratified
 from lexical_baseline import TARBALL, load, norm
 from prompts import (AB_EXECUTOR, AB_FIELDS, AB_WRITER, DI_EXECUTOR, DI_REF_SPEC, DI_WRITER, EM_EXECUTOR, EM_REF_SPEC, EM_WRITER,
                      di_examples, di_record, em_examples, em_record)
@@ -86,8 +86,13 @@ def c1(name: str = "c1", split: str = "test", k: int = 0) -> Workflow:
                     lambda spec, it: DI_EXECUTOR.format(spec=spec, record=di_record(it["record"])), parse_city, pilot, screen)
 
 
-def c2(name: str = "c2", path=C2_SAMPLE, key: str = "pilot") -> Workflow:
+def c2(name: str = "c2", path=C2_SAMPLE, key: str = "pilot", extra: tuple = ()) -> Workflow:
+    """extra: further sample files whose "items" are appended (same writer examples asserted)."""
     sample = json.loads(path.read_text())
+    for e in extra:
+        more = json.loads(e.read_text())
+        assert more["writer_examples"] == sample["writer_examples"]
+        sample[key] = sample[key] + more["items"]
     screen = stratified(load_pairs("valid"), 3, 7, 0, random.Random(SCREEN_SEED))
     return Workflow(name, EM_WRITER.format(examples=em_examples(sample["writer_examples"])), EM_REF_SPEC,
                     lambda spec, it: EM_EXECUTOR.format(spec=spec, left=em_record(it["left"]), right=em_record(it["right"])),
@@ -102,4 +107,6 @@ def ab() -> Workflow:
                     parse_yes, sample["pilot"], screen)
 
 
-WORKFLOWS = {"c1": c1, "c1_k40": lambda: c1("c1_k40", "valid", 40), "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items"), "ab": ab}
+WORKFLOWS = {"c1": c1, "c1_k40": lambda: c1("c1_k40", "valid", 40), "c2": c2, "c2_full": lambda: c2("c2_full", C2_FULL_SAMPLE, "items"),
+             "c2_easy": lambda: c2("c2_easy", C2_EASY_SAMPLE, "items"),
+             "c2_union": lambda: c2("c2_union", C2_FULL_SAMPLE, "items", (C2_EASY_SAMPLE,)), "ab": ab}

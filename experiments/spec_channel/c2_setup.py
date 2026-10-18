@@ -1,6 +1,6 @@
 """C2 (Walmart-Amazon entity matching) setup: stratified pilot and full-run samples, spec-writer examples, and a context-truncation check on Purdue.
 
-`--abt-buy` builds the same pilot-shaped sample on Abt-Buy.
+`--abt-buy` builds the same pilot-shaped sample on Abt-Buy; `--easy` adds easy non-matches for the C2 extension.
 
 Design and results: REPORT.md.
 """
@@ -22,7 +22,9 @@ AB_DATA = REPO / "testdata" / "fm_data_tasks" / "datasets" / "entity_matching" /
 OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_sample.json"
 FULL_OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_full_sample.json"
 AB_OUT = REPO / "experiments" / "spec_channel" / "results" / "ab_sample.json"
-SEED, FULL_SEED = 0, 2
+EASY_OUT = REPO / "experiments" / "spec_channel" / "results" / "c2_easy_sample.json"
+SEED, FULL_SEED, EASY_SEED = 0, 2, 3
+N_EASY = 100
 N_POS, N_HARD_NEG, N_RAND_NEG = 40, 30, 10
 FULL_STRATA = (75, 56, 19)  # 150 pairs at pilot proportions
 K_POS, K_HARD_NEG = 4, 4
@@ -91,6 +93,24 @@ def build_full() -> dict:
     return data
 
 
+def build_easy() -> dict:
+    # Easy non-matches drawn like rand_neg: outside the top-Jaccard negatives the pilot and full run took as hard, disjoint from both.
+    pilot, full = json.loads(OUT.read_text()), json.loads(FULL_OUT.read_text())
+    used = {p["id"] for p in pilot["pilot"] + full["items"]}
+    neg = sorted((p for p in load_pairs("test") if not p["label"]), key=lambda p: -p["jaccard"])
+    pool = [p for p in neg[N_HARD_NEG + FULL_STRATA[1]:] if p["id"] not in used]
+    items = random.Random(EASY_SEED).sample(pool, N_EASY)
+    for p in items:
+        p["stratum"] = "rand_neg"
+    assert not used & {p["id"] for p in items} and len({p["id"] for p in items}) == N_EASY
+    data = {"seed": EASY_SEED, "dataset": pilot["dataset"], "excludes": [OUT.name, FULL_OUT.name], "items": items,
+            "writer_examples": pilot["writer_examples"]}
+    EASY_OUT.write_text(json.dumps(data, indent=1))
+    hard_floor = neg[N_HARD_NEG + FULL_STRATA[1] - 1]["jaccard"]
+    print(f"easy={len(items)} pool={len(pool)} overlap=0 jaccard max {max(p['jaccard'] for p in items):.2f} (hard floor {hard_floor:.2f})")
+    return data
+
+
 def build_ab() -> dict:
     # Abt-Buy (second matching dataset): same strata and writer-example counts as the C2 pilot.
     rng = random.Random(SEED)
@@ -122,6 +142,6 @@ def truncation_check() -> None:
 
 
 if __name__ == "__main__":
-    build_ab() if "--abt-buy" in sys.argv else build_full() if "--full" in sys.argv else build()
+    build_ab() if "--abt-buy" in sys.argv else build_full() if "--full" in sys.argv else build_easy() if "--easy" in sys.argv else build()
     if "--truncation-check" in sys.argv:
         truncation_check()
