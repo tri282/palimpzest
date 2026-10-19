@@ -1,7 +1,7 @@
 """Abacus-style champion writer for C2: PZ's default LLM judge scores each saved rule draft without any executor.
 
-Usage: python -I p9_scores.py [--style pz|raw] [--samples 3] [--dry-run]
-Outputs results/runs/p9-scores[-pz]/calls.jsonl and results/p9_scores[_pz].json. Design and results: REPORT.md.
+Usage: python -I p9_scores.py [--style pz|raw] [--samples 3] [--source-run full-c2] [--run-id <id>] [--dry-run]
+Outputs results/runs/<run_id>/calls.jsonl (default p9-scores[-pz]) and results/<run_id with _>.json. Design and results: REPORT.md.
 Exit codes: 0 done, 2 transient stop (re-run resumes).
 """
 from __future__ import annotations
@@ -24,7 +24,6 @@ from palimpzest.prompts import MAP_VALIDATOR_PROMPT, PromptFactory  # noqa: E402
 from palimpzest.query.generators.generators import get_json_from_answer  # noqa: E402
 
 JUDGE = "gpt-oss:120b"  # stand-in for PZ's default o4-mini
-SOURCE_RUN = "full-c2"
 RESULTS = REPO / "experiments" / "spec_channel" / "results"
 EXAMPLES_SPLIT = "\n\nOutput the rules only.\n\n"  # EM_WRITER: instruction, this line, then the examples
 EXAMPLES_DESC = "Labeled example pairs of a Walmart product record (Record A) and an Amazon product record (Record B), each with whether they refer to the same product."
@@ -77,19 +76,21 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--style", choices=["pz", "raw"], default="pz", help="judge input message: PZ sem_map messages or raw writer prompt")
     ap.add_argument("--samples", type=int, default=3)
+    ap.add_argument("--source-run", default="full-c2", help="run whose specs.jsonl drafts are judged")
+    ap.add_argument("--run-id", help="output run id (default p9-scores, or p9-scores-pz with --style pz)")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     check_parse()
 
-    src = RESULTS / "runs" / SOURCE_RUN
+    src = RESULTS / "runs" / args.source_run
     writer_prompt = json.loads((src / "config.json").read_text())["writer_prompt"]
     drafts = {(s["replicate"], s["arm_a"]): s for s in read_jsonl(src / "specs.jsonl") if not s["error"]}
     jobs = [(rep, a, k) for (rep, a) in sorted(drafts) for k in range(args.samples)]
     random.Random(args.seed).shuffle(jobs)
 
     suffix = "-pz" if args.style == "pz" else ""
-    run_dir = RESULTS / "runs" / f"p9-scores{suffix}"
+    run_dir = RESULTS / "runs" / (args.run_id or f"p9-scores{suffix}")
     pz_msgs = pz_input_messages(writer_prompt)
 
     def judge_input(draft: str) -> str | list[str]:
@@ -113,7 +114,7 @@ def main() -> int:
         d = drafts[(rep, a)]
         r = ask(JUDGE, judge_input(d["content"]), temperature=None, system=MAP_VALIDATOR_PROMPT)
         score = parse_score(r["content"])
-        append(calls_path, {"run_id": run_dir.name, "style": args.style, "source_run": SOURCE_RUN, "replicate": rep, "arm_a": a, "sample": k,
+        append(calls_path, {"run_id": run_dir.name, "style": args.style, "source_run": args.source_run, "replicate": rep, "arm_a": a, "sample": k,
                             "spec_hash": d["spec_hash"], "spec_words": d["spec_words"], "score": score,
                             "unparsed": r["content"] is not None and score is None, "timestamp": now(), **r})
         print(f"rep={rep} {a} sample={k} score={score}", flush=True)
@@ -122,27 +123,29 @@ def main() -> int:
             print(f"{failures} consecutive failed calls (last: {r['error']}); stopping. Re-run to resume.", flush=True)
             return 2
 
-    summarize(calls_path, sorted({rep for rep, _ in drafts}), RESULTS / f"p9_scores{suffix.replace('-', '_')}.json")
+    summarize(calls_path, sorted({rep for rep, _ in drafts}), RESULTS / f"{run_dir.name.replace('-', '_')}.json", args.source_run)
     return 0
 
 
-def summarize(calls_path: Path, replicates: list[int], out_path: Path) -> None:
+def summarize(calls_path: Path, replicates: list[int], out_path: Path, source_run: str) -> None:
     rows = [r for r in read_jsonl(calls_path) if not r["error"]]
-    out = {"judge": JUDGE, "source_run": SOURCE_RUN, "replicates": {}}
-    print(f"\n{'rep':>3} {'A0 scores':>16} {'A1 scores':>16} {'A0 w':>5} {'A1 w':>5}  champion")
+    writers = sorted({r["arm_a"] for r in rows})
+    out = {"judge": JUDGE, "source_run": source_run, "replicates": {}}
+    print(f"\n{'rep':>3} " + " ".join(f"{a + ' scores':>16} {a + ' w':>5}" for a in writers) + "  champion (3-sample mean, these writers)")
     for rep in replicates:
         cell = {}
-        for a in ("A0", "A1"):
+        for a in writers:
             rs = [r for r in rows if r["replicate"] == rep and r["arm_a"] == a]
             vals = [r["score"] for r in rs if r["score"] is not None]
             cell[a] = {"scores": [r["score"] for r in sorted(rs, key=lambda r: r["sample"])],
                        "mean": sum(vals) / len(vals) if vals else None, "spec_words": rs[0]["spec_words"] if rs else None}
-        m0, m1 = cell["A0"]["mean"], cell["A1"]["mean"]
+        means = {a: c["mean"] for a, c in cell.items()}
         # Ties reported as ties (Abacus would take the first operator, an order artefact).
-        champ = None if m0 is None or m1 is None else "tie" if m0 == m1 else "A0" if m0 > m1 else "A1"
+        top = None if None in means.values() else max(means.values())
+        best = [a for a, m in means.items() if m == top]
+        champ = None if top is None else best[0] if len(best) == 1 else "tie"
         out["replicates"][rep] = {**cell, "champion": champ}
-        print(f"{rep:>3} {str(cell['A0']['scores']):>16} {str(cell['A1']['scores']):>16} {cell['A0']['spec_words']!s:>5} "
-              f"{cell['A1']['spec_words']!s:>5}  {champ}")
+        print(f"{rep:>3} " + " ".join(f"{str(cell[a]['scores']):>16} {cell[a]['spec_words']!s:>5}" for a in writers) + f"  {champ}")
     out_path.write_text(json.dumps(out, indent=1))
 
 

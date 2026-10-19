@@ -1,8 +1,9 @@
 """Pilot runner for the Specification channel: fresh specs per replicate, shuffled downstream calls, resumable JSONL logs.
 
-Usage: python -I runner.py <run_id> --workflow c1|c2|c2_full|c2_easy|c2_union [--replicates 3] [--items N] [--cells all|factorial]
-       [--ref-executor | --executors B0,B4,...] [--specs-from <run_id>] [--seed 0]
-Outputs results/runs/<run_id>/{config.json, specs.jsonl, calls.jsonl}. Design and results: REPORT.md.
+Usage: python -I runner.py <run_id> --workflow c1|c2|c2_full|c2_easy|c2_union [--replicates 3] [--items N]
+       [--cells all|factorial|ref] [--writers A2,A3,...] [--ref-executor | --executors B0,B4,...] [--specs-from <run_id>]
+       [--specs-only] [--rep-block 0-2] [--host purdue|purdue2|chameleon] [--seed 0] [--dry-run]
+Outputs results/runs/<run_id>/{config.json, specs.jsonl, calls.jsonl, invocations.jsonl}. Design and results: REPORT.md.
 Exit codes: 0 done, 2 transient stop (provider outage; re-run resumes), 3 config mismatch (do not retry).
 """
 from __future__ import annotations
@@ -12,20 +13,25 @@ import hashlib
 import json
 import os
 import random
+import subprocess
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from llm import ask  # noqa: E402
+from llm import HOSTS, ask, model_snapshot  # noqa: E402
 from probe_api import REPO  # noqa: E402
 from workflows import WORKFLOWS  # noqa: E402
 
 WRITERS = {"A0": "gemini-3.5-flash-lite", "A1": "qwen2.5:72b"}
+# C2 extension writers (PREREG-C2-ext.md I); replaced by RESERVE_WRITERS in order if the writer screen fails one.
+NEW_WRITERS = {"A2": "gpt-oss:120b", "A3": "llama3.3:70b", "A4": "gemma3:27b", "A5": "qwen3:8b"}
+RESERVE_WRITERS = {"A6": "phi4:latest", "A7": "gemma4:26b-a4b"}
+ALL_WRITERS = WRITERS | NEW_WRITERS | RESERVE_WRITERS
 EXECUTORS = {"B0": "gemma3:12b", "B1": "llama3.3:70b"}
 REF_EXECUTORS = {"B2": "gpt-oss:120b", "B3": "gemma3:27b"}  # profiling-only references, never candidate plans (D6)
-# C2 extension executors that passed the drop-rule screen (results/drop_screen); role (profiling vs candidate) not decided.
+# C2 extension executors that passed the drop-rule screen (results/drop_screen); all candidate plans (PREREG-C2-ext.md).
 EXTRA_EXECUTORS = {"B4": "gemma4:26b-a4b", "B5": "qwen3:8b", "B6": "qwen3:32b", "B7": "gpt-oss:latest", "B8": "deepseek-r1:14b",
                    "B9": "mistral:latest", "B10": "phi4:latest", "B11": "qwen2.5:72b", "B12": "llama4:latest"}
 ALL_EXECUTORS = EXECUTORS | REF_EXECUTORS | EXTRA_EXECUTORS
@@ -69,32 +75,60 @@ def latest_ok(rows: list[dict]) -> dict[tuple, dict]:
     return out
 
 
+def git_state() -> dict:
+    def git(*a: str) -> str:
+        return subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True).stdout.strip()
+    return {"commit": git("rev-parse", "HEAD"), "dirty": bool(git("status", "--porcelain", "--untracked-files=no"))}
+
+
+def log_invocation(run_dir: Path, event: str, host: str, models: list[str]) -> None:
+    # Freeze point and re-pull guard (PREREG-C2-ext.md II.4, V): code version and served models at start and end.
+    append(run_dir / "invocations.jsonl", {"event": event, "time": now(), "argv": sys.argv[1:], "host": host, **git_state(),
+                                           "models": model_snapshot(host, models)})
+
+
+def parse_block(spec: str | None, replicates: int) -> range:
+    if not spec:
+        return range(replicates)
+    lo, hi = (int(x) for x in spec.split("-"))
+    assert 0 <= lo <= hi < replicates, f"--rep-block {spec} outside 0-{replicates - 1}"
+    return range(lo, hi + 1)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("run_id")
     ap.add_argument("--workflow", required=True, choices=sorted(WORKFLOWS))
     ap.add_argument("--replicates", type=int, default=3)
     ap.add_argument("--items", type=int, default=0, help="limit pilot items (0 = all)")
-    ap.add_argument("--cells", choices=["all", "factorial"], default="all")
+    ap.add_argument("--cells", choices=["all", "factorial", "ref"], default="all", help="ref = generic instruction only")
+    ap.add_argument("--writers", help="comma-separated writer ids from ALL_WRITERS (default A0,A1)")
     ap.add_argument("--ref-executor", action="store_true", help="add the held-out reference executors B2, B3")
     ap.add_argument("--executors", help="comma-separated executor ids from ALL_EXECUTORS (overrides the default set)")
     ap.add_argument("--specs-from", help="reuse the saved specs of this run (no writer calls); writer prompt must match")
+    ap.add_argument("--specs-only", action="store_true", help="generate the writer drafts and stop")
+    ap.add_argument("--rep-block", help="run only these replicates now, e.g. 0-2; the run resumes into the rest later")
+    ap.add_argument("--host", choices=sorted(HOSTS), help="where executor and writer calls go (default purdue)")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--dry-run", action="store_true", help="plan only: copy specs, print job counts, no calls (use a dry-* run_id)")
     args = ap.parse_args()
 
     wf = WORKFLOWS[args.workflow]()
     items = wf.pilot[: args.items] if args.items else wf.pilot
-    a_arms = list(WRITERS) + ([REF] if args.cells == "all" else [])
+    writers = {a: ALL_WRITERS[a] for a in args.writers.split(",")} if args.writers else WRITERS
+    host = args.host or "purdue"
+    a_arms = [REF] if args.cells == "ref" else list(writers) + ([REF] if args.cells == "all" else [])
     executors = ({b: ALL_EXECUTORS[b] for b in args.executors.split(",")} if args.executors
                  else EXECUTORS | (REF_EXECUTORS if args.ref_executor else {}))
     cells = [(a, b) for a in a_arms for b in executors]
 
     run_dir = REPO / "experiments" / "spec_channel" / "results" / "runs" / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)
-    # New options stay out of the config when unset, so runs from before they existed still resume; dry_run never.
-    opts = {k: v for k, v in vars(args).items() if k != "dry_run" and not (k in ("executors", "specs_from") and v is None)}
-    config = {**opts, "writers": WRITERS, "executors": executors, "writer_temp": WRITER_TEMP,
+    # New options stay out of the config when unset, so runs from before they existed still resume. Per-invocation
+    # options (dry run, replicate block, specs-only) never enter it; --writers is recorded through "writers".
+    per_call = ("dry_run", "rep_block", "specs_only", "writers")
+    opts = {k: v for k, v in vars(args).items() if k not in per_call and not (k in ("executors", "specs_from", "host") and v is None)}
+    config = {**opts, "writers": writers, "executors": executors, "writer_temp": WRITER_TEMP,
               "executor_temp": EXECUTOR_TEMP, "cells": cells, "n_items": len(items), "writer_prompt": wf.writer_prompt,
               "ref_spec": wf.ref_spec}
     cfg_path = run_dir / "config.json"
@@ -106,6 +140,9 @@ def main() -> int:
         cfg_path.write_text(json.dumps({**config, "started": now()}, indent=1))
     specs_path, calls_path = run_dir / "specs.jsonl", run_dir / "calls.jsonl"
     rng = random.Random(args.seed)
+    used_writers = {} if args.cells == "ref" else writers
+    if not args.dry_run:
+        log_invocation(run_dir, "start", host, sorted(set(used_writers.values()) | set(executors.values())))
 
     # Phase 1: one fresh spec per writer arm per replicate, generated in shuffled order. Resumes from specs.jsonl.
     specs = {(s["replicate"], s["arm_a"]): s for s in read_jsonl(specs_path) if not s["error"]}
@@ -116,21 +153,21 @@ def main() -> int:
             print(f"writer prompt differs from {args.specs_from}; its specs do not apply", flush=True)
             return 3
         for row in read_jsonl(src / "specs.jsonl"):
-            if not row["error"] and row["replicate"] < args.replicates and row["arm_a"] in WRITERS:
+            if not row["error"] and row["replicate"] < args.replicates and row["arm_a"] in used_writers:
                 assert row["spec_hash"] == hashlib.sha256((row["content"] or "").encode()).hexdigest()[:12]
                 append(specs_path, {**row, "run_id": args.run_id, "copied_from": args.specs_from})
                 specs[(row["replicate"], row["arm_a"])] = row
-        missing = [(rep, a) for rep in range(args.replicates) for a in WRITERS if (rep, a) not in specs]
+        missing = [(rep, a) for rep in range(args.replicates) for a in used_writers if (rep, a) not in specs]
         if missing:
             print(f"{args.specs_from} lacks specs for {missing}", flush=True)
             return 3
         print(f"copied {len(specs)} specs from {args.specs_from}; no writer calls", flush=True)
-    spec_jobs = [(rep, a) for rep in range(args.replicates) for a in WRITERS]
+    spec_jobs = [(rep, a) for rep in range(args.replicates) for a in used_writers]
     rng.shuffle(spec_jobs)
     for rep, a in spec_jobs:
         if (rep, a) in specs or args.dry_run:  # dry run never calls the writer
             continue
-        r = ask(WRITERS[a], wf.writer_prompt, WRITER_TEMP)
+        r = ask(used_writers[a], wf.writer_prompt, WRITER_TEMP, host=host)
         row = {"run_id": args.run_id, "workflow": wf.name, "seed": args.seed, "replicate": rep, "arm_a": a, "operator": "up",
                "spec_hash": hashlib.sha256((r["content"] or "").encode()).hexdigest()[:12], "spec_words": len((r["content"] or "").split()),
                "timestamp": now(), **r}
@@ -140,6 +177,12 @@ def main() -> int:
             return 2
         specs[(rep, a)] = row
         print(f"spec rep={rep} {a} words={row['spec_words']} tokens_out={row['tokens_out']}", flush=True)
+
+    if args.specs_only:
+        print(f"specs: {len(specs)} of {len(spec_jobs)}; --specs-only, no executor calls", flush=True)
+        if not args.dry_run:
+            log_invocation(run_dir, "end", host, sorted(set(used_writers.values())))
+        return 0
 
     def spec_for(rep: int, a: str) -> tuple[str, str]:
         if a == REF:
@@ -156,15 +199,17 @@ def main() -> int:
             rng.shuffle(block)
             jobs += block
     call_index = {(j[0], j[1], j[2], j[3]["id"]): i for i, j in enumerate(jobs)}
-    todo = [j for j in jobs if (j[0], j[1], j[2], j[3]["id"]) not in done]
-    print(f"downstream: {len(jobs)} planned, {len(jobs) - len(todo)} done, {len(todo)} to run", flush=True)
+    block = parse_block(args.rep_block, args.replicates)
+    todo = [j for j in jobs if j[0] in block and (j[0], j[1], j[2], j[3]["id"]) not in done]
+    print(f"downstream: {len(jobs)} planned, {len(jobs) - len(todo)} done or outside block, {len(todo)} to run"
+          f"{f' (replicates {args.rep_block})' if args.rep_block else ''}", flush=True)
     if args.dry_run:
         return 0
 
     prev_model, t0, failures = None, time.time(), 0
     for k, (rep, a, b, it) in enumerate(todo):
         spec, spec_hash = spec_for(rep, a)
-        r = ask(executors[b], wf.executor_prompt(spec, it), EXECUTOR_TEMP)
+        r = ask(executors[b], wf.executor_prompt(spec, it), EXECUTOR_TEMP, host=host)
         pred = wf.parse(r["content"])
         append(calls_path, {
             "run_id": args.run_id, "workflow": wf.name, "seed": args.seed, "replicate": rep, "arm_a": a, "arm_b": b,
@@ -181,6 +226,7 @@ def main() -> int:
             rate = (k + 1) / (time.time() - t0) * 60
             print(f"{k + 1}/{len(todo)} calls, {rate:.1f}/min, eta {(len(todo) - k - 1) / rate:.0f} min", flush=True)
 
+    log_invocation(run_dir, "end", host, sorted(set(used_writers.values()) | set(executors.values())))
     summarize(calls_path, cells, args.replicates)
     return 0
 

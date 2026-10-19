@@ -1,7 +1,9 @@
 """Model drop-rule screen for the C2 extension: candidate executors under the generic instruction on validation pairs.
 
-Usage: python -I drop_screen.py [--summary]. Appends to results/drop_screen/calls.jsonl (resumable). Design: REPORT.md.
+Usage: python -I drop_screen.py [--summary] [--host chameleon]. Appends to results/drop_screen[_<host>]/calls.jsonl
+(resumable). Design: REPORT.md, REPORT-C2-ext.md.
 Drop if accuracy <= majority rate, one answer >= 95% of outputs, or > 10% unparsed (rule fixed before running).
+With --host chameleon it is the host check (PREREG-C2-ext.md II.2): self-hosted answers vs the Purdue screen, >= 38 / 40.
 """
 from __future__ import annotations
 
@@ -14,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from c2_setup import load_pairs, stratified  # noqa: E402
-from llm import ask  # noqa: E402
+from llm import ask, model_snapshot  # noqa: E402
 from probe_api import PURDUE_BASE, REPO, call, load_env  # noqa: E402
 from runner import EXECUTOR_TEMP, append, now, read_jsonl  # noqa: E402
 from workflows import WORKFLOWS, parse_yes  # noqa: E402
@@ -25,6 +27,9 @@ SEED = 4
 STRATA = (20, 15, 5)  # pos, hard neg, random neg: C2 proportions, majority rate 0.50
 MAX_ONE_ANSWER, MAX_UNPARSED = 0.95, 0.10
 OUT_DIR = REPO / "experiments" / "spec_channel" / "results" / "drop_screen"
+# Host check (PREREG-C2-ext.md II.2): the executors moved to the self-hosted server, and the agreement they need.
+SELF_HOSTED = ["gemma4:26b-a4b", "qwen3:8b", "qwen3:32b", "deepseek-r1:14b", "mistral:latest", "phi4:latest"]
+MIN_AGREE = 38
 
 
 def snapshot_models() -> None:
@@ -34,25 +39,46 @@ def snapshot_models() -> None:
     (OUT_DIR / f"models-{now()[:10]}.json").write_text(json.dumps({"status": s, "fetched": now(), "models": models}, indent=1))
 
 
-def main() -> int:
+def main(host: str) -> int:
     wf = WORKFLOWS["c2"]()
     pairs = stratified(load_pairs("valid"), *STRATA, random.Random(SEED))
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    snapshot_models()
-    out = OUT_DIR / "calls.jsonl"
+    out_dir, models = (OUT_DIR, CANDIDATES) if host == "purdue" else (OUT_DIR.with_name(f"drop_screen_{host}"), SELF_HOSTED)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    if host == "purdue":
+        snapshot_models()
+    else:
+        (out_dir / f"models-{now()[:10]}.json").write_text(json.dumps(model_snapshot(host, models), indent=1))
+    out = out_dir / "calls.jsonl"
 
     done = {(r["model"], r["item_id"]) for r in read_jsonl(out) if not r["error"]}
-    todo = [(m, p) for m in CANDIDATES for p in pairs if (m, p["id"]) not in done]
-    print(f"{len(CANDIDATES)} models x {len(pairs)} pairs; {len(todo)} to run", flush=True)
+    todo = [(m, p) for m in models for p in pairs if (m, p["id"]) not in done]
+    print(f"{len(models)} models x {len(pairs)} pairs on {host}; {len(todo)} to run", flush=True)
     for k, (m, p) in enumerate(todo):
-        r = ask(m, wf.executor_prompt(wf.ref_spec, p), EXECUTOR_TEMP)
+        r = ask(m, wf.executor_prompt(wf.ref_spec, p), EXECUTOR_TEMP, host=host)
         pred = parse_yes(r["content"])
         append(out, {"spec": "S_ref", "item_id": p["id"], "stratum": p["stratum"], "label": p["label"], "prediction": pred,
                      "correct": pred == p["label"], "unparsed": pred is None, "timestamp": now(), **r})
         if (k + 1) % 40 == 0:
             print(f"{k + 1}/{len(todo)} (last model {m})", flush=True)
-    report(out, [p["id"] for p in pairs])
+    ids = [p["id"] for p in pairs]
+    if host == "purdue":
+        report(out, ids)
+    else:
+        host_check(out, OUT_DIR / "calls.jsonl", ids, out_dir / "host_check.json")
     return 0
+
+
+def host_check(out: Path, purdue: Path, ids: list[str], dest: Path) -> None:
+    """Per model: answers equal to the Purdue screen's on the same pairs; below MIN_AGREE the model stays on Purdue."""
+    mine = {(r["model"], r["item_id"]): r["prediction"] for r in read_jsonl(out) if not r["error"]}
+    ref = {(r["model"], r["item_id"]): r["prediction"] for r in read_jsonl(purdue) if not r["error"]}
+    verdicts = {}
+    for m in SELF_HOSTED:
+        both = [i for i in ids if (m, i) in mine and (m, i) in ref]
+        agree = sum(mine[(m, i)] == ref[(m, i)] for i in both)
+        verdicts[m] = {"compared": len(both), "agree": agree, "self_hosted": len(both) == len(ids) and agree >= MIN_AGREE}
+        print(f"{m:18s} {agree:>2}/{len(both)} agree  {'self-host' if verdicts[m]['self_hosted'] else 'stay on Purdue'}")
+    dest.write_text(json.dumps({"min_agree": MIN_AGREE, "models": verdicts}, indent=1))
 
 
 def report(out: Path, ids: list[str]) -> None:
@@ -78,5 +104,6 @@ def report(out: Path, ids: list[str]) -> None:
 
 
 if __name__ == "__main__":
+    host = sys.argv[sys.argv.index("--host") + 1] if "--host" in sys.argv else "purdue"
     sys.exit(report(OUT_DIR / "calls.jsonl", [p["id"] for p in stratified(load_pairs("valid"), *STRATA, random.Random(SEED))])
-             if "--summary" in sys.argv else main())
+             if "--summary" in sys.argv else main(host))
