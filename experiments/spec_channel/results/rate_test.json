@@ -1,0 +1,31 @@
+{
+ "model": "gemma3:12b",
+ "n": 30,
+ "single": {
+  "n": 30,
+  "ok": 21,
+  "throttled": 0,
+  "other": 9,
+  "elapsed_s": 67.5,
+  "ok_per_min": 18.7
+ },
+ "both": {
+  "PURDUE": {
+   "n": 30,
+   "ok": 20,
+   "throttled": 0,
+   "other": 10,
+   "elapsed_s": 52.3,
+   "ok_per_min": 23.0
+  },
+  "PURDUE_2": {
+   "n": 30,
+   "ok": 20,
+   "throttled": 0,
+   "other": 10,
+   "elapsed_s": 52.3,
+   "ok_per_min": 23.0
+  }
+ },
+ "verdict": "per key"
+}
