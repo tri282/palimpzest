@@ -1,16 +1,22 @@
-"""Single-call client for Purdue GenAI and Gemini with per-provider pacing, retries, and R3 cost fields.
+"""Single-call client for Purdue GenAI (one or two keys), a self-hosted OpenAI-compatible server, and Gemini, with per-host
+pacing, retries, and R3 cost fields.
 
 Design and results: REPORT.md.
 """
 from __future__ import annotations
 
+import os
 import re
 import time
 
 from probe_api import GEMINI_BASE, PURDUE_BASE, call, load_env
 
-PROVIDER = {"gemini-3.5-flash-lite": "gemini"}  # everything else is Purdue
-MIN_INTERVAL_S = {"purdue": 60 / 18, "gemini": 60 / 14}
+PROVIDER = {"gemini-3.5-flash-lite": "gemini"}  # everything else is OpenAI-compatible, routed by host
+# host -> (base URL, env var holding the key or None, min seconds between calls). Purdue paces per key; the self-hosted
+# server (Chameleon, reached through an SSH tunnel by default) is not rate-limited.
+HOSTS = {"purdue": (PURDUE_BASE, "PURDUE", 60 / 18), "purdue2": (PURDUE_BASE, "PURDUE_2", 60 / 18),
+         "chameleon": (os.environ.get("CHAMELEON_BASE", "http://127.0.0.1:11434/v1"), None, 0.0)}
+GEMINI_INTERVAL_S = 60 / 14
 # USD per million tokens, list rate. Gemini row from the Google Gemini API pricing page
 # (read 2026-08-28). Purdue models have no list price: cost stays None (unpriced), tokens are the cost unit.
 RATES = {"gemini-3.5-flash-lite": {"prompt": 0.30, "completion": 2.50}}
@@ -43,6 +49,29 @@ def reasoning_estimate(reasoning: str, content: str | None, tokens_out: int | No
     return {"reasoning_tokens_est": max(0, tokens_out - -(-len(content or "") // 4)), "reasoning_source": "token_gap"}
 
 
+def model_snapshot(host: str, models: list[str]) -> dict:
+    """Served versions of `models` on `host`: Purdue lists tag + registry time (no digest); a self-hosted Ollama server's
+    /api/tags lists digest and quantization. Gemini is skipped. Errors are recorded, not raised."""
+    if not _env:
+        _env.update(load_env())
+    base, key_var, _ = HOSTS[host]
+    if key_var:
+        s, _, resp, _ = call(f"{base}/models", {"Authorization": f"Bearer {_env[key_var]}"})
+        rows = [{"id": m["id"], "updated_at": (m.get("info") or {}).get("updated_at")} for m in (resp or {}).get("data", [])]
+    else:
+        s, _, resp, _ = call(f"{base.removesuffix('/v1')}/api/tags", {})
+        rows = [{"id": m["name"], "digest": m.get("digest"), "size": m.get("size"),
+                 "quantization": (m.get("details") or {}).get("quantization_level")} for m in (resp or {}).get("models", [])]
+    want = set(models) - set(PROVIDER)
+    rows = [r for r in rows if r["id"] in want]
+    return {"status": s, "models": rows, "missing": sorted(want - {r["id"] for r in rows})}
+
+
+def check_hosts() -> None:
+    assert set(HOSTS) == {"purdue", "purdue2", "chameleon"} and HOSTS["purdue"][1] != HOSTS["purdue2"][1]
+    assert HOSTS["chameleon"][1] is None and HOSTS["chameleon"][2] == 0.0
+
+
 def check_split() -> None:
     assert split_reasoning({"content": "Yes"}) == ("Yes", "")
     assert split_reasoning({"content": "No", "reasoning_content": "abc"}) == ("No", "abc")
@@ -53,13 +82,15 @@ def check_split() -> None:
     assert reasoning_estimate("", None, None)["reasoning_tokens_est"] is None
 
 
-def _once(model: str, provider: str, text: str | list[str], temperature: float | None, system: str | None) -> dict:
+def _once(model: str, provider: str, host: str, text: str | list[str], temperature: float | None, system: str | None) -> dict:
     # temperature None = field omitted (provider default), as PZ's validator calls the judge; a list = consecutive user turns.
     texts = [text] if isinstance(text, str) else text
-    if provider == "purdue":
+    if provider != "gemini":
+        base, key_var, _ = HOSTS[host]
+        auth = {"Authorization": f"Bearer {_env[key_var]}"} if key_var else {}
         messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": t} for t in texts]
         body = {"model": model, "messages": messages} | ({} if temperature is None else {"temperature": temperature})
-        s, _, resp, lat = call(f"{PURDUE_BASE}/chat/completions", {"Authorization": f"Bearer {_env['PURDUE']}"}, body)
+        s, _, resp, lat = call(f"{base}/chat/completions", auth, body)
         msg = (((resp or {}).get("choices") or [{}])[0] or {}).get("message") or {}
         usage = (resp or {}).get("usage") or {}
         content, reasoning = split_reasoning(msg)
@@ -81,18 +112,22 @@ def _once(model: str, provider: str, text: str | list[str], temperature: float |
     return {"status": s, "latency_s": round(lat, 3), "raw_response": resp, **out}
 
 
-def ask(model: str, text: str | list[str], temperature: float | None = 0.0, system: str | None = None) -> dict:
-    """One logical call: paces per provider, retries transient failures, returns final attempt plus attempt history."""
+def ask(model: str, text: str | list[str], temperature: float | None = 0.0, system: str | None = None, host: str = "purdue") -> dict:
+    """One logical call: paces per host, retries transient failures, returns final attempt plus attempt history.
+    host is ignored for Gemini models."""
     if not _env:
         _env.update(load_env())
     provider = provider_of(model)
+    host = "gemini" if provider == "gemini" else host
+    provider = provider if provider == "gemini" else "purdue" if host.startswith("purdue") else "selfhosted"
+    interval = GEMINI_INTERVAL_S if provider == "gemini" else HOSTS[host][2]
     attempts, wait_total = [], 0.0
     for attempt in range(MAX_ATTEMPTS):
-        wait = max(0.0, MIN_INTERVAL_S[provider] - (time.time() - _last.get(provider, 0.0)))
+        wait = max(0.0, interval - (time.time() - _last.get(host, 0.0)))
         time.sleep(wait)
         wait_total += wait
-        _last[provider] = time.time()
-        r = _once(model, provider, text, temperature, system)
+        _last[host] = time.time()
+        r = _once(model, provider, host, text, temperature, system)
         ok = r["status"] == 200 and r["content"]
         attempts.append({"status": r["status"], "latency_s": r["latency_s"], "error": None if ok else str(r["raw_response"])[:300]})
         if ok:
@@ -105,13 +140,14 @@ def ask(model: str, text: str | list[str], temperature: float | None = 0.0, syst
     rate = RATES.get(model)
     cost = (None if rate is None or r["tokens_in"] is None or r["tokens_out"] is None
             else (r["tokens_in"] * rate["prompt"] + r["tokens_out"] * rate["completion"]) / 1e6)
-    return {"model": model, "provider": provider, "temperature": temperature, **r,
+    return {"model": model, "provider": provider, "host": host, "temperature": temperature, **r,
             "error": attempts[-1]["error"], "retry_count": len(attempts) - 1, "attempts": attempts,
             "latency_total_s": round(sum(a["latency_s"] for a in attempts), 3), "wait_s": round(wait_total, 3),
-            "cache_hit": None if provider == "purdue" else bool(r["cached_tokens"]),
+            "cache_hit": bool(r["cached_tokens"]) if provider == "gemini" else None,
             "cost_usd_list": cost}
 
 
 if __name__ == "__main__":
     check_split()
-    print("split_reasoning / reasoning_estimate ok")
+    check_hosts()
+    print("split_reasoning / reasoning_estimate / hosts ok")
