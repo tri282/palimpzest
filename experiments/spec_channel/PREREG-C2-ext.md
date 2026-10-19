@@ -97,3 +97,13 @@ Seven tests, Holm correction at family-wise alpha 0.05. A test **supports** its 
 
 * The code commit is recorded with every run invocation. Results of replicates 0-2 may be inspected descriptively before replicates 3-8 finish; all 9 run regardless. Any change to prompts, parser, pair sets, writer drafts or the tests above after that look demotes the affected primary tests to exploratory, and the change is reported.
 * Analysis code is committed before the analysis is run on replicates 3-8.
+
+---
+
+## VI. Amendment 1 (2026-10-19, Before Any Executor Call)
+
+Added after the writer screen and the judge run on the 36 new drafts (`results/runs/p9-scores-ext`), before any extension executor call. It changes no primary test.
+
+* **Reason:** the validator's score is binary (one output field). Over the 6 writers, sample 0 ties in all 9 replicates (2 to 6 writers at 1.0), and IV.4 had no tie rule for more than two writers.
+* **Rule for the judge champion (IV.4):** per replicate, the champion set is every writer tied at the highest sample-0 score. P9 with the judge champion is reported three ways: (i) best writer in the set, (ii) worst writer in the set, (iii) Abacus's tie rule, the first writer in operator order A0, A1, A2, A3, A4, A5. The size of the champion set is reported per replicate. The 3-sample-mean champion (same tie rule) is reported alongside as the stability check.
+* **The judge result itself** (binary scores cannot rank several good writers; the pick is decided by operator order) is reported as a finding about Palimpzest's default validator.

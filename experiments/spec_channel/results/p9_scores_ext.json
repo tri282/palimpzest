@@ -1,0 +1,357 @@
+{
+ "judge": "gpt-oss:120b",
+ "source_run": "ext-writer-drafts",
+ "replicates": {
+  "0": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 328
+   },
+   "A3": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 216
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 169
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 154
+   },
+   "champion": "tie"
+  },
+  "1": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 272
+   },
+   "A3": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 248
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "mean": 0.3333333333333333,
+    "spec_words": 170
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     0.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 154
+   },
+   "champion": "tie"
+  },
+  "2": {
+   "A2": {
+    "scores": [
+     1.0,
+     0.0,
+     1.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 304
+   },
+   "A3": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 242
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 177
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 188
+   },
+   "champion": "A5"
+  },
+  "3": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 254
+   },
+   "A3": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 230
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 171
+   },
+   "A5": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 133
+   },
+   "champion": "A2"
+  },
+  "4": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 326
+   },
+   "A3": {
+    "scores": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "mean": 0.3333333333333333,
+    "spec_words": 254
+   },
+   "A4": {
+    "scores": [
+     1.0,
+     0.0,
+     1.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 158
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 160
+   },
+   "champion": "tie"
+  },
+  "5": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 274
+   },
+   "A3": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 216
+   },
+   "A4": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 198
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     0.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 160
+   },
+   "champion": "tie"
+  },
+  "6": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 351
+   },
+   "A3": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 202
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 174
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 105
+   },
+   "champion": "tie"
+  },
+  "7": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     0.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 356
+   },
+   "A3": {
+    "scores": [
+     1.0,
+     0.0,
+     1.0
+    ],
+    "mean": 0.6666666666666666,
+    "spec_words": 238
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 166
+   },
+   "A5": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 121
+   },
+   "champion": "tie"
+  },
+  "8": {
+   "A2": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 301
+   },
+   "A3": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 195
+   },
+   "A4": {
+    "scores": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "spec_words": 161
+   },
+   "A5": {
+    "scores": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "mean": 1.0,
+    "spec_words": 61
+   },
+   "champion": "tie"
+  }
+ }
+}

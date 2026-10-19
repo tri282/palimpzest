@@ -1,0 +1,70 @@
+{
+ "A2": {
+  "model": "gpt-oss:120b",
+  "drafts": 2,
+  "pass": true,
+  "words": [
+   266,
+   282
+  ],
+  "criteria": [
+   5,
+   5
+  ],
+  "copied": [
+   0,
+   0
+  ]
+ },
+ "A3": {
+  "model": "llama3.3:70b",
+  "drafts": 2,
+  "pass": true,
+  "words": [
+   193,
+   205
+  ],
+  "criteria": [
+   5,
+   5
+  ],
+  "copied": [
+   0,
+   0
+  ]
+ },
+ "A4": {
+  "model": "gemma3:27b",
+  "drafts": 2,
+  "pass": true,
+  "words": [
+   158,
+   169
+  ],
+  "criteria": [
+   5,
+   5
+  ],
+  "copied": [
+   0,
+   0
+  ]
+ },
+ "A5": {
+  "model": "qwen3:8b",
+  "drafts": 2,
+  "pass": true,
+  "words": [
+   129,
+   133
+  ],
+  "criteria": [
+   5,
+   5
+  ],
+  "copied": [
+   0,
+   0
+  ]
+ }
+}
