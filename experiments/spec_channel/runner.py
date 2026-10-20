@@ -9,6 +9,7 @@ Exit codes: 0 done, 2 transient stop (provider outage; re-run resumes), 3 config
 from __future__ import annotations
 
 import argparse
+import fcntl
 import hashlib
 import json
 import os
@@ -44,6 +45,41 @@ def now() -> str:
 
 
 MAX_CONSECUTIVE_FAILURES = 5
+# Purdue cannot keep two of these loaded at once: two keys on two of them evict each other (~50-100 s per call), so
+# runners on one machine take turns per executor block.
+PURDUE_LARGE = {"llama3.3:70b", "gpt-oss:120b", "qwen2.5:72b", "llama4:latest"}
+LARGE_LOCK = Path("/tmp/spec_channel-purdue-large.lock")
+
+
+def large_lock(held, want: bool, model: str):
+    """Release the held block lock; if `want`, block until this process holds it. Closing (or exiting) releases it."""
+    if held:
+        held.close()
+        if want:
+            time.sleep(2)  # let a waiting runner take it, else back-to-back large blocks starve it
+    if not want:
+        return None
+    f = open(LARGE_LOCK, "w")
+    try:
+        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print(f"{now()[:19]} waiting for the large-model lock ({model})", flush=True)
+        fcntl.flock(f, fcntl.LOCK_EX)
+        print(f"{now()[:19]} got the large-model lock ({model})", flush=True)
+    return f
+
+
+def check_lock() -> None:
+    first = large_lock(None, True, "x")
+    other = open(LARGE_LOCK, "w")
+    try:
+        fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        raise AssertionError("second holder got the lock")
+    except BlockingIOError:
+        pass
+    assert large_lock(first, False, "x") is None
+    fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)  # free after release
+    other.close()
 
 
 def read_jsonl(path: Path) -> list[dict]:
@@ -206,8 +242,10 @@ def main() -> int:
     if args.dry_run:
         return 0
 
-    prev_model, t0, failures = None, time.time(), 0
+    prev_model, t0, failures, lock = None, time.time(), 0, None
     for k, (rep, a, b, it) in enumerate(todo):
+        if executors[b] != prev_model:
+            lock = large_lock(lock, host.startswith("purdue") and executors[b] in PURDUE_LARGE, executors[b])
         spec, spec_hash = spec_for(rep, a)
         r = ask(executors[b], wf.executor_prompt(spec, it), EXECUTOR_TEMP, host=host)
         pred = wf.parse(r["content"])
