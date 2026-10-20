@@ -16,6 +16,9 @@ PROVIDER = {"gemini-3.5-flash-lite": "gemini"}  # everything else is OpenAI-comp
 # server (Chameleon, reached through an SSH tunnel by default) is not rate-limited.
 HOSTS = {"purdue": (PURDUE_BASE, "PURDUE", 60 / 18), "purdue2": (PURDUE_BASE, "PURDUE_2", 60 / 18),
          "chameleon": (os.environ.get("CHAMELEON_BASE", "http://127.0.0.1:11434/v1"), None, 0.0)}
+# Extra request fields per self-hosted model, so it runs in the same mode as on Purdue: Ollama >= 0.40 turns gemma4
+# thinking on by default, Purdue serves it plain (host check, launch sheet III).
+SELF_HOSTED_EXTRA = {"gemma4:26b-a4b": {"reasoning_effort": "none"}}
 GEMINI_INTERVAL_S = 60 / 14
 # USD per million tokens, list rate. Gemini row from the Google Gemini API pricing page
 # (read 2026-08-28). Purdue models have no list price: cost stays None (unpriced), tokens are the cost unit.
@@ -82,6 +85,19 @@ def check_split() -> None:
     assert reasoning_estimate("", None, None)["reasoning_tokens_est"] is None
 
 
+def request_body(model: str, host: str, messages: list[dict], temperature: float | None) -> dict:
+    extra = SELF_HOSTED_EXTRA.get(model, {}) if HOSTS[host][1] is None else {}
+    return {"model": model, "messages": messages} | ({} if temperature is None else {"temperature": temperature}) | extra
+
+
+def check_body() -> None:
+    m = [{"role": "user", "content": "x"}]
+    assert request_body("gemma4:26b-a4b", "chameleon", m, 0.0)["reasoning_effort"] == "none"
+    assert "reasoning_effort" not in request_body("gemma4:26b-a4b", "purdue", m, 0.0)
+    assert "reasoning_effort" not in request_body("qwen3:8b", "chameleon", m, 0.0)
+    assert "temperature" not in request_body("gemma3:12b", "purdue2", m, None)
+
+
 def _once(model: str, provider: str, host: str, text: str | list[str], temperature: float | None, system: str | None) -> dict:
     # temperature None = field omitted (provider default), as PZ's validator calls the judge; a list = consecutive user turns.
     texts = [text] if isinstance(text, str) else text
@@ -89,7 +105,7 @@ def _once(model: str, provider: str, host: str, text: str | list[str], temperatu
         base, key_var, _ = HOSTS[host]
         auth = {"Authorization": f"Bearer {_env[key_var]}"} if key_var else {}
         messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": t} for t in texts]
-        body = {"model": model, "messages": messages} | ({} if temperature is None else {"temperature": temperature})
+        body = request_body(model, host, messages, temperature)
         s, _, resp, lat = call(f"{base}/chat/completions", auth, body)
         msg = (((resp or {}).get("choices") or [{}])[0] or {}).get("message") or {}
         usage = (resp or {}).get("usage") or {}
@@ -150,4 +166,5 @@ def ask(model: str, text: str | list[str], temperature: float | None = 0.0, syst
 if __name__ == "__main__":
     check_split()
     check_hosts()
-    print("split_reasoning / reasoning_estimate / hosts ok")
+    check_body()
+    print("split_reasoning / reasoning_estimate / hosts / request body ok")
