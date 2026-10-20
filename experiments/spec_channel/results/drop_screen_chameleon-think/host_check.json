@@ -1,0 +1,35 @@
+{
+ "min_agree": 38,
+ "models": {
+  "gemma4:26b-a4b": {
+   "compared": 40,
+   "agree": 38,
+   "self_hosted": true
+  },
+  "qwen3:8b": {
+   "compared": 40,
+   "agree": 40,
+   "self_hosted": true
+  },
+  "qwen3:32b": {
+   "compared": 40,
+   "agree": 37,
+   "self_hosted": false
+  },
+  "deepseek-r1:14b": {
+   "compared": 40,
+   "agree": 36,
+   "self_hosted": false
+  },
+  "mistral:latest": {
+   "compared": 40,
+   "agree": 36,
+   "self_hosted": false
+  },
+  "phi4:latest": {
+   "compared": 40,
+   "agree": 40,
+   "self_hosted": true
+  }
+ }
+}

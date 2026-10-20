@@ -1,0 +1,42 @@
+{
+ "status": 200,
+ "models": [
+  {
+   "id": "phi4:latest",
+   "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+   "size": 9053116391,
+   "quantization": "Q4_K_M"
+  },
+  {
+   "id": "mistral:latest",
+   "digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf",
+   "size": 4372824384,
+   "quantization": "Q4_K_M"
+  },
+  {
+   "id": "deepseek-r1:14b",
+   "digest": "c333b7232bdb521236694ffbb5f5a6b11cc45d98e9142c73123b670fca400b09",
+   "size": 8988112209,
+   "quantization": "Q4_K_M"
+  },
+  {
+   "id": "qwen3:32b",
+   "digest": "030ee887880fc378860c2dd35101da424377520441ae4bfe7be6deff8ade7840",
+   "size": 20201253829,
+   "quantization": "Q4_K_M"
+  },
+  {
+   "id": "qwen3:8b",
+   "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+   "size": 5225388164,
+   "quantization": "Q4_K_M"
+  },
+  {
+   "id": "gemma4:26b-a4b",
+   "digest": "001e5dafc3c77684c2307ebc6ab8e336e10c9b18eca52acf547d72fc83c3ca8c",
+   "size": 18731025629,
+   "quantization": "Q4_K_M"
+  }
+ ],
+ "missing": []
+}

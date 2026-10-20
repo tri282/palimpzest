@@ -74,10 +74,10 @@ New writers are chosen from models that are also executors, so each has a writer
 | B3 | `gemma3:27b` | plain | Purdue |
 | B4 | `gemma4:26b-a4b` (MoE, 4B active) | plain | Chameleon |
 | B5 | `qwen3:8b` | reasoning | Chameleon |
-| B6 | `qwen3:32b` | reasoning | Chameleon |
+| B6 | `qwen3:32b` | reasoning | Purdue (failed host check) |
 | B7 | `gpt-oss:latest` (= 20B, 14 GB) | reasoning | Purdue |
-| B8 | `deepseek-r1:14b` | reasoning | Chameleon |
-| B9 | `mistral:latest` (= 7B, 4.4 GB) | plain | Chameleon |
+| B8 | `deepseek-r1:14b` | reasoning | Purdue (failed host check) |
+| B9 | `mistral:latest` (= 7B, 4.4 GB) | plain | Purdue (failed host check) |
 | B10 | `phi4:latest` (= 14B, 9.1 GB) | plain | Chameleon |
 | B11 | `qwen2.5:72b` | plain | Purdue |
 | B12 | `llama4:latest` (= Llama 4 Scout 17B-16E, w4a16) | plain | Purdue |
@@ -85,7 +85,7 @@ New writers are chosen from models that are also executors, so each has a writer
 * **Screened** before the run (`drop_screen.py`, `results/drop_screen/`): 40 validation pairs under the generic instruction; drop if accuracy <= majority rate, one answer >= 95%, or > 10% unparsed (rule fixed in advance). Dropped: `gemma3:1b` (always Yes), `llama3.1:latest` (8B; 75% unparsed: writes an analysis instead of Yes/No). `gemma3:4b` is not served on Purdue.
 * **All executors are candidate plans** in the optimizer analysis (in the full run B2 and B3 were profiling-only references).
 * **B11 = writer A1:** its A1 cells are the writer applying its own rules; reported separately and excluded from the cross-executor test.
-* **Hosts:** B0-B3 stay on Purdue (compared with full-run data); B7 stays on Purdue (compared with B2). Each executor uses one host for all its calls. Chameleon copies use the same Ollama tags.
+* **Hosts:** B0-B3 stay on Purdue (compared with full-run data); B7 stays on Purdue (compared with B2). Each executor uses one host for all its calls. Chameleon copies use the same Ollama tags. Planned on Chameleon: B4-B6, B8-B10; after the host check (VII.1) B6, B8 and B9 run on Purdue, as the pre-registered rule requires.
 
 ---
 
@@ -110,6 +110,7 @@ Blocks A and B differ only in where the drafts come from (saved vs new); togethe
 * Checks first, then replicates 0-2 for every run, then 3-8. All 9 are committed; the early look is descriptive and cannot change what runs.
 * **Hosts:** Purdue about 94.8k calls (B0-B3, B7, B11, B12, new writers, judge) over two API keys (about 18 calls per minute per key; per-key limit to be confirmed), about 44 h; Chameleon about 94.7k calls (B4-B6, B8-B10) on one GPU node (Ollama, 4 parallel requests), about 48 h, of which `qwen3:32b` is about 22 h.
 * **Estimated time:** about 2 days of running plus 0.5-1 day of setup. Throughput on Chameleon is an estimate until measured.
+* **As run:** with B6, B8 and B9 moved to Purdue, Purdue carries about 142k calls and Chameleon about 47k (B4, B5, B10). B6 and B8 are latency-bound on Purdue (about 10 s and 7.5 s per call), so each runs as two concurrent processes on one key, still under the per-key limit; about 3.2 days in total.
 
 ---
 
@@ -178,7 +179,25 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 
 ## VII. Results
 
-*Placeholders: checks, block A, block B, tests (a)-(d), optimizer analysis, reliability.*
+### 1. Checks
+
+**Rate test** (`results/rate_test.json`): 18.7 successful calls per minute on one key, 46 on two at once, so the limit is per key.
+
+**Host check** (`results/drop_screen_chameleon/host_check.json`): each self-hosted model answers the 40 screen pairs under `S_ref`; it stays self-hosted at >= 38 of 40 answers equal to Purdue's.
+
+| id | model | agree with Purdue | host |
+|---|---|---:|---|
+| B4 | `gemma4:26b-a4b` | 39 / 40 (rerun, plain mode) | Chameleon |
+| B5 | `qwen3:8b` | 40 / 40 | Chameleon |
+| B6 | `qwen3:32b` | 37 / 40 | Purdue |
+| B8 | `deepseek-r1:14b` | 36 / 40 | Purdue |
+| B9 | `mistral:latest` | 36 / 40 | Purdue |
+| B10 | `phi4:latest` | 40 / 40 | Chameleon |
+
+* **gemma4 ran in a different mode at first.** The self-hosted Ollama (0.40.6) turns gemma4 thinking on by default; Purdue serves it plain. Same request on both hosts, yet the first check gave a median of 350 output tokens and about 1,100 reasoning characters on Chameleon against 2 tokens and none on Purdue, while answers still agreed 38/40. Self-hosted gemma4 calls now send `reasoning_effort: "none"` (a deviation, VIII.8); the rerun gives 2 tokens (median and maximum), no reasoning text and 39/40. The first check is kept in `results/drop_screen_chameleon-think/`.
+* **The B6, B8, B9 gaps are systematic.** The rerun repeats every self-hosted answer and token count exactly (40/40 for all five other models; digests unchanged), and Purdue repeats itself at temperature 0 (`S_ref` across 9 full-run replicates: 40/40 for B0 and B1, 39.4/40 for B2). No call was truncated or unparsed on Chameleon. Prompt token counts differ by 2-6 per call between hosts, which points to a different chat template or build behind the same tag. B6's 3 flips are all Yes on Purdue, No on Chameleon (all true matches); B9's 4 lean the same way (3 Yes to No, 1 unparsed to No); B8's 4 go both ways.
+
+*Placeholders: block A, block B, tests (a)-(d), optimizer analysis, reliability.*
 
 ---
 
@@ -191,6 +210,9 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 5. **Writers are mixed in provenance:** A0 is an API model whose drafts date from the full run; A2-A5 are Purdue models drafted now.
 6. **Statistics.** Test (a) has 12 executors, so it only detects a strong relation; the natural mix is near ceiling; temperature 0 is not fully deterministic for reasoning models.
 7. **Time.** B0-B3's 150-pair data is about 10 days older than the rest; the drift anchor checks this but does not prove it.
+8. **Deviation from the freeze.** One code change after the freeze commit: self-hosted gemma4 calls send `reasoning_effort: "none"` (VII.1), so B4 runs plain as on Purdue. It changes request fields only, not prompts, parser, pairs, drafts or tests; it was made before any B4 data existed, and the host check was rerun under it.
+9. **The host check compares answers only.** It did not notice gemma4 thinking on one host and not the other, since the answers still agreed. Mode (output tokens, reasoning text) is now compared by hand for every self-hosted model (VII.1) but is not part of the pre-registered rule.
+10. **Size pair (b2) crosses hosts.** B5 (`qwen3:8b`) runs on Chameleon and B6 (`qwen3:32b`) on Purdue. B5 agrees 40/40 with its Purdue answers, but the pair compares two sizes on two serving builds.
 
 ---
 
