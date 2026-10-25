@@ -197,6 +197,18 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 * **gemma4 ran in a different mode at first.** The self-hosted Ollama (0.40.6) turns gemma4 thinking on by default; Purdue serves it plain. Same request on both hosts, yet the first check gave a median of 350 output tokens and about 1,100 reasoning characters on Chameleon against 2 tokens and none on Purdue, while answers still agreed 38/40. Self-hosted gemma4 calls now send `reasoning_effort: "none"` (a deviation, VIII.8); the rerun gives 2 tokens (median and maximum), no reasoning text and 39/40. The first check is kept in `results/drop_screen_chameleon-think/`.
 * **The B6, B8, B9 gaps are systematic.** The rerun repeats every self-hosted answer and token count exactly (40/40 for all five other models; digests unchanged), and Purdue repeats itself at temperature 0 (`S_ref` across 9 full-run replicates: 40/40 for B0 and B1, 39.4/40 for B2). No call was truncated or unparsed on Chameleon. Prompt token counts differ by 2-6 per call between hosts, which points to a different chat template or build behind the same tag. B6's 3 flips are all Yes on Purdue, No on Chameleon (all true matches); B9's 4 lean the same way (3 Yes to No, 1 unparsed to No); B8's 4 go both ways.
 
+**B5 timeouts** (`results/runs/ext-{models,writers}-B5`): 8 of 15,750 B5 calls have no answer, at most 5 in one rule cell (A2 x B5; 2,250 calls). All 8 are status 0 timeouts: the client waits 120 s per attempt with no `max_tokens` (pre-registered), and each call failed all 6 attempts in the main pass and in later resume passes.
+
+| run | writer | replicate | pair |
+|---|---|---|---|
+| `ext-models-B5` | A1 | 2, 4 | `test-1355-559`, `test-22-16209` |
+| `ext-writers-B5` | A2 | 0, 2, 3, 4, 7 | `test-1355-559` |
+| `ext-writers-B5` | A4 | 7 | `test-1649-21800` |
+
+* **They are reasoning loops, not slow serving.** On the idle GPU `qwen3:8b` generates about 185 tokens/s, so a timeout means more than about 22k reasoning tokens with no answer. Replayed with streaming and a 12k-token cap, 5 of the 8 hit the cap with no answer, repeating the same lines; on `test-1355-559` the model compares model numbers `rrvtps28pkr1` and `rr-vtps-28pk-r1` over and over under a rule that model numbers must be identical, without settling whether formatting counts. The A1 and A2 drafts both state such a rule.
+* **Long reasoning is not deterministic on this host** at temperature 0: the other 3 replays answered in 3-12 s, and one call that hit the cap in a first replay answered "Yes" in 12 s in a second, with the identical request. Short answers repeat exactly (host check above).
+* **Treatment:** counted as failures, under the pre-registered unparsed rule (wrong in the primary analysis, excluded in the sensitivity analysis). Not retried further: retrying until a call succeeds keeps only the paths that escape the loop. Earlier timeouts on B5 came from our own load (two passes on one GPU, `OLLAMA_NUM_PARALLEL=1`) and were resolved by resume passes run one at a time; the last of those passes overlapped briefly with the replay.
+
 *Placeholders: block A, block B, tests (a)-(d), optimizer analysis, reliability.*
 
 ---
@@ -213,6 +225,7 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 8. **Deviation from the freeze.** One code change after the freeze commit: self-hosted gemma4 calls send `reasoning_effort: "none"` (VII.1), so B4 runs plain as on Purdue. It changes request fields only, not prompts, parser, pairs, drafts or tests; it was made before any B4 data existed, and the host check was rerun under it.
 9. **The host check compares answers only.** It did not notice gemma4 thinking on one host and not the other, since the answers still agreed. Mode (output tokens, reasoning text) is now compared by hand for every self-hosted model (VII.1) but is not part of the pre-registered rule.
 10. **Size pair (b2) crosses hosts.** B5 (`qwen3:8b`) runs on Chameleon and B6 (`qwen3:32b`) on Purdue. B5 agrees 40/40 with its Purdue answers, but the pair compares two sizes on two serving builds.
+11. **Timeouts are failures by a client limit.** The 120 s client timeout, not a token cap, ends a runaway reasoning call; at about 185 tokens/s that is about 22k tokens on Chameleon, and a slower host would cut calls earlier. 8 B5 calls failed this way (VII.1); since long reasoning is not deterministic, a rerun could answer some of them, so their count is itself noisy.
 
 ---
 
