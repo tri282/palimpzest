@@ -3,7 +3,7 @@
 Goal: test whether the C2 result (rules written by an upstream LLM change which downstream LLM is best) holds across many executor and writer models, and what that means for an optimizer that profiles operators one at a time.  
 *Requirements: `REPORT.md` Sections VII and IX (the full C2 run this extends). Pre-registration: `PREREG-C2-ext.md` (to be committed before the first replicate). Raw logs: `results/runs/{drift-c2, ext-easy, ext-models, ext-writers, p9-scores-ext}` (planned).*  
 
-Status: **design, no results yet.** Design fixed 2026-10-19; runs pending.
+Status: **running, about 75% of calls done (2026-10-26); no results yet.** Design fixed 2026-10-19; runs started 2026-10-20 (V.2).
 
 ---
 
@@ -111,6 +111,19 @@ Blocks A and B differ only in where the drafts come from (saved vs new); togethe
 * **Hosts:** Purdue about 94.8k calls (B0-B3, B7, B11, B12, new writers, judge) over two API keys (about 18 calls per minute per key; per-key limit to be confirmed), about 44 h; Chameleon about 94.7k calls (B4-B6, B8-B10) on one GPU node (Ollama, 4 parallel requests), about 48 h, of which `qwen3:32b` is about 22 h.
 * **Estimated time:** about 2 days of running plus 0.5-1 day of setup. Throughput on Chameleon is an estimate until measured.
 * **As run:** with B6, B8 and B9 moved to Purdue, Purdue carries about 142k calls and Chameleon about 47k (B4, B5, B10). B6 and B8 are latency-bound on Purdue (about 10 s and 7.5 s per call), so each runs as two concurrent processes on one key, still under the per-key limit; about 3.2 days in total.
+* **Progress (2026-10-26):** 141,165 of 189,150 executor calls have a final row (74.6%; checks, writer drafts and judge calls all done).
+
+| executors | run(s) | done | of |
+|---|---|---:|---:|
+| B4, B5, B10 (Chameleon) | `ext-models-*`, `ext-writers-*` | 47,250 | 47,250 |
+| B0-B3 | `drift-c2`, `ext-easy`, `ext-writers-p1` | 47,389 | 47,400 |
+| B7, B11, B12 | `ext-models-p2`, `ext-writers-p2` | 46,235 | 47,250 |
+| B6 | `ext-models-B6`, `ext-writers-B6` (concurrent) | 291 | 15,750 |
+| B8 | `ext-models-B8`, `ext-writers-B8` (concurrent) | 0 | 15,750 |
+| B9 | `ext-models-B9`, `ext-writers-B9` | 0 | 15,750 |
+
+  B5 counts its 8 final timeouts (VII.1). Purdue-side counts are from 2026-10-25 except B6.
+* **Purdue outages.** 2026-10-21 (gateway errors, about half a day) and, since 2026-10-24 about 16:00 UTC, a full request queue on Purdue's shared model server: on both keys, every model the remaining runs need answers `server busy ... maximum pending requests exceeded` or times out, while `gpt-oss:120b` and `llama4:latest` still answer in about 1 s. Not throttling of our keys. The runners retry on their own (restart budget raised from 30 to 100 after both streams used it up); no data is lost, since each restart skips calls already done. B6 was also slower than planned before the outage (median about 20 s per call, not 10 s), so the B6 pair needs about 50 h once Purdue recovers; the end date is open.
 
 ---
 
@@ -226,6 +239,7 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 9. **The host check compares answers only.** It did not notice gemma4 thinking on one host and not the other, since the answers still agreed. Mode (output tokens, reasoning text) is now compared by hand for every self-hosted model (VII.1) but is not part of the pre-registered rule.
 10. **Size pair (b2) crosses hosts.** B5 (`qwen3:8b`) runs on Chameleon and B6 (`qwen3:32b`) on Purdue. B5 agrees 40/40 with its Purdue answers, but the pair compares two sizes on two serving builds.
 11. **Timeouts are failures by a client limit.** The 120 s client timeout, not a token cap, ends a runaway reasoning call; at about 185 tokens/s that is about 22k tokens on Chameleon, and a slower host would cut calls earlier. 8 B5 calls failed this way (VII.1); since long reasoning is not deterministic, a rerun could answer some of them, so their count is itself noisy.
+12. **Collection spread over time.** B6, B8 and B9 run days after the other executors, behind a Purdue outage. Each run's `/models` snapshot at start and end checks for re-pulls, but a build change under the same tag would not show there.
 
 ---
 
