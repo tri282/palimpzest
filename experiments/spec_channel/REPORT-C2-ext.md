@@ -240,6 +240,7 @@ Purdue and Chameleon are free; dollar figures are what the same calls would cost
 10. **Size pair (b2) crosses hosts.** B5 (`qwen3:8b`) runs on Chameleon and B6 (`qwen3:32b`) on Purdue. B5 agrees 40/40 with its Purdue answers, but the pair compares two sizes on two serving builds.
 11. **Timeouts are failures by a client limit.** The 120 s client timeout, not a token cap, ends a runaway reasoning call; at about 185 tokens/s that is about 22k tokens on Chameleon, and a slower host would cut calls earlier. 8 B5 calls failed this way (VII.1); since long reasoning is not deterministic, a rerun could answer some of them, so their count is itself noisy.
 12. **Collection spread over time.** B6, B8 and B9 run days after the other executors, behind a Purdue outage. Each run's `/models` snapshot at start and end checks for re-pulls, but a build change under the same tag would not show there.
+13. **Early look beyond replicates 0-2.** On 2026-10-26, during the Purdue outage, descriptive summaries (accuracy, gain, unparsed rates, cost, writer order) were computed on every replicate collected so far, about 75% of the calls, before the analysis code was committed. The pre-registration allows a descriptive look at replicates 0-2 only. No prompt, parser, pair set, draft or test has been changed since; the primary tests are still run as pre-registered, but they were not blind to replicates 3-8.
 
 ---
 
