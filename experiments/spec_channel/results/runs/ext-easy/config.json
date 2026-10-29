@@ -1,0 +1,75 @@
+{
+ "run_id": "ext-easy",
+ "workflow": "c2_easy",
+ "replicates": 9,
+ "items": 0,
+ "cells": [
+  [
+   "A0",
+   "B0"
+  ],
+  [
+   "A0",
+   "B1"
+  ],
+  [
+   "A0",
+   "B2"
+  ],
+  [
+   "A0",
+   "B3"
+  ],
+  [
+   "A1",
+   "B0"
+  ],
+  [
+   "A1",
+   "B1"
+  ],
+  [
+   "A1",
+   "B2"
+  ],
+  [
+   "A1",
+   "B3"
+  ],
+  [
+   "S_ref",
+   "B0"
+  ],
+  [
+   "S_ref",
+   "B1"
+  ],
+  [
+   "S_ref",
+   "B2"
+  ],
+  [
+   "S_ref",
+   "B3"
+  ]
+ ],
+ "ref_executor": false,
+ "executors": {
+  "B0": "gemma3:12b",
+  "B1": "llama3.3:70b",
+  "B2": "gpt-oss:120b",
+  "B3": "gemma3:27b"
+ },
+ "specs_from": "full-c2",
+ "seed": 0,
+ "writers": {
+  "A0": "gemini-3.5-flash-lite",
+  "A1": "qwen2.5:72b"
+ },
+ "writer_temp": 0.7,
+ "executor_temp": 0.0,
+ "n_items": 100,
+ "writer_prompt": "You are writing instructions for an assistant that will decide, one pair at a time, whether a Walmart product record and an Amazon product record refer to the same real-world product.\n\nBelow are labeled example pairs. Write concise matching rules, at most 250 words, that capture the criteria these labels imply: how to treat model numbers, brands, product variants (color, size, capacity), bundles and accessories, and missing or noisy fields.\n\nOutput the rules only.\n\nRecord A: title: humminbird 778c hd color fishing system; category: fishing and boating; brand: humminbird; modelno: 407930-1; price: 499.46\nRecord B: title: humminbird 778c hd fishfinder; category: fishfinders; brand: humminbird; modelno: 407930-1; price: -\nSame product: Yes\n\nRecord A: title: gear head 2.4 ghz wireless optical nano mouse black; category: mice; brand: gear head; modelno: mp2800blk; price: 15.82\nRecord B: title: 2.4 ghz wireless optical nano mouse black usb; category: mice; brand: gear head; modelno: mp2375blk; price: 12.0\nSame product: No\n\nRecord A: title: pc treasures clickit classic mouse black; category: mice; brand: pc treasures; modelno: 07667; price: 16.8\nRecord B: title: pc treasures clickit classic mouse - copper 07724; category: mice; brand: pc treasures; modelno: 07724; price: 16.8\nSame product: No\n\nRecord A: title: corsair xms2 2gb 2 x 1gb pc2-6400 800mhz 240-pin ddr2 cl5 dual channel desktop memory kit - twin2x4096-6400c5c; category: memory; brand: corsair; modelno: twin2x4096-6400c5c; price: 72.82\nRecord B: title: corsair xms2 2gb 2 x 1gb pc2-6400 800mhz 240-pin ddr2 cl5 dual channel desktop memory kit - twin2x2048-6400; category: computer components; brand: corsair; modelno: twin2x2048-6400; price: 32.99\nSame product: No\n\nRecord A: title: xerox 108r00657 extended-capacity maintenance kit for work centre c2424; category: printers; brand: xerox; modelno: 108r00657; price: 154.84\nRecord B: title: extended capacity maintenance kit workcentre c2424; category: printer accessories; brand: tektronix; modelno: 108r00657; price: 154.84\nSame product: Yes\n\nRecord A: title: scosche it4scbk tch 3 switchback; category: mp3 accessories; brand: scosche; modelno: it4scbk; price: 32.88\nRecord B: title: scosche switchkase hybrid case for ipod touch 4g black; category: cases; brand: scosche; modelno: it4scbk; price: 15.25\nSame product: Yes\n\nRecord A: title: buffalo technology drivestation axis 1.5 tb usb 2.0 desktop external hard drive with buffalo tools and turbo pc hd-lb1 .5 tu2 black; category: hard drives; brand: buffalo technology; modelno: hd-lb1 .5 tu2; price: 101.82\nRecord B: title: buffalo technology drivestation axis 1 tb usb 2.0 desktop external hard drive with buffalo tools and turbo pc hd-lb1 .0 tu2 black; category: computers accessories; brand: buffalo technology; modelno: hd-lb1 .0 tu2; price: 76.77\nSame product: No\n\nRecord A: title: siig mini displayport to hdmi adapter; category: electronics - general; brand: siig; modelno: cb-dp0b11-s1; price: 19.88\nRecord B: title: mini displayport to hdmi adapter; category: video cables; brand: siig; modelno: cb-dp0b11-s1; price: 15.14\nSame product: Yes",
+ "ref_spec": "Decide whether the two product records refer to the same real-world product.",
+ "started": "2026-10-20T21:19:46.789071+00:00"
+}
