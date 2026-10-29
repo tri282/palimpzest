@@ -1,15 +1,21 @@
 # C2 Extension: Report
 
-Goal: test whether the C2 result (rules written by an upstream LLM change which downstream LLM is best) holds across many executor and writer models, and what that means for an optimizer that profiles operators one at a time.  
-*Requirements: `REPORT.md` Sections VII and IX (the full C2 run this extends). Pre-registration: `PREREG-C2-ext.md` (to be committed before the first replicate). Raw logs: `results/runs/{drift-c2, ext-easy, ext-models, ext-writers, p9-scores-ext}` (planned).*  
+Goal: test whether the best downstream LLM depends on which upstream LLM wrote its instructions, across 6 writers and 13 executors, and what that costs an optimizer that picks them one at a time.  
+*Requirements: `REPORT.md` VII and IX (the full C2 run). Pre-registration: `PREREG-C2-ext.md`. Analysis: `analyze_ext.py`, output `results/analysis_ext.json`. Raw logs: `results/runs/{drift-c2, ext-easy, ext-models-*, ext-writers-*, p9-scores-ext}`.*  
 
-Status: **running, about 75% of calls done (2026-10-26); no results yet.** Design fixed 2026-10-19; runs started 2026-10-20 (V.2).
+Status: **primary analysis done 2026-10-29** on 8 executors. B8 and B9 still running, reported later as a supplement; B6 stopped (VI.1).
 
 ---
 
 ## I. Summary
 
-*Placeholder: filled after the runs.*
+* **The best executor does depend on the writer.** The interaction is clear: each executor has its own best writer, and four different writers each come out on top for some executor (V.1).
+* **For accuracy, ignoring it costs almost nothing.** Picking one champion writer for every executor loses far less than the smallest effect we pre-registered as meaningful (V.2).
+* **For cost, it can matter.** The cheapest executor needs its own best writer to clear a tight quality bar; with the shared champion, an Abacus-style pick moves to a pricier executor and pays about 1.5x (V.3).
+* **Abacus picks a near-best plan; separate profiling can miss.** Abacus fixes the best writer, then profiles executors under its rules, and lands next to the best plan. Profiling each operator alone picks the executor that looks best without rules, and that executor gets worse under them (V.3).
+* **Abacus's remaining loss is its judge.** The judge ties several writers at the top score; the tie rule costs more than the interaction does (V.3).
+* **Output format, not the parser, decides which models count.** Two executors reason before answering under rules and fail the strict parser; a lenient parser brings one back, and the conclusions do not change (V.4).
+* **Writer vs no writer is a prompt choice, not an operator interaction.** Rules help the weakest executor and hurt the strongest ones; these pre-registered tests are reported, but they belong to prompt search, not to this question (V.2, II.1).
 
 ---
 
@@ -17,233 +23,227 @@ Status: **running, about 75% of calls done (2026-10-26); no results yet.** Desig
 
 ### 1. Question
 
-A semantic query optimizer (for example Palimpzest's Abacus) profiles each LLM operator on its own and combines the numbers. In the Specification channel an upstream LLM (the **writer**) writes instructions that a downstream LLM (the **executor**) follows on every record, so the executor's behavior depends on what the writer wrote.
+* **Setup:** an upstream LLM (the **writer**) turns 8 labeled examples into matching rules; a downstream LLM (the **executor**) follows them on every record pair.
+* **H1:** does the best executor depend on which writer wrote the rules? If yes, an optimizer that profiles the executor under one writer's rules can pick the wrong plan.
+* **Not the question:** writer vs no writer. A one-line generic instruction is not a writer implementation, so comparing against it is a prompt choice, which an optimizer handles by profiling each executor under the prompt it will run with (group review, 2026-10-29).
 
 ### 2. What The Full C2 Run Found (`REPORT.md` VII, IX)
 
-* **Rules erase the strong executor's lead.** Under a one-line generic instruction, `llama3.3:70b` beats `gemma3:12b` by 12 points (0.91 vs 0.79); under either writer's rules they tie (about 0.87). Significant in all 9 replicates (p < 0.001): adding a writer interacts with the executor choice.
-* **Which writer did not matter:** the which-writer x which-executor interaction was not detected (p = 0.34; about 17 replicates needed for a 0.05 effect).
-* **Optimizer consequence:** profiling executors under the generic instruction overpays about 1.7x at list prices; profiling them under the best writer's rules (Abacus-style) removes the overpay but misses the quality bar more often.
+* Rules erased the strong executor's lead: `llama3.3:70b` beat `gemma3:12b` by 12 points under the generic instruction (0.91 vs 0.79) and tied it under rules (about 0.87).
+* H1 was not detected with 2 writers and 4 executors (p = 0.34).
 
 ### 3. Why Extend
 
-* 4 executors and 2 writers cannot show whether the effect is general across model families and sizes, or whether the best writer differs by executor (a **crossover**, the case where a single "best upstream" choice misleads the optimizer).
-* The natural-mix estimate rested on 19 easy non-matches carrying 86% of the weight.
+* 2 writers and 4 executors cannot show a crossover. This run uses 6 writers and 13 executors.
 
 ---
 
-## III. Pipeline
+## III. Analysis
 
-```
-8 labeled training pairs (4 matches, 4 hard non-matches)
-  -> WRITER (temperature 0.7): matching rules, at most 250 words     1 call per draft
-  -> EXECUTOR (temperature 0): rules + record pair, "Answer Yes or No only"   1 call per pair
-  -> first word parsed as Yes / No, scored against the label
-Baseline (S_ref): the executor with a one-line generic instruction instead of rules
-```
+Fixed in `PREREG-C2-ext.md` before the first replicate; code committed before it touched the data.
 
-* **Dataset:** Walmart-Amazon (structured product matching), test split.
-* **Pairs:** 250 per executor: 75 matches, 56 hard non-matches (highest token Jaccard among non-matches), 119 easy non-matches (19 from the full run, 100 new: `results/c2_easy_sample.json`, disjoint from all earlier samples, below the hard-negative Jaccard floor).
-* **Natural weights** (test split: 193 matches, 86 hard, 2,049 pairs): 0.094 / 0.042 / 0.864.
-* **Replicate:** one fresh draft from each writer. Rules vary from draft to draft, so effects must hold across drafts. **9 replicates, committed in advance**; no replicates are added after looking.
+### 1. Tests
 
----
-
-## IV. Models
-
-### 1. Writers (6)
-
-| id | model | drafts | source |
-|---|---|---:|---|
-| A0 | `gemini-3.5-flash-lite` | 9 | saved from the full run (Gemini API, 2026-10-09) |
-| A1 | `qwen2.5:72b` | 9 | saved from the full run |
-| A2 | `gpt-oss:120b` | 9 | new |
-| A3 | `llama3.3:70b` | 9 | new |
-| A4 | `gemma3:27b` | 9 | new |
-| A5 | `qwen3:8b` | 9 | new |
-
-New writers are chosen from models that are also executors, so each has a writer-on-its-own-rules cell. A writer screen (2 drafts each: on-topic rules, not a copy of the examples, length within a tolerance of the limit) runs before their drafts are frozen.
-
-### 2. Executors (13)
-
-| id | model | type | host |
+| test | question | how | supports H1 if |
 |---|---|---|---|
-| B0 | `gemma3:12b` | plain | Purdue |
-| B1 | `llama3.3:70b` | plain | Purdue |
-| B2 | `gpt-oss:120b` | reasoning | Purdue |
-| B3 | `gemma3:27b` | plain | Purdue |
-| B4 | `gemma4:26b-a4b` (MoE, 4B active) | plain | Chameleon |
-| B5 | `qwen3:8b` | reasoning | Chameleon |
-| B6 | `qwen3:32b` | reasoning | Purdue (failed host check) |
-| B7 | `gpt-oss:latest` (= 20B, 14 GB) | reasoning | Purdue |
-| B8 | `deepseek-r1:14b` | reasoning | Purdue (failed host check) |
-| B9 | `mistral:latest` (= 7B, 4.4 GB) | plain | Purdue (failed host check) |
-| B10 | `phi4:latest` (= 14B, 9.1 GB) | plain | Chameleon |
-| B11 | `qwen2.5:72b` | plain | Purdue |
-| B12 | `llama4:latest` (= Llama 4 Scout 17B-16E, w4a16) | plain | Purdue |
+| **(d1)** | is there a writer x executor interaction? | split-plot F on accuracy, drafts within writer as the noise term | significant |
+| **(d2)** | does it cost accuracy to ignore? | regret of one shared writer vs each executor's own best writer (below) | regret > 0.03 and significant |
+| (a), (b1-b3), (c) | do weaker executors gain more from rules? | rank correlation; paired t on size pairs and on easy pairs | (writer present vs absent, II.1) |
 
-* **Screened** before the run (`drop_screen.py`, `results/drop_screen/`): 40 validation pairs under the generic instruction; drop if accuracy <= majority rate, one answer >= 95%, or > 10% unparsed (rule fixed in advance). Dropped: `gemma3:1b` (always Yes), `llama3.1:latest` (8B; 75% unparsed: writes an analysis instead of Yes/No). `gemma3:4b` is not served on Purdue.
-* **All executors are candidate plans** in the optimizer analysis (in the full run B2 and B3 were profiling-only references).
-* **B11 = writer A1:** its A1 cells are the writer applying its own rules; reported separately and excluded from the cross-executor test.
-* **Hosts:** B0-B3 stay on Purdue (compared with full-run data); B7 stays on Purdue (compared with B2). Each executor uses one host for all its calls. Chameleon copies use the same Ollama tags. Planned on Chameleon: B4-B6, B8-B10; after the host check (VII.1) B6, B8 and B9 run on Purdue, as the pre-registered rule requires.
+* **Decision:** Holm over the 7 tests at 0.05; smallest effect of interest 0.03 accuracy.
+* **Why (d2) too:** (d1) only says rankings differ somewhere, even by a hair; (d2) asks whether they differ enough to matter.
+
+**(d2) in plain terms:**  
+
+* **Shortcut:** pick the one writer that is best on average over all executors (the champion), then give every executor that writer's rules.
+* **Full search:** pick each executor's own best writer.
+* **Regret R:** how much accuracy the shortcut loses against the full search, averaged over executors.
+* **No luck allowed:** writers are chosen on drafts 0, 2, 4, 6, 8 and scored on drafts 1, 3, 5, 7 (then swapped). Without this, the full search always wins by picking whichever writer drew a lucky draft.
+* **Reading:** R near 0 means the shortcut is safe; R >= 0.03 means an optimizer must search writer and executor together.
+
+### 3. Optimizers Modelled
+
+Neither runs here: Palimpzest cannot yet optimize an operator that follows an aggregate (the writer turns all examples into one output, so its output cannot be traced to single records for sampling). Both are replayed on the measured matrix (`optimizer_picks_ext.py`; descriptive, not pre-registered) under two goals: the highest-accuracy plan, and the cheapest plan within a quality bar.
+
+| optimizer | how it scores the writer | how it scores the executor | then picks |
+|---|---|---|---|
+| **Separate profiles** (one operator at a time) | accuracy of a fixed reference executor under each writer's rules | accuracy under the one-line generic instruction | best writer + best executor |
+| **Abacus** (best upstream) | its validator (an LLM judge) scores each writer's rules, no executor involved | accuracy under the champion writer's rules | champion + best executor under it |
+| **Full search** (reference) | every writer x executor pair measured | | best pair |
+
+* **Abacus judge:** Palimpzest's default validator, one score per draft. It often ties several writers at the top score; the tie is broken toward the best, the first (operator order) or the worst writer (pre-registered amendment 1).
+
+### 2. Rules Of The Analysis
+
+* **Executors:** primary if complete (all writers, 9 replicates, 250 pairs) and at most 10% unparsed in every rule cell; computed from the data.
+* **Parser:** first word Yes / No (pre-registered, primary). A lenient parser (also reads a final `Answer:` line or `\boxed{}`) is a sensitivity analysis only.
+* **Own-model cells** (a writer executing its own rules) are left out of (d1), (d2) and the champion: a model helping itself most is a crossover by construction.
+* **Failed calls** count as wrong.
 
 ---
 
-## V. Runs
+## IV. Pipeline And Models
 
-### 1. Blocks
+### 1. Pipeline
 
-| block | what | calls | why this shape |
+```txt
+8 labeled pairs (4 matches, 4 hard non-matches)
+  -> WRITER (temperature 0.7): matching rules, <= 250 words       1 draft per replicate
+  -> EXECUTOR (temperature 0): rules + record pair, "Answer Yes or No only"
+  -> parsed Yes / No, scored against the label
+Baseline S_ref: the executor with a one-line generic instruction
+```
+
+* **Data:** Walmart-Amazon test split, 250 pairs per executor (75 matches, 56 hard non-matches, 119 easy non-matches).
+* **Replicates:** 9 fresh drafts per writer, fixed in advance.
+
+### 2. Models
+
+| id | writer | executor | model | type | host | in primary analysis |
+|---|---|---|---|---|---|---|
+| A0 | yes | | `gemini-3.5-flash-lite` | | Gemini API | |
+| A1 / B11 | yes | yes | `qwen2.5:72b` | plain | Purdue | **yes** |
+| A2 / B2 | yes | yes | `gpt-oss:120b` | reasoning | Purdue | **yes** |
+| A3 / B1 | yes | yes | `llama3.3:70b` | plain | Purdue | **yes** |
+| A4 / B3 | yes | yes | `gemma3:27b` | plain | Purdue | **yes** |
+| A5 / B5 | yes | yes | `qwen3:8b` | reasoning | Chameleon | **yes** |
+| B0 | | yes | `gemma3:12b` | plain | Purdue | **yes** |
+| B4 | | yes | `gemma4:26b-a4b` | plain | Chameleon | **yes** |
+| B7 | | yes | `gpt-oss:latest` (20B) | reasoning | Purdue | **yes** |
+| B10 | | yes | `phi4:latest` (14B) | plain | Chameleon | no: format (VI.2) |
+| B12 | | yes | `llama4:latest` (Scout) | plain | Purdue | no: format (VI.2) |
+| B6 | | yes | `qwen3:32b` | reasoning | Purdue | no: stopped (VI.1) |
+| B8 | | yes | `deepseek-r1:14b` | reasoning | Purdue | later: supplement |
+| B9 | | yes | `mistral:latest` (7B) | plain | Purdue | later: supplement |
+
+*Note: Chameleon = self-hosted Ollama on one GPU node; Purdue = Purdue's GenAI API. B6, B8 and B9 were planned on Chameleon and moved to Purdue by the pre-registered host check (VI.3).*
+
+---
+
+## V. Results
+
+Primary parser, 8 executors.
+
+### 1. H1: Best Writer Per Executor
+
+Mean accuracy over 9 drafts. **Bold:** each executor's best writer. †: own-model cell (excluded).
+
+| writer | B0 | B1 | B2 | B3 | B4 | B5 | B7 | B11 | mean |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| A0 | 0.905 | 0.915 | 0.930 | **0.914** | **0.929** | **0.884** | 0.908 | 0.934 | **0.915** |
+| A1 | 0.856 | 0.905 | 0.912 | 0.875 | 0.922 | 0.861 | 0.890 | 0.923† | 0.889 |
+| A2 | 0.800 | **0.919** | 0.871† | 0.884 | 0.926 | 0.868 | 0.872 | 0.922 | 0.884 |
+| A3 | 0.911 | 0.891† | **0.932** | 0.895 | 0.926 | 0.882 | **0.914** | **0.937** | 0.914 |
+| A4 | **0.922** | 0.905 | 0.920 | 0.902† | 0.927 | 0.877 | 0.904 | 0.930 | 0.912 |
+| A5 | 0.898 | 0.898 | 0.907 | 0.893 | 0.927 | 0.883† | 0.899 | 0.926 | 0.907 |
+| `S_ref` | 0.788 | 0.924 | 0.952 | 0.864 | 0.924 | 0.932 | 0.932 | 0.931 | |
+
+* **Crossover is real but shallow.** Four writers are each best somewhere; each executor's best writer beats the champion (A0) by at most 0.017 (B0).
+* **Rules hurt the strongest executors:** B1, B2, B5 and B7 do best under `S_ref` (writer vs no writer, II.1).
+
+### 2. Tests
+
+| test | result | Holm p | supported |
 |---|---|---:|---|
-| checks | per-key rate test; host check (6 Chameleon models x 40 screen pairs vs their Purdue answers); drift anchor (B0-B3 x S_ref x 150 full-run pairs, 1 replicate) | ~880 | confirm old and new data, and the two hosts, are comparable |
-| A1 `ext-easy` | B0-B3 x {A0, A1, S_ref} x 100 new easy x 9 | 10,800 | B0-B3 already have the 150 full-run pairs with the same drafts (16,200 calls, reused); only the new easy pairs are missing |
-| A2 `ext-models` | B4-B12 x {A0, A1, S_ref} x 250 x 9 | 60,750 | new executors on the same drafts and pairs, so only the executor changes |
-| B0 writers | A2-A5 x 9 drafts | 36 | new drafts |
-| B1 `p9-scores-ext` | PZ validator on the 36 new drafts x 3 samples | 108 | Abacus-style champion over 6 writers (VI.3) |
-| B2 `ext-writers` | A2-A5 x all 13 executors x 250 x 9 | 117,000 | full cross: every executor under every writer, so crossovers can be tested over the whole matrix; S_ref cells are shared with block A |
-| **total new** | | **~189.6k** | plus 16,200 reused |
+| **(d1) interaction** | **F = 5.37** (df 30 / 296) | **< 0.001** | **yes** |
+| **(d2) cost of one champion** | **R = 0.0005** (95% CI -0.005 to 0.010) | 0.72 | **no** |
+| (a) weaker executors gain more | rho = -0.63 (7 executors) | 0.28 | no |
+| (b1) `gemma3` 12B vs 27B | +0.061 | < 0.001 | yes |
+| (b2) `qwen3` 8B vs 32B | not computable (B6 stopped) | 1 | no |
+| (b3) `gpt-oss` 20B vs 120B | -0.002 | 1 | no |
+| (c) B0 vs B1, easy pairs | +0.092 | < 0.001 | yes |
 
-Blocks A and B differ only in where the drafts come from (saved vs new); together they form one 6-writer x 13-executor matrix.
+* **H1: rankings differ, but not enough to matter.** (d1) finds the interaction; (d2) finds a shared writer loses 0.0005, 60x below the 0.03 threshold. Same with own-model cells included.
+* **Weak executors need rules, strong ones do not.** `gemma3:12b` gains 0.061 more than its 27B sibling (b1) and 0.092 more than `llama3.3:70b` on easy pairs (c). Across all executors (a) the trend is there (rho = -0.63) but 7 executors are too few to confirm it.
 
-### 2. Order And Time
+### 3. What The Optimizers Pick
 
-* Checks first, then replicates 0-2 for every run, then 3-8. All 9 are committed; the early look is descriptive and cannot change what runs.
-* **Hosts:** Purdue about 94.8k calls (B0-B3, B7, B11, B12, new writers, judge) over two API keys (about 18 calls per minute per key; per-key limit to be confirmed), about 44 h; Chameleon about 94.7k calls (B4-B6, B8-B10) on one GPU node (Ollama, 4 parallel requests), about 48 h, of which `qwen3:32b` is about 22 h.
-* **Estimated time:** about 2 days of running plus 0.5-1 day of setup. Throughput on Chameleon is an estimate until measured.
-* **As run:** with B6, B8 and B9 moved to Purdue, Purdue carries about 142k calls and Chameleon about 47k (B4, B5, B10). B6 and B8 are latency-bound on Purdue (about 10 s and 7.5 s per call), so each runs as two concurrent processes on one key, still under the per-key limit; about 3.2 days in total.
-* **Progress (2026-10-26):** 141,165 of 189,150 executor calls have a final row (74.6%; checks, writer drafts and judge calls all done).
+Plans scored by mean accuracy over 9 drafts; regret = best plan minus picked plan (III.3).
 
-| executors | run(s) | done | of |
+| optimizer | picks (writer x executor) | accuracy | regret |
 |---|---|---:|---:|
-| B4, B5, B10 (Chameleon) | `ext-models-*`, `ext-writers-*` | 47,250 | 47,250 |
-| B0-B3 | `drift-c2`, `ext-easy`, `ext-writers-p1` | 47,389 | 47,400 |
-| B7, B11, B12 | `ext-models-p2`, `ext-writers-p2` | 46,235 | 47,250 |
-| B6 | `ext-models-B6`, `ext-writers-B6` (concurrent) | 291 | 15,750 |
-| B8 | `ext-models-B8`, `ext-writers-B8` (concurrent) | 0 | 15,750 |
-| B9 | `ext-models-B9`, `ext-writers-B9` | 0 | 15,750 |
+| full search | **A3 x B11** (`llama3.3:70b` writes, `qwen2.5:72b` executes) | **0.937** | 0 |
+| Abacus, true champion (A0) | A0 x B11 | 0.934 | **0.003** |
+| Abacus, judge (tie best / first / worst)* | varies: A0, A2, A3 or A5 with B1, B2, B4 or B11 | | 0.003 / 0.012 / 0.017 |
+| separate profiles, writer scored on B3, B4 or B5 | A0 x B2 | 0.930 | 0.007 |
+| separate profiles, writer scored on B2, B7 or B11 | A3 x B2 | 0.932 | 0.005 |
+| separate profiles, writer scored on B0 | A4 x B2 | 0.920 | 0.017 |
+| **separate profiles, writer scored on B1** | **A2 x B2** (`gpt-oss:120b` runs its own rules) | **0.871** | **0.066** |
 
-  B5 counts its 8 final timeouts (VII.1). Purdue-side counts are from 2026-10-25 except B6.
-* **Purdue outages.** 2026-10-21 (gateway errors, about half a day) and, since 2026-10-24 about 16:00 UTC, a full request queue on Purdue's shared model server: on both keys, every model the remaining runs need answers `server busy ... maximum pending requests exceeded` or times out, while `gpt-oss:120b` and `llama4:latest` still answer in about 1 s. Not throttling of our keys. The runners retry on their own (restart budget raised from 30 to 100 after both streams used it up); no data is lost, since each restart skips calls already done. B6 was also slower than planned before the outage (median about 20 s per call, not 10 s), so the B6 pair needs about 50 h once Purdue recovers; the end date is open.
+*\*The judge scores each replicate's drafts separately, so its pick and regret are per replicate (against that replicate's best plan), averaged over 9.*
 
----
+* **The top is flat.** The 5 best plans are within 0.007 of each other; 3 of them use B11.
+* **Abacus is near-optimal because one writer is good for everyone.** A0 is within 0.017 of every executor's own best writer (V.1), so fixing it first costs 0.003. This is what (d2) measures, and why it is not supported.
+* **Abacus's loss comes from its judge, not from the interaction.** The judge cannot separate the top writers, so the tie rule decides; the worst tie costs 6x the true champion.
+* **Separate profiles always pick B2 (`gpt-oss:120b`)**, the best executor under the generic instruction (0.952). Under rules B2 drops to 0.871-0.932, so its pick depends on which writer comes with it: up to 0.066 lost. This is the writer-present effect (II.1), not H1: separate profiling never sees the executor under real rules.
 
-## VI. Analysis (Fixed In `PREREG-C2-ext.md` Before Replicate 0)
+**With cost:** cheapest plan whose estimated accuracy is within 95% (the full run's bar) or 98% of the best estimate. List prices on measured tokens, USD per 1k records; one writer draft per 1k records. Every pick below clears its bar on true accuracy.
 
-### 1. Quantities
+| optimizer | 95% bar (0.890) | cost | 98% bar (0.918) | cost |
+|---|---|---:|---|---:|
+| full search | A5 x B0 | $0.020 | **A4 x B0** | **$0.021** |
+| Abacus, true champion (A0) | A0 x B0 | 1.14x | **A0 x B4** | **1.49x** |
+| separate profiles (any reference) | A4 x B4 | 1.47x | A4 x B2 | 1.78x |
 
-* **Gain** of executor b on draft r: g(b, r) = accuracy under the rules of draft r minus S̄_ref(b), the generic-instruction accuracy averaged over its 9 replicates (S_ref does not depend on the draft).
-* **Unit:** drafts primary (9 per writer), pairs secondary (draft x pair bootstrap).
-* **Primary sample:** the 250 pairs, with per-stratum results. Natural mix secondary (86% easy pairs, near ceiling for most models).
-* **Unparsed answers** count as wrong; sensitivity analysis excludes them; an executor with > 10% unparsed in any rule cell moves to exploratory.
+* **Cost is where the interaction shows.** The cheapest executor, B0 (`gemma3:12b`), has the largest crossover: 0.922 under its own best writer (A4), 0.905 under the champion (A0). At the tight bar A0's rules push B0 below it, and Abacus pays 1.49x for B4.
+* **The writer sets the executor's bill.** Rules are part of every executor prompt, so long rules cost on every record: the same executor costs up to 1.7x more under A2 (longest rules) than under A5 (B0: $0.035 vs $0.020).
+* **Separate profiles always overpay (1.47-1.78x)**, close to the full run's 1.7x: under the generic instruction B0 looks too weak (0.788) and every executor looks cheap, so the cheap-and-good plan is never considered.
 
-### 2. Primary Tests (Holm Over 7 Tests At Family-Wise 0.05, Smallest Effect Of Interest 0.03)
+### 4. Parser Sensitivity
 
-Tests (a)-(c) use block A, gains pooled over writers A0 and A1, one-sided. Tests (d1)-(d2) use the full 6 x 13 matrix, rule cells only.
+| | primary (8 executors) | lenient (+ B10, B12) |
+|---|---|---|
+| (d1) | F = 5.37 | F = 3.93 |
+| (d2) | R = 0.0005 | R = 0.0015 |
+| champion (best writer on average) | A0 | A3 |
 
-| test | contrast | statistic | direction |
-|---|---|---|---|
-| (a) | across 12 executors (B11 excluded): generic accuracy vs gain | Spearman rho, split-half: generic accuracy on one half of the pairs, gain on the other; must also hold for the error-rate ratio (1 - acc_rules) / (1 - acc_generic) | rho < 0 (weaker models gain more) |
-| (b1-b3) | size pairs: `gemma3` 12B vs 27B, `qwen3` 8B vs 32B, `gpt-oss` 20B vs 120B | paired t over 9 drafts | smaller gains more |
-| (c) | B0 vs B1 on the 100 new easy pairs | paired t over 9 drafts | B0 gains more |
-| (d1) | writer x executor interaction (omnibus) | split-plot linear model on accuracy (draft within writer as the whole-plot unit); writer x executor F-tested against executor x draft(writer) | any interaction |
-| (d2) | cost of a single champion writer | cross-validated champion regret: per executor, accuracy under its own best writer minus under the oracle champion (best writer averaged over executors); both chosen on drafts {0, 2, 4, 6, 8}, measured on {1, 3, 5, 7}, then halves swapped and averaged; draft bootstrap (drafts resampled within writer), one-sided: with no crossover the expected regret is <= 0, since the pooled champion estimates a common best writer more precisely than any one executor's pick | regret > 0 |
-
-*(a) uses split halves because gain = acc_rules - acc_generic contains generic accuracy and is capped at 1 - acc_generic, so a negative correlation appears even with no real effect.*
-
-*Exact statistics, thresholds and decision rules: `PREREG-C2-ext.md`.*
-
-*(d1) alone can be significant from scale differences with the same writer ranking everywhere; (d2) asks whether the ranking actually changes enough to cost quality. (d2) is cross-validated because the best of 6 noisy writer means beats any single writer even with no real effect.*
-
-* **Own-model cells** (a writer executing its own rules: A1 x B11, A2 x B2, A3 x B1, A4 x B3, A5 x B5) are excluded from (d1) and (d2): a writer that helps its own model most is a crossover by construction. Reported separately, with (d1)-(d2) recomputed including them as a what-if.
-
-### 3. Optimizer Analysis (Offline, On The Full Matrix)
-
-Abacus is **modelled, not run**: Palimpzest cannot yet optimize an LLM operator that follows an aggregate, and the writer aggregates its examples. The full matrix gives the true best plan; policies are simulated on it:
-
-* **P0:** profile executors under the generic instruction (the overpaying policy in the full run).
-* **P9:** Abacus-style. Pick a champion writer with Palimpzest's default validator (`MAP_VALIDATOR_PROMPT`, writer modelled as a `sem_map` with input field `examples` and output field `rules`, messages from `PromptFactory`, no temperature sent; `gpt-oss:120b` stands in for o4-mini), then profile executors under the champion's rules. **Sample 0 of 3 is the champion** (Abacus judges once); samples 1-2 measure how often a single judgment flips. The 18 saved drafts were judged the same way (`results/p9_scores_pz.json`).
-* **Champions:** the **oracle** champion (best writer on the data, averaged over executors) is the reference, since the measured matrix is the ground truth; the **judge** champion is Abacus's route. Reported side by side, including whether the judge misses the oracle champion.
-* Outcomes: best plan picked, meets the quality bar, overpay at list prices (VI.4), and how often each champion is the wrong writer for some executor.
-
-### 4. Prices (List, Per 1M Tokens In / Out, Read 2026-10-19)
-
-Purdue and Chameleon are free; dollar figures are what the same calls would cost at a provider's list price. Rule: DeepInfra where listed (its last list price if delisted); Nscale where DeepInfra never listed it; sensitivity analysis at the lowest and highest price found for each model. Reasoning tokens are priced as output. Tokens (input, output, estimated reasoning) are reported next to every dollar figure, since price does not track model size (older or scarcer models can cost more).
-
-| model | role | provider | in | out | other prices found |
-|---|---|---|---:|---:|---|
-| `gemini-3.5-flash-lite` | A0 | Google (rechecked 2026-10-19) | 0.30 | 2.50 | |
-| `qwen2.5:72b` | A1, B11 | DeepInfra (Qwen2.5-72B-Instruct) | 0.36 | 0.40 | |
-| `gpt-oss:120b` | A2, B2 | DeepInfra | 0.037 | 0.17 | |
-| `llama3.3:70b` | A3, B1 | DeepInfra (Llama-3.3-70B-Instruct-Turbo) | 0.10 | 0.32 | |
-| `gemma3:27b` | A4, B3 | DeepInfra (gemma-3-27b-it) | 0.08 | 0.16 | |
-| `qwen3:8b` | A5, B5 | Nscale | 0.07 | 0.18 | OpenRouter (deprecated) / Alibaba 0.12 / 0.46 |
-| `gemma3:12b` | B0 | DeepInfra | 0.05 | 0.15 | |
-| `gemma4:26b-a4b` | B4 | DeepInfra (gemma-4-26b-a4b-it) | 0.07 | 0.34 | |
-| `qwen3:32b` | B6 | DeepInfra | 0.08 | 0.28 | |
-| `gpt-oss:latest` (20B) | B7 | DeepInfra (gpt-oss-20b) | 0.03 | 0.14 | |
-| `deepseek-r1:14b` | B8 | Nscale (R1-Distill-Qwen-14B) | 0.07 | 0.07 | Novita 0.15 / 0.15; Alibaba 0.144 / 0.431; Together 1.6 / 1.6 |
-| `mistral:latest` (7B v0.3) | B9 | DeepInfra (Mistral-7B-Instruct-v0.3, last list price before delisting) | 0.03 | 0.06 | Together 0.2 / 0.2 |
-| `phi4:latest` (14B) | B10 | DeepInfra (phi-4) | 0.07 | 0.14 | |
-| `llama4:latest` (Scout 17B-16E) | B12 | DeepInfra (Llama-4-Scout-17B-16E-Instruct) | 0.10 | 0.30 | |
-
-*Provider builds differ from the ones measured (e.g. DeepInfra's Turbo is an FP8 build; the measured `llama3.3:70b` is presumed Q4): prices are for the model, not the exact build.*
+* Same conclusion. Neither parser is Palimpzest's (VII.7).
 
 ---
 
-## VII. Results
+## VI. Other Results
 
-### 1. Checks
+### 1. Runs And Outages
 
-**Rate test** (`results/rate_test.json`): 18.7 successful calls per minute on one key, 46 on two at once, so the limit is per key.
+| date | event | effect |
+|---|---|---|
+| 2026-10-20 | runs start: Purdue (2 keys) + Chameleon GPU node | |
+| 2026-10-21 | Purdue gateway errors, about half a day | runners resumed on their own |
+| 2026-10-22 | Chameleon executors done (B4, B5, B10) | |
+| 2026-10-24 to 26 | Purdue shared queue full (`server busy`) | most models unreachable 2+ days |
+| 2026-10-26 | first CPU node reclaimed at lease end | resumed on a new node from a log copy |
+| 2026-10-29 | Purdue stalls again; scope cut to H1 | **B6 stopped** (about 0.2 calls/min, days left), B9 started, B8 continues |
 
-**Host check** (`results/drop_screen_chameleon/host_check.json`): each self-hosted model answers the 40 screen pairs under `S_ref`; it stays self-hosted at >= 38 of 40 answers equal to Purdue's.
+### 2. Model Failures
 
-| id | model | agree with Purdue | host |
+| executor | what failed | calls | treatment |
 |---|---|---:|---|
-| B4 | `gemma4:26b-a4b` | 39 / 40 (rerun, plain mode) | Chameleon |
-| B5 | `qwen3:8b` | 40 / 40 | Chameleon |
-| B6 | `qwen3:32b` | 37 / 40 | Purdue |
-| B8 | `deepseek-r1:14b` | 36 / 40 | Purdue |
-| B9 | `mistral:latest` | 36 / 40 | Purdue |
-| B10 | `phi4:latest` | 40 / 40 | Chameleon |
+| **B10** `phi4` | reasons first under rules, ends `**Answer: Yes**`; up to 32% unparsed per cell | about 2.2k of 13,500 | exploratory; primary under lenient parser |
+| **B12** `llama4` | narrates steps, ends `\boxed{Yes}`; 92% unparsed under A2 | about 2.7k of 13,500 | exploratory under both parsers |
+| B5 `qwen3:8b` | reasoning loops past the 120 s timeout (same pair, "identical model numbers" rule) | 8 of 15,750 | counted wrong; not retried (non-deterministic) |
+| B7 `gpt-oss:latest` | Purdue `CUDA error: the function failed to launch` on the same requests (4), timeout (1) | 5 of 15,750 | counted wrong; retried once, failed again |
 
-* **gemma4 ran in a different mode at first.** The self-hosted Ollama (0.40.6) turns gemma4 thinking on by default; Purdue serves it plain. Same request on both hosts, yet the first check gave a median of 350 output tokens and about 1,100 reasoning characters on Chameleon against 2 tokens and none on Purdue, while answers still agreed 38/40. Self-hosted gemma4 calls now send `reasoning_effort: "none"` (a deviation, VIII.8); the rerun gives 2 tokens (median and maximum), no reasoning text and 39/40. The first check is kept in `results/drop_screen_chameleon-think/`.
-* **The B6, B8, B9 gaps are systematic.** The rerun repeats every self-hosted answer and token count exactly (40/40 for all five other models; digests unchanged), and Purdue repeats itself at temperature 0 (`S_ref` across 9 full-run replicates: 40/40 for B0 and B1, 39.4/40 for B2). No call was truncated or unparsed on Chameleon. Prompt token counts differ by 2-6 per call between hosts, which points to a different chat template or build behind the same tag. B6's 3 flips are all Yes on Purdue, No on Chameleon (all true matches); B9's 4 lean the same way (3 Yes to No, 1 unparsed to No); B8's 4 go both ways.
+* B10 and B12 answer one word under `S_ref`; only rules trigger the format.
 
-**B5 timeouts** (`results/runs/ext-{models,writers}-B5`): 8 of 15,750 B5 calls have no answer, at most 5 in one rule cell (A2 x B5; 2,250 calls). All 8 are status 0 timeouts: the client waits 120 s per attempt with no `max_tokens` (pre-registered), and each call failed all 6 attempts in the main pass and in later resume passes.
+### 3. Checks
 
-| run | writer | replicate | pair |
-|---|---|---|---|
-| `ext-models-B5` | A1 | 2, 4 | `test-1355-559`, `test-22-16209` |
-| `ext-writers-B5` | A2 | 0, 2, 3, 4, 7 | `test-1355-559` |
-| `ext-writers-B5` | A4 | 7 | `test-1649-21800` |
-
-* **They are reasoning loops, not slow serving.** On the idle GPU `qwen3:8b` generates about 185 tokens/s, so a timeout means more than about 22k reasoning tokens with no answer. Replayed with streaming and a 12k-token cap, 5 of the 8 hit the cap with no answer, repeating the same lines; on `test-1355-559` the model compares model numbers `rrvtps28pkr1` and `rr-vtps-28pk-r1` over and over under a rule that model numbers must be identical, without settling whether formatting counts. The A1 and A2 drafts both state such a rule.
-* **Long reasoning is not deterministic on this host** at temperature 0: the other 3 replays answered in 3-12 s, and one call that hit the cap in a first replay answered "Yes" in 12 s in a second, with the identical request. Short answers repeat exactly (host check above).
-* **Treatment:** counted as failures, under the pre-registered unparsed rule (wrong in the primary analysis, excluded in the sensitivity analysis). Not retried further: retrying until a call succeeds keeps only the paths that escape the loop. Earlier timeouts on B5 came from our own load (two passes on one GPU, `OLLAMA_NUM_PARALLEL=1`) and were resolved by resume passes run one at a time; the last of those passes overlapped briefly with the replay.
-
-*Placeholders: block A, block B, tests (a)-(d), optimizer analysis, reliability.*
+| check | result |
+|---|---|
+| rate limit | per key: 18.7 calls/min on one key, 46 on two |
+| host check (Chameleon vs Purdue, 40 pairs) | B4 39, B5 40, B10 40: self-hosted; **B6 37, B8 36, B9 36: moved to Purdue** |
+| `gemma4` mode | thought by default on Chameleon (350 vs 2 tokens); fixed by `reasoning_effort: "none"`, rerun 39 / 40 |
+| merge | 250 pairs x 9 in every primary cell; re-scoring reproduces logged scores |
 
 ---
 
-## VIII. Limitations
+## VII. Limitations
 
-1. **Model identity.** Purdue's API exposes only the model tag; its model list (https://docs.rcac.purdue.edu/services/genai/models/) links each tag to its source. Resolved there: `gpt-oss:latest` = 20B (14 GB), `mistral:latest` = 7B (4.4 GB), `phi4:latest` = 14B (9.1 GB), `llama3.1:latest` = 8B, `llama4:latest` = `RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16` (4-bit weights, 16-bit activations; a Hugging Face build, so not every model is served the same way). Quantization is stated only for some tags (e.g. `llama3.1:70b-instruct-q4_K_M`); others are presumed to be Ollama's default 4-bit builds, which the file sizes are consistent with. No digests are exposed, and the library page may not match the build Purdue pulled. Chameleon copies use the same tags and are checked against Purdue answers, which shows agreement on these pairs only.
-2. **Cost is not measured in dollars.** Dollar figures use list prices (DeepInfra), not what was paid; Purdue is free. Reasoning tokens are estimated: Purdue hides reasoning text but bills it in completion tokens, so they are completion tokens minus the visible answer.
-3. **Abacus is modelled, not run** (VI.3), and the judge is a stand-in model. Palimpzest's validator sends no temperature, so the judge runs at the provider's default and is not deterministic: on the 18 full-run drafts, 8 got different verdicts across 3 judgments, so a single judgment (as Abacus makes) picks its champion partly by chance. Kept as is to stay faithful; sample 0 is the pick and samples 1-2 measure the flips.
-4. **Scope.** One dataset, one task type (product matching), one generic instruction as the stand-in.
-5. **Writers are mixed in provenance:** A0 is an API model whose drafts date from the full run; A2-A5 are Purdue models drafted now.
-6. **Statistics.** Test (a) has 12 executors, so it only detects a strong relation; the natural mix is near ceiling; temperature 0 is not fully deterministic for reasoning models.
-7. **Time.** B0-B3's 150-pair data is about 10 days older than the rest; the drift anchor checks this but does not prove it.
-8. **Deviation from the freeze.** One code change after the freeze commit: self-hosted gemma4 calls send `reasoning_effort: "none"` (VII.1), so B4 runs plain as on Purdue. It changes request fields only, not prompts, parser, pairs, drafts or tests; it was made before any B4 data existed, and the host check was rerun under it.
-9. **The host check compares answers only.** It did not notice gemma4 thinking on one host and not the other, since the answers still agreed. Mode (output tokens, reasoning text) is now compared by hand for every self-hosted model (VII.1) but is not part of the pre-registered rule.
-10. **Size pair (b2) crosses hosts.** B5 (`qwen3:8b`) runs on Chameleon and B6 (`qwen3:32b`) on Purdue. B5 agrees 40/40 with its Purdue answers, but the pair compares two sizes on two serving builds.
-11. **Timeouts are failures by a client limit.** The 120 s client timeout, not a token cap, ends a runaway reasoning call; at about 185 tokens/s that is about 22k tokens on Chameleon, and a slower host would cut calls earlier. 8 B5 calls failed this way (VII.1); since long reasoning is not deterministic, a rerun could answer some of them, so their count is itself noisy.
-12. **Collection spread over time.** B6, B8 and B9 run days after the other executors, behind a Purdue outage. Each run's `/models` snapshot at start and end checks for re-pulls, but a build change under the same tag would not show there.
-13. **Early look beyond replicates 0-2.** On 2026-10-26, during the Purdue outage, descriptive summaries (accuracy, gain, unparsed rates, cost, writer order) were computed on every replicate collected so far, about 75% of the calls, before the analysis code was committed. The pre-registration allows a descriptive look at replicates 0-2 only. No prompt, parser, pair set, draft or test has been changed since; the primary tests are still run as pre-registered, but they were not blind to replicates 3-8.
-
----
-
-## IX. Reliability And Latency
-
-Every call logs latency, wait time, retries, host and model tag; a `/models` snapshot is taken at the start and end of each block. **Latency is reported descriptively, within each host only**: on Purdue it mixes shared load, queueing, model reloads and our own pacing, and Chameleon runs on different hardware. Tokens (input, output, estimated reasoning) are the cost unit.
+1. **Fewer executors than planned:** 8 of 13 primary. (a) has little power; (b2) is lost.
+2. **Primary analysis ran before B8 and B9 finished.** Their data is a supplement and never replaces it.
+3. **Not blind:** a descriptive look at about 75% of the data (2026-10-26) preceded the committed analysis code; nothing was changed after it.
+4. **Optimizer replay is in-sample.** Profiles use all 9 drafts; the bar is set from the true best plan; dollar costs use list prices, not what was paid (Purdue and Chameleon are free).
+5. **Abacus is modelled, not run.** The judge is a stand-in (`gpt-oss:120b`) at the provider's default temperature, so a single judgment flips often (8 of 18 full-run drafts).
+6. **Mixed hosts:** a host is part of an executor's identity; Purdue exposes tags, not builds or digests.
+7. **Parser:** this experiment asks for Yes / No and reads the first word; Palimpzest's filter asks for TRUE / FALSE after `ANSWER:`.
+8. **Code deviations from the freeze:** `gemma4` request field (before any B4 data) and a Purdue lock for large models (orchestration only). The first CPU node ran from a modified checkout, contents lost with the node; re-scoring with the committed parser matches every stored score.
+9. **Scope:** one dataset, one task, one generic instruction; B0-B3's full-run pairs are about 10 days older than the rest (drift check passed).
