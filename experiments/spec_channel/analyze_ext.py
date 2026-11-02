@@ -1,6 +1,6 @@
 """Pre-registered analysis of the C2 extension: tests (a)-(d2), own-model what-if, champion-writer view.
 
-Usage: python -I analyze_ext.py [--check]. Tests and rules: PREREG-C2-ext.md; results: REPORT-C2-ext.md.
+Usage: python -I analyze_ext.py [--check] [--out analysis_ext_supplement.json]. Tests and rules: PREREG-C2-ext.md; results: REPORT-C2-ext.md.
 """
 from __future__ import annotations
 
@@ -364,15 +364,20 @@ def check() -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true", help="synthetic checks only")
-    if ap.parse_args().check:
+    ap.add_argument("--out", default="analysis_ext.json", help="output file under results/; never overwritten")
+    args = ap.parse_args()
+    if args.check:
         check()
         return 0
+    path = RESULTS / args.out
+    if path.exists():  # the primary result is fixed once written; later data goes to a new file (supplement)
+        print(f"{path} exists; pass a new --out", file=sys.stderr)
+        return 1
     check()
     calls = load()
     out = {"primary": analyze(False, calls), "lenient": analyze(True, calls, extra=("B10", "B12"))}
     for res in out.values():
         report(res)
-    path = RESULTS / "analysis_ext.json"
     path.write_text(json.dumps(out, indent=1, default=float))
     print(f"\nwrote {path}")
     return 0

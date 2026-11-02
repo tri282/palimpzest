@@ -1,9 +1,10 @@
 """Optimizer replay on the C2 extension matrix: which writer x executor plan each policy picks (descriptive).
 
-Usage: python -I optimizer_picks_ext.py. Policies and results: REPORT-C2-ext.md III.3, V.3.
+Usage: python -I optimizer_picks_ext.py [--add B8,B9]. Policies and results: REPORT-C2-ext.md III.3, V.3.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -16,10 +17,12 @@ import analyze_ext as ax  # noqa: E402
 EXECS = ["B0", "B1", "B2", "B3", "B4", "B5", "B7", "B11"]  # primary set, analysis_ext.json
 W = ax.WRITERS
 BARS = (0.95, 0.98)  # cheapest plan within this share of the best estimate
-# USD per 1M tokens (input, output), list prices read 2026-10-19 (DeepInfra; Nscale for qwen3:8b); reasoning billed as output.
+# USD per 1M tokens (input, output), list prices read 2026-10-19: DeepInfra (last listed price for mistral), Nscale for
+# qwen3:8b and deepseek-r1:14b; reasoning billed as output.
 PRICES = {"gemini-3.5-flash-lite": (0.30, 2.50), "qwen2.5:72b": (0.36, 0.40), "gpt-oss:120b": (0.037, 0.17),
           "llama3.3:70b": (0.10, 0.32), "gemma3:27b": (0.08, 0.16), "qwen3:8b": (0.07, 0.18), "gemma3:12b": (0.05, 0.15),
-          "gemma4:26b-a4b": (0.07, 0.34), "gpt-oss:latest": (0.03, 0.14)}
+          "gemma4:26b-a4b": (0.07, 0.34), "gpt-oss:latest": (0.03, 0.14),
+          "deepseek-r1:14b": (0.07, 0.07), "mistral:latest": (0.03, 0.06)}
 WRITER_MODEL = {"A0": "gemini-3.5-flash-lite", "A1": "qwen2.5:72b", "A2": "gpt-oss:120b", "A3": "llama3.3:70b",
                 "A4": "gemma3:27b", "A5": "qwen3:8b"}
 PER = 1000  # records per writer draft: the draft is written once and amortized
@@ -44,6 +47,9 @@ def load():
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--add", default="", help="supplementary executors, e.g. B8,B9 (never part of the primary set)")
+    EXECS.extend(b for b in ap.parse_args().add.split(",") if b)
     S, model, tok, drafts = load()
     A = ax.matrix(S, EXECS, own=True)  # [w, b, r]; own-model cells are real plans
     M = A.mean(axis=2)
@@ -78,7 +84,7 @@ def main() -> int:
     print("Cost per 1k records (USD), executor x writer:")
     for b in range(len(EXECS)):
         print(f"  {EXECS[b]:4s} {model[EXECS[b]]:16s} " + " ".join(f"{W[w]} {C[w, b]:.4f}" for w in range(len(W)))
-              + f"  | S_ref {cost(0, b, ax.REF) - usd(WRITER_MODEL['A0'], drafts['A0']):.4f}")
+              + f"  | S_ref {usd(model[EXECS[b]], tok[(ax.REF, EXECS[b])]) * 1000:.4f}")
 
     print("\nMax quality:")
     report("full search", *np.unravel_index(np.argmax(M), M.shape))
