@@ -1,0 +1,9079 @@
+{
+ "execs": [
+  "B0",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B7",
+  "B11"
+ ],
+ "insample": {
+  "acc": "A3 x B11",
+  "0.95": "A5 x B0",
+  "0.98": "A4 x B0"
+ },
+ "rows": [
+  {
+   "goal": "acc",
+   "strategy": "F",
+   "knob": "",
+   "n": 25,
+   "share": 0.1,
+   "regret": 0.0151,
+   "regret_p90": 0.036,
+   "near": 0.875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "F",
+   "knob": "",
+   "n": 25,
+   "share": 0.1,
+   "met": 0.7875,
+   "overpay": 1.1457,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "F",
+   "knob": "",
+   "n": 25,
+   "share": 0.1,
+   "met": 0.6525,
+   "overpay": 1.6813,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "regret": 0.0203,
+   "regret_p90": 0.0408,
+   "near": 0.7725
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "met": 0.7175,
+   "overpay": 1.0742,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "met": 0.6825,
+   "overpay": 1.4179,
+   "overpay_p90": 1.7588
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 25,
+   "share": 0.0387,
+   "regret": 0.0186,
+   "regret_p90": 0.0384,
+   "near": 0.7875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 25,
+   "share": 0.0387,
+   "met": 0.75,
+   "overpay": 1.1097,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 25,
+   "share": 0.0387,
+   "met": 0.69,
+   "overpay": 1.7774,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 25,
+   "share": 0.0421,
+   "regret": 0.0174,
+   "regret_p90": 0.0384,
+   "near": 0.8125
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 25,
+   "share": 0.0421,
+   "met": 0.765,
+   "overpay": 1.1215,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 25,
+   "share": 0.0421,
+   "met": 0.7,
+   "overpay": 1.7949,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 25,
+   "share": 0.0456,
+   "regret": 0.016,
+   "regret_p90": 0.0361,
+   "near": 0.84
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 25,
+   "share": 0.0456,
+   "met": 0.77,
+   "overpay": 1.1264,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 25,
+   "share": 0.0456,
+   "met": 0.71,
+   "overpay": 1.8433,
+   "overpay_p90": 1.9077
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 25,
+   "share": 0.0663,
+   "regret": 0.0146,
+   "regret_p90": 0.036,
+   "near": 0.8525
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 25,
+   "share": 0.0663,
+   "met": 0.785,
+   "overpay": 1.1385,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 25,
+   "share": 0.0663,
+   "met": 0.6925,
+   "overpay": 1.8438,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 25,
+   "share": 0.0183,
+   "regret": 0.0294,
+   "regret_p90": 0.0592,
+   "near": 0.5575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 25,
+   "share": 0.0183,
+   "met": 0.7375,
+   "overpay": 4.1405,
+   "overpay_p90": 9.1973
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 25,
+   "share": 0.0183,
+   "met": 0.4325,
+   "overpay": 4.0273,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "regret": 0.0182,
+   "regret_p90": 0.0408,
+   "near": 0.7825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "met": 0.9925,
+   "overpay": 2.2564,
+   "overpay_p90": 2.4634
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 25,
+   "share": 0.0246,
+   "met": 0.6725,
+   "overpay": 2.5224,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 25,
+   "share": 0.0349,
+   "regret": 0.0153,
+   "regret_p90": 0.0384,
+   "near": 0.8275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 25,
+   "share": 0.0349,
+   "met": 0.9925,
+   "overpay": 1.8968,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 25,
+   "share": 0.0349,
+   "met": 0.715,
+   "overpay": 2.3984,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 25,
+   "share": 0.0493,
+   "regret": 0.0135,
+   "regret_p90": 0.037,
+   "near": 0.87
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 25,
+   "share": 0.0493,
+   "met": 0.9775,
+   "overpay": 1.6949,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 25,
+   "share": 0.0493,
+   "met": 0.7575,
+   "overpay": 2.3302,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 25,
+   "share": 0.0291,
+   "regret": 0.0191,
+   "regret_p90": 0.0384,
+   "near": 0.7875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 25,
+   "share": 0.0291,
+   "met": 0.7175,
+   "overpay": 1.1072,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 25,
+   "share": 0.0291,
+   "met": 0.6675,
+   "overpay": 1.509,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 25,
+   "share": 0.0487,
+   "regret": 0.0172,
+   "regret_p90": 0.037,
+   "near": 0.8275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 25,
+   "share": 0.0487,
+   "met": 0.7625,
+   "overpay": 1.1437,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 25,
+   "share": 0.0487,
+   "met": 0.67,
+   "overpay": 1.6793,
+   "overpay_p90": 2.0639
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 25,
+   "share": 0.0556,
+   "regret": 0.017,
+   "regret_p90": 0.0361,
+   "near": 0.8275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 25,
+   "share": 0.0556,
+   "met": 0.775,
+   "overpay": 1.1427,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 25,
+   "share": 0.0556,
+   "met": 0.6925,
+   "overpay": 1.6791,
+   "overpay_p90": 2.0711
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 25,
+   "share": 0.0608,
+   "regret": 0.0166,
+   "regret_p90": 0.036,
+   "near": 0.8325
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 25,
+   "share": 0.0608,
+   "met": 0.785,
+   "overpay": 1.1441,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 25,
+   "share": 0.0608,
+   "met": 0.71,
+   "overpay": 1.7077,
+   "overpay_p90": 2.0639
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 25,
+   "share": 0.0852,
+   "regret": 0.0151,
+   "regret_p90": 0.036,
+   "near": 0.865
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 25,
+   "share": 0.0852,
+   "met": 0.7875,
+   "overpay": 1.143,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 25,
+   "share": 0.0852,
+   "met": 0.695,
+   "overpay": 1.6996,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 25,
+   "share": 0.0178,
+   "regret": 0.0331,
+   "regret_p90": 0.06,
+   "near": 0.54
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 25,
+   "share": 0.0178,
+   "met": 0.6475,
+   "overpay": 4.8309,
+   "overpay_p90": 11.3808
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 25,
+   "share": 0.0178,
+   "met": 0.3625,
+   "overpay": 4.6974,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 25,
+   "share": 0.0226,
+   "regret": 0.0203,
+   "regret_p90": 0.0408,
+   "near": 0.7825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 25,
+   "share": 0.0226,
+   "met": 0.98,
+   "overpay": 2.3719,
+   "overpay_p90": 2.6032
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 25,
+   "share": 0.0226,
+   "met": 0.6675,
+   "overpay": 2.6827,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 25,
+   "share": 0.031,
+   "regret": 0.0172,
+   "regret_p90": 0.0408,
+   "near": 0.8275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 25,
+   "share": 0.031,
+   "met": 0.99,
+   "overpay": 1.892,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 25,
+   "share": 0.031,
+   "met": 0.6925,
+   "overpay": 2.3317,
+   "overpay_p90": 3.1314
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 25,
+   "share": 0.0431,
+   "regret": 0.0162,
+   "regret_p90": 0.0384,
+   "near": 0.8575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 25,
+   "share": 0.0431,
+   "met": 0.9875,
+   "overpay": 1.6771,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 25,
+   "share": 0.0431,
+   "met": 0.7275,
+   "overpay": 2.3587,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 25,
+   "share": 0.0289,
+   "regret": 0.0182,
+   "regret_p90": 0.0408,
+   "near": 0.8075
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 25,
+   "share": 0.0289,
+   "met": 0.735,
+   "overpay": 1.1358,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 25,
+   "share": 0.0289,
+   "met": 0.6875,
+   "overpay": 1.539,
+   "overpay_p90": 1.8882
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 25,
+   "share": 0.0447,
+   "regret": 0.0161,
+   "regret_p90": 0.037,
+   "near": 0.835
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 25,
+   "share": 0.0447,
+   "met": 0.7775,
+   "overpay": 1.1558,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 25,
+   "share": 0.0447,
+   "met": 0.7,
+   "overpay": 1.758,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 25,
+   "share": 0.0501,
+   "regret": 0.0158,
+   "regret_p90": 0.036,
+   "near": 0.845
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 25,
+   "share": 0.0501,
+   "met": 0.7875,
+   "overpay": 1.1492,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 25,
+   "share": 0.0501,
+   "met": 0.7025,
+   "overpay": 1.7292,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 25,
+   "share": 0.0542,
+   "regret": 0.0158,
+   "regret_p90": 0.036,
+   "near": 0.8425
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 25,
+   "share": 0.0542,
+   "met": 0.7875,
+   "overpay": 1.1473,
+   "overpay_p90": 1.3839
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 25,
+   "share": 0.0542,
+   "met": 0.7,
+   "overpay": 1.7515,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 25,
+   "share": 0.0778,
+   "regret": 0.0149,
+   "regret_p90": 0.036,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 25,
+   "share": 0.0778,
+   "met": 0.79,
+   "overpay": 1.1471,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 25,
+   "share": 0.0778,
+   "met": 0.6875,
+   "overpay": 1.7156,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 25,
+   "share": 0.0177,
+   "regret": 0.0297,
+   "regret_p90": 0.054,
+   "near": 0.535
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 25,
+   "share": 0.0177,
+   "met": 0.725,
+   "overpay": 4.4669,
+   "overpay_p90": 11.3808
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 25,
+   "share": 0.0177,
+   "met": 0.45,
+   "overpay": 4.3476,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 25,
+   "share": 0.0222,
+   "regret": 0.0174,
+   "regret_p90": 0.0408,
+   "near": 0.79
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 25,
+   "share": 0.0222,
+   "met": 0.9725,
+   "overpay": 2.3152,
+   "overpay_p90": 2.3723
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 25,
+   "share": 0.0222,
+   "met": 0.755,
+   "overpay": 2.4954,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 25,
+   "share": 0.03,
+   "regret": 0.0164,
+   "regret_p90": 0.0408,
+   "near": 0.805
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 25,
+   "share": 0.03,
+   "met": 0.99,
+   "overpay": 1.9252,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 25,
+   "share": 0.03,
+   "met": 0.745,
+   "overpay": 2.3496,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 25,
+   "share": 0.0419,
+   "regret": 0.0144,
+   "regret_p90": 0.037,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 25,
+   "share": 0.0419,
+   "met": 0.985,
+   "overpay": 1.6896,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 25,
+   "share": 0.0419,
+   "met": 0.76,
+   "overpay": 2.3473,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 25,
+   "share": 0.029,
+   "regret": 0.0209,
+   "regret_p90": 0.048,
+   "near": 0.7575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 25,
+   "share": 0.029,
+   "met": 0.685,
+   "overpay": 1.0953,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 25,
+   "share": 0.029,
+   "met": 0.655,
+   "overpay": 1.48,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 25,
+   "share": 0.0455,
+   "regret": 0.0186,
+   "regret_p90": 0.0384,
+   "near": 0.7975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 25,
+   "share": 0.0455,
+   "met": 0.75,
+   "overpay": 1.1664,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 25,
+   "share": 0.0455,
+   "met": 0.655,
+   "overpay": 1.8042,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 25,
+   "share": 0.0504,
+   "regret": 0.017,
+   "regret_p90": 0.0368,
+   "near": 0.8275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 25,
+   "share": 0.0504,
+   "met": 0.76,
+   "overpay": 1.1618,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 25,
+   "share": 0.0504,
+   "met": 0.665,
+   "overpay": 1.7988,
+   "overpay_p90": 2.0244
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 25,
+   "share": 0.0553,
+   "regret": 0.0167,
+   "regret_p90": 0.0361,
+   "near": 0.83
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 25,
+   "share": 0.0553,
+   "met": 0.775,
+   "overpay": 1.1609,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 25,
+   "share": 0.0553,
+   "met": 0.6775,
+   "overpay": 1.7682,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 25,
+   "share": 0.079,
+   "regret": 0.015,
+   "regret_p90": 0.036,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 25,
+   "share": 0.079,
+   "met": 0.7825,
+   "overpay": 1.1478,
+   "overpay_p90": 1.3839
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 25,
+   "share": 0.079,
+   "met": 0.6725,
+   "overpay": 1.7671,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 25,
+   "share": 0.0183,
+   "regret": 0.0289,
+   "regret_p90": 0.054,
+   "near": 0.5825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 25,
+   "share": 0.0183,
+   "met": 0.725,
+   "overpay": 4.4614,
+   "overpay_p90": 11.3808
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 25,
+   "share": 0.0183,
+   "met": 0.44,
+   "overpay": 4.3398,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 25,
+   "share": 0.0245,
+   "regret": 0.0168,
+   "regret_p90": 0.0384,
+   "near": 0.8375
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 25,
+   "share": 0.0245,
+   "met": 0.9825,
+   "overpay": 2.2657,
+   "overpay_p90": 2.5845
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 25,
+   "share": 0.0245,
+   "met": 0.6675,
+   "overpay": 2.6337,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 25,
+   "share": 0.0346,
+   "regret": 0.0161,
+   "regret_p90": 0.037,
+   "near": 0.8425
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 25,
+   "share": 0.0346,
+   "met": 0.98,
+   "overpay": 1.8698,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 25,
+   "share": 0.0346,
+   "met": 0.71,
+   "overpay": 2.3241,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 25,
+   "share": 0.0485,
+   "regret": 0.0148,
+   "regret_p90": 0.037,
+   "near": 0.875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 25,
+   "share": 0.0485,
+   "met": 0.975,
+   "overpay": 1.6962,
+   "overpay_p90": 1.8825
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 25,
+   "share": 0.0485,
+   "met": 0.7525,
+   "overpay": 2.3551,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 25,
+   "share": 0.0251,
+   "regret": 0.0176,
+   "regret_p90": 0.0371,
+   "near": 0.8425
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 25,
+   "share": 0.0251,
+   "met": 0.7325,
+   "overpay": 1.1364,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 25,
+   "share": 0.0251,
+   "met": 0.7275,
+   "overpay": 1.4558,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 25,
+   "share": 0.044,
+   "regret": 0.0161,
+   "regret_p90": 0.036,
+   "near": 0.875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 25,
+   "share": 0.044,
+   "met": 0.7725,
+   "overpay": 1.1498,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 25,
+   "share": 0.044,
+   "met": 0.7225,
+   "overpay": 1.5517,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 25,
+   "share": 0.0506,
+   "regret": 0.0157,
+   "regret_p90": 0.036,
+   "near": 0.8675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 25,
+   "share": 0.0506,
+   "met": 0.7825,
+   "overpay": 1.1481,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 25,
+   "share": 0.0506,
+   "met": 0.705,
+   "overpay": 1.5886,
+   "overpay_p90": 1.9227
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 25,
+   "share": 0.057,
+   "regret": 0.0158,
+   "regret_p90": 0.036,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 25,
+   "share": 0.057,
+   "met": 0.785,
+   "overpay": 1.1496,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 25,
+   "share": 0.057,
+   "met": 0.71,
+   "overpay": 1.6263,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 25,
+   "share": 0.0837,
+   "regret": 0.0147,
+   "regret_p90": 0.036,
+   "near": 0.8675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 25,
+   "share": 0.0837,
+   "met": 0.79,
+   "overpay": 1.1456,
+   "overpay_p90": 1.3839
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 25,
+   "share": 0.0837,
+   "met": 0.6825,
+   "overpay": 1.683,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 25,
+   "share": 0.0182,
+   "regret": 0.0344,
+   "regret_p90": 0.076,
+   "near": 0.5425
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.655,
+   "overpay": 4.7167,
+   "overpay_p90": 11.4041
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.3825,
+   "overpay": 4.5883,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 25,
+   "share": 0.0237,
+   "regret": 0.0183,
+   "regret_p90": 0.0408,
+   "near": 0.8425
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 25,
+   "share": 0.0237,
+   "met": 0.9825,
+   "overpay": 2.2949,
+   "overpay_p90": 2.6698
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 25,
+   "share": 0.0237,
+   "met": 0.6625,
+   "overpay": 2.6342,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 25,
+   "share": 0.0326,
+   "regret": 0.016,
+   "regret_p90": 0.0384,
+   "near": 0.8475
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 25,
+   "share": 0.0326,
+   "met": 0.985,
+   "overpay": 1.8388,
+   "overpay_p90": 1.9993
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 25,
+   "share": 0.0326,
+   "met": 0.71,
+   "overpay": 2.3238,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 25,
+   "share": 0.0448,
+   "regret": 0.0143,
+   "regret_p90": 0.033,
+   "near": 0.895
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 25,
+   "share": 0.0448,
+   "met": 0.9725,
+   "overpay": 1.6613,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 25,
+   "share": 0.0448,
+   "met": 0.7375,
+   "overpay": 2.2444,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 25,
+   "share": 0.0281,
+   "regret": 0.0206,
+   "regret_p90": 0.041,
+   "near": 0.76
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 25,
+   "share": 0.0281,
+   "met": 0.705,
+   "overpay": 1.1255,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 25,
+   "share": 0.0281,
+   "met": 0.64,
+   "overpay": 1.5658,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 25,
+   "share": 0.0451,
+   "regret": 0.0185,
+   "regret_p90": 0.0408,
+   "near": 0.8
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 25,
+   "share": 0.0451,
+   "met": 0.745,
+   "overpay": 1.1481,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 25,
+   "share": 0.0451,
+   "met": 0.6875,
+   "overpay": 1.8303,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 25,
+   "share": 0.0521,
+   "regret": 0.0173,
+   "regret_p90": 0.0384,
+   "near": 0.83
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 25,
+   "share": 0.0521,
+   "met": 0.755,
+   "overpay": 1.1516,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 25,
+   "share": 0.0521,
+   "met": 0.7,
+   "overpay": 1.8516,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 25,
+   "share": 0.0581,
+   "regret": 0.0161,
+   "regret_p90": 0.037,
+   "near": 0.84
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 25,
+   "share": 0.0581,
+   "met": 0.7725,
+   "overpay": 1.152,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 25,
+   "share": 0.0581,
+   "met": 0.7025,
+   "overpay": 1.7834,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 25,
+   "share": 0.0829,
+   "regret": 0.0152,
+   "regret_p90": 0.036,
+   "near": 0.8575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 25,
+   "share": 0.0829,
+   "met": 0.78,
+   "overpay": 1.1472,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 25,
+   "share": 0.0829,
+   "met": 0.675,
+   "overpay": 1.7435,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 25,
+   "share": 0.0179,
+   "regret": 0.0317,
+   "regret_p90": 0.06,
+   "near": 0.5275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 25,
+   "share": 0.0179,
+   "met": 0.7025,
+   "overpay": 4.4619,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 25,
+   "share": 0.0179,
+   "met": 0.4075,
+   "overpay": 4.345,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 25,
+   "share": 0.0232,
+   "regret": 0.0211,
+   "regret_p90": 0.0488,
+   "near": 0.73
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 25,
+   "share": 0.0232,
+   "met": 0.96,
+   "overpay": 2.3569,
+   "overpay_p90": 3.0122
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 25,
+   "share": 0.0232,
+   "met": 0.66,
+   "overpay": 2.671,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 25,
+   "share": 0.0322,
+   "regret": 0.0169,
+   "regret_p90": 0.0408,
+   "near": 0.8025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 25,
+   "share": 0.0322,
+   "met": 0.9825,
+   "overpay": 1.9097,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 25,
+   "share": 0.0322,
+   "met": 0.745,
+   "overpay": 2.3985,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 25,
+   "share": 0.0447,
+   "regret": 0.0146,
+   "regret_p90": 0.037,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 25,
+   "share": 0.0447,
+   "met": 0.9725,
+   "overpay": 1.7037,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 25,
+   "share": 0.0447,
+   "met": 0.7625,
+   "overpay": 2.3007,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 25,
+   "share": 0.0286,
+   "regret": 0.0165,
+   "regret_p90": 0.036,
+   "near": 0.8325
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 25,
+   "share": 0.0286,
+   "met": 0.93,
+   "overpay": 1.2547,
+   "overpay_p90": 1.4942
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 25,
+   "share": 0.0286,
+   "met": 0.63,
+   "overpay": 1.6581,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 25,
+   "share": 0.0426,
+   "regret": 0.0164,
+   "regret_p90": 0.036,
+   "near": 0.8325
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 25,
+   "share": 0.0426,
+   "met": 0.895,
+   "overpay": 1.217,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 25,
+   "share": 0.0426,
+   "met": 0.675,
+   "overpay": 1.83,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 25,
+   "share": 0.0487,
+   "regret": 0.0162,
+   "regret_p90": 0.036,
+   "near": 0.84
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 25,
+   "share": 0.0487,
+   "met": 0.855,
+   "overpay": 1.1914,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 25,
+   "share": 0.0487,
+   "met": 0.6875,
+   "overpay": 1.7918,
+   "overpay_p90": 2.0639
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 25,
+   "share": 0.0545,
+   "regret": 0.0161,
+   "regret_p90": 0.036,
+   "near": 0.84
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 25,
+   "share": 0.0545,
+   "met": 0.81,
+   "overpay": 1.176,
+   "overpay_p90": 1.4739
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 25,
+   "share": 0.0545,
+   "met": 0.685,
+   "overpay": 1.754,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 25,
+   "share": 0.0775,
+   "regret": 0.0151,
+   "regret_p90": 0.036,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 25,
+   "share": 0.0775,
+   "met": 0.79,
+   "overpay": 1.1585,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 25,
+   "share": 0.0775,
+   "met": 0.67,
+   "overpay": 1.7256,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 25,
+   "share": 0.0182,
+   "regret": 0.0309,
+   "regret_p90": 0.0592,
+   "near": 0.495
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.7,
+   "overpay": 4.4416,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.425,
+   "overpay": 4.3263,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 25,
+   "share": 0.0237,
+   "regret": 0.0192,
+   "regret_p90": 0.0408,
+   "near": 0.7625
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 25,
+   "share": 0.0237,
+   "met": 0.97,
+   "overpay": 2.3593,
+   "overpay_p90": 2.593
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 25,
+   "share": 0.0237,
+   "met": 0.6875,
+   "overpay": 2.5942,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 25,
+   "share": 0.0326,
+   "regret": 0.0162,
+   "regret_p90": 0.0408,
+   "near": 0.8175
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 25,
+   "share": 0.0326,
+   "met": 0.9875,
+   "overpay": 1.9072,
+   "overpay_p90": 2.0054
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 25,
+   "share": 0.0326,
+   "met": 0.7175,
+   "overpay": 2.4138,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 25,
+   "share": 0.0448,
+   "regret": 0.0153,
+   "regret_p90": 0.0384,
+   "near": 0.85
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 25,
+   "share": 0.0448,
+   "met": 0.9775,
+   "overpay": 1.6856,
+   "overpay_p90": 1.888
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 25,
+   "share": 0.0448,
+   "met": 0.7575,
+   "overpay": 2.372,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 25,
+   "share": 0.0287,
+   "regret": 0.0186,
+   "regret_p90": 0.0408,
+   "near": 0.77
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 25,
+   "share": 0.0287,
+   "met": 0.7125,
+   "overpay": 1.1263,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 25,
+   "share": 0.0287,
+   "met": 0.67,
+   "overpay": 1.5167,
+   "overpay_p90": 1.888
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 25,
+   "share": 0.0495,
+   "regret": 0.0163,
+   "regret_p90": 0.037,
+   "near": 0.835
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 25,
+   "share": 0.0495,
+   "met": 0.775,
+   "overpay": 1.1744,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 25,
+   "share": 0.0495,
+   "met": 0.6775,
+   "overpay": 1.837,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 25,
+   "share": 0.0568,
+   "regret": 0.0153,
+   "regret_p90": 0.036,
+   "near": 0.865
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 25,
+   "share": 0.0568,
+   "met": 0.7825,
+   "overpay": 1.1654,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 25,
+   "share": 0.0568,
+   "met": 0.6925,
+   "overpay": 1.7908,
+   "overpay_p90": 2.0244
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 25,
+   "share": 0.0634,
+   "regret": 0.0154,
+   "regret_p90": 0.036,
+   "near": 0.86
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 25,
+   "share": 0.0634,
+   "met": 0.785,
+   "overpay": 1.1457,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 25,
+   "share": 0.0634,
+   "met": 0.6975,
+   "overpay": 1.7629,
+   "overpay_p90": 2.0244
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 25,
+   "share": 0.0882,
+   "regret": 0.0149,
+   "regret_p90": 0.036,
+   "near": 0.8675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 25,
+   "share": 0.0882,
+   "met": 0.79,
+   "overpay": 1.1448,
+   "overpay_p90": 1.3839
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 25,
+   "share": 0.0882,
+   "met": 0.6875,
+   "overpay": 1.7332,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 25,
+   "share": 0.0182,
+   "regret": 0.0318,
+   "regret_p90": 0.061,
+   "near": 0.5475
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.6825,
+   "overpay": 4.4751,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 25,
+   "share": 0.0182,
+   "met": 0.4175,
+   "overpay": 4.3567,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 25,
+   "share": 0.0239,
+   "regret": 0.0174,
+   "regret_p90": 0.0408,
+   "near": 0.815
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 25,
+   "share": 0.0239,
+   "met": 0.99,
+   "overpay": 2.3601,
+   "overpay_p90": 2.5941
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 25,
+   "share": 0.0239,
+   "met": 0.71,
+   "overpay": 2.6368,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 25,
+   "share": 0.0333,
+   "regret": 0.0155,
+   "regret_p90": 0.0384,
+   "near": 0.845
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 25,
+   "share": 0.0333,
+   "met": 0.9925,
+   "overpay": 1.9601,
+   "overpay_p90": 2.0054
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 25,
+   "share": 0.0333,
+   "met": 0.7325,
+   "overpay": 2.3593,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 25,
+   "share": 0.0462,
+   "regret": 0.0141,
+   "regret_p90": 0.0333,
+   "near": 0.8825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 25,
+   "share": 0.0462,
+   "met": 0.985,
+   "overpay": 1.7149,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 25,
+   "share": 0.0462,
+   "met": 0.76,
+   "overpay": 2.3569,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P4",
+   "knob": "",
+   "n": 25,
+   "share": 0.0413,
+   "regret": 0.0179,
+   "regret_p90": 0.036,
+   "near": 0.87
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P4",
+   "knob": "",
+   "n": 25,
+   "share": 0.0413,
+   "met": 0.735,
+   "overpay": 1.061,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P4",
+   "knob": "",
+   "n": 25,
+   "share": 0.0413,
+   "met": 0.7,
+   "overpay": 1.2641,
+   "overpay_p90": 1.7588
+  },
+  {
+   "goal": "acc",
+   "strategy": "F",
+   "knob": "",
+   "n": 50,
+   "share": 0.2,
+   "regret": 0.0123,
+   "regret_p90": 0.0248,
+   "near": 0.935
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "F",
+   "knob": "",
+   "n": 50,
+   "share": 0.2,
+   "met": 0.7225,
+   "overpay": 1.0689,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "F",
+   "knob": "",
+   "n": 50,
+   "share": 0.2,
+   "met": 0.7975,
+   "overpay": 1.8244,
+   "overpay_p90": 2.3425
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 50,
+   "share": 0.0529,
+   "regret": 0.0165,
+   "regret_p90": 0.037,
+   "near": 0.8725
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 50,
+   "share": 0.0529,
+   "met": 0.65,
+   "overpay": 1.0213,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 50,
+   "share": 0.0529,
+   "met": 0.7725,
+   "overpay": 1.3352,
+   "overpay_p90": 1.4033
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 50,
+   "share": 0.0741,
+   "regret": 0.0147,
+   "regret_p90": 0.036,
+   "near": 0.885
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 50,
+   "share": 0.0741,
+   "met": 0.6775,
+   "overpay": 1.0437,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 50,
+   "share": 0.0741,
+   "met": 0.8,
+   "overpay": 1.57,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 50,
+   "share": 0.0861,
+   "regret": 0.0131,
+   "regret_p90": 0.028,
+   "near": 0.91
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 50,
+   "share": 0.0861,
+   "met": 0.69,
+   "overpay": 1.0501,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 50,
+   "share": 0.0861,
+   "met": 0.82,
+   "overpay": 1.6435,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 50,
+   "share": 0.1096,
+   "regret": 0.012,
+   "regret_p90": 0.028,
+   "near": 0.915
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 50,
+   "share": 0.1096,
+   "met": 0.7025,
+   "overpay": 1.0611,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 50,
+   "share": 0.1096,
+   "met": 0.8175,
+   "overpay": 1.7253,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 50,
+   "share": 0.1356,
+   "regret": 0.0116,
+   "regret_p90": 0.028,
+   "near": 0.91
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 50,
+   "share": 0.1356,
+   "met": 0.7125,
+   "overpay": 1.0662,
+   "overpay_p90": 1.3154
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 50,
+   "share": 0.1356,
+   "met": 0.8225,
+   "overpay": 1.8813,
+   "overpay_p90": 2.5173
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 50,
+   "share": 0.0367,
+   "regret": 0.0261,
+   "regret_p90": 0.0592,
+   "near": 0.66
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 50,
+   "share": 0.0367,
+   "met": 0.7975,
+   "overpay": 3.7846,
+   "overpay_p90": 9.1973
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 50,
+   "share": 0.0367,
+   "met": 0.555,
+   "overpay": 3.6802,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 50,
+   "share": 0.0492,
+   "regret": 0.0144,
+   "regret_p90": 0.037,
+   "near": 0.8475
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 50,
+   "share": 0.0492,
+   "met": 1.0,
+   "overpay": 2.205,
+   "overpay_p90": 2.4837
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 50,
+   "share": 0.0492,
+   "met": 0.74,
+   "overpay": 2.5082,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 50,
+   "share": 0.0699,
+   "regret": 0.0113,
+   "regret_p90": 0.0328,
+   "near": 0.895
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 50,
+   "share": 0.0699,
+   "met": 1.0,
+   "overpay": 1.7844,
+   "overpay_p90": 1.888
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 50,
+   "share": 0.0699,
+   "met": 0.7975,
+   "overpay": 2.3619,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 50,
+   "share": 0.0991,
+   "regret": 0.0107,
+   "regret_p90": 0.0282,
+   "near": 0.9025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 50,
+   "share": 0.0991,
+   "met": 0.9875,
+   "overpay": 1.6337,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 50,
+   "share": 0.0991,
+   "met": 0.825,
+   "overpay": 2.3923,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 50,
+   "share": 0.0652,
+   "regret": 0.0159,
+   "regret_p90": 0.0336,
+   "near": 0.895
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 50,
+   "share": 0.0652,
+   "met": 0.6625,
+   "overpay": 1.063,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 50,
+   "share": 0.0652,
+   "met": 0.765,
+   "overpay": 1.3917,
+   "overpay_p90": 1.8882
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 50,
+   "share": 0.0966,
+   "regret": 0.0146,
+   "regret_p90": 0.027,
+   "near": 0.915
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 50,
+   "share": 0.0966,
+   "met": 0.6975,
+   "overpay": 1.0693,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 50,
+   "share": 0.0966,
+   "met": 0.785,
+   "overpay": 1.6553,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 50,
+   "share": 0.1135,
+   "regret": 0.0141,
+   "regret_p90": 0.027,
+   "near": 0.92
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 50,
+   "share": 0.1135,
+   "met": 0.7025,
+   "overpay": 1.0633,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 50,
+   "share": 0.1135,
+   "met": 0.83,
+   "overpay": 1.6601,
+   "overpay_p90": 1.9227
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 50,
+   "share": 0.1441,
+   "regret": 0.0138,
+   "regret_p90": 0.0257,
+   "near": 0.9225
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 50,
+   "share": 0.1441,
+   "met": 0.7025,
+   "overpay": 1.0606,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 50,
+   "share": 0.1441,
+   "met": 0.825,
+   "overpay": 1.7,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 50,
+   "share": 0.1762,
+   "regret": 0.0132,
+   "regret_p90": 0.027,
+   "near": 0.9175
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 50,
+   "share": 0.1762,
+   "met": 0.72,
+   "overpay": 1.0672,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 50,
+   "share": 0.1762,
+   "met": 0.82,
+   "overpay": 1.8044,
+   "overpay_p90": 2.3425
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 50,
+   "share": 0.036,
+   "regret": 0.0354,
+   "regret_p90": 0.0655,
+   "near": 0.4875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 50,
+   "share": 0.036,
+   "met": 0.5625,
+   "overpay": 4.5898,
+   "overpay_p90": 11.3808
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 50,
+   "share": 0.036,
+   "met": 0.36,
+   "overpay": 4.4593,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 50,
+   "share": 0.0462,
+   "regret": 0.0178,
+   "regret_p90": 0.0408,
+   "near": 0.82
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 50,
+   "share": 0.0462,
+   "met": 0.99,
+   "overpay": 2.3931,
+   "overpay_p90": 2.6032
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 50,
+   "share": 0.0462,
+   "met": 0.71,
+   "overpay": 2.6295,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 50,
+   "share": 0.0634,
+   "regret": 0.0162,
+   "regret_p90": 0.0408,
+   "near": 0.8375
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 50,
+   "share": 0.0634,
+   "met": 1.0,
+   "overpay": 1.8736,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 50,
+   "share": 0.0634,
+   "met": 0.8175,
+   "overpay": 2.5573,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 50,
+   "share": 0.0875,
+   "regret": 0.0136,
+   "regret_p90": 0.033,
+   "near": 0.8975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 50,
+   "share": 0.0875,
+   "met": 0.9925,
+   "overpay": 1.6551,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 50,
+   "share": 0.0875,
+   "met": 0.81,
+   "overpay": 2.4353,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 50,
+   "share": 0.0639,
+   "regret": 0.0147,
+   "regret_p90": 0.036,
+   "near": 0.88
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 50,
+   "share": 0.0639,
+   "met": 0.675,
+   "overpay": 1.074,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 50,
+   "share": 0.0639,
+   "met": 0.785,
+   "overpay": 1.414,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 50,
+   "share": 0.089,
+   "regret": 0.0143,
+   "regret_p90": 0.037,
+   "near": 0.855
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 50,
+   "share": 0.089,
+   "met": 0.7,
+   "overpay": 1.0666,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 50,
+   "share": 0.089,
+   "met": 0.795,
+   "overpay": 1.6817,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 50,
+   "share": 0.1032,
+   "regret": 0.0134,
+   "regret_p90": 0.0328,
+   "near": 0.8925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 50,
+   "share": 0.1032,
+   "met": 0.7075,
+   "overpay": 1.0629,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 50,
+   "share": 0.1032,
+   "met": 0.7975,
+   "overpay": 1.7368,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 50,
+   "share": 0.1283,
+   "regret": 0.0129,
+   "regret_p90": 0.028,
+   "near": 0.905
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 50,
+   "share": 0.1283,
+   "met": 0.7125,
+   "overpay": 1.0647,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 50,
+   "share": 0.1283,
+   "met": 0.805,
+   "overpay": 1.7845,
+   "overpay_p90": 1.9077
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 50,
+   "share": 0.1578,
+   "regret": 0.0126,
+   "regret_p90": 0.027,
+   "near": 0.915
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 50,
+   "share": 0.1578,
+   "met": 0.72,
+   "overpay": 1.0681,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 50,
+   "share": 0.1578,
+   "met": 0.815,
+   "overpay": 1.8762,
+   "overpay_p90": 3.0122
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 50,
+   "share": 0.0349,
+   "regret": 0.0272,
+   "regret_p90": 0.054,
+   "near": 0.5575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 50,
+   "share": 0.0349,
+   "met": 0.7275,
+   "overpay": 4.1437,
+   "overpay_p90": 11.3808
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 50,
+   "share": 0.0349,
+   "met": 0.5175,
+   "overpay": 4.0331,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 50,
+   "share": 0.0434,
+   "regret": 0.0151,
+   "regret_p90": 0.0408,
+   "near": 0.8175
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 50,
+   "share": 0.0434,
+   "met": 0.97,
+   "overpay": 2.226,
+   "overpay_p90": 2.2588
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 50,
+   "share": 0.0434,
+   "met": 0.785,
+   "overpay": 2.5017,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 50,
+   "share": 0.059,
+   "regret": 0.0131,
+   "regret_p90": 0.0371,
+   "near": 0.855
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 50,
+   "share": 0.059,
+   "met": 0.9975,
+   "overpay": 1.7867,
+   "overpay_p90": 1.8911
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 50,
+   "share": 0.059,
+   "met": 0.835,
+   "overpay": 2.4043,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 50,
+   "share": 0.083,
+   "regret": 0.0119,
+   "regret_p90": 0.033,
+   "near": 0.8825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 50,
+   "share": 0.083,
+   "met": 1.0,
+   "overpay": 1.661,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 50,
+   "share": 0.083,
+   "met": 0.835,
+   "overpay": 2.4383,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 50,
+   "share": 0.0619,
+   "regret": 0.0155,
+   "regret_p90": 0.037,
+   "near": 0.875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 50,
+   "share": 0.0619,
+   "met": 0.6125,
+   "overpay": 1.0447,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 50,
+   "share": 0.0619,
+   "met": 0.7675,
+   "overpay": 1.4111,
+   "overpay_p90": 1.7364
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 50,
+   "share": 0.086,
+   "regret": 0.0138,
+   "regret_p90": 0.036,
+   "near": 0.89
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 50,
+   "share": 0.086,
+   "met": 0.66,
+   "overpay": 1.0597,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 50,
+   "share": 0.086,
+   "met": 0.8,
+   "overpay": 1.6485,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 50,
+   "share": 0.1013,
+   "regret": 0.0131,
+   "regret_p90": 0.0281,
+   "near": 0.9025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 50,
+   "share": 0.1013,
+   "met": 0.6775,
+   "overpay": 1.0593,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 50,
+   "share": 0.1013,
+   "met": 0.81,
+   "overpay": 1.6726,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 50,
+   "share": 0.1283,
+   "regret": 0.0131,
+   "regret_p90": 0.028,
+   "near": 0.91
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 50,
+   "share": 0.1283,
+   "met": 0.705,
+   "overpay": 1.0673,
+   "overpay_p90": 1.3154
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 50,
+   "share": 0.1283,
+   "met": 0.795,
+   "overpay": 1.7413,
+   "overpay_p90": 1.9316
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 50,
+   "share": 0.1694,
+   "regret": 0.0125,
+   "regret_p90": 0.027,
+   "near": 0.925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 50,
+   "share": 0.1694,
+   "met": 0.7175,
+   "overpay": 1.0696,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 50,
+   "share": 0.1694,
+   "met": 0.81,
+   "overpay": 1.8492,
+   "overpay_p90": 2.4754
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 50,
+   "share": 0.0367,
+   "regret": 0.0265,
+   "regret_p90": 0.054,
+   "near": 0.5925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 50,
+   "share": 0.0367,
+   "met": 0.7825,
+   "overpay": 3.9718,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 50,
+   "share": 0.0367,
+   "met": 0.5,
+   "overpay": 3.8627,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 50,
+   "share": 0.0491,
+   "regret": 0.0148,
+   "regret_p90": 0.033,
+   "near": 0.8525
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 50,
+   "share": 0.0491,
+   "met": 0.9925,
+   "overpay": 2.1839,
+   "overpay_p90": 2.2588
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 50,
+   "share": 0.0491,
+   "met": 0.675,
+   "overpay": 2.5051,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 50,
+   "share": 0.0698,
+   "regret": 0.0126,
+   "regret_p90": 0.0303,
+   "near": 0.9
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 50,
+   "share": 0.0698,
+   "met": 0.9975,
+   "overpay": 1.7862,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 50,
+   "share": 0.0698,
+   "met": 0.805,
+   "overpay": 2.48,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 50,
+   "share": 0.0983,
+   "regret": 0.0119,
+   "regret_p90": 0.023,
+   "near": 0.92
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 50,
+   "share": 0.0983,
+   "met": 0.9875,
+   "overpay": 1.64,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 50,
+   "share": 0.0983,
+   "met": 0.82,
+   "overpay": 2.4111,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 50,
+   "share": 0.0536,
+   "regret": 0.014,
+   "regret_p90": 0.023,
+   "near": 0.93
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 50,
+   "share": 0.0536,
+   "met": 0.67,
+   "overpay": 1.0852,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 50,
+   "share": 0.0536,
+   "met": 0.7875,
+   "overpay": 1.394,
+   "overpay_p90": 1.7588
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 50,
+   "share": 0.0843,
+   "regret": 0.0134,
+   "regret_p90": 0.0248,
+   "near": 0.935
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 50,
+   "share": 0.0843,
+   "met": 0.6875,
+   "overpay": 1.0762,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 50,
+   "share": 0.0843,
+   "met": 0.8275,
+   "overpay": 1.6055,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 50,
+   "share": 0.1064,
+   "regret": 0.0132,
+   "regret_p90": 0.0249,
+   "near": 0.94
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 50,
+   "share": 0.1064,
+   "met": 0.705,
+   "overpay": 1.0664,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 50,
+   "share": 0.1064,
+   "met": 0.82,
+   "overpay": 1.6519,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 50,
+   "share": 0.1427,
+   "regret": 0.0131,
+   "regret_p90": 0.0248,
+   "near": 0.935
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 50,
+   "share": 0.1427,
+   "met": 0.7125,
+   "overpay": 1.0674,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 50,
+   "share": 0.1427,
+   "met": 0.81,
+   "overpay": 1.7098,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 50,
+   "share": 0.1747,
+   "regret": 0.0127,
+   "regret_p90": 0.0256,
+   "near": 0.93
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 50,
+   "share": 0.1747,
+   "met": 0.72,
+   "overpay": 1.0692,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 50,
+   "share": 0.1747,
+   "met": 0.8175,
+   "overpay": 1.8281,
+   "overpay_p90": 2.3425
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 50,
+   "share": 0.0364,
+   "regret": 0.031,
+   "regret_p90": 0.06,
+   "near": 0.5825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 50,
+   "share": 0.0364,
+   "met": 0.6925,
+   "overpay": 4.3078,
+   "overpay_p90": 11.381
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 50,
+   "share": 0.0364,
+   "met": 0.435,
+   "overpay": 4.187,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 50,
+   "share": 0.0476,
+   "regret": 0.0166,
+   "regret_p90": 0.0384,
+   "near": 0.835
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 50,
+   "share": 0.0476,
+   "met": 0.99,
+   "overpay": 2.2482,
+   "overpay_p90": 2.4837
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 50,
+   "share": 0.0476,
+   "met": 0.66,
+   "overpay": 2.5333,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 50,
+   "share": 0.0655,
+   "regret": 0.0128,
+   "regret_p90": 0.0282,
+   "near": 0.905
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 50,
+   "share": 0.0655,
+   "met": 0.995,
+   "overpay": 1.8158,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 50,
+   "share": 0.0655,
+   "met": 0.8025,
+   "overpay": 2.5041,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 50,
+   "share": 0.0901,
+   "regret": 0.0118,
+   "regret_p90": 0.023,
+   "near": 0.9275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 50,
+   "share": 0.0901,
+   "met": 0.9875,
+   "overpay": 1.6316,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 50,
+   "share": 0.0901,
+   "met": 0.815,
+   "overpay": 2.4218,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 50,
+   "share": 0.0591,
+   "regret": 0.0162,
+   "regret_p90": 0.0384,
+   "near": 0.855
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 50,
+   "share": 0.0591,
+   "met": 0.64,
+   "overpay": 1.0639,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 50,
+   "share": 0.0591,
+   "met": 0.7375,
+   "overpay": 1.4683,
+   "overpay_p90": 1.7588
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 50,
+   "share": 0.0889,
+   "regret": 0.0148,
+   "regret_p90": 0.0371,
+   "near": 0.8575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 50,
+   "share": 0.0889,
+   "met": 0.6875,
+   "overpay": 1.0749,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 50,
+   "share": 0.0889,
+   "met": 0.7775,
+   "overpay": 1.73,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 50,
+   "share": 0.1107,
+   "regret": 0.0137,
+   "regret_p90": 0.036,
+   "near": 0.8875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 50,
+   "share": 0.1107,
+   "met": 0.7025,
+   "overpay": 1.0741,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 50,
+   "share": 0.1107,
+   "met": 0.785,
+   "overpay": 1.7144,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 50,
+   "share": 0.1438,
+   "regret": 0.0134,
+   "regret_p90": 0.0299,
+   "near": 0.9
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 50,
+   "share": 0.1438,
+   "met": 0.705,
+   "overpay": 1.0695,
+   "overpay_p90": 1.3154
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 50,
+   "share": 0.1438,
+   "met": 0.79,
+   "overpay": 1.7741,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 50,
+   "share": 0.1785,
+   "regret": 0.0125,
+   "regret_p90": 0.0257,
+   "near": 0.9275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 50,
+   "share": 0.1785,
+   "met": 0.72,
+   "overpay": 1.0701,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 50,
+   "share": 0.1785,
+   "met": 0.805,
+   "overpay": 1.8181,
+   "overpay_p90": 2.3425
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 50,
+   "share": 0.0359,
+   "regret": 0.0296,
+   "regret_p90": 0.0592,
+   "near": 0.5375
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 50,
+   "share": 0.0359,
+   "met": 0.7525,
+   "overpay": 4.0086,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 50,
+   "share": 0.0359,
+   "met": 0.4475,
+   "overpay": 3.9056,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 50,
+   "share": 0.047,
+   "regret": 0.0171,
+   "regret_p90": 0.0408,
+   "near": 0.775
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 50,
+   "share": 0.047,
+   "met": 0.9875,
+   "overpay": 2.203,
+   "overpay_p90": 2.4623
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 50,
+   "share": 0.047,
+   "met": 0.685,
+   "overpay": 2.5347,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 50,
+   "share": 0.0655,
+   "regret": 0.0143,
+   "regret_p90": 0.0408,
+   "near": 0.83
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 50,
+   "share": 0.0655,
+   "met": 0.9925,
+   "overpay": 1.7689,
+   "overpay_p90": 1.9061
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 50,
+   "share": 0.0655,
+   "met": 0.7975,
+   "overpay": 2.437,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 50,
+   "share": 0.0909,
+   "regret": 0.0129,
+   "regret_p90": 0.037,
+   "near": 0.87
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 50,
+   "share": 0.0909,
+   "met": 0.9875,
+   "overpay": 1.6354,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 50,
+   "share": 0.0909,
+   "met": 0.8275,
+   "overpay": 2.4256,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 50,
+   "share": 0.0616,
+   "regret": 0.0131,
+   "regret_p90": 0.0328,
+   "near": 0.8975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 50,
+   "share": 0.0616,
+   "met": 0.9075,
+   "overpay": 1.1645,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 50,
+   "share": 0.0616,
+   "met": 0.735,
+   "overpay": 1.5604,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 50,
+   "share": 0.0851,
+   "regret": 0.0131,
+   "regret_p90": 0.036,
+   "near": 0.88
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 50,
+   "share": 0.0851,
+   "met": 0.8475,
+   "overpay": 1.1267,
+   "overpay_p90": 1.4739
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 50,
+   "share": 0.0851,
+   "met": 0.79,
+   "overpay": 1.8317,
+   "overpay_p90": 1.9077
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 50,
+   "share": 0.1012,
+   "regret": 0.0131,
+   "regret_p90": 0.033,
+   "near": 0.8875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 50,
+   "share": 0.1012,
+   "met": 0.7825,
+   "overpay": 1.1012,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 50,
+   "share": 0.1012,
+   "met": 0.7875,
+   "overpay": 1.7528,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 50,
+   "share": 0.1267,
+   "regret": 0.0129,
+   "regret_p90": 0.0282,
+   "near": 0.9025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 50,
+   "share": 0.1267,
+   "met": 0.7325,
+   "overpay": 1.085,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 50,
+   "share": 0.1267,
+   "met": 0.79,
+   "overpay": 1.7961,
+   "overpay_p90": 2.0381
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 50,
+   "share": 0.1595,
+   "regret": 0.0126,
+   "regret_p90": 0.027,
+   "near": 0.92
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 50,
+   "share": 0.1595,
+   "met": 0.72,
+   "overpay": 1.072,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 50,
+   "share": 0.1595,
+   "met": 0.81,
+   "overpay": 1.8527,
+   "overpay_p90": 2.3813
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 50,
+   "share": 0.0362,
+   "regret": 0.0276,
+   "regret_p90": 0.0592,
+   "near": 0.56
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 50,
+   "share": 0.0362,
+   "met": 0.74,
+   "overpay": 4.0235,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 50,
+   "share": 0.0362,
+   "met": 0.51,
+   "overpay": 3.9187,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 50,
+   "share": 0.0464,
+   "regret": 0.0159,
+   "regret_p90": 0.0408,
+   "near": 0.7925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 50,
+   "share": 0.0464,
+   "met": 0.9575,
+   "overpay": 2.2265,
+   "overpay_p90": 2.3723
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 50,
+   "share": 0.0464,
+   "met": 0.7425,
+   "overpay": 2.588,
+   "overpay_p90": 6.7557
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 50,
+   "share": 0.0633,
+   "regret": 0.0135,
+   "regret_p90": 0.0408,
+   "near": 0.84
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 50,
+   "share": 0.0633,
+   "met": 1.0,
+   "overpay": 1.7962,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 50,
+   "share": 0.0633,
+   "met": 0.8475,
+   "overpay": 2.385,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 50,
+   "share": 0.0875,
+   "regret": 0.012,
+   "regret_p90": 0.0328,
+   "near": 0.8825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 50,
+   "share": 0.0875,
+   "met": 0.9975,
+   "overpay": 1.6521,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 50,
+   "share": 0.0875,
+   "met": 0.8375,
+   "overpay": 2.446,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 50,
+   "share": 0.0641,
+   "regret": 0.0135,
+   "regret_p90": 0.028,
+   "near": 0.9225
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 50,
+   "share": 0.0641,
+   "met": 0.6675,
+   "overpay": 1.0601,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 50,
+   "share": 0.0641,
+   "met": 0.7575,
+   "overpay": 1.514,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 50,
+   "share": 0.0984,
+   "regret": 0.013,
+   "regret_p90": 0.0273,
+   "near": 0.9225
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 50,
+   "share": 0.0984,
+   "met": 0.695,
+   "overpay": 1.0674,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 50,
+   "share": 0.0984,
+   "met": 0.81,
+   "overpay": 1.7471,
+   "overpay_p90": 1.9077
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 50,
+   "share": 0.1203,
+   "regret": 0.0126,
+   "regret_p90": 0.0256,
+   "near": 0.9375
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 50,
+   "share": 0.1203,
+   "met": 0.7025,
+   "overpay": 1.0602,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 50,
+   "share": 0.1203,
+   "met": 0.81,
+   "overpay": 1.6963,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 50,
+   "share": 0.1529,
+   "regret": 0.0129,
+   "regret_p90": 0.0249,
+   "near": 0.9325
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 50,
+   "share": 0.1529,
+   "met": 0.71,
+   "overpay": 1.0639,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 50,
+   "share": 0.1529,
+   "met": 0.815,
+   "overpay": 1.7478,
+   "overpay_p90": 2.2735
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 50,
+   "share": 0.18,
+   "regret": 0.0126,
+   "regret_p90": 0.0256,
+   "near": 0.93
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 50,
+   "share": 0.18,
+   "met": 0.72,
+   "overpay": 1.0684,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 50,
+   "share": 0.18,
+   "met": 0.815,
+   "overpay": 1.826,
+   "overpay_p90": 2.3813
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 50,
+   "share": 0.0364,
+   "regret": 0.0272,
+   "regret_p90": 0.061,
+   "near": 0.6275
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 50,
+   "share": 0.0364,
+   "met": 0.7375,
+   "overpay": 4.0985,
+   "overpay_p90": 10.7868
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 50,
+   "share": 0.0364,
+   "met": 0.525,
+   "overpay": 3.9893,
+   "overpay_p90": 10.767
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 50,
+   "share": 0.0477,
+   "regret": 0.0146,
+   "regret_p90": 0.0371,
+   "near": 0.85
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 50,
+   "share": 0.0477,
+   "met": 0.995,
+   "overpay": 2.2813,
+   "overpay_p90": 2.4893
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 50,
+   "share": 0.0477,
+   "met": 0.75,
+   "overpay": 2.5776,
+   "overpay_p90": 7.234
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 50,
+   "share": 0.066,
+   "regret": 0.0126,
+   "regret_p90": 0.0328,
+   "near": 0.895
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 50,
+   "share": 0.066,
+   "met": 0.9975,
+   "overpay": 1.8294,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 50,
+   "share": 0.066,
+   "met": 0.8275,
+   "overpay": 2.4072,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 50,
+   "share": 0.0903,
+   "regret": 0.0118,
+   "regret_p90": 0.0235,
+   "near": 0.9175
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 50,
+   "share": 0.0903,
+   "met": 0.9925,
+   "overpay": 1.6714,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 50,
+   "share": 0.0903,
+   "met": 0.8275,
+   "overpay": 2.5123,
+   "overpay_p90": 6.7026
+  },
+  {
+   "goal": "acc",
+   "strategy": "P4",
+   "knob": "",
+   "n": 50,
+   "share": 0.0825,
+   "regret": 0.0154,
+   "regret_p90": 0.028,
+   "near": 0.9375
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P4",
+   "knob": "",
+   "n": 50,
+   "share": 0.0825,
+   "met": 0.6525,
+   "overpay": 1.0299,
+   "overpay_p90": 1.0789
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P4",
+   "knob": "",
+   "n": 50,
+   "share": 0.0825,
+   "met": 0.805,
+   "overpay": 1.2283,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "F",
+   "knob": "",
+   "n": 100,
+   "share": 0.4,
+   "regret": 0.0087,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "F",
+   "knob": "",
+   "n": 100,
+   "share": 0.4,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "F",
+   "knob": "",
+   "n": 100,
+   "share": 0.4,
+   "met": 0.89,
+   "overpay": 1.4578,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 100,
+   "share": 0.1075,
+   "regret": 0.0138,
+   "regret_p90": 0.017,
+   "near": 0.94
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 100,
+   "share": 0.1075,
+   "met": 0.5675,
+   "overpay": 0.9902,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 100,
+   "share": 0.1075,
+   "met": 0.8325,
+   "overpay": 1.198,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 100,
+   "share": 0.1434,
+   "regret": 0.0112,
+   "regret_p90": 0.017,
+   "near": 0.96
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 100,
+   "share": 0.1434,
+   "met": 0.5925,
+   "overpay": 0.9946,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 100,
+   "share": 0.1434,
+   "met": 0.8875,
+   "overpay": 1.3602,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 100,
+   "share": 0.1927,
+   "regret": 0.0086,
+   "regret_p90": 0.0152,
+   "near": 0.98
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 100,
+   "share": 0.1927,
+   "met": 0.6125,
+   "overpay": 1.0021,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 100,
+   "share": 0.1927,
+   "met": 0.9025,
+   "overpay": 1.4851,
+   "overpay_p90": 1.5314
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 100,
+   "share": 0.2356,
+   "regret": 0.0072,
+   "regret_p90": 0.0136,
+   "near": 0.99
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 100,
+   "share": 0.2356,
+   "met": 0.6325,
+   "overpay": 1.0049,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 100,
+   "share": 0.2356,
+   "met": 0.91,
+   "overpay": 1.5458,
+   "overpay_p90": 1.7911
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 100,
+   "share": 0.2788,
+   "regret": 0.0069,
+   "regret_p90": 0.0136,
+   "near": 0.9875
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 100,
+   "share": 0.2788,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 100,
+   "share": 0.2788,
+   "met": 0.9125,
+   "overpay": 1.5563,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 100,
+   "share": 0.0733,
+   "regret": 0.0222,
+   "regret_p90": 0.05,
+   "near": 0.7675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 100,
+   "share": 0.0733,
+   "met": 0.8925,
+   "overpay": 3.1277,
+   "overpay_p90": 8.3703
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 100,
+   "share": 0.0733,
+   "met": 0.7025,
+   "overpay": 3.0464,
+   "overpay_p90": 8.3703
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 100,
+   "share": 0.0983,
+   "regret": 0.0105,
+   "regret_p90": 0.028,
+   "near": 0.92
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 100,
+   "share": 0.0983,
+   "met": 1.0,
+   "overpay": 1.9299,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 100,
+   "share": 0.0983,
+   "met": 0.8275,
+   "overpay": 2.1385,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 100,
+   "share": 0.14,
+   "regret": 0.0079,
+   "regret_p90": 0.0136,
+   "near": 0.975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 100,
+   "share": 0.14,
+   "met": 1.0,
+   "overpay": 1.6841,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 100,
+   "share": 0.14,
+   "met": 0.8825,
+   "overpay": 2.1424,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 100,
+   "share": 0.1983,
+   "regret": 0.0071,
+   "regret_p90": 0.0114,
+   "near": 0.99
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 100,
+   "share": 0.1983,
+   "met": 1.0,
+   "overpay": 1.5467,
+   "overpay_p90": 1.8358
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 100,
+   "share": 0.1983,
+   "met": 0.895,
+   "overpay": 1.9799,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 100,
+   "share": 0.1393,
+   "regret": 0.0126,
+   "regret_p90": 0.017,
+   "near": 0.97
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 100,
+   "share": 0.1393,
+   "met": 0.5925,
+   "overpay": 1.012,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 100,
+   "share": 0.1393,
+   "met": 0.855,
+   "overpay": 1.2915,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 100,
+   "share": 0.1961,
+   "regret": 0.0119,
+   "regret_p90": 0.0171,
+   "near": 0.965
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 100,
+   "share": 0.1961,
+   "met": 0.6025,
+   "overpay": 1.0051,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 100,
+   "share": 0.1961,
+   "met": 0.8875,
+   "overpay": 1.3177,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 100,
+   "share": 0.2599,
+   "regret": 0.0108,
+   "regret_p90": 0.017,
+   "near": 0.9625
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 100,
+   "share": 0.2599,
+   "met": 0.6125,
+   "overpay": 1.0041,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 100,
+   "share": 0.2599,
+   "met": 0.9025,
+   "overpay": 1.3719,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 100,
+   "share": 0.3129,
+   "regret": 0.0101,
+   "regret_p90": 0.017,
+   "near": 0.9575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 100,
+   "share": 0.3129,
+   "met": 0.6175,
+   "overpay": 1.004,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 100,
+   "share": 0.3129,
+   "met": 0.895,
+   "overpay": 1.4135,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 100,
+   "share": 0.3722,
+   "regret": 0.0088,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 100,
+   "share": 0.3722,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 100,
+   "share": 0.3722,
+   "met": 0.8975,
+   "overpay": 1.4579,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 100,
+   "share": 0.0726,
+   "regret": 0.0346,
+   "regret_p90": 0.06,
+   "near": 0.465
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 100,
+   "share": 0.0726,
+   "met": 0.505,
+   "overpay": 4.0482,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 100,
+   "share": 0.0726,
+   "met": 0.3775,
+   "overpay": 3.932,
+   "overpay_p90": 10.7648
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 100,
+   "share": 0.0945,
+   "regret": 0.0137,
+   "regret_p90": 0.028,
+   "near": 0.905
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 100,
+   "share": 0.0945,
+   "met": 1.0,
+   "overpay": 2.1348,
+   "overpay_p90": 2.4623
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 100,
+   "share": 0.0945,
+   "met": 0.88,
+   "overpay": 2.2325,
+   "overpay_p90": 2.4623
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 100,
+   "share": 0.1303,
+   "regret": 0.0132,
+   "regret_p90": 0.023,
+   "near": 0.9125
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 100,
+   "share": 0.1303,
+   "met": 1.0,
+   "overpay": 1.7505,
+   "overpay_p90": 1.9061
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 100,
+   "share": 0.1303,
+   "met": 0.8625,
+   "overpay": 2.014,
+   "overpay_p90": 2.0244
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 100,
+   "share": 0.1782,
+   "regret": 0.0121,
+   "regret_p90": 0.023,
+   "near": 0.9225
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 100,
+   "share": 0.1782,
+   "met": 1.0,
+   "overpay": 1.5916,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 100,
+   "share": 0.1782,
+   "met": 0.8875,
+   "overpay": 1.9326,
+   "overpay_p90": 1.9077
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 100,
+   "share": 0.1346,
+   "regret": 0.0104,
+   "regret_p90": 0.0153,
+   "near": 0.9525
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 100,
+   "share": 0.1346,
+   "met": 0.62,
+   "overpay": 1.0077,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 100,
+   "share": 0.1346,
+   "met": 0.8675,
+   "overpay": 1.2907,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 100,
+   "share": 0.1822,
+   "regret": 0.0093,
+   "regret_p90": 0.0152,
+   "near": 0.96
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 100,
+   "share": 0.1822,
+   "met": 0.6325,
+   "overpay": 1.0047,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 100,
+   "share": 0.1822,
+   "met": 0.905,
+   "overpay": 1.4351,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 100,
+   "share": 0.232,
+   "regret": 0.0084,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 100,
+   "share": 0.232,
+   "met": 0.6325,
+   "overpay": 1.0047,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 100,
+   "share": 0.232,
+   "met": 0.91,
+   "overpay": 1.5206,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 100,
+   "share": 0.2718,
+   "regret": 0.0079,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 100,
+   "share": 0.2718,
+   "met": 0.635,
+   "overpay": 1.0051,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 100,
+   "share": 0.2718,
+   "met": 0.91,
+   "overpay": 1.5474,
+   "overpay_p90": 1.7911
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 100,
+   "share": 0.3328,
+   "regret": 0.0081,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 100,
+   "share": 0.3328,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 100,
+   "share": 0.3328,
+   "met": 0.9125,
+   "overpay": 1.5582,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 100,
+   "share": 0.0683,
+   "regret": 0.0195,
+   "regret_p90": 0.05,
+   "near": 0.7
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 100,
+   "share": 0.0683,
+   "met": 0.84,
+   "overpay": 3.4521,
+   "overpay_p90": 10.4209
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 100,
+   "share": 0.0683,
+   "met": 0.675,
+   "overpay": 3.3653,
+   "overpay_p90": 10.4209
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 100,
+   "share": 0.084,
+   "regret": 0.0106,
+   "regret_p90": 0.033,
+   "near": 0.8975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 100,
+   "share": 0.084,
+   "met": 0.99,
+   "overpay": 2.0277,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 100,
+   "share": 0.084,
+   "met": 0.9275,
+   "overpay": 2.1323,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 100,
+   "share": 0.1161,
+   "regret": 0.0086,
+   "regret_p90": 0.0128,
+   "near": 0.9475
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 100,
+   "share": 0.1161,
+   "met": 0.9975,
+   "overpay": 1.7336,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 100,
+   "share": 0.1161,
+   "met": 0.9325,
+   "overpay": 2.0916,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 100,
+   "share": 0.1652,
+   "regret": 0.008,
+   "regret_p90": 0.0136,
+   "near": 0.96
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 100,
+   "share": 0.1652,
+   "met": 1.0,
+   "overpay": 1.5845,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 100,
+   "share": 0.1652,
+   "met": 0.9,
+   "overpay": 1.9691,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 100,
+   "share": 0.1252,
+   "regret": 0.0124,
+   "regret_p90": 0.017,
+   "near": 0.955
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 100,
+   "share": 0.1252,
+   "met": 0.5725,
+   "overpay": 1.0073,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 100,
+   "share": 0.1252,
+   "met": 0.8375,
+   "overpay": 1.2731,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 100,
+   "share": 0.1672,
+   "regret": 0.0107,
+   "regret_p90": 0.0153,
+   "near": 0.97
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 100,
+   "share": 0.1672,
+   "met": 0.5875,
+   "overpay": 1.0083,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 100,
+   "share": 0.1672,
+   "met": 0.87,
+   "overpay": 1.3998,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 100,
+   "share": 0.2244,
+   "regret": 0.0095,
+   "regret_p90": 0.016,
+   "near": 0.98
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 100,
+   "share": 0.2244,
+   "met": 0.6075,
+   "overpay": 1.0102,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 100,
+   "share": 0.2244,
+   "met": 0.875,
+   "overpay": 1.4352,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 100,
+   "share": 0.2884,
+   "regret": 0.0089,
+   "regret_p90": 0.016,
+   "near": 0.9775
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 100,
+   "share": 0.2884,
+   "met": 0.6225,
+   "overpay": 1.0083,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 100,
+   "share": 0.2884,
+   "met": 0.89,
+   "overpay": 1.4689,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 100,
+   "share": 0.3801,
+   "regret": 0.0088,
+   "regret_p90": 0.016,
+   "near": 0.97
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 100,
+   "share": 0.3801,
+   "met": 0.6325,
+   "overpay": 1.0045,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 100,
+   "share": 0.3801,
+   "met": 0.8975,
+   "overpay": 1.4564,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 100,
+   "share": 0.0733,
+   "regret": 0.0212,
+   "regret_p90": 0.0528,
+   "near": 0.6925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 100,
+   "share": 0.0733,
+   "met": 0.89,
+   "overpay": 3.2735,
+   "overpay_p90": 8.3703
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 100,
+   "share": 0.0733,
+   "met": 0.625,
+   "overpay": 3.1891,
+   "overpay_p90": 8.3703
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 100,
+   "share": 0.0983,
+   "regret": 0.0108,
+   "regret_p90": 0.0176,
+   "near": 0.94
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 100,
+   "share": 0.0983,
+   "met": 1.0,
+   "overpay": 1.9134,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 100,
+   "share": 0.0983,
+   "met": 0.725,
+   "overpay": 2.1121,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 100,
+   "share": 0.14,
+   "regret": 0.0089,
+   "regret_p90": 0.0161,
+   "near": 0.975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 100,
+   "share": 0.14,
+   "met": 1.0,
+   "overpay": 1.6769,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 100,
+   "share": 0.14,
+   "met": 0.835,
+   "overpay": 2.0382,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 100,
+   "share": 0.1983,
+   "regret": 0.0093,
+   "regret_p90": 0.0176,
+   "near": 0.975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 100,
+   "share": 0.1983,
+   "met": 1.0,
+   "overpay": 1.5729,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 100,
+   "share": 0.1983,
+   "met": 0.88,
+   "overpay": 1.9371,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 100,
+   "share": 0.1096,
+   "regret": 0.012,
+   "regret_p90": 0.016,
+   "near": 0.9825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 100,
+   "share": 0.1096,
+   "met": 0.595,
+   "overpay": 1.0382,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 100,
+   "share": 0.1096,
+   "met": 0.8325,
+   "overpay": 1.2853,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 100,
+   "share": 0.1806,
+   "regret": 0.0115,
+   "regret_p90": 0.0177,
+   "near": 0.9575
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 100,
+   "share": 0.1806,
+   "met": 0.6275,
+   "overpay": 1.0148,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 100,
+   "share": 0.1806,
+   "met": 0.8825,
+   "overpay": 1.3822,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 100,
+   "share": 0.2677,
+   "regret": 0.0096,
+   "regret_p90": 0.016,
+   "near": 0.97
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 100,
+   "share": 0.2677,
+   "met": 0.6325,
+   "overpay": 1.0068,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 100,
+   "share": 0.2677,
+   "met": 0.8975,
+   "overpay": 1.4383,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 100,
+   "share": 0.323,
+   "regret": 0.0091,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 100,
+   "share": 0.323,
+   "met": 0.635,
+   "overpay": 1.0051,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 100,
+   "share": 0.323,
+   "met": 0.89,
+   "overpay": 1.4509,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 100,
+   "share": 0.3732,
+   "regret": 0.0088,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 100,
+   "share": 0.3732,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 100,
+   "share": 0.3732,
+   "met": 0.8975,
+   "overpay": 1.4589,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 100,
+   "share": 0.0732,
+   "regret": 0.0278,
+   "regret_p90": 0.058,
+   "near": 0.59
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 100,
+   "share": 0.0732,
+   "met": 0.72,
+   "overpay": 3.5675,
+   "overpay_p90": 8.8841
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 100,
+   "share": 0.0732,
+   "met": 0.4925,
+   "overpay": 3.4687,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 100,
+   "share": 0.0958,
+   "regret": 0.0129,
+   "regret_p90": 0.0292,
+   "near": 0.9
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 100,
+   "share": 0.0958,
+   "met": 1.0,
+   "overpay": 1.9538,
+   "overpay_p90": 2.0046
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 100,
+   "share": 0.0958,
+   "met": 0.7325,
+   "overpay": 2.131,
+   "overpay_p90": 2.4623
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 100,
+   "share": 0.1313,
+   "regret": 0.0105,
+   "regret_p90": 0.023,
+   "near": 0.9475
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 100,
+   "share": 0.1313,
+   "met": 0.9975,
+   "overpay": 1.7016,
+   "overpay_p90": 1.8882
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 100,
+   "share": 0.1313,
+   "met": 0.8325,
+   "overpay": 2.0723,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 100,
+   "share": 0.1798,
+   "regret": 0.0094,
+   "regret_p90": 0.016,
+   "near": 0.975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 100,
+   "share": 0.1798,
+   "met": 1.0,
+   "overpay": 1.5683,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 100,
+   "share": 0.1798,
+   "met": 0.8825,
+   "overpay": 1.9207,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 100,
+   "share": 0.1228,
+   "regret": 0.012,
+   "regret_p90": 0.0184,
+   "near": 0.9325
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 100,
+   "share": 0.1228,
+   "met": 0.58,
+   "overpay": 1.0375,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 100,
+   "share": 0.1228,
+   "met": 0.785,
+   "overpay": 1.3576,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 100,
+   "share": 0.189,
+   "regret": 0.0104,
+   "regret_p90": 0.017,
+   "near": 0.9525
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 100,
+   "share": 0.189,
+   "met": 0.615,
+   "overpay": 1.0264,
+   "overpay_p90": 1.1382
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 100,
+   "share": 0.189,
+   "met": 0.865,
+   "overpay": 1.4331,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 100,
+   "share": 0.2606,
+   "regret": 0.0088,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 100,
+   "share": 0.2606,
+   "met": 0.63,
+   "overpay": 1.0153,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 100,
+   "share": 0.2606,
+   "met": 0.895,
+   "overpay": 1.5366,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 100,
+   "share": 0.3152,
+   "regret": 0.0085,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 100,
+   "share": 0.3152,
+   "met": 0.635,
+   "overpay": 1.0063,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 100,
+   "share": 0.3152,
+   "met": 0.9075,
+   "overpay": 1.5185,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 100,
+   "share": 0.3741,
+   "regret": 0.0087,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 100,
+   "share": 0.3741,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 100,
+   "share": 0.3741,
+   "met": 0.9,
+   "overpay": 1.4689,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 100,
+   "share": 0.0725,
+   "regret": 0.0237,
+   "regret_p90": 0.053,
+   "near": 0.67
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 100,
+   "share": 0.0725,
+   "met": 0.8575,
+   "overpay": 3.3537,
+   "overpay_p90": 8.8493
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 100,
+   "share": 0.0725,
+   "met": 0.5575,
+   "overpay": 3.273,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 100,
+   "share": 0.0949,
+   "regret": 0.0127,
+   "regret_p90": 0.037,
+   "near": 0.8675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 100,
+   "share": 0.0949,
+   "met": 0.9925,
+   "overpay": 1.9705,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 100,
+   "share": 0.0949,
+   "met": 0.7975,
+   "overpay": 2.095,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 100,
+   "share": 0.131,
+   "regret": 0.0099,
+   "regret_p90": 0.0177,
+   "near": 0.94
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 100,
+   "share": 0.131,
+   "met": 0.995,
+   "overpay": 1.697,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 100,
+   "share": 0.131,
+   "met": 0.8675,
+   "overpay": 2.0904,
+   "overpay_p90": 1.9202
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 100,
+   "share": 0.1817,
+   "regret": 0.0089,
+   "regret_p90": 0.016,
+   "near": 0.955
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 100,
+   "share": 0.1817,
+   "met": 1.0,
+   "overpay": 1.5602,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 100,
+   "share": 0.1817,
+   "met": 0.8925,
+   "overpay": 1.9525,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 100,
+   "share": 0.1262,
+   "regret": 0.0103,
+   "regret_p90": 0.0184,
+   "near": 0.945
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 100,
+   "share": 0.1262,
+   "met": 0.9525,
+   "overpay": 1.1199,
+   "overpay_p90": 1.3827
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 100,
+   "share": 0.1262,
+   "met": 0.805,
+   "overpay": 1.432,
+   "overpay_p90": 1.7911
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 100,
+   "share": 0.1761,
+   "regret": 0.0091,
+   "regret_p90": 0.0152,
+   "near": 0.965
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 100,
+   "share": 0.1761,
+   "met": 0.8075,
+   "overpay": 1.0598,
+   "overpay_p90": 1.1382
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 100,
+   "share": 0.1761,
+   "met": 0.8525,
+   "overpay": 1.4804,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 100,
+   "share": 0.2274,
+   "regret": 0.0083,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 100,
+   "share": 0.2274,
+   "met": 0.67,
+   "overpay": 1.0236,
+   "overpay_p90": 1.0766
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 100,
+   "share": 0.2274,
+   "met": 0.875,
+   "overpay": 1.5513,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 100,
+   "share": 0.2723,
+   "regret": 0.008,
+   "regret_p90": 0.0152,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 100,
+   "share": 0.2723,
+   "met": 0.6375,
+   "overpay": 1.0127,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 100,
+   "share": 0.2723,
+   "met": 0.895,
+   "overpay": 1.5128,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 100,
+   "share": 0.3449,
+   "regret": 0.0085,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 100,
+   "share": 0.3449,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 100,
+   "share": 0.3449,
+   "met": 0.9,
+   "overpay": 1.492,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 100,
+   "share": 0.0724,
+   "regret": 0.0206,
+   "regret_p90": 0.0528,
+   "near": 0.7025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 100,
+   "share": 0.0724,
+   "met": 0.84,
+   "overpay": 3.3865,
+   "overpay_p90": 8.8841
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 100,
+   "share": 0.0724,
+   "met": 0.6475,
+   "overpay": 3.3039,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 100,
+   "share": 0.0915,
+   "regret": 0.0106,
+   "regret_p90": 0.0296,
+   "near": 0.9025
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 100,
+   "share": 0.0915,
+   "met": 0.9775,
+   "overpay": 1.9962,
+   "overpay_p90": 1.9987
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 100,
+   "share": 0.0915,
+   "met": 0.8875,
+   "overpay": 2.1198,
+   "overpay_p90": 2.0119
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 100,
+   "share": 0.1246,
+   "regret": 0.0085,
+   "regret_p90": 0.0129,
+   "near": 0.9525
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 100,
+   "share": 0.1246,
+   "met": 0.995,
+   "overpay": 1.7086,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 100,
+   "share": 0.1246,
+   "met": 0.9075,
+   "overpay": 2.0809,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 100,
+   "share": 0.1713,
+   "regret": 0.008,
+   "regret_p90": 0.0152,
+   "near": 0.965
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 100,
+   "share": 0.1713,
+   "met": 1.0,
+   "overpay": 1.5707,
+   "overpay_p90": 1.8595
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 100,
+   "share": 0.1713,
+   "met": 0.9275,
+   "overpay": 1.9457,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 100,
+   "share": 0.1375,
+   "regret": 0.0108,
+   "regret_p90": 0.016,
+   "near": 0.955
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 100,
+   "share": 0.1375,
+   "met": 0.5975,
+   "overpay": 1.0135,
+   "overpay_p90": 1.0766
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 100,
+   "share": 0.1375,
+   "met": 0.815,
+   "overpay": 1.3335,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 100,
+   "share": 0.2053,
+   "regret": 0.0092,
+   "regret_p90": 0.016,
+   "near": 0.9825
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 100,
+   "share": 0.2053,
+   "met": 0.625,
+   "overpay": 1.0064,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 100,
+   "share": 0.2053,
+   "met": 0.8825,
+   "overpay": 1.4206,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 100,
+   "share": 0.2792,
+   "regret": 0.0091,
+   "regret_p90": 0.016,
+   "near": 0.975
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 100,
+   "share": 0.2792,
+   "met": 0.63,
+   "overpay": 1.0052,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 100,
+   "share": 0.2792,
+   "met": 0.8975,
+   "overpay": 1.5099,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 100,
+   "share": 0.3301,
+   "regret": 0.0088,
+   "regret_p90": 0.016,
+   "near": 0.97
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 100,
+   "share": 0.3301,
+   "met": 0.635,
+   "overpay": 1.0053,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 100,
+   "share": 0.3301,
+   "met": 0.8925,
+   "overpay": 1.463,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 100,
+   "share": 0.374,
+   "regret": 0.0088,
+   "regret_p90": 0.016,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 100,
+   "share": 0.374,
+   "met": 0.635,
+   "overpay": 1.0054,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 100,
+   "share": 0.374,
+   "met": 0.8975,
+   "overpay": 1.4589,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 100,
+   "share": 0.0727,
+   "regret": 0.0215,
+   "regret_p90": 0.0592,
+   "near": 0.735
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 100,
+   "share": 0.0727,
+   "met": 0.8175,
+   "overpay": 3.4172,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 100,
+   "share": 0.0727,
+   "met": 0.6625,
+   "overpay": 3.3316,
+   "overpay_p90": 8.6995
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 100,
+   "share": 0.0959,
+   "regret": 0.0093,
+   "regret_p90": 0.017,
+   "near": 0.95
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 100,
+   "share": 0.0959,
+   "met": 0.9975,
+   "overpay": 1.9928,
+   "overpay_p90": 1.9993
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 100,
+   "share": 0.0959,
+   "met": 0.875,
+   "overpay": 2.188,
+   "overpay_p90": 2.1365
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 100,
+   "share": 0.1317,
+   "regret": 0.0088,
+   "regret_p90": 0.0153,
+   "near": 0.965
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 100,
+   "share": 0.1317,
+   "met": 1.0,
+   "overpay": 1.702,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 100,
+   "share": 0.1317,
+   "met": 0.885,
+   "overpay": 2.1591,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 100,
+   "share": 0.1805,
+   "regret": 0.0083,
+   "regret_p90": 0.016,
+   "near": 0.9775
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 100,
+   "share": 0.1805,
+   "met": 1.0,
+   "overpay": 1.5748,
+   "overpay_p90": 1.8819
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 100,
+   "share": 0.1805,
+   "met": 0.9,
+   "overpay": 1.9983,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P4",
+   "knob": "",
+   "n": 100,
+   "share": 0.165,
+   "regret": 0.0135,
+   "regret_p90": 0.023,
+   "near": 0.98
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P4",
+   "knob": "",
+   "n": 100,
+   "share": 0.165,
+   "met": 0.5825,
+   "overpay": 0.9954,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P4",
+   "knob": "",
+   "n": 100,
+   "share": 0.165,
+   "met": 0.855,
+   "overpay": 1.1501,
+   "overpay_p90": 1.3941
+  },
+  {
+   "goal": "acc",
+   "strategy": "F",
+   "knob": "",
+   "n": 250,
+   "share": 1.0,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "F",
+   "knob": "",
+   "n": 250,
+   "share": 1.0,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "F",
+   "knob": "",
+   "n": 250,
+   "share": 1.0,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0111,
+   "regret_p90": 0.0144,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0076,
+   "regret_p90": 0.0137,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 250,
+   "share": 0.6208,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 250,
+   "share": 0.6208,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B0",
+   "n": 250,
+   "share": 0.6208,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B0",
+   "n": 250,
+   "share": 0.6625,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0173,
+   "regret_p90": 0.0175,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.831,
+   "overpay_p90": 1.8717
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B0",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0048,
+   "regret_p90": 0.0086,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.831,
+   "overpay_p90": 1.8717
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B0",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.831,
+   "overpay_p90": 1.8717
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B0",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 250,
+   "share": 0.4958,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.7861,
+   "overpay_p90": 1.8259
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B0",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0096,
+   "regret_p90": 0.0109,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 250,
+   "share": 0.4958,
+   "regret": 0.0096,
+   "regret_p90": 0.0109,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 250,
+   "share": 0.4958,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B1",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 250,
+   "share": 0.7354,
+   "regret": 0.003,
+   "regret_p90": 0.0038,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 250,
+   "share": 0.7354,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B1",
+   "n": 250,
+   "share": 0.7354,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B1",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0281,
+   "regret_p90": 0.0448,
+   "near": 0.5
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 250,
+   "share": 0.1833,
+   "met": 0.5,
+   "overpay": 2.6388,
+   "overpay_p90": 3.2374
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B1",
+   "n": 250,
+   "share": 0.1833,
+   "met": 0.5,
+   "overpay": 2.5472,
+   "overpay_p90": 3.0724
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0076,
+   "regret_p90": 0.0079,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.9447,
+   "overpay_p90": 1.9879
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B1",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.8906,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.003,
+   "regret_p90": 0.0038,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8862,
+   "overpay_p90": 1.8897
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B1",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 250,
+   "share": 0.4125,
+   "regret": 0.003,
+   "regret_p90": 0.0038,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.831,
+   "overpay_p90": 1.8717
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B1",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 250,
+   "share": 0.3083,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 250,
+   "share": 0.3083,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B2",
+   "n": 250,
+   "share": 0.3083,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 250,
+   "share": 0.4854,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 250,
+   "share": 0.4854,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B2",
+   "n": 250,
+   "share": 0.4854,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 250,
+   "share": 0.6833,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 250,
+   "share": 0.6833,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B2",
+   "n": 250,
+   "share": 0.6833,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 250,
+   "share": 0.725,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 250,
+   "share": 0.725,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B2",
+   "n": 250,
+   "share": 0.725,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 250,
+   "share": 0.85,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 250,
+   "share": 0.85,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B2",
+   "n": 250,
+   "share": 0.85,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 250,
+   "share": 0.1625,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 250,
+   "share": 0.1625,
+   "met": 1.0,
+   "overpay": 1.9474,
+   "overpay_p90": 1.9885
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B2",
+   "n": 250,
+   "share": 0.1625,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 250,
+   "share": 0.2042,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 250,
+   "share": 0.2042,
+   "met": 1.0,
+   "overpay": 1.9474,
+   "overpay_p90": 1.9885
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B2",
+   "n": 250,
+   "share": 0.2042,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 250,
+   "share": 0.2875,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8862,
+   "overpay_p90": 1.8897
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B2",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 250,
+   "share": 0.4125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.8079,
+   "overpay_p90": 1.8302
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B2",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 250,
+   "share": 0.3187,
+   "regret": 0.0096,
+   "regret_p90": 0.0109,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 250,
+   "share": 0.3187,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B3",
+   "n": 250,
+   "share": 0.3187,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 250,
+   "share": 0.4021,
+   "regret": 0.0096,
+   "regret_p90": 0.0109,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 250,
+   "share": 0.4021,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B3",
+   "n": 250,
+   "share": 0.4021,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 250,
+   "share": 0.5583,
+   "regret": 0.0025,
+   "regret_p90": 0.0037,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 250,
+   "share": 0.5583,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B3",
+   "n": 250,
+   "share": 0.5583,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 250,
+   "share": 0.8187,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 250,
+   "share": 0.8187,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B3",
+   "n": 250,
+   "share": 0.8187,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 250,
+   "share": 1.0375,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 250,
+   "share": 1.0375,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B3",
+   "n": 250,
+   "share": 1.0375,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0076,
+   "regret_p90": 0.0079,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.9447,
+   "overpay_p90": 1.9879
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B3",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.8906,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0076,
+   "regret_p90": 0.0079,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B3",
+   "n": 250,
+   "share": 0.2458,
+   "met": 0.5,
+   "overpay": 1.7583,
+   "overpay_p90": 1.7757
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0025,
+   "regret_p90": 0.0037,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B3",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 250,
+   "share": 0.4958,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B3",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 250,
+   "share": 0.2667,
+   "regret": 0.0116,
+   "regret_p90": 0.0145,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 250,
+   "share": 0.2667,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B4",
+   "n": 250,
+   "share": 0.2667,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 250,
+   "share": 0.5687,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 250,
+   "share": 0.5687,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B4",
+   "n": 250,
+   "share": 0.5687,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 250,
+   "share": 0.85,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 250,
+   "share": 0.85,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B4",
+   "n": 250,
+   "share": 0.85,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B4",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0281,
+   "regret_p90": 0.0448,
+   "near": 0.5
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 250,
+   "share": 0.1833,
+   "met": 0.5,
+   "overpay": 2.6388,
+   "overpay_p90": 3.2374
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B4",
+   "n": 250,
+   "share": 0.1833,
+   "met": 0.5,
+   "overpay": 2.5472,
+   "overpay_p90": 3.0724
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0076,
+   "regret_p90": 0.0079,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.8676,
+   "overpay_p90": 1.9725
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B4",
+   "n": 250,
+   "share": 0.2458,
+   "met": 0.5,
+   "overpay": 1.8135,
+   "overpay_p90": 1.8751
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0025,
+   "regret_p90": 0.0037,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8676,
+   "overpay_p90": 1.9725
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B4",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 250,
+   "share": 0.4958,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B4",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 250,
+   "share": 0.2875,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 250,
+   "share": 0.2875,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B5",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.3079,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 250,
+   "share": 0.6208,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 250,
+   "share": 0.6208,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B5",
+   "n": 250,
+   "share": 0.6208,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 250,
+   "share": 0.7875,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 250,
+   "share": 0.7875,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B5",
+   "n": 250,
+   "share": 0.7875,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 250,
+   "share": 0.85,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 250,
+   "share": 0.85,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B5",
+   "n": 250,
+   "share": 0.85,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B5",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.9474,
+   "overpay_p90": 1.9885
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B5",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.7861,
+   "overpay_p90": 1.8259
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B5",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 250,
+   "share": 0.35,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.7861,
+   "overpay_p90": 1.8259
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B5",
+   "n": 250,
+   "share": 0.35,
+   "met": 1.0,
+   "overpay": 1.8906,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 250,
+   "share": 0.4958,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.7861,
+   "overpay_p90": 1.8259
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B5",
+   "n": 250,
+   "share": 0.4958,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.1074,
+   "overpay_p90": 1.1321
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.4857,
+   "overpay_p90": 1.4857
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 250,
+   "share": 0.5375,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 250,
+   "share": 0.5375,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B7",
+   "n": 250,
+   "share": 0.5375,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 250,
+   "share": 0.6833,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 250,
+   "share": 0.6833,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B7",
+   "n": 250,
+   "share": 0.6833,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 250,
+   "share": 0.725,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 250,
+   "share": 0.725,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B7",
+   "n": 250,
+   "share": 0.725,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B7",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.9474,
+   "overpay_p90": 1.9885
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B7",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 250,
+   "share": 0.2042,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 250,
+   "share": 0.2042,
+   "met": 1.0,
+   "overpay": 1.9474,
+   "overpay_p90": 1.9885
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B7",
+   "n": 250,
+   "share": 0.2042,
+   "met": 1.0,
+   "overpay": 1.8933,
+   "overpay_p90": 1.8956
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8862,
+   "overpay_p90": 1.8897
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B7",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 250,
+   "share": 0.4125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.8079,
+   "overpay_p90": 1.8302
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B7",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.7801,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 250,
+   "share": 0.3812,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 250,
+   "share": 0.3812,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.0 ref=B11",
+   "n": 250,
+   "share": 0.3812,
+   "met": 1.0,
+   "overpay": 1.1539,
+   "overpay_p90": 1.2771
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 250,
+   "share": 0.5792,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 250,
+   "share": 0.5792,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.01 ref=B11",
+   "n": 250,
+   "share": 0.5792,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 250,
+   "share": 0.7979,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 250,
+   "share": 0.7979,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.02 ref=B11",
+   "n": 250,
+   "share": 0.7979,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.03 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "met": 0.5,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0461
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P1",
+   "knob": "eps=0.05 ref=B11",
+   "n": 250,
+   "share": 0.9125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 250,
+   "share": 0.1833,
+   "regret": 0.0048,
+   "regret_p90": 0.0086,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.9504,
+   "overpay_p90": 1.9938
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=1 ref=B11",
+   "n": 250,
+   "share": 0.1833,
+   "met": 1.0,
+   "overpay": 1.8961,
+   "overpay_p90": 1.8961
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 250,
+   "share": 0.2458,
+   "regret": 0.0088,
+   "regret_p90": 0.0094,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.9447,
+   "overpay_p90": 1.9879
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=2 ref=B11",
+   "n": 250,
+   "share": 0.2458,
+   "met": 1.0,
+   "overpay": 1.8906,
+   "overpay_p90": 1.8906
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 250,
+   "share": 0.2875,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=3 ref=B11",
+   "n": 250,
+   "share": 0.2875,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 250,
+   "share": 0.4125,
+   "regret": 0.0053,
+   "regret_p90": 0.0087,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.8092,
+   "overpay_p90": 1.8674
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P2",
+   "knob": "k=4 ref=B11",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.8353,
+   "overpay_p90": 1.8795
+  },
+  {
+   "goal": "acc",
+   "strategy": "P4",
+   "knob": "",
+   "n": 250,
+   "share": 0.4125,
+   "regret": 0.0136,
+   "regret_p90": 0.0155,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P4",
+   "knob": "",
+   "n": 250,
+   "share": 0.4125,
+   "met": 0.5,
+   "overpay": 0.9729,
+   "overpay_p90": 0.9946
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P4",
+   "knob": "",
+   "n": 250,
+   "share": 0.4125,
+   "met": 1.0,
+   "overpay": 1.0,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.05",
+   "n": null,
+   "share": 0.3353,
+   "regret": 0.0047,
+   "regret_p90": 0.0096,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.05",
+   "n": null,
+   "share": 0.7375,
+   "met": 0.51,
+   "overpay": 1.0015,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.05",
+   "n": null,
+   "share": 0.6256,
+   "met": 0.9925,
+   "overpay": 1.0336,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.1",
+   "n": null,
+   "share": 0.2199,
+   "regret": 0.0062,
+   "regret_p90": 0.0112,
+   "near": 0.9925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.1",
+   "n": null,
+   "share": 0.5887,
+   "met": 0.545,
+   "overpay": 1.0073,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.1",
+   "n": null,
+   "share": 0.4644,
+   "met": 0.98,
+   "overpay": 1.1312,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.2",
+   "n": null,
+   "share": 0.1377,
+   "regret": 0.0091,
+   "regret_p90": 0.017,
+   "near": 0.9675
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.2",
+   "n": null,
+   "share": 0.328,
+   "met": 0.63,
+   "overpay": 1.0251,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=25 delta=0.2",
+   "n": null,
+   "share": 0.2501,
+   "met": 0.915,
+   "overpay": 1.3892,
+   "overpay_p90": 1.7801
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.05",
+   "n": null,
+   "share": 0.4371,
+   "regret": 0.0049,
+   "regret_p90": 0.0096,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.05",
+   "n": null,
+   "share": 0.8422,
+   "met": 0.5,
+   "overpay": 1.0008,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.05",
+   "n": null,
+   "share": 0.6939,
+   "met": 0.9975,
+   "overpay": 1.0099,
+   "overpay_p90": 1.0
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.1",
+   "n": null,
+   "share": 0.3419,
+   "regret": 0.0052,
+   "regret_p90": 0.0096,
+   "near": 1.0
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.1",
+   "n": null,
+   "share": 0.7186,
+   "met": 0.51,
+   "overpay": 1.0009,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.1",
+   "n": null,
+   "share": 0.5958,
+   "met": 0.9975,
+   "overpay": 1.0576,
+   "overpay_p90": 1.3079
+  },
+  {
+   "goal": "acc",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.2",
+   "n": null,
+   "share": 0.2618,
+   "regret": 0.0067,
+   "regret_p90": 0.0152,
+   "near": 0.9925
+  },
+  {
+   "goal": "bar0.95",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.2",
+   "n": null,
+   "share": 0.4991,
+   "met": 0.56,
+   "overpay": 1.0076,
+   "overpay_p90": 1.0572
+  },
+  {
+   "goal": "bar0.98",
+   "strategy": "P3",
+   "knob": "m=50 delta=0.2",
+   "n": null,
+   "share": 0.4355,
+   "met": 0.985,
+   "overpay": 1.2296,
+   "overpay_p90": 1.3941
+  }
+ ]
+}
